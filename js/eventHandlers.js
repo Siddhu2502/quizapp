@@ -110,14 +110,13 @@ function handleHintToggle(button) {
     }
 }
 
-function handleReviewNavigation(direction) {
-    const appContainer = document.getElementById('app');
+function handleReviewNavigation(container, direction) {
     if (direction === 'next' && AppState.currentReviewIndex < AppState.reviewQuestions.length - 1) {
         AppState.currentReviewIndex++;
-        renderReviewScreen(appContainer);
+        renderReviewScreen(container);
     } else if (direction === 'prev' && AppState.currentReviewIndex > 0) {
         AppState.currentReviewIndex--;
-        renderReviewScreen(appContainer);
+        renderReviewScreen(container);
     }
 }
 

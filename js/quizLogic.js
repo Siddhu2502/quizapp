@@ -87,6 +87,8 @@ export function handleNextQuestion(container) {
     } else {
         renderResults(container);
     }
+    // Always re-render header to update counter or hide it on results page
+    renderHeader();
 }
 
 export function handleExitQuiz() {
