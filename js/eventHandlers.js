@@ -1,7 +1,7 @@
 // --- EVENT HANDLING MODULE ---
 import { AppState } from './state.js';
 import { renderReviewScreen, renderResults, renderTopicMenu } from './renderer.js';
-import { navigate } from './router.js';
+import { navigate, handleRouteChange } from './router.js';
 import { 
     handleOptionSelect, 
     handleNextQuestion, 
@@ -67,32 +67,30 @@ async function handleManualRefresh() {
     const confirmed = confirm('Check for new quiz content? This will refresh all questions while keeping your progress.');
     if (!confirmed) return;
     
-    const appContainer = document.getElementById('app');
-    const originalContent = appContainer.innerHTML;
-    appContainer.innerHTML = `
-        <div class="screen-container">
-            <h1 class="screen-title">Checking for Updates...</h1>
-            <div style="text-align: center; padding: 2rem;">
-                <div class="loading-spinner"></div>
-                <p style="margin-top: 1rem; color: var(--text-muted);">Fetching latest content...</p>
-            </div>
-        </div>
-    `;
+    const refreshButton = document.getElementById('refresh-content-btn');
+    const originalButtonText = refreshButton.textContent;
+
+    refreshButton.disabled = true;
+    refreshButton.textContent = '...';
     
     try {
         const { manualRefresh } = await import('./dataService.js');
-        const { CONFIG, AppState } = await import('./state.js');
+        const { CONFIG } = await import('./state.js');
         
         await manualRefresh(CONFIG.TOPICS);
         
-        alert('✅ Content updated! Latest questions are now available.');
+        alert('✅ Content updated! The latest questions are now available.');
         
-        // Re-render the current view
-        renderTopicMenu(appContainer, AppState.currentTopic);
+        // Correctly re-render the current view by calling the router's handler
+        handleRouteChange();
+
     } catch (error) {
         console.error('Manual refresh failed:', error);
         alert('❌ Failed to check for updates. Please check your internet connection.');
-        appContainer.innerHTML = originalContent; // Restore on failure
+    } finally {
+        // Restore button state
+        refreshButton.disabled = false;
+        refreshButton.textContent = originalButtonText;
     }
 }
 

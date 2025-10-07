@@ -34,7 +34,7 @@ const routes = {
     }
 };
 
-function handleRouteChange() {
+export function handleRouteChange() {
     const path = window.location.pathname;
     const appContainer = document.getElementById('app');
 
