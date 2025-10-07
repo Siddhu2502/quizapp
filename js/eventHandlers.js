@@ -48,10 +48,10 @@ export function attachEventListeners(container) {
             startSessionReview(appContainer);
         }
         else if (targetId === 'review-next-btn') {
-            handleReviewNavigation(appContainer, 'next');
+            handleReviewNavigation('next');
         }
         else if (targetId === 'review-prev-btn') {
-            handleReviewNavigation(appContainer, 'prev');
+            handleReviewNavigation('prev');
         }
         else if (targetId === 'review-back-btn') {
             handleReviewBack();
@@ -114,11 +114,10 @@ function handleReviewNavigation(direction) {
     const appContainer = document.getElementById('app');
     if (direction === 'next' && AppState.currentReviewIndex < AppState.reviewQuestions.length - 1) {
         AppState.currentReviewIndex++;
-        renderReviewScreen(appContainer);
     } else if (direction === 'prev' && AppState.currentReviewIndex > 0) {
         AppState.currentReviewIndex--;
-        renderReviewScreen(appContainer);
     }
+    renderReviewScreen(appContainer);
 }
 
 function handleReviewBack() {
