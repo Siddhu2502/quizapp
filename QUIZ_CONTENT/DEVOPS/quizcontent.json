@@ -1,0 +1,26 @@
+[
+  {
+    "question": "What distinguishes Continuous Deployment from Continuous Delivery in a DevOps pipeline?",
+    "options": [
+      "Continuous Delivery is only suitable for small projects, whereas Continuous Deployment is for large-scale applications.",
+      "Continuous Deployment focuses on integrating code into a shared repository, while Continuous Delivery focuses on building the code.",
+      "Continuous Deployment automates the release to production without manual approval, while Continuous Delivery requires it.",
+      "Continuous Delivery involves automated testing, while Continuous Deployment does not."
+    ],
+    "answer": "Continuous Deployment automates the release to production without manual approval, while Continuous Delivery requires it.",
+    "hint": "Think about the final step. Which one goes all the way to production automatically?",
+    "explanation": "Continuous Delivery ensures that every change is releasable, but the final deployment to production is a manual business decision. Continuous Deployment takes this a step further by automatically deploying every passed build to production."
+  },
+  {
+    "question": "The practice of automatically provisioning a new environment at the time of deployment is referred to as?",
+    "options": [
+      "Continuous Integration",
+      "Continuous Development",
+      "Infrastructure-as-Code",
+      "Configuration Management"
+    ],
+    "answer": "Infrastructure-as-Code",
+    "hint": "Which practice treats infrastructure setup like software code?",
+    "explanation": "Infrastructure-as-Code (IaC) is the management of infrastructure (networks, virtual machines, load balancers, and connection topology) in a descriptive model, using the same versioning as DevOps team uses for source code."
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "question": "What will be the output of the following Java code snippet?",
+    "code": "public class Main {\n  public static void main(String[] args) {\n    String s1 = \"hello\";\n    String s2 = new String(\"hello\");\n    System.out.println(s1 == s2);\n  }\n}",
+    "options": [
+      "true",
+      "false",
+      "Compilation Error",
+      "RuntimeException"
+    ],
+    "answer": "false",
+    "hint": "Consider how `==` works for objects versus primitive types in Java.",
+    "explanation": "The `==` operator compares object references, not their content. `s1` refers to a string in the string pool, while `s2` is a new object created in the heap. Since they are different objects in memory, the comparison returns `false`. To compare the content, you should use `s1.equals(s2)`."
+  },
+  {
+    "question": "Which of the following is NOT a Java keyword?",
+    "options": [
+      "static",
+      "try",
+      "string",
+      "instanceof"
+    ],
+    "answer": "string",
+    "hint": "One of these is a commonly used Class, but not a reserved word in the language.",
+    "explanation": "`String` (with a capital S) is a class in the `java.lang` package. `string` (lowercase) is not a keyword. `static`, `try`, and `instanceof` are all reserved keywords in Java."
+  }
+]
