@@ -66,7 +66,45 @@ export function attachEventListeners(container) {
         else if (targetId === 'review-back-btn') {
             handleReviewBack(container);
         }
+        else if (targetId === 'refresh-content-btn') {
+            handleManualRefresh(container);
+        }
     });
+}
+
+async function handleManualRefresh(container) {
+    const confirmed = confirm('Check for new quiz content? This will refresh all questions while keeping your progress.');
+    if (!confirmed) return;
+    
+    // Show loading
+    const originalContent = container.innerHTML;
+    container.innerHTML = `
+        <div class="screen-container">
+            <h1 class="screen-title">Checking for Updates...</h1>
+            <div style="text-align: center; padding: 2rem;">
+                <div class="loading-spinner"></div>
+                <p style="margin-top: 1rem; color: var(--text-muted);">Fetching latest content...</p>
+            </div>
+        </div>
+    `;
+    
+    try {
+        const { manualRefresh } = await import('./dataService.js');
+        const { CONFIG } = await import('./state.js');
+        const { AppState } = await import('./state.js');
+        
+        await manualRefresh(CONFIG.TOPICS);
+        
+        alert('✅ Content updated! Latest questions are now available.');
+        
+        // Re-render the current view
+        const { renderTopicMenu } = await import('./renderer.js');
+        renderTopicMenu(container, AppState.currentTopic);
+    } catch (error) {
+        console.error('Manual refresh failed:', error);
+        alert('❌ Failed to check for updates. Please check your internet connection.');
+        container.innerHTML = originalContent;
+    }
 }
 
 function handleHintToggle(button) {

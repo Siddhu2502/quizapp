@@ -133,13 +133,31 @@ export function startFullReview(container, topic) {
         return;
     }
 
-    AppState.reviewQuestions = allQuestionsForTopic
-        .filter(q => attemptedTexts.includes(q.question))
-        .map(q => ({
-            question: q,
-            userAnswer: attemptedData[q.question].userAnswer
-        }));
+    // Match attempted questions with current questions (handles updates/deletions)
+    const validReviewQuestions = [];
     
+    for (const questionText of attemptedTexts) {
+        const currentQuestion = allQuestionsForTopic.find(q => q.question === questionText);
+        
+        if (currentQuestion) {
+            // Question still exists, use updated version (in case explanation changed)
+            validReviewQuestions.push({
+                question: currentQuestion,
+                userAnswer: attemptedData[questionText].userAnswer
+            });
+        } else {
+            // Question was deleted, remove from storage
+            console.log(`Question deleted: "${questionText.substring(0, 50)}..."`);
+            StorageManager.removeAttemptedQuestion(topic, questionText);
+        }
+    }
+    
+    if (validReviewQuestions.length === 0) {
+        alert("No attempted questions found. They may have been removed from the quiz.");
+        return;
+    }
+    
+    AppState.reviewQuestions = validReviewQuestions;
     AppState.currentReviewIndex = 0;
     renderReviewScreen(container);
 }

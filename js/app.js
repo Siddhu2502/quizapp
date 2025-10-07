@@ -43,6 +43,10 @@ async function init() {
         await prefetchAllData(CONFIG.TOPICS);
         renderTopicSelection(appContainer);
         attachEventListeners(appContainer);
+        
+        // Start background update checks
+        const { startAutoUpdateCheck } = await import('./dataService.js');
+        startAutoUpdateCheck(CONFIG.TOPICS);
     } catch (error) {
         console.error('Failed to initialize app:', error);
         const isOffline = !navigator.onLine;

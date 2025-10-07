@@ -21,14 +21,19 @@ export function renderTopicMenu(container, topic) {
     AppState.currentView = 'menu';
     AppState.currentTopic = topic;
     const attemptedCount = Object.keys(StorageManager.getAttemptedQuestions(topic)).length;
+    const totalQuestions = AppState.allQuestions[topic]?.length || 0;
 
     container.innerHTML = `
         <div class="screen-container">
             <h1 class="screen-title">${formatTopicName(topic)}</h1>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">
+                ${totalQuestions} questions available
+            </p>
             <div class="topic-menu-list">
                 <div class="topic-menu-item" id="new-quiz-btn">New Quiz</div>
                 <div class="topic-menu-item" id="review-attempted-btn">Review Attempted (${attemptedCount})</div>
                 <div class="topic-menu-item" id="mixed-quiz-btn">Mixed Quiz</div>
+                <div class="topic-menu-item secondary-button" id="refresh-content-btn">🔄 Check for Updates</div>
                 <div class="topic-menu-item" id="back-to-topics-btn">Back to Topics</div>
             </div>
         </div>
