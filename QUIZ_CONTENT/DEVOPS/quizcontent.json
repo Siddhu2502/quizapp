@@ -895,7 +895,7 @@
             "The process of discovering various models, summaries and derived values from a given collection of data.",
             "The process of designing the architecture for a data warehouse."
         ],
-        "answer": "The process of discovering various models, summaries and derived values from a given collection of data",
+        "answer": "The process of discovering various models, summaries and derived values from a given collection of data.",
         "hint": "This is often associated with finding hidden patterns.",
         "explanation": "Data Mining is the Process of discovering various models, summaries and derived values from a given collection of data ."
     },
