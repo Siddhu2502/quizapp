@@ -63,10 +63,21 @@ body {
     font-weight: 500;
 }
 
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 #question-counter-container {
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--text-muted);
+}
+
+#refresh-content-btn {
+    padding: 0.4rem 0.8rem; /* Adjust padding for text */
+    font-size: 0.9rem;   /* Match other header text */
 }
 
 #app {
