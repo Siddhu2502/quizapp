@@ -1,6 +1,7 @@
 // --- DATA FETCHING MODULE ---
 import { AppState } from './state.js';
 import { StorageManager } from './storage.js';
+import { synchronizeActiveQuiz } from './quizLogic.js';
 
 const CHECK_INTERVAL = 5 * 60 * 1000; // Check for updates every 5 minutes
 let updateCheckTimer = null;
@@ -100,14 +101,14 @@ export async function prefetchAllData(topics, forceRefresh = false) {
 
 // Background update check (silent, doesn't interrupt user)
 export async function checkForUpdatesInBackground(topics) {
-    // Don't check if user is in active quiz
-    if (AppState.quizSessionActive) {
-        return;
-    }
-    
     try {
         console.log('🔄 Checking for content updates...');
         await prefetchAllData(topics, true);
+
+        // If a quiz is active, synchronize its questions with the new data
+        if (AppState.quizSessionActive) {
+            synchronizeActiveQuiz();
+        }
     } catch (error) {
         // Silent fail - normal if offline or no network
         if (error.message) {

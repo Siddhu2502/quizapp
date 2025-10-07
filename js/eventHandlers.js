@@ -1,50 +1,43 @@
 // --- EVENT HANDLING MODULE ---
 import { AppState } from './state.js';
-import { renderTopicSelection, renderTopicMenu, renderReviewScreen, renderResults } from './renderer.js';
+import { renderReviewScreen, renderResults, renderTopicMenu } from './renderer.js';
+import { navigate } from './router.js';
 import { 
-    startNewQuiz, 
     handleOptionSelect, 
     handleNextQuestion, 
     handleExitQuiz,
     startSessionReview,
-    startFullReview 
+    handleQuizStart
 } from './quizLogic.js';
 
 export function attachEventListeners(container) {
     container.addEventListener('click', (e) => {
         const targetId = e.target.id;
         const target = e.target;
+        const appContainer = document.getElementById('app');
 
-        // Topic Selection
-        if (target.closest('.topic-item')) {
-            renderTopicMenu(container, target.closest('.topic-item').dataset.topic);
+        // --- Event Delegation ---
+
+        // Retake quiz from results screen
+        if (targetId === 'retake-quiz-btn') {
+            handleQuizStart(AppState.currentTopic, AppState.lastQuizType);
+            navigate(`/${AppState.currentTopic}/${AppState.lastQuizType}-quiz`);
         }
-        // Navigation
-        else if (targetId === 'back-to-topics-btn') {
-            renderTopicSelection(container);
-        }
-        else if (targetId === 'back-to-menu-btn') {
-            renderTopicMenu(container, AppState.currentTopic);
-        }
-        // Quiz Actions
-        else if (targetId === 'new-quiz-btn') {
-            startNewQuiz(container, AppState.currentTopic, false);
-        }
-        else if (targetId === 'mixed-quiz-btn') {
-            startNewQuiz(container, AppState.currentTopic, true);
-        }
-        else if (targetId === 'retake-quiz-btn') {
-            startNewQuiz(container, AppState.currentTopic, true);
-        }
+        // Exit quiz button
         else if (targetId === 'exit-quiz-btn') {
-            handleExitQuiz(container, renderTopicMenu);
+            handleExitQuiz();
+            navigate(`/${AppState.currentTopic}`);
         }
-        // Question Interaction
+        // Go back to menu from results screen
+        else if (targetId === 'back-to-menu-btn') {
+            navigate(`/${AppState.currentTopic}`);
+        }
+        // Question Interaction (options, next, hint)
         else if (target.closest('.option')) {
-            handleOptionSelect(e, container);
+            handleOptionSelect(e, appContainer);
         }
         else if (targetId === 'next-btn') {
-            handleNextQuestion(container);
+            handleNextQuestion(appContainer);
         }
         else if (targetId === 'hint-btn' || target.closest('#hint-btn')) {
             const hintBtn = target.closest('#hint-btn') || target;
@@ -52,33 +45,31 @@ export function attachEventListeners(container) {
         }
         // Review Actions
         else if (targetId === 'review-session-btn') {
-            startSessionReview(container);
-        }
-        else if (targetId === 'review-attempted-btn') {
-            startFullReview(container, AppState.currentTopic);
+            startSessionReview(appContainer);
         }
         else if (targetId === 'review-next-btn') {
-            handleReviewNavigation(container, 'next');
+            handleReviewNavigation(appContainer, 'next');
         }
         else if (targetId === 'review-prev-btn') {
-            handleReviewNavigation(container, 'prev');
+            handleReviewNavigation(appContainer, 'prev');
         }
         else if (targetId === 'review-back-btn') {
-            handleReviewBack(container);
+            handleReviewBack();
         }
+        // Manual content refresh
         else if (targetId === 'refresh-content-btn') {
-            handleManualRefresh(container);
+            handleManualRefresh();
         }
     });
 }
 
-async function handleManualRefresh(container) {
+async function handleManualRefresh() {
     const confirmed = confirm('Check for new quiz content? This will refresh all questions while keeping your progress.');
     if (!confirmed) return;
     
-    // Show loading
-    const originalContent = container.innerHTML;
-    container.innerHTML = `
+    const appContainer = document.getElementById('app');
+    const originalContent = appContainer.innerHTML;
+    appContainer.innerHTML = `
         <div class="screen-container">
             <h1 class="screen-title">Checking for Updates...</h1>
             <div style="text-align: center; padding: 2rem;">
@@ -90,20 +81,18 @@ async function handleManualRefresh(container) {
     
     try {
         const { manualRefresh } = await import('./dataService.js');
-        const { CONFIG } = await import('./state.js');
-        const { AppState } = await import('./state.js');
+        const { CONFIG, AppState } = await import('./state.js');
         
         await manualRefresh(CONFIG.TOPICS);
         
         alert('✅ Content updated! Latest questions are now available.');
         
         // Re-render the current view
-        const { renderTopicMenu } = await import('./renderer.js');
-        renderTopicMenu(container, AppState.currentTopic);
+        renderTopicMenu(appContainer, AppState.currentTopic);
     } catch (error) {
         console.error('Manual refresh failed:', error);
         alert('❌ Failed to check for updates. Please check your internet connection.');
-        container.innerHTML = originalContent;
+        appContainer.innerHTML = originalContent; // Restore on failure
     }
 }
 
@@ -123,20 +112,21 @@ function handleHintToggle(button) {
     }
 }
 
-function handleReviewNavigation(container, direction) {
+function handleReviewNavigation(direction) {
+    const appContainer = document.getElementById('app');
     if (direction === 'next' && AppState.currentReviewIndex < AppState.reviewQuestions.length - 1) {
         AppState.currentReviewIndex++;
-        renderReviewScreen(container);
+        renderReviewScreen(appContainer);
     } else if (direction === 'prev' && AppState.currentReviewIndex > 0) {
         AppState.currentReviewIndex--;
-        renderReviewScreen(container);
+        renderReviewScreen(appContainer);
     }
 }
 
-function handleReviewBack(container) {
+function handleReviewBack() {
     if (AppState.reviewReturnView === 'menu') {
-        renderTopicMenu(container, AppState.currentTopic);
-    } else {
-        renderResults(container);
+        navigate(`/${AppState.currentTopic}`);
+    } else { // 'results'
+        navigate(`/${AppState.currentTopic}/results`);
     }
 }

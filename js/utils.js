@@ -21,11 +21,6 @@ export function escapeHtml(text) {
 
 export function formatTopicName(topic) {
     if (!topic) return 'Unknown';
-    return topic.charAt(0) + topic.slice(1).toLowerCase();
-}
-
-// Sanitize user input (defense in depth)
-export function sanitizeInput(input) {
-    if (!input) return '';
-    return String(input).trim().substring(0, 1000); // Limit length
+    // Improved formatting for multi-word topics like "devops_devsecops"
+    return topic.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
 }

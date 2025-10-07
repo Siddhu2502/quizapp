@@ -3,10 +3,43 @@ import { AppState, CONFIG } from './state.js';
 import { StorageManager } from './storage.js';
 import { escapeHtml, formatTopicName } from './utils.js';
 
+export function renderHeader() {
+    const breadcrumbsContainer = document.getElementById('breadcrumbs');
+    const questionCounterContainer = document.getElementById('question-counter-container');
+    if (!breadcrumbsContainer || !questionCounterContainer) return;
+
+    const path = window.location.pathname;
+    const parts = path.split('/').filter(p => p);
+    let breadcrumbsHTML = '<a href="/">Home</a>';
+
+    if (parts.length > 0) {
+        const topic = parts[0];
+        breadcrumbsHTML += ` <span class="separator">&gt;</span> <a href="/${topic}">${formatTopicName(topic)}</a>`;
+        if (parts.length > 1) {
+            const view = parts[1];
+            breadcrumbsHTML += ` <span class="separator">&gt;</span> <span class="current">${formatTopicName(view)}</span>`;
+        } else {
+             breadcrumbsHTML += ` <span class="separator">&gt;</span> <span class="current">Menu</span>`;
+        }
+    } else {
+        breadcrumbsHTML += ` <span class="separator">&gt;</span> <span class="current">Topics</span>`;
+    }
+
+    breadcrumbsContainer.innerHTML = breadcrumbsHTML;
+
+    // Handle question counter
+    if (AppState.currentView === 'quiz' && AppState.quizQuestions.length > 0) {
+        questionCounterContainer.textContent = `Question: ${AppState.currentQuestionIndex + 1} / ${AppState.quizQuestions.length}`;
+        questionCounterContainer.style.display = 'block';
+    } else {
+        questionCounterContainer.style.display = 'none';
+    }
+}
+
 export function renderTopicSelection(container) {
     AppState.currentView = 'topics';
     const topicItems = CONFIG.TOPICS.map(topic => 
-        `<div class="topic-item" data-topic="${topic}">${formatTopicName(topic)}</div>`
+        `<a href="/${topic}" class="topic-item" data-topic="${topic}">${formatTopicName(topic)}</a>`
     ).join('');
     
     container.innerHTML = `
@@ -30,11 +63,11 @@ export function renderTopicMenu(container, topic) {
                 ${totalQuestions} questions available
             </p>
             <div class="topic-menu-list">
-                <div class="topic-menu-item" id="new-quiz-btn">New Quiz</div>
-                <div class="topic-menu-item" id="review-attempted-btn">Review Attempted (${attemptedCount})</div>
-                <div class="topic-menu-item" id="mixed-quiz-btn">Mixed Quiz</div>
-                <div class="topic-menu-item secondary-button" id="refresh-content-btn">🔄 Check for Updates</div>
-                <div class="topic-menu-item" id="back-to-topics-btn">Back to Topics</div>
+                <a href="/${topic}/quiz" class="topic-menu-item">New Quiz</a>
+                <a href="/${topic}/review" class="topic-menu-item">Review Attempted (${attemptedCount})</a>
+                <a href="/${topic}/mixed-quiz" class="topic-menu-item">Mixed Quiz</a>
+                <button class="topic-menu-item secondary-button" id="refresh-content-btn">🔄 Check for Updates</button>
+                <a href="/" class="topic-menu-item">Back to Topics</a>
             </div>
         </div>
     `;
@@ -65,7 +98,7 @@ export function renderQuiz(container) {
         <div class="quiz-container">
             <div class="quiz-header">
                 <div class="quiz-header-top">
-                    <p class="question-counter">${AppState.currentQuestionIndex + 1} / ${AppState.quizQuestions.length}</p>
+                    <div class="quiz-topic-name">${formatTopicName(AppState.currentTopic)}</div>
                     <button class="button exit-button" id="exit-quiz-btn">Exit Quiz</button>
                 </div>
                 <h2 class="question-text">${question.question}</h2>
