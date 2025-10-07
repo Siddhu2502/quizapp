@@ -1,27 +1,29 @@
 name: Deploy Quiz App to Azure
 
-# This is the trigger: the workflow runs on a push to the 'main' branch
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Install the SSH Key into the agent
-      # Use the EXACT name of your key secret here
-      - name: Install SSH Key
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.quizdeploykey }}
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      # Step 2: Deploy the code using a standard SSH command
-      # Use the EXACT names of your user and host secrets here
-      - name: Deploy Code via SSH
-        run: |
-          # The -o StrictHostKeyChecking=no option is important for GitHub Actions
-          # as the runner is a new machine every time.
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'echo "Starting deployment..."; cd /var/www/quiz.serveris.live && git pull origin main && echo "Deployment finished!"'
+      - name: SSH and Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          # These secrets can be safely reused
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          
+          # This uses the NEW, specific secret for this project
+          key: ${{ secrets.SSH_PRIVATE_KEY_QUIZAPP }} 
+          
+          script: |
+            echo "Deploying Quiz App..."
+            cd /var/www/quiz.serveris.live
+            git pull origin main
+            echo "Quiz App deployment finished!"
