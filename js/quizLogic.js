@@ -29,9 +29,12 @@ export function handleQuizStart(topic, quizType = 'new') {
     
     if (questionPool.length === 0 && quizType === 'new') {
         alert("You've attempted all available questions for this topic! Try a Mixed Quiz or refresh content.");
+        AppState.currentTopic = topic;
         navigate(`/${topic}`);
         return;
     }
+    
+    AppState.currentTopic = topic;
 
     const quizLength = Math.min(CONFIG.QUIZ_LENGTH, questionPool.length);
     const selectedQuestions = shuffleArray(questionPool).slice(0, quizLength);
@@ -134,8 +137,7 @@ export function handleReviewStart(topic) {
     const attemptedTexts = Object.keys(attemptedData);
 
     if (attemptedTexts.length === 0) {
-        alert("You haven't attempted any questions for this topic yet.");
-        return;
+        return false;
     }
 
     const validReviewQuestions = [];
@@ -144,7 +146,6 @@ export function handleReviewStart(topic) {
         const currentQuestion = allQuestionsForTopic.find(q => q.question === questionText);
         
         if (currentQuestion) {
-            // Question still exists, use updated version from live data
             validReviewQuestions.push({
                 question: currentQuestion,
                 userAnswer: attemptedData[questionText].userAnswer
@@ -153,12 +154,12 @@ export function handleReviewStart(topic) {
     }
     
     if (validReviewQuestions.length === 0) {
-        alert("No attempted questions found. They may have been removed from the quiz.");
-        return;
+        return false;
     }
     
     AppState.reviewQuestions = validReviewQuestions;
     AppState.currentReviewIndex = 0;
+    return true;
 }
 
 export function synchronizeActiveQuiz() {

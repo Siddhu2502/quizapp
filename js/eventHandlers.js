@@ -30,7 +30,7 @@ export function attachEventListeners(container) {
         }
         // Go back to menu from results screen
         else if (targetId === 'back-to-menu-btn') {
-            navigate(`/${AppState.currentTopic}`);
+            navigate('/');
         }
         // Question Interaction (options, next, hint)
         else if (target.closest('.option')) {

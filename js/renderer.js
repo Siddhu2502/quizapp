@@ -97,7 +97,10 @@ export function renderQuiz(container) {
         <div class="quiz-container">
             <div class="quiz-header">
                 <div class="quiz-header-top">
-                    <div class="quiz-topic-name">${formatTopicName(AppState.currentTopic)}</div>
+                    <div>
+                        <div class="quiz-topic-name">${formatTopicName(AppState.currentTopic)}</div>
+                        <div class="question-counter">${AppState.currentQuestionIndex + 1} / ${AppState.quizQuestions.length}</div>
+                    </div>
                     <button class="button exit-button" id="exit-quiz-btn">Exit Quiz</button>
                 </div>
                 <h2 class="question-text">${question.question}</h2>

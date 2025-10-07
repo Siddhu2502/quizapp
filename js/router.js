@@ -19,7 +19,11 @@ const routes = {
         renderQuiz(container);
     },
     '/:topic/review': (container, topic) => {
-        handleReviewStart(topic, 'all');
+        const hasQuestions = handleReviewStart(topic);
+        if (!hasQuestions) {
+            navigate(`/${topic}`);
+            return;
+        }
         renderReviewScreen(container);
     },
     '/:topic/results': (container, topic) => {

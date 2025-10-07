@@ -41,13 +41,23 @@ self.addEventListener('activate', event => {
 
 // Fetch event - serve from cache, fallback to network
 self.addEventListener('fetch', event => {
+    const url = new URL(event.request.url);
+    
     // Skip cross-origin requests
-    if (!event.request.url.startsWith(self.location.origin)) {
+    if (url.origin !== self.location.origin) {
+        return;
+    }
+    
+    // Return index.html for all navigation requests (routing)
+    if (event.request.mode === 'navigate') {
+        event.respondWith(
+            fetch('/index.html').catch(() => caches.match('/index.html'))
+        );
         return;
     }
 
     // Network-first strategy for JSON files (quiz content)
-    if (event.request.url.includes('.json')) {
+    if (url.pathname.includes('.json')) {
         event.respondWith(
             fetch(event.request)
                 .then(response => {
