@@ -1,0 +1,38 @@
+<ALL YOUR CONTENTS ASK ANYTHING ANY HOW ANY FILES UR WISH>
+
+generate a comprehensive quiz with a minimum of 20 questions. The output must be a single, raw JSON array of question objects. Do not include any explanatory text, markdown formatting, or introductions before or after the JSON block.
+
+Each object in the JSON array must follow this strict schema:
+
+1.  **For standard questions:**
+    * `question` (string): The question text derived from the document.
+    * `options` (array of strings): Exactly four potential answers. At least three should be plausible but incorrect distractors.
+    * `answer` (string): The correct answer, which must *exactly* match one of the items in the `options` array.
+    * `hint` (string): A short, helpful clue to guide the user without giving away the answer.
+    * `explanation` (string): A concise, 1-2 sentence explanation of why the answer is correct, providing context from the source material.
+
+2.  **For questions with code snippets:**
+    * Include all the keys from the standard question format.
+    * Add an additional key: `code` (string): The formatted code snippet from the document, properly escaped as a JSON string.
+
+Ensure the questions are diverse, accurately reflect the content for the specified topic, and strictly adhere to the requested JSON format.
+
+example 
+
+```
+[
+  {
+    "question": "Code question text...",
+    "code": "Code snippet text...", // optional only where there is code
+    "options": [
+      "Option 1",
+      "Option 2",
+      "Option 3",
+      "Option 4"
+    ],
+    "answer": "Option 1",
+    "hint": "Short code hint text...",
+    "explanation": "Brief code explanation text..."
+  },
+]
+```
