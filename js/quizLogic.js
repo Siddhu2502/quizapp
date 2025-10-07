@@ -2,37 +2,47 @@
 import { AppState, CONFIG } from './state.js';
 import { StorageManager } from './storage.js';
 import { shuffleArray } from './utils.js';
-import { renderQuiz, renderReviewScreen } from './renderer.js';
+import { renderQuiz, renderReviewScreen, renderHeader, renderResults } from './renderer.js';
+import { navigate } from './router.js';
 
-export function startNewQuiz(container, topic, isMixed = false) {
+/**
+ * Sets up a new quiz session.
+ * @param {string} topic The quiz topic.
+ * @param {string} quizType 'new' or 'mixed'.
+ */
+export function handleQuizStart(topic, quizType = 'new') {
     const allQuestionsForTopic = AppState.allQuestions[topic];
     
     if (!allQuestionsForTopic || allQuestionsForTopic.length === 0) {
         alert(`No questions available for ${topic}. Please check the data files.`);
+        navigate(`/${topic}`);
         return;
     }
 
-    const attemptedQuestions = StorageManager.getAttemptedQuestions(topic);
     let questionPool;
-
-    if (isMixed) {
+    if (quizType === 'mixed') {
         questionPool = [...allQuestionsForTopic];
     } else {
-        // Filter using question text instead of ID
+        const attemptedQuestions = StorageManager.getAttemptedQuestions(topic);
         questionPool = allQuestionsForTopic.filter(q => !attemptedQuestions.hasOwnProperty(q.question));
     }
     
-    if (questionPool.length === 0 && !isMixed) {
-        alert("You've attempted all available questions for this topic! Try Mixed Quiz.");
+    if (questionPool.length === 0 && quizType === 'new') {
+        alert("You've attempted all available questions for this topic! Try a Mixed Quiz or refresh content.");
+        navigate(`/${topic}`);
         return;
     }
 
     const quizLength = Math.min(CONFIG.QUIZ_LENGTH, questionPool.length);
-    AppState.quizQuestions = shuffleArray(questionPool).slice(0, quizLength);
+    const selectedQuestions = shuffleArray(questionPool).slice(0, quizLength);
+
+    // Create a deep copy of the questions for this session to isolate it from background updates
+    AppState.quizQuestions = JSON.parse(JSON.stringify(selectedQuestions));
+
     AppState.currentQuestionIndex = 0;
     AppState.userAnswers = [];
     AppState.quizSessionActive = true;
-    renderQuiz(container);
+    AppState.lastQuizType = quizType; // For 'retake' functionality
 }
 
 export function handleOptionSelect(e, container) {
@@ -51,7 +61,6 @@ export function handleOptionSelect(e, container) {
         isCorrect: isCorrect
     };
     
-    // Save using question text instead of ID
     StorageManager.saveAttemptedQuestion(AppState.currentTopic, question.question, userAnswer, isCorrect);
     
     document.querySelectorAll('.option').forEach(opt => {
@@ -73,45 +82,39 @@ export function handleOptionSelect(e, container) {
 
 export function handleNextQuestion(container) {
     AppState.currentQuestionIndex++;
-    renderQuiz(container);
+    if (AppState.currentQuestionIndex < AppState.quizQuestions.length) {
+        renderQuiz(container);
+    } else {
+        renderResults(container);
+    }
 }
 
-export function handleExitQuiz(container, renderMenuCallback) {
+export function handleExitQuiz() {
     if (!AppState.quizSessionActive) return;
 
-    const confirmed = confirm('Are you sure you want to exit? Your progress in this quiz will be lost and answered questions will not be saved.');
+    const confirmed = confirm('Are you sure you want to exit? Your progress in this quiz will be lost.');
     
     if (confirmed) {
-        // Remove all answered questions from this session from localStorage
-        const answeredQuestions = AppState.userAnswers
-            .filter(answer => answer !== undefined)
-            .map(answer => answer.questionText);
-        
-        if (answeredQuestions.length > 0) {
-            StorageManager.removeMultipleAttemptedQuestions(AppState.currentTopic, answeredQuestions);
-        }
-        
+        // Since progress is only saved on answer, we don't need to clean up storage.
         // Reset quiz state
         AppState.quizQuestions = [];
         AppState.currentQuestionIndex = 0;
         AppState.userAnswers = [];
         AppState.quizSessionActive = false;
         
-        // Return to topic menu
-        renderMenuCallback(container, AppState.currentTopic);
+        // Navigation is handled by the event handler
     }
 }
 
 export function startSessionReview(container) {
     AppState.reviewReturnView = 'results';
     
-    // Only include questions that were actually attempted
     AppState.reviewQuestions = AppState.quizQuestions
         .map((q, index) => ({
             question: q,
             userAnswer: AppState.userAnswers[index]?.answer || null
         }))
-        .filter(item => item.userAnswer !== null); // Only show attempted questions
+        .filter(item => item.userAnswer !== null);
     
     if (AppState.reviewQuestions.length === 0) {
         alert("No questions were attempted in this quiz session.");
@@ -122,7 +125,7 @@ export function startSessionReview(container) {
     renderReviewScreen(container);
 }
 
-export function startFullReview(container, topic) {
+export function handleReviewStart(topic) {
     AppState.reviewReturnView = 'menu';
     const allQuestionsForTopic = AppState.allQuestions[topic];
     const attemptedData = StorageManager.getAttemptedQuestions(topic);
@@ -133,22 +136,17 @@ export function startFullReview(container, topic) {
         return;
     }
 
-    // Match attempted questions with current questions (handles updates/deletions)
     const validReviewQuestions = [];
     
     for (const questionText of attemptedTexts) {
         const currentQuestion = allQuestionsForTopic.find(q => q.question === questionText);
         
         if (currentQuestion) {
-            // Question still exists, use updated version (in case explanation changed)
+            // Question still exists, use updated version from live data
             validReviewQuestions.push({
                 question: currentQuestion,
                 userAnswer: attemptedData[questionText].userAnswer
             });
-        } else {
-            // Question was deleted, remove from storage
-            console.log(`Question deleted: "${questionText.substring(0, 50)}..."`);
-            StorageManager.removeAttemptedQuestion(topic, questionText);
         }
     }
     
@@ -159,5 +157,30 @@ export function startFullReview(container, topic) {
     
     AppState.reviewQuestions = validReviewQuestions;
     AppState.currentReviewIndex = 0;
-    renderReviewScreen(container);
+}
+
+export function synchronizeActiveQuiz() {
+    if (!AppState.quizSessionActive || !AppState.currentTopic) return;
+
+    console.log('Syncing active quiz with updated content...');
+    const newQuestionSet = new Set(AppState.allQuestions[AppState.currentTopic].map(q => q.question));
+    const originalLength = AppState.quizQuestions.length;
+
+    // Filter out questions that have been removed AND have not been seen yet
+    AppState.quizQuestions = AppState.quizQuestions.filter((question, index) => {
+        const isQuestionSeen = index < AppState.currentQuestionIndex;
+        const questionExists = newQuestionSet.has(question.question);
+
+        if (!questionExists && !isQuestionSeen) {
+            console.log(`Silently removing unseen, deleted question: "${question.question.substring(0, 30)}..."`);
+            return false;
+        }
+        return true;
+    });
+
+    const newLength = AppState.quizQuestions.length;
+    if (originalLength !== newLength) {
+        console.log(`Quiz length adjusted due to content update: ${originalLength} -> ${newLength}`);
+        renderHeader(); // Re-render header to update the question count
+    }
 }

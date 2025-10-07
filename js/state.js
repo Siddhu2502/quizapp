@@ -10,6 +10,7 @@ export const AppState = {
     currentReviewIndex: 0,
     reviewReturnView: null,
     quizSessionActive: false, // Track if quiz is in progress
+    lastQuizType: 'new', // 'new' or 'mixed', for retake logic
 };
 
 export const CONFIG = {

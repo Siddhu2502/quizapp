@@ -8,6 +8,7 @@
     --correct-color: #a6e3a1;
     --incorrect-color: #f38ba8;
     --font-family: 'Inter', sans-serif;
+    --header-height: 56px;
 }
 
 * {
@@ -20,16 +21,70 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-family);
+    padding-top: var(--header-height);
+}
+
+.app-header {
+    background-color: var(--card-color);
+    border-bottom: 1px solid var(--border-color);
+    height: var(--header-height);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+}
+
+#breadcrumbs {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+#breadcrumbs a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#breadcrumbs a:hover {
+    color: var(--primary-color);
+}
+
+#breadcrumbs .separator {
+    margin: 0 0.5rem;
+}
+
+#breadcrumbs .current {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#question-counter-container {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+#refresh-content-btn {
+    padding: 0.4rem 0.8rem; /* Adjust padding for text */
+    font-size: 0.9rem;   /* Match other header text */
 }
 
 #app {
     width: 100%;
     max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 /* --- Generic Components --- */
@@ -94,6 +149,9 @@ body {
     transition: background-color 0.2s ease, border-color 0.2s ease;
     font-size: 1.2rem;
     font-weight: 500;
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
 }
 
 .topic-item:hover, .topic-menu-item:hover {
@@ -364,6 +422,11 @@ body {
 @media (max-width: 640px) {
     body {
         padding: 1rem;
+        padding-top: var(--header-height);
+    }
+
+    .app-header {
+        padding: 0 1rem;
     }
 
     .quiz-container, .screen-container {

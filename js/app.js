@@ -1,7 +1,7 @@
 // --- MAIN APPLICATION MODULE ---
 import { CONFIG } from './state.js';
 import { prefetchAllData } from './dataService.js';
-import { renderTopicSelection } from './renderer.js';
+import { initRouter } from './router.js';
 import { attachEventListeners } from './eventHandlers.js';
 
 // --- SERVICE WORKER REGISTRATION ---
@@ -40,9 +40,13 @@ async function init() {
     `;
 
     try {
+        // Attach global event listeners
+        attachEventListeners(document.body);
+
         await prefetchAllData(CONFIG.TOPICS);
-        renderTopicSelection(appContainer);
-        attachEventListeners(appContainer);
+
+        // Initialize the router, which will handle the initial render
+        initRouter();
         
         // Start background update checks
         const { startAutoUpdateCheck } = await import('./dataService.js');
