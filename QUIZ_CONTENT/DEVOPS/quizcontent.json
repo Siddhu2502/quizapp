@@ -1,26 +1,962 @@
 [
-  {
-    "question": "What distinguishes Continuous Deployment from Continuous Delivery in a DevOps pipeline?",
-    "options": [
-      "Continuous Delivery is only suitable for small projects, whereas Continuous Deployment is for large-scale applications.",
-      "Continuous Deployment focuses on integrating code into a shared repository, while Continuous Delivery focuses on building the code.",
-      "Continuous Deployment automates the release to production without manual approval, while Continuous Delivery requires it.",
-      "Continuous Delivery involves automated testing, while Continuous Deployment does not."
-    ],
-    "answer": "Continuous Deployment automates the release to production without manual approval, while Continuous Delivery requires it.",
-    "hint": "Think about the final step. Which one goes all the way to production automatically?",
-    "explanation": "Continuous Delivery ensures that every change is releasable, but the final deployment to production is a manual business decision. Continuous Deployment takes this a step further by automatically deploying every passed build to production."
-  },
-  {
-    "question": "The practice of automatically provisioning a new environment at the time of deployment is referred to as?",
-    "options": [
-      "Continuous Integration",
-      "Continuous Development",
-      "Infrastructure-as-Code",
-      "Configuration Management"
-    ],
-    "answer": "Infrastructure-as-Code",
-    "hint": "Which practice treats infrastructure setup like software code?",
-    "explanation": "Infrastructure-as-Code (IaC) is the management of infrastructure (networks, virtual machines, load balancers, and connection topology) in a descriptive model, using the same versioning as DevOps team uses for source code."
-  }
+    {
+        "question": "Which of the following refers to automatically releasing a developer’s changes from the repository to production, where it is usable by customers?",
+        "options": [
+            "Continuous Monitoring",
+            "Continuous Delivery",
+            "Continuous Integration",
+            "Continuous Deployment"
+        ],
+        "answer": "Continuous Deployment",
+        "hint": "This practice involves no required manual approval to reach the end-user.",
+        "explanation": "Continuous Deployment is the practice of automatically releasing a developer's changes from the repository to production, making it usable by customers ."
+    },
+    {
+        "question": "In the CAMS Model, which component focuses on monitoring and tracking the progress of various activities involved in the DevOps environment?",
+        "options": [
+            "Culture",
+            "Sharing",
+            "Automation",
+            "Measurement"
+        ],
+        "answer": "Measurement",
+        "hint": "This relates to tracking metrics and performance.",
+        "explanation": "Measurement is the component of the CAMS Model that involves monitoring and tracking the progress of various activities within the DevOps environment ."
+    },
+    {
+        "question": "What software development practice involves team members frequently integrating their work to a common location, like the main branch, using a version control system?",
+        "options": [
+            "Continuous Monitoring",
+            "Continuous Delivery",
+            "Continuous Deployment",
+            "Continuous Integration"
+        ],
+        "answer": "Continuous Integration",
+        "hint": "This is the practice of combining work often, tracked via a central repository.",
+        "explanation": "Continuous Integration is a software development practice where team members use a version control system and frequently integrate their work to the same location, such as the main branch ."
+    },
+    {
+        "question": "Why is the Blue/Green deployment strategy beneficial for reducing deployment risk?",
+        "options": [
+            "It minimizes the need for infrastructure-as-code tools.",
+            "It directs traffic only to the blue environment after testing.",
+            "It simplifies the rollback process if a deployment fails.",
+            "It requires three separate, non-identical environments."
+        ],
+        "answer": "It simplifies the rollback process if a deployment fails.",
+        "hint": "Consider the effect on application availability and safety.",
+        "explanation": "Using a blue/green deployment strategy increases application availability and reduces deployment risk by simplifying the rollback process if a deployment fails ."
+    },
+    {
+        "question": "Which phase in the CI/CD pipeline compiles the code and merges features from various repository branches?",
+        "options": [
+            "Testing phase",
+            "Deploy phase",
+            "Validation phase",
+            "Build phase"
+        ],
+        "answer": "Build phase",
+        "hint": "This is where the raw code is transformed into an executable artifact and occurs first in the pipeline.",
+        "explanation": "The Build phase of the CI/CD pipeline gets all features from various branches, merges them, and finally uses a compiler to compile the code ."
+    },
+    {
+        "question": "Which pair of tools are CI/CD software used to automate tasks starting from the development pipeline to deployment?",
+        "options": [
+            "Puppet and Vagrant",
+            "Terraform and Puppet",
+            "SaltStack and Chef",
+            "Jenkins and Bamboo"
+        ],
+        "answer": "Jenkins and Bamboo",
+        "hint": "These are common automation servers used for Continuous Integration.",
+        "explanation": "Jenkins and Bamboo are CI/CD software tools that automate tasks throughout the development pipeline up to deployment ."
+    },
+    {
+        "question": "Which of the following is an Infrastructure-As-Code (IaC) tool?",
+        "options": [
+            "SVN",
+            "Kubernetes",
+            "AWS CloudFormation",
+            "Selenium"
+        ],
+        "answer": "AWS CloudFormation",
+        "hint": "IaC tools are used to create software environments using predefined templates.",
+        "explanation": "AWS CloudFormation and Terraform are cited as Infrastructure-As-Code tools . Infrastructure-as-Code tools are used to create software environments using predefined templates ."
+    },
+    {
+        "question": "Which web-based DevOps program provides a full CI/CD toolchain out-of-the-box in one particular application?",
+        "options": [
+            "Logz.io",
+            "Aqua Security",
+            "Contrast Security",
+            "GitLab"
+        ],
+        "answer": "GitLab",
+        "hint": "This tool is famous for its repository management combined with integrated CI/CD capabilities.",
+        "explanation": "GitLab is defined as a web-based DevOps program that provides a full CI/CD toolchain out-of-the-box in one particular application ."
+    },
+    {
+        "question": "What application security methodology is used for managing open source components?",
+        "options": [
+            "Static Analysis Security Testing",
+            "Dynamic Analysis Security Testing",
+            "Container security",
+            "Software Composition Analysis"
+        ],
+        "answer": "Software Composition Analysis",
+        "hint": "This process analyzes the third-party parts and dependencies of the code.",
+        "explanation": "Software Composition Analysis (SCA) is an application security methodology utilized for managing open source components ."
+    },
+    {
+        "question": "Which application security solution helps find certain vulnerabilities in web applications while they are running in production?",
+        "options": [
+            "Software Composition Analysis",
+            "Static Analysis Security Testing",
+            "Container security",
+            "Dynamic Analysis Security Testing"
+        ],
+        "answer": "Dynamic Analysis Security Testing",
+        "hint": "This is often referred to as 'black box testing' on an active application.",
+        "explanation": "Dynamic Analysis Security Testing (DAST) is an application security solution that helps find certain vulnerabilities in web applications while they are running in production ."
+    },
+    {
+        "question": "What security activity is incorporated in the implementation phase of the Secure SDLC?",
+        "options": [
+            "Dynamic Analysis",
+            "OS Hardening, Web/Application Hardening",
+            "Security Monitoring/Compliance",
+            "Static Analysis"
+        ],
+        "answer": "Static Analysis",
+        "hint": "This involves examining the source code before execution.",
+        "explanation": "Static Analysis is incorporated during the implementation phase of the Secure SDLC ."
+    },
+    {
+        "question": "In which phase of the Secure SDLC do teams follow architecture and design guidelines to address risk?",
+        "options": [
+            "Development",
+            "Requirement Analysis",
+            "Planning",
+            "Architecture And Design"
+        ],
+        "answer": "Architecture And Design",
+        "hint": "The name of the phase is reflective of its core activities.",
+        "explanation": "Teams follow architecture and design guidelines to address risk during the Architecture And Design phase of the Secure SDLC ."
+    },
+    {
+        "question": "What is the process of identifying potential areas of risk from the use of third-party and open-source software and hardware components?",
+        "options": [
+            "Static Analysis",
+            "Configuration Management",
+            "Dynamic Analysis",
+            "Component Analysis"
+        ],
+        "answer": "Component Analysis",
+        "hint": "This process involves evaluating the constituent parts of an application.",
+        "explanation": "Component Analysis is the process of identifying potential areas of risk that arise from the use of third-party and open-source software and hardware components ."
+    },
+    {
+        "question": "Which of the following problems can be identified by using static analysis?",
+        "options": [
+            "Runtime memory utilization",
+            "Code Coverage",
+            "Input/Output Validation",
+            "Dead or unused code"
+        ],
+        "answer": "Dead or unused code",
+        "hint": "SAST examines code at rest, focusing on structural quality.",
+        "explanation": "Static analysis can identify issues like dead or unused code and violations of code style guidelines ."
+    },
+    {
+        "question": "Which SAST tool is specifically built for NodeJS applications?",
+        "options": [
+            "Klocwork",
+            "Veracode",
+            "Checkmarx",
+            "Reshift"
+        ],
+        "answer": "Reshift",
+        "hint": "This tool focuses on a popular JavaScript runtime environment.",
+        "explanation": "Reshift is the SAST tool specifically built for NodeJS ."
+    },
+    {
+        "question": "What technology does Ansible leverage to communicate between servers?",
+        "options": [
+            "HTTP",
+            "SOAP",
+            "REST API",
+            "SSH"
+        ],
+        "answer": "SSH",
+        "hint": "This is a secure remote access protocol.",
+        "explanation": "Ansible leverages SSH to communicate between servers ."
+    },
+    {
+        "question": "Which open-source configuration management tool is based on Python?",
+        "options": [
+            "Chef",
+            "Puppet",
+            "Vagrant",
+            "SaltStack"
+        ],
+        "answer": "SaltStack",
+        "hint": "Configuration management tools like this help maintain systems in a desired state.",
+        "explanation": "SaltStack is identified as an open-source configuration management tool based on Python ."
+    },
+    {
+        "question": "What term refers to a list of tasks that runs repeatedly in an ordered sequence in automation tools like Ansible?",
+        "options": [
+            "Module",
+            "Task",
+            "Role",
+            "Playbook"
+        ],
+        "answer": "Playbook",
+        "hint": "This is the primary definition file for configuration management execution.",
+        "explanation": "A Playbook is defined as a list of tasks that runs repeatedly in an order ."
+    },
+    {
+        "question": "Which tool is defined as a set of security tools that can be used to validate compliance against a set of policies?",
+        "options": [
+            "ServerSpec",
+            "Inspec",
+            "ClientSpec",
+            "OpenSCAP"
+        ],
+        "answer": "OpenSCAP",
+        "hint": "This tool relates to Security Content Automation Protocol (SCAP).",
+        "explanation": "OpenSCAP is a set of security tools used to validate compliance against a set of policies ."
+    },
+    {
+        "question": "Which of the following CI/CD tools is typically suitable for small projects?",
+        "options": [
+            "Bamboo",
+            "GitLab",
+            "TeamCity",
+            "CircleCI"
+        ],
+        "answer": "CircleCI",
+        "hint": "This tool is often chosen for its simplicity and scale for smaller teams.",
+        "explanation": "CircleCI is one of the CI/CD tools that is suitable for small projects ."
+    },
+    {
+        "question": "Which CI/CD tool is designed to handle anything from a simple Continuous Integration server to a complete Continuous Deployment hub?",
+        "options": [
+            "CircleCI",
+            "TeamCity",
+            "Bamboo",
+            "Jenkins"
+        ],
+        "answer": "Jenkins",
+        "hint": "This tool is known for being highly extensible and widely adopted.",
+        "explanation": "Jenkins is the CI/CD tool designed to handle anything from a simple CI server role to functioning as a complete CD hub ."
+    },
+    {
+        "question": "In which pipeline do all new changes run through a consistent set of quality checks?",
+        "options": [
+            "GitLab pipeline",
+            "Azure pipeline",
+            "Bitbucket pipeline",
+            "AWS codpipeline"
+        ],
+        "answer": "AWS codpipeline",
+        "hint": "This is Amazon's dedicated Continuous Delivery service.",
+        "explanation": "In the AWS codpipeline, all the new changes run through a consistent set of quality checks ."
+    },
+    {
+        "question": "Which CI/CD tool provides support for the .Net framework?",
+        "options": [
+            "CircleCI",
+            "Bamboo",
+            "GitLab",
+            "TeamCity"
+        ],
+        "answer": "TeamCity",
+        "hint": "This tool is known for its out-of-the-box usability and beautiful user interface.",
+        "explanation": "TeamCity is the CI/CD tool mentioned that provides support for the .Net framework ."
+    },
+    {
+        "question": "What is the final phase of the DevOps cycle?",
+        "options": [
+            "Operate",
+            "Deploy",
+            "Release",
+            "Monitor"
+        ],
+        "answer": "Monitor",
+        "hint": "This phase ensures the system is running correctly post-deployment.",
+        "explanation": "Monitor is identified as the final phase of the DevOps cycle ."
+    },
+    {
+        "question": "What is the primary function of the version control system in DevOps according to the sources?",
+        "options": [
+            "To automatically deploy code to production environments.",
+            "To run continuous integration tests automatically.",
+            "To record code changes made by developers for sharing with others.",
+            "To compile and build executable artifacts from source code."
+        ],
+        "answer": "To record code changes made by developers for sharing with others.",
+        "hint": "This system tracks the history of work done by various programmers.",
+        "explanation": "The version control system is used to record the code changes made by developers so that these changes can be shared with others ."
+    },
+    {
+        "question": "Besides Culture and Automation, what two components complete the CAMS model for DevOps?",
+        "options": [
+            "Motivation and Standard",
+            "Management and Security",
+            "Measurement and Sharing",
+            "Monitoring and Scaling"
+        ],
+        "answer": "Measurement and Sharing",
+        "hint": "The 'M' involves tracking metrics, and the 'S' involves teamwork.",
+        "explanation": "CAMS stands for Culture, Automation, Measurement, and Sharing ."
+    },
+    {
+        "question": "What is characteristic of the production deployment process when using Continuous Delivery (CD)?",
+        "options": [
+            "Production deployment happens automatically without explicit approval.",
+            "The code is continuously delivered until the programmer considers it ready to ship.",
+            "A failed test will automatically prevent deployment to the production environment.",
+            "The deployment requires manual approval before reaching the production environment."
+        ],
+        "answer": "The deployment requires manual approval before reaching the production environment.",
+        "hint": "Unlike Continuous Deployment, CD involves an approval gate.",
+        "explanation": "With Continuous Delivery, production happens only with explicit approval, meaning the statement that it happens automatically without approval is false ."
+    },
+    {
+        "question": "What defines the communication method between services in a microservices architecture?",
+        "options": [
+            "A centralized application layer API.",
+            "A monolithic data bus.",
+            "Communication through a well-defined interface.",
+            "Direct shared memory access."
+        ],
+        "answer": "Communication through a well-defined interface.",
+        "hint": "Each service runs independently in its own process.",
+        "explanation": "In Microservices, each service runs in its own process and communicates with other services through a well-defined interface ."
+    },
+    {
+        "question": "Which company is the developer of the continuous integration server named Bamboo?",
+        "options": [
+            "Google",
+            "Microsoft",
+            "Atlassian",
+            "JetBrains"
+        ],
+        "answer": "Atlassian",
+        "hint": "This company is also known for tools like Jira and Confluence.",
+        "explanation": "Bamboo is a continuous integration server developed by Atlassian ."
+    },
+    {
+        "question": "Which CI/CD tool is specifically known for its ease of setup, out-of-the-box usability, and beautiful user interface?",
+        "options": [
+            "Jenkins",
+            "TeamCity",
+            "CircleCI",
+            "GitLab"
+        ],
+        "answer": "TeamCity",
+        "hint": "This tool is also noted for its support for the .Net framework.",
+        "explanation": "TeamCity is the CI/CD tool known for its ease of setup, out-of-the-box usability, and beautiful user interface ."
+    },
+    {
+        "question": "What does Unit Testing primarily validate within the CI/CD pipeline?",
+        "options": [
+            "Whether the entire integrated application performs correctly.",
+            "Whether the individual units or components of code perform as expected.",
+            "Whether the deployment to the staging environment succeeds.",
+            "Whether the application adheres to security policies."
+        ],
+        "answer": "Whether the individual units or components of code perform as expected.",
+        "hint": "Unit testing is performed by the developer on the smallest parts of the application.",
+        "explanation": "Unit Testing tests individual units or components of a code written by the developer to validate if they perform as expected ."
+    },
+    {
+        "question": "What is the term for the problem that occurs when ad-hoc configuration changes and updates result in a mismatched development, test, and deployment environment?",
+        "options": [
+            "Configuration overload",
+            "Infrastructure mismatch",
+            "Configuration drift",
+            "Synchronization failure"
+        ],
+        "answer": "Configuration drift",
+        "hint": "This term implies that the environment is deviating from the desired state.",
+        "explanation": "Configuration drift occurs when ad-hoc configuration changes and updates result in a mismatched development, test, and deployment environments ."
+    },
+    {
+        "question": "What protocol does Ansible leverage to communicate between servers and execute tasks?",
+        "options": [
+            "HTTP/S",
+            "SMTP",
+            "SSH",
+            "FTP"
+        ],
+        "answer": "SSH",
+        "hint": "This is a secure remote access protocol often used for administration.",
+        "explanation": "Ansible leverages SSH to communicate between servers ."
+    },
+    {
+        "question": "Which cloud service natively integrates Role-Based Access Control (RBAC) into its management platform?",
+        "options": [
+            "AWS CloudFormation",
+            "Chef Automate",
+            "Azure Resource Manager",
+            "Google Cloud Deployment Manager"
+        ],
+        "answer": "Azure Resource Manager",
+        "hint": "This is Microsoft Azure's infrastructure deployment and management tool.",
+        "explanation": "Azure Resource Manager natively integrates Role-Based Access Control (RBAC) into the management platform ."
+    },
+    {
+        "question": "What constitutes 'Infrastructure' in the context of operating and managing enterprise IT environments?",
+        "options": [
+            "A centralized data warehouse.",
+            "The components required to operate and manage enterprise IT environments.",
+            "The standardized set of development tools used by the team.",
+            "The defined set of quality checks in the CI/CD pipeline."
+        ],
+        "answer": "The components required to operate and manage enterprise IT environments.",
+        "hint": "This term refers to the underlying operational hardware and software components.",
+        "explanation": "Infrastructure refers to the components required to operate and manage enterprise IT environments ."
+    },
+    {
+        "question": "In terms of configuration management models, how is Ansible generally classified?",
+        "options": [
+            "Pull Based",
+            "Client-Server Based",
+            "Model Driven",
+            "Push Based"
+        ],
+        "answer": "Push Based",
+        "hint": "Ansible initiates communication to the nodes, rather than nodes requesting updates.",
+        "explanation": "Ansible is considered a Push Based configuration management tool because nodes do not pull configuration information from the server ."
+    },
+    {
+        "question": "Which tool is identified as an integrated solution specifically for managing and deploying infrastructure and applications?",
+        "options": [
+            "Jenkins",
+            "Chef Automate",
+            "SaltStack",
+            "Terraform"
+        ],
+        "answer": "Chef Automate",
+        "hint": "This solution is associated with the Chef configuration management tool.",
+        "explanation": "Chef Automate is an integrated solution for managing and deploying infrastructure and applications ."
+    },
+    {
+        "question": "What specific information does a Bill Of Materials (BOM) describe in relation to application components?",
+        "options": [
+            "The deployment timestamp, resource utilization, and cost.",
+            "The components included, their version, and the license types for each.",
+            "The security threat ranking and mitigation steps required.",
+            "The developer responsible and the last commit ID."
+        ],
+        "answer": "The components included, their version, and the license types for each.",
+        "hint": "This document details the inventory of parts used in the software.",
+        "explanation": "Bill Of Materials (BOM) describes the components included in applications, the version of the components used, and the license types for each ."
+    },
+    {
+        "question": "What is the term for securing software against threats that arise when your application starts running?",
+        "options": [
+            "Static Analysis",
+            "Threat Modeling",
+            "Runtime protection",
+            "Component Analysis"
+        ],
+        "answer": "Runtime protection",
+        "hint": "This security measure protects the application while it is actively executing.",
+        "explanation": "Runtime protection means securing software against threats that can arise when your application starts running ."
+    },
+    {
+        "question": "What is the purpose of Vulnerability Scanning across the delivery pipeline?",
+        "options": [
+            "To generate a Bill of Materials (BOM) document.",
+            "To ensure that all code is checked for vulnerabilities at every major stage.",
+            "To automatically remediate all identified security flaws.",
+            "To determine the organizational capacity for agile development."
+        ],
+        "answer": "To ensure that all code is checked for vulnerabilities at every major stage.",
+        "hint": "This process ensures continuous security checks from writing to deployment.",
+        "explanation": "Vulnerability Scanning ensures that code is checked for vulnerabilities at every major stage of the delivery pipeline from the time it is written to, when it is deployed into production ."
+    },
+    {
+        "question": "What type of DevOps tool is Codacy, specifically noted for using static code analysis?",
+        "options": [
+            "A dynamic analysis security scanner (DAST)",
+            "An all-in-one website security scanner",
+            "An enterprise-grade automated code review solution",
+            "A container security platform"
+        ],
+        "answer": "An enterprise-grade automated code review solution",
+        "hint": "It provides comprehensive vulnerability reporting based on code analysis.",
+        "explanation": "Codacy is an enterprise-grade automated code review solution that uses static code analysis to provide comprehensive vulnerability reporting ."
+    },
+    {
+        "question": "During which phase of the Secure SDLC must development teams ensure they use secure coding standards?",
+        "options": [
+            "Requirement Analysis",
+            "Architecture And Design",
+            "Deployment",
+            "Development"
+        ],
+        "answer": "Development",
+        "hint": "This phase focuses on the actual writing of the code.",
+        "explanation": "During the development phase in Secure SDLC, teams need to make sure that they use secure coding standards ."
+    },
+    {
+        "question": "Which of the following is a critical focus area of Security Monitoring/Compliance in the Secure SDLC?",
+        "options": [
+            "Integrating DAST tools exclusively in the final stage.",
+            "Ensuring OS hardening, Web/Application hardening.",
+            "Shifting security left in the SDLC.",
+            "Generating a final compliance report after deployment."
+        ],
+        "answer": "Shifting security left in the SDLC.",
+        "hint": "This principle involves incorporating security earlier in the process.",
+        "explanation": "Critical areas focused on by Security Monitoring/Compliance include Shifting security left in the SDLC, Building security into policies, and Creating an audit trail throughout the development ."
+    },
+    {
+        "question": "What is the major benefit of employing both SAST and DAST in a security pipeline?",
+        "options": [
+            "It eliminates the need for manual security audits.",
+            "It focuses solely on preventing supply-chain risks.",
+            "It covers both codebase vulnerabilities and runtime vulnerabilities.",
+            "It accelerates the deployment time by skipping manual testing."
+        ],
+        "answer": "It covers both codebase vulnerabilities and runtime vulnerabilities.",
+        "hint": "SAST reviews static code, while DAST reviews the application when it is running.",
+        "explanation": "Employing both SAST and DAST in a pipeline would cover both codebase and runtime vulnerabilities ."
+    },
+    {
+        "question": "What security process involves summarizing possible attack scenarios and outlining sensitive data flow?",
+        "options": [
+            "Dynamic Analysis Security Testing",
+            "Threat Modeling",
+            "Software Composition Analysis",
+            "Vulnerability Scanning"
+        ],
+        "answer": "Threat Modeling",
+        "hint": "This activity occurs early and helps define security requirements.",
+        "explanation": "Threat Modeling provides a summary of possible attack scenarios, outlines the flow of sensitive data, and identifies vulnerabilities and offers potential mitigation options ."
+    },
+    {
+        "question": "Which activity is a required step when performing Threat Modeling?",
+        "options": [
+            "Dynamic Analysis Security Testing",
+            "Decomposing the application",
+            "Software Composition Analysis",
+            "Usecase Modeling"
+        ],
+        "answer": "Decomposing the application",
+        "hint": "This step involves breaking down the application architecture.",
+        "explanation": "The steps of Threat Modeling include Decomposing the application, Ranking Threats, and Mitigation ."
+    },
+    {
+        "question": "According to DSOMM Level 1, what is required concerning the execution of static analysis tools?",
+        "options": [
+            "The tools must be heavily customized to project needs.",
+            "Execution must be performed manually by the security team.",
+            "Execution is required without any changes to the tools or settings.",
+            "Execution is only required on critical components."
+        ],
+        "answer": "Execution is required without any changes to the tools or settings.",
+        "hint": "Level 1 represents the initial, basic implementation phase.",
+        "explanation": "DSOMM Level 1 calls for the execution of static analysis tools without any changes to the tools or settings ."
+    },
+    {
+        "question": "Which two specific tools are listed as Software Composition Analysis (SCA) tools?",
+        "options": [
+            "Acunetix and SonarQube",
+            "Dependency Checker and WhiteSource",
+            "Klocwork and Checkmarx",
+            "Terraform and Docker"
+        ],
+        "answer": "Dependency Checker and WhiteSource",
+        "hint": "SCA tools manage risks related to open-source components.",
+        "explanation": "Dependency Checker and WhiteSource are examples of Software Composition Analysis tools ."
+    },
+    {
+        "question": "What approach is designed to detect dependency bugs in build systems?",
+        "options": [
+            "Reshift",
+            "Static code analyzer",
+            "Smoke",
+            "VeriBuild"
+        ],
+        "answer": "VeriBuild",
+        "hint": "This focuses specifically on build integrity and dependencies.",
+        "explanation": "VeriBuild is an approach to detect dependency bugs in build systems ."
+    },
+    {
+        "question": "What is the primary function of the SAST tool 'Smoke'?",
+        "options": [
+            "Optimizing performance for analyzing typestate problems.",
+            "Performing comprehensive vulnerability reporting.",
+            "Identifying runtime configuration issues.",
+            "Generating security audit trails."
+        ],
+        "answer": "Optimizing performance for analyzing typestate problems.",
+        "hint": "This tool focuses on efficiency in analyzing complex data types.",
+        "explanation": "Smoke is designed for optimizing the performance for analyzing typestate problem ."
+    },
+    {
+        "question": "Which of the following is considered a comprehensive ruleset rule when embedding SAST tools into the pipeline?",
+        "options": [
+            "Runtime memory management",
+            "Input/Output Validation",
+            "XML external entity",
+            "Dynamic data flow tracking"
+        ],
+        "answer": "XML external entity",
+        "hint": "This relates to parsing external, potentially malicious, data in documents.",
+        "explanation": "XML external entity and Header injection are comprehensive rulesets while embedding SAST tools into the pipeline ."
+    },
+    {
+        "question": "SAST (Static Application Security Testing) is defined by examining the source code while it is in which state?",
+        "options": [
+            "Running in a test environment",
+            "At rest (not executing)",
+            "Deployed in production",
+            "Being committed to the repository"
+        ],
+        "answer": "At rest (not executing)",
+        "hint": "The term 'static' refers to the application state during analysis.",
+        "explanation": "SAST tools examine the source code at rest to detect and report on potential security vulnerabilities ."
+    },
+    {
+        "question": "What security methodology is utilized to track identified vulnerabilities, mitigation steps, and the overall status of an application’s security?",
+        "options": [
+            "Remediate",
+            "Monitor",
+            "Scan",
+            "Analyze"
+        ],
+        "answer": "Monitor",
+        "hint": "This refers to the ongoing observation and tracking process.",
+        "explanation": "Monitoring refers to the process of tracking the identified vulnerabilities, the steps taken to mitigate and/or eliminate those vulnerabilities, and the overall status of the application’s security ."
+    },
+    {
+        "question": "What is the definition of Infrastructure-as-Code (IaC) tools?",
+        "options": [
+            "Tools used for visualizing data flow in a pipeline.",
+            "Tools used only for deploying containers.",
+            "Tools used to create software environments using predefined templates.",
+            "Tools used exclusively for configuration drift detection."
+        ],
+        "answer": "Tools used to create software environments using predefined templates.",
+        "hint": "IaC defines infrastructure setup using descriptive files.",
+        "explanation": "Infrastructure-as-Code tools are used to create software environments using predefined templates ."
+    },
+    {
+        "question": "Which agile methodology heavily depends on the cohesiveness of the team and the individual commitment of its members?",
+        "options": [
+            "SCRUM",
+            "Dynamic System Development Method",
+            "Lean Software Development",
+            "Extreme programming"
+        ],
+        "answer": "Lean Software Development",
+        "hint": "This method focuses on minimizing waste and maximizing value through teamwork.",
+        "explanation": "Lean Software Development depends on the cohesiveness of the team and individual commitment of the team members ."
+    },
+    {
+        "question": "In agile development, what is the emphasis given to documentation compared to traditional methods?",
+        "options": [
+            "It is heavily emphasized.",
+            "It is completely ignored.",
+            "It is given less emphasis.",
+            "It is standardized using only SRS documents."
+        ],
+        "answer": "It is given less emphasis.",
+        "hint": "Agile prioritizes working software over comprehensive documentation.",
+        "explanation": "During agile development, less emphasis is given to documentation (the source indicates the statement that more emphasis is given is FALSE) ."
+    },
+    {
+        "question": "What is the primary focus of the Kanban methodology?",
+        "options": [
+            "Defining sprint cycles.",
+            "Maximizing technical complexity.",
+            "Visualization flow.",
+            "Mandating collaborative and co-operative approaches."
+        ],
+        "answer": "Visualization flow.",
+        "hint": "This methodology often uses boards to show work status.",
+        "explanation": "Kanban methodology focus on visualization flow ."
+    },
+    {
+        "question": "What is the process called during which changes of a system are implemented in a controllable manner following a predefined model?",
+        "options": [
+            "Update Management",
+            "Modification Management",
+            "Change Management",
+            "Configuration drift control"
+        ],
+        "answer": "Change Management",
+        "hint": "This involves managing the transition of states in a structured way.",
+        "explanation": "Change Management is the process during which the changes of a system are implemented in a controllable manner by following a predefined model, with some reasonable modifications ."
+    },
+    {
+        "question": "Which software configuration concept ensures that change should be done in a controlled and authorized environment?",
+        "options": [
+            "Audit",
+            "Baseline",
+            "Configuration database",
+            "Synchronization control"
+        ],
+        "answer": "Baseline",
+        "hint": "This represents a stable, agreed-upon point in the system's development.",
+        "explanation": "Baseline is the software configuration concept that ensures that change should be done in a controlled and authorized environment ."
+    },
+    {
+        "question": "What concept ensures that when two different people update work in parallel, one should not overwrite the other?",
+        "options": [
+            "Check-in",
+            "Check-out",
+            "Synchronization control",
+            "Management audit"
+        ],
+        "answer": "Synchronization control",
+        "hint": "This mechanism manages parallel access to the code repository.",
+        "explanation": "Synchronization control ensures that when two different people do the work and update parallelly, one should not over write the other ."
+    },
+    {
+        "question": "For what type of project scenario is the Prototype Methodology particularly useful?",
+        "options": [
+            "When client requirements are clear and stable.",
+            "When the project requires a rigid Waterfall structure.",
+            "When the client requirements are not clear and stable.",
+            "When the project must adhere strictly to documentation standards."
+        ],
+        "answer": "When the client requirements are not clear and stable.",
+        "hint": "Prototyping helps clarify needs through iterative examples.",
+        "explanation": "Prototype Methodology is useful when the client requirements are not clear and stable ."
+    },
+    {
+        "question": "Which role is specifically identified as being part of the Dynamic System Development Method (DSDM)?",
+        "options": [
+            "Designer",
+            "System Analyst",
+            "Scribe Facilitator",
+            "Product Owner"
+        ],
+        "answer": "Scribe Facilitator",
+        "hint": "DSDM emphasizes specific facilitation and coordination roles.",
+        "explanation": "The roles in dynamic system development method include Scribe Facilitator and Technical Coordinator ."
+    },
+    {
+        "question": "The 'Understand' phase in Design Thinking is comprised of which two sub phases?",
+        "options": [
+            "Model and Test",
+            "Define and Ideate",
+            "Empathize and Define",
+            "Prototype and Explore"
+        ],
+        "answer": "Empathize and Define",
+        "hint": "These are the initial two steps where user context is gathered and framed.",
+        "explanation": "The sub phases of the understand phase are Empathize and Define ."
+    },
+    {
+        "question": "What is the core philosophical approach of Design Thinking regarding problems and solutions?",
+        "options": [
+            "To arrive at a solution immediately rather than focusing on the problem.",
+            "To focus on the stated problem rather than to arrive at a solution immediately.",
+            "To prototype without defining the problem first.",
+            "To utilize machine learning models to generate solutions."
+        ],
+        "answer": "To focus on the stated problem rather than to arrive at a solution immediately.",
+        "hint": "This emphasizes deep exploration before jumping to conclusions.",
+        "explanation": "Design Thinking is focusing on the stated problem than to arrive at a solution immediately ."
+    },
+    {
+        "question": "What is the role of the 'Observer' activity within the Empathize phase of Design Thinking?",
+        "options": [
+            "Creating low-fidelity models of the solution.",
+            "Analyzing how users interact with their environment.",
+            "Writing the Point of View statement.",
+            "Challenging underlying assumptions."
+        ],
+        "answer": "Analyzing how users interact with their environment.",
+        "hint": "This involves watching users directly.",
+        "explanation": "Analyzing how users interact with their environment is an Observer activity in Empathize ."
+    },
+    {
+        "question": "What is a Point of View (POV) statement defined as in Design Thinking?",
+        "options": [
+            "A conceptual drawing of the final product.",
+            "A list of resources required for prototyping.",
+            "A written, actionable statement expressing the problem the design team addresses.",
+            "A method for ranking threats based on severity."
+        ],
+        "answer": "A written, actionable statement expressing the problem the design team addresses.",
+        "hint": "This statement frames the gathered insights into an action plan.",
+        "explanation": "A POV (Point of View) in design thinking is a written, actionable statement that expresses the problem that the design team is trying to address ."
+    },
+    {
+        "question": "Which phase in design thinking involves challenging assumptions and creating ideas?",
+        "options": [
+            "Empathize",
+            "Define",
+            "Ideate",
+            "Prototype"
+        ],
+        "answer": "Ideate",
+        "hint": "This phase focuses on generating novel solutions.",
+        "explanation": "Challenge Assumptions and Create Ideas is done in Ideate ."
+    },
+    {
+        "question": "Which component is NOT one of the four essential areas mapped by an Empath Map?",
+        "options": [
+            "Says",
+            "Thinks",
+            "Decides",
+            "Feels"
+        ],
+        "answer": "Decides",
+        "hint": "The map focuses on observable actions and internal states (Says, Thinks, Does, Feels).",
+        "explanation": "The components mapped by an empath map are Says, Thinks, Does, and Feels ."
+    },
+    {
+        "question": "Which layer of Business Analytics helps to understand the best course of action for a problem?",
+        "options": [
+            "Descriptive Layer",
+            "Predictive Layer",
+            "Prescriptive Layer",
+            "Cognitive Layer"
+        ],
+        "answer": "Prescriptive Layer",
+        "hint": "This layer moves beyond prediction to providing recommendations.",
+        "explanation": "The Prescriptive Layer is used to understand the best course of action for a problem ."
+    },
+    {
+        "question": "According to the sources, what does the Descriptive Layer in business analytics indicate?",
+        "options": [
+            "What could happen in the future.",
+            "Uncovers unexpected patterns and associations.",
+            "What is happening or what has happened.",
+            "Determines the optimal course of action."
+        ],
+        "answer": "What is happening or what has happened.",
+        "hint": "This layer reports historical and current status.",
+        "explanation": "The Descriptive Layer in business analytics indicates what is happening or what has happened ."
+    },
+    {
+        "question": "Which of the following is NOT listed as a challenge faced in Business Analytics?",
+        "options": [
+            "Volume of data",
+            "Velocity of data",
+            "Variety of data",
+            "Integral data"
+        ],
+        "answer": "Integral data",
+        "hint": "The challenges relate to the 3 Vs.",
+        "explanation": "The challenges faced in Business Analytics are Volume of data, Variety of data, and Velocity of data ."
+    },
+    {
+        "question": "What organizational tool allows decision makers at virtually all levels of the organization to gain insight into business performance?",
+        "options": [
+            "SCM (Supply Chain Management)",
+            "CRM (Customer Relationship Management)",
+            "BPM (Business Process Management)",
+            "ERP (Enterprise Resource Planning)"
+        ],
+        "answer": "BPM (Business Process Management)",
+        "hint": "This concept involves aligning processes with organizational goals.",
+        "explanation": "BPM (Business Process Management) allows decision makers at virtually all levels of the organization to gain insight into business performance and data to support and guide actions ."
+    },
+    {
+        "question": "What is one crucial characteristic that a metric should adhere to, as stated in the sources?",
+        "options": [
+            "It must be purely qualitative.",
+            "It must be calculated manually.",
+            "It should be time bound.",
+            "It should only measure input."
+        ],
+        "answer": "It should be time bound.",
+        "hint": "This adds context and urgency to the measurement.",
+        "explanation": "A metric should be time bound ."
+    },
+    {
+        "question": "What does the abbreviation KSI stand for in the context of business performance measurement?",
+        "options": [
+            "Key Source Indicator",
+            "Key Success Index",
+            "Key Success Initiative",
+            "Key Success Indicator"
+        ],
+        "answer": "Key Success Indicator",
+        "hint": "This relates closely to Key Performance Indicators (KPIs).",
+        "explanation": "KSI stands for Key Success Indicator ."
+    },
+    {
+        "question": "What is Data Mining defined as?",
+        "options": [
+            "The process of cleaning and preparing data for analysis.",
+            "The process of storing data in a cube or data mart.",
+            "The process of discovering various models, summaries and derived values from a given collection of data.",
+            "The process of designing the architecture for a data warehouse."
+        ],
+        "answer": "The process of discovering various models, summaries and derived values from a given collection of data",
+        "hint": "This is often associated with finding hidden patterns.",
+        "explanation": "Data Mining is the Process of discovering various models, summaries and derived values from a given collection of data ."
+    },
+    {
+        "question": "Which CI/CD tool is cited as a Continuous Integration server developed by Atlassian?",
+        "options": [
+            "Jenkins",
+            "Bitbucket Pipelines",
+            "Bamboo",
+            "GitLab"
+        ],
+        "answer": "Bamboo",
+        "hint": "This tool supports integration tasks and is often integrated with Jira.",
+        "explanation": "Bamboo is a continuous integration server developed by Atlassian ."
+    },
+    {
+        "question": "What is the most common form of Key Performance Indicator (KPI) reporting?",
+        "options": [
+            "CRM systems",
+            "ERP reports",
+            "Dashboarding",
+            "Manual spreadsheets"
+        ],
+        "answer": "Dashboarding",
+        "hint": "This method provides a visual, high-level overview of key metrics.",
+        "explanation": "The most common form of KPI reporting is Dashboarding ."
+    },
+    {
+        "question": "Which KPI reflects the success or failure after an event has been consumed?",
+        "options": [
+            "Leading KPI",
+            "Input KPI",
+            "Process KPI",
+            "Lagging KPI"
+        ],
+        "answer": "Lagging KPI",
+        "hint": "This measures results that have already occurred.",
+        "explanation": "Lagging KPI reflects the success or failure after an event has been consumed ."
+    },
+    {
+        "question": "What kind of KPI is 'Units per hour' an example of?",
+        "options": [
+            "Qualitative KPI",
+            "Lagging KPI",
+            "Quantitative KPI",
+            "Outcome KPI"
+        ],
+        "answer": "Quantitative KPI",
+        "hint": "This metric involves numerical measurement.",
+        "explanation": "Units per hour is an example of a Quantitative KPI ."
+    },
+    {
+        "question": "Which concept allows decision makers to guide actions by gaining insight into business performance and data?",
+        "options": [
+            "CRM",
+            "BPM",
+            "SCM",
+            "ERP"
+        ],
+        "answer": "BPM",
+        "hint": "The concept stands for Business Process Management.",
+        "explanation": "BPM allows decision makers at virtually all levels of the organization to gain insight into business performance and data to support and guide actions ."
+    }
 ]
