@@ -66,6 +66,7 @@ export function renderTopicMenu(container, topic) {
                 <a href="/${topic}/quiz" class="topic-menu-item">New Quiz</a>
                 <a href="/${topic}/review" class="topic-menu-item">Review Attempted (${attemptedCount})</a>
                 <a href="/${topic}/mixed-quiz" class="topic-menu-item">Mixed Quiz</a>
+                <button class="topic-menu-item secondary-button" id="fetch-new-questions-btn">Fetch New Questions</button>
                 <a href="/" class="topic-menu-item">Back to Topics</a>
             </div>
         </div>

@@ -1,7 +1,7 @@
 // --- EVENT HANDLING MODULE ---
 import { AppState } from './state.js';
 import { renderReviewScreen, renderResults, renderTopicMenu } from './renderer.js';
-import { navigate, handleRouteChange } from './router.js';
+import { navigate } from './router.js';
 import { 
     handleOptionSelect, 
     handleNextQuestion, 
@@ -57,40 +57,41 @@ export function attachEventListeners(container) {
             handleReviewBack();
         }
         // Manual content refresh
-        else if (targetId === 'refresh-content-btn') {
+        else if (targetId === 'fetch-new-questions-btn') {
             handleManualRefresh();
         }
     });
 }
 
 async function handleManualRefresh() {
-    const confirmed = confirm('Check for new quiz content? This will refresh all questions while keeping your progress.');
+    const confirmed = confirm('Fetch new questions? This will refresh all questions while keeping your progress.');
     if (!confirmed) return;
-    
-    const refreshButton = document.getElementById('refresh-content-btn');
-    const originalButtonText = refreshButton.textContent;
 
-    refreshButton.disabled = true;
-    refreshButton.textContent = '...';
-    
+    const appContainer = document.getElementById('app');
+    const originalContent = appContainer.innerHTML;
+    appContainer.innerHTML = `
+        <div class="screen-container">
+            <h1 class="screen-title">Fetching New Questions...</h1>
+            <div style="text-align: center; padding: 2rem;">
+                <div class="loading-spinner"></div>
+            </div>
+        </div>
+    `;
+
     try {
         const { manualRefresh } = await import('./dataService.js');
-        const { CONFIG } = await import('./state.js');
-        
-        await manualRefresh(CONFIG.TOPICS);
-        
-        alert('✅ Content updated! The latest questions are now available.');
-        
-        // Correctly re-render the current view by calling the router's handler
-        handleRouteChange();
+        const { CONFIG, AppState } = await import('./state.js');
 
+        await manualRefresh(CONFIG.TOPICS);
+
+        alert('✅ Content updated! The latest questions are now available.');
+
+        // Re-render the current topic menu
+        renderTopicMenu(appContainer, AppState.currentTopic);
     } catch (error) {
         console.error('Manual refresh failed:', error);
-        alert('❌ Failed to check for updates. Please check your internet connection.');
-    } finally {
-        // Restore button state
-        refreshButton.disabled = false;
-        refreshButton.textContent = originalButtonText;
+        alert('❌ Failed to fetch new questions. Please check your internet connection.');
+        appContainer.innerHTML = originalContent; // Restore on failure
     }
 }
 
