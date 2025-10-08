@@ -2267,5 +2267,493 @@
     "answer": "Package names should use reverse internet domain name of a company",
     "hint": "Read the description again carefully to ensure it is a package and not something else",
     "explanation": "Packages can contain interfaces and sub packages. Since code packages may be on different levels, the convention is that to avoid naming conflicts, you use the reverse domain name."
-    }
+    },
+  {
+    "question": "which of these is NOT a valid way to instantiate a wrapper class object like `Integer`?",
+    "options": [
+      "Passing a primitive `int` to the constructor.",
+      "Passing a valid `String` representation of a number to the constructor.",
+      "Passing a `char` to the `Integer` constructor.",
+      "Using the static `valueOf` method."
+    ],
+    "answer": "Passing a `char` to the `Integer` constructor.",
+    "hint": "The constructor and `valueOf` methods are specific about the types they accept (primitive or String).",
+    "explanation": "You can instantiate an `Integer` with an `int` or a parsable `String` (like \"123\"), but not with a `char`. Trying to do so would result in a compilation error as no such constructor exists."
+  },
+  {
+    "question": "What is the primary purpose of the `String.toCharArray()` method?",
+    "options": [
+      "To check if a string contains only characters.",
+      "To convert a `String` object into a `char` array.",
+      "To create a `Character` array from a `String`.",
+      "To split a string by its characters."
+    ],
+    "answer": "To convert a `String` object into a `char` array.",
+    "hint": "The method name literally describes its function.",
+    "explanation": "The `toCharArray()` method provides a simple way to get an array of characters representing the sequence of characters in the string, which is useful for character-by-character iteration and manipulation."
+  },
+  {
+    "question": "What is the output of the following code?",
+    "code": "StringBuffer sb = new StringBuffer(\"Java\");\nsb.append(\" Program\");\nSystem.out.println(sb);",
+    "options": [
+      "Java",
+      "Java Program",
+      "Program",
+      "A new object reference is printed."
+    ],
+    "answer": "Java Program",
+    "hint": "The `append` method of `StringBuffer` modifies the object in place.",
+    "explanation": "`StringBuffer` is mutable. The `append` method concatenates the given string to the end of the existing `StringBuffer` content, modifying the original object rather than creating a new one."
+  },
+  {
+    "question": "Why would a developer choose `StringBuilder` over `StringBuffer`?",
+    "options": [
+      "Because `StringBuilder` is thread-safe.",
+      "Because `StringBuilder` offers better performance in a single-threaded environment.",
+      "Because `StringBuilder` can hold more characters.",
+      "Because `StringBuilder` has more methods for manipulation."
+    ],
+    "answer": "Because `StringBuilder` offers better performance in a single-threaded environment.",
+    "hint": "The choice between them revolves around thread safety and performance.",
+    "explanation": "`StringBuffer` is synchronized (thread-safe), which adds performance overhead. `StringBuilder` is not synchronized, making it faster. It should be the preferred choice in single-threaded contexts."
+  },
+  {
+    "question": "In a regular expression, what does the quantifier `*` signify?",
+    "options": [
+      "Match the preceding element one or more times.",
+      "Match the preceding element zero or more times.",
+      "Match the preceding element exactly once.",
+      "It is a wildcard for any character."
+    ],
+    "answer": "Match the preceding element zero or more times.",
+    "hint": "This quantifier is the most inclusive, allowing for absence.",
+    "explanation": "The asterisk `*` quantifier means that the preceding character or group can appear zero or more times. For example, `ab*c` would match 'ac', 'abc', 'abbc', and so on."
+  },
+  {
+    "question": "A method is defined as `public void sum(int... numbers)`. Which of the following is a key restriction for this `varargs` parameter?",
+    "options": [
+      "It must be the first argument in the method.",
+      "There can be only one `varargs` parameter in the method.",
+      "The method can only accept up to 10 arguments.",
+      "It cannot be used with an enhanced for-loop."
+    ],
+    "answer": "There can be only one `varargs` parameter in the method.",
+    "hint": "Java needs to know where the variable arguments end.",
+    "explanation": "A method can have only one `varargs` parameter, and it must be the last parameter in the method's signature. This allows the compiler to know which arguments belong to the `varargs` array."
+  },
+  {
+    "question": "What happens when you pass an array to a method in Java and modify its contents inside that method?",
+    "code": "public static void main(String[] args) {\n    int[] arr = {10, 20};\n    change(arr);\n    System.out.println(arr[0]);\n}\npublic static void change(int[] data) {\n    data[0] = 99;\n}",
+    "options": [
+      "10",
+      "99",
+      "20",
+      "A compile-time error occurs."
+    ],
+    "answer": "99",
+    "hint": "In Java, the reference to the array is passed by value, not a copy of the array itself.",
+    "explanation": "When an array is passed to a method, a copy of the reference to the array is passed. Both the original reference and the method's parameter point to the *same* array object in memory. Therefore, any changes made to the array's elements inside the method will be reflected in the original array."
+  },
+  {
+    "question": "Which `java.util.Arrays` method requires the array to be sorted beforehand to work correctly?",
+    "options": [
+      "sort()",
+      "fill()",
+      "binarySearch()",
+      "toString()"
+    ],
+    "answer": "binarySearch()",
+    "hint": "This search algorithm relies on the data being in a specific order to be efficient.",
+    "explanation": "The binary search algorithm works by repeatedly dividing the search interval in half. This is only possible if the array is sorted. If `binarySearch()` is called on an unsorted array, the results are undefined and likely incorrect."
+  },
+  {
+    "question": "Why does the Java language provide two `Date` classes, `java.util.Date` and `java.sql.Date`?",
+    "options": [
+      "There is no difference; they are interchangeable.",
+      "`java.util.Date` is for dates and `java.sql.Date` is for time.",
+      "To avoid name collisions and provide a class specifically tailored for JDBC and SQL DATE types.",
+      "`java.sql.Date` is an older, deprecated version."
+    ],
+    "answer": "To avoid name collisions and provide a class specifically tailored for JDBC and SQL DATE types.",
+    "hint": "Packages help solve the problem of two classes having the same name but different purposes.",
+    "explanation": "Packages prevent name collisions. `java.util.Date` represents both date and time, while `java.sql.Date` is designed to map to the SQL `DATE` type, which contains only date information (year, month, day) and not time. Using packages keeps these two distinct classes separate."
+  },
+  {
+    "question": "Which of the following describes a 'jagged array'?",
+    "options": [
+      "A 2D array where both row and column sizes are fixed.",
+      "An array that can only hold objects.",
+      "A 2D array where each row can have a different number of columns.",
+      "An array whose elements are sorted in a non-standard order."
+    ],
+    "answer": "A 2D array where each row can have a different number of columns.",
+    "hint": "This is also known as an array of arrays, where the inner arrays can have different lengths.",
+    "explanation": "A jagged array is created by only specifying the size of the first dimension. Each subsequent inner array (representing a row) can then be initialized individually with a different length, creating a non-rectangular structure."
+  },
+  {
+    "question": "What is the output of this code?",
+    "code": "String text = \"Java is fun\";\nSystem.out.println(text.indexOf('a', 2));",
+    "options": [
+      "1",
+      "3",
+      "4",
+      "-1"
+    ],
+    "answer": "3",
+    "hint": "The second parameter of `indexOf` specifies the index from which to start the search.",
+    "explanation": "The code searches for the character 'a' in the string \"Java is fun\", but it starts the search from index 2 ('v'). The first 'a' it finds after that position is at index 3."
+  },
+  {
+    "question": "In regular expressions, what is the purpose of the `group()` method in the `Matcher` class?",
+    "options": [
+      "To group multiple patterns into one.",
+      "To return the subsequence of the input that was matched by the previous successful match.",
+      "To count the number of matches found.",
+      "To group all matches into a single String."
+    ],
+    "answer": "To return the subsequence of the input that was matched by the previous successful match.",
+    "hint": "You typically call this method after `find()` returns true.",
+    "explanation": "After a successful match is found (e.g., by calling `find()`), the `group()` method is used to retrieve the actual string that was matched by the pattern."
+  },
+  {
+    "question": "Which of these is a static method in the `Character` class used for validation?",
+    "options": [
+      "isNumber()",
+      "isDigit()",
+      "isNumeric()",
+      "isAnInteger()"
+    ],
+    "answer": "isDigit()",
+    "hint": "The Character class provides static helper methods to check the type of a `char`.",
+    "explanation": "`Character.isDigit(char ch)` is a static method that determines if the specified character is a digit (0-9). `isLetter()` and `isLetterOrDigit()` are other similar validation methods."
+  },
+  {
+    "question": "What is the result of running this code?",
+    "code": "String[] parts = \"one,two,,four\".split(\",\");\nSystem.out.println(parts.length);",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "2"
+    ],
+    "answer": "4",
+    "hint": "The `split` method will produce an empty string for the content between two adjacent delimiters.",
+    "explanation": "The string is split by the comma. The parts are \"one\", \"two\", an empty string \"\", and \"four\". This results in a string array of length 4."
+  },
+  {
+    "question": "Which method in `StringBuffer` is used to reverse the sequence of characters?",
+    "options": [
+      "invert()",
+      "flip()",
+      "reverse()",
+      "stringReverse()"
+    ],
+    "answer": "reverse()",
+    "hint": "The method name is a direct verb for the action it performs.",
+    "explanation": "The `reverse()` method of the `StringBuffer` (and `StringBuilder`) class reverses the characters in the sequence and modifies the object in place."
+  },
+  {
+    "question": "A `PatternSyntaxException` is thrown when...",
+    "options": [
+      "The input string does not match the regular expression pattern.",
+      "The regular expression's syntax is invalid.",
+      "The `Matcher` object is used before a pattern is compiled.",
+      "The `group()` method is called before a successful match."
+    ],
+    "answer": "The regular expression's syntax is invalid.",
+    "hint": "This is a compile-time error for the pattern itself, not a matching failure.",
+    "explanation": "This exception indicates an error in the regular expression pattern string itself, for example, an unclosed bracket like `[a-z` or an invalid quantifier. It's an error in how the pattern is written, not in whether it matches the input."
+  },
+  {
+    "question": "Which regular expression meta-character is a shorthand for `[0-9]`?",
+    "options": [
+      "\\w",
+      "\\s",
+      "\\d",
+      "\\D"
+    ],
+    "answer": "\\d",
+    "hint": "'d' stands for digit.",
+    "explanation": "The meta-character `\\d` is a shorthand for the character class `[0-9]`, matching any single digit character."
+  },
+  {
+    "question": "What is the difference between `arr.length` and `str.length()`?",
+    "options": [
+      "There is no difference.",
+      "`arr.length` is a property for arrays, while `str.length()` is a method for Strings.",
+      "`arr.length` is a method for arrays, while `str.length()` is a property for Strings.",
+      "`arr.length` includes the null terminator, `str.length()` does not."
+    ],
+    "answer": "`arr.length` is a property for arrays, while `str.length()` is a method for Strings.",
+    "hint": "One is a field, the other is a method call.",
+    "explanation": "For arrays, `length` is a final instance variable (a property) that stores the size of the array. For `String` objects, `length()` is a public method that returns the number of characters in the string."
+  },
+  {
+    "question": "Why is it generally recommended to use the static factory method `Integer.valueOf(int i)` instead of the constructor `new Integer(int i)` in modern Java?",
+    "options": [
+      "The constructor is slower.",
+      "The constructor is private.",
+      "The constructor is deprecated, and `valueOf` can return cached objects, improving performance.",
+      "The constructor can throw a `NumberFormatException`."
+    ],
+    "answer": "The constructor is deprecated, and `valueOf` can return cached objects, improving performance.",
+    "hint": "Consider the benefits of caching frequently used values.",
+    "explanation": "The `Integer` constructor has been deprecated since Java 9. The `valueOf` method is preferred because it can utilize a cache for commonly used integer values (typically -128 to 127), which avoids creating new objects and can improve memory efficiency and performance."
+  },
+  {
+    "question": "What does the `String.matches()` method do?",
+    "options": [
+      "Checks if a string contains another string as a substring.",
+      "Checks if the *entire* string matches a given regular expression.",
+      "Finds the first occurrence of a pattern in a string.",
+      "Splits the string using a regular expression."
+    ],
+    "answer": "Checks if the *entire* string matches a given regular expression.",
+    "hint": "This is a convenient shortcut but has a specific behavior regarding the whole string.",
+    "explanation": "The `String.matches(String regex)` method is a shorthand way to check if the entire string matches the provided regular expression. It is equivalent to `Pattern.matches(regex, this)`."
+  },
+  {
+    "question": "What will be the output of this code?",
+    "code": "String s1 = \"abc\";\nString s2 = new String(\"abc\");\nString s3 = \"abc\";\nSystem.out.println(s1 == s3);",
+    "options": [
+      "true",
+      "false",
+      "It will not compile.",
+      "It will throw an exception."
+    ],
+    "answer": "true",
+    "hint": "String literals are stored in the string pool to promote reuse.",
+    "explanation": "`s1` and `s3` are both initialized with the same string literal. The JVM places \"abc\" in the string pool once and makes both `s1` and `s3` point to that same object. Since they refer to the same object, the `==` comparison returns `true`."
+  },
+  {
+    "question": "The three fundamental properties of any object in an object-oriented domain are:",
+    "options": [
+      "Class, Method, and Variable",
+      "Public, Private, and Protected",
+      "State, Behavior, and Identity",
+      "Constructor, Getter, and Setter"
+    ],
+    "answer": "State, Behavior, and Identity",
+    "hint": "These three concepts define what an object is, what it can do, and what makes it unique.",
+    "explanation": "State represents the object's data (attributes). Behavior represents what the object can do (methods). Identity is the property that uniquely distinguishes it from all other objects (like its memory address)."
+  },
+  {
+    "question": "How is a sub-package created in Java?",
+    "options": [
+      "Using the `subpackage` keyword.",
+      "By creating a nested folder structure and using dots in the package name.",
+      "By using a hyphen in the package name, like `com.info-mymath`.",
+      "Sub-packages are not allowed in Java."
+    ],
+    "answer": "By creating a nested folder structure and using dots in the package name.",
+    "hint": "The package name `com.info.mymath` directly maps to a directory structure.",
+    "explanation": "Sub-packages are declared using a dot-separated naming convention. For example, `package com.info.mymath;` tells the compiler to place the `.class` file in a directory structure `com/info/mymath/`."
+  },
+  {
+    "question": "What will be printed by this code?",
+    "code": "StringBuffer sb = new StringBuffer(\"Hello\");\nString s = \"Hello\";\nSystem.out.println(s.equals(sb));",
+    "options": [
+      "true",
+      "false",
+      "A compilation error occurs.",
+      "A runtime exception is thrown."
+    ],
+    "answer": "false",
+    "hint": "The `String.equals()` method checks if the argument is also a `String` with the same content.",
+    "explanation": "The `equals` method of the `String` class is strict. It first checks if the object being compared to is an instance of `String`. Since `sb` is a `StringBuffer`, not a `String`, the comparison immediately returns `false` without checking the content."
+  },
+  {
+    "question": "If you need to get a `String` representation of a `StringBuffer` object to use `String` methods on it, which method should you call?",
+    "options": [
+      "sb.getString()",
+      "sb.asString()",
+      "sb.toString()",
+      "String.valueOf(sb)"
+    ],
+    "answer": "sb.toString()",
+    "hint": "This is a standard method inherited from the `Object` class but overridden to provide meaningful content.",
+    "explanation": "The `toString()` method of `StringBuffer` (and `StringBuilder`) returns a new `String` object that contains the sequence of characters currently in the buffer. This allows you to use all the methods of the `String` class on the content."
+  },
+  {
+    "question": "What is the purpose of the `Locale` class when used with `DateFormat`?",
+    "options": [
+      "To set the physical location of the server.",
+      "To specify the language and country for region-specific formatting of dates and numbers.",
+      "To change the character encoding of the output string.",
+      "To set the time zone for the date."
+    ],
+    "answer": "To specify the language and country for region-specific formatting of dates and numbers.",
+    "hint": "A date like '10/12/2023' means different things in the US (Oct 12) and the UK (10 Dec).",
+    "explanation": "A `Locale` object represents a specific geographical, political, or cultural region. When passed to a `DateFormat`, it ensures that the date is formatted according to that region's conventions (e.g., month names in French, date order as DD/MM/YYYY)."
+  },
+  {
+    "question": "What does the `DateFormat` style `FULL` typically produce?",
+    "options": [
+      "A short numeric format, like 10/31/23",
+      "A medium-length format, like Oct 31, 2023",
+      "A long, completely specified format, like Tuesday, October 31, 2023",
+      "Only the year, like 2023"
+    ],
+    "answer": "A long, completely specified format, like Tuesday, October 31, 2023",
+    "hint": "This style provides the most detail.",
+    "explanation": "The `FULL` style constant in `DateFormat` is used to get a verbose, fully detailed date format, which typically includes the day of the week, the full month name, the day, and the year."
+  },
+  {
+    "question": "What is the key characteristic of an 'instance method'?",
+    "options": [
+      "It is declared with the `static` keyword.",
+      "It operates on an object (an instance) of a class and can access instance variables.",
+      "It can be called without creating an object of the class.",
+      "It must be declared inside the `main` method."
+    ],
+    "answer": "It operates on an object (an instance) of a class and can access instance variables.",
+    "hint": "Instance methods belong to an object, not the class as a whole.",
+    "explanation": "Instance methods are non-static methods that belong to an instance of a class. They must be invoked on an object and have access to the object's instance variables (fields) and other instance methods via the implicit `this` reference."
+  },
+  {
+    "question": "Given `String word = \"Programming\";`, what does `word.endsWith(\"ing\")` return?",
+    "options": [
+      "true",
+      "false",
+      "8",
+      "Compilation Error"
+    ],
+    "answer": "true",
+    "hint": "This method checks for a specific suffix.",
+    "explanation": "The `endsWith(String suffix)` method checks if the string ends with the specified suffix. Since \"Programming\" does end with \"ing\", the method returns `true`."
+  },
+  {
+    "question": "In the context of regular expressions, what does `[a-zA-Z]` match?",
+    "options": [
+      "The literal string \"a-zA-Z\".",
+      "Any single uppercase or lowercase letter.",
+      "Any sequence of letters.",
+      "Any character that is not a letter."
+    ],
+    "answer": "Any single uppercase or lowercase letter.",
+    "hint": "This is a character class that defines a range.",
+    "explanation": "`[a-zA-Z]` is a character class that matches any single character that falls within the range of 'a' to 'z' (lowercase) or 'A' to 'Z' (uppercase)."
+  },
+  {
+    "question": "What is the output of this code?",
+    "code": "String s = \"  Hello  \";\ns = s.trim();\nSystem.out.println(s.length());",
+    "options": [
+      "9",
+      "7",
+      "5",
+      "6"
+    ],
+    "answer": "5",
+    "hint": "The `trim()` method removes whitespace from both ends of the string.",
+    "explanation": "The `trim()` method is called on the string `s`, which removes the two leading and two trailing spaces. The new string \"Hello\" is assigned back to `s`. The length of \"Hello\" is 5."
+  },
+  {
+    "question": "If an array `arr` is declared as a local variable inside a method and you try to access `arr[0]` before initializing it, what will be the result?",
+    "options": [
+      "It will access the default value, 0.",
+      "It will access a garbage value.",
+      "A `NullPointerException` will be thrown at runtime.",
+      "A compile-time error will occur."
+    ],
+    "answer": "A compile-time error will occur.",
+    "hint": "The compiler is strict about the initialization of local variables.",
+    "explanation": "Unlike instance variables which get default values, local variables must be explicitly initialized before they are used. The compiler will detect that `arr` has not been initialized and will report a compile-time error."
+  },
+  {
+    "question": "What is the output of the following?",
+    "code": "System.out.println(\"apple\".compareTo(\"banana\"));",
+    "options": [
+      "A positive number",
+      "A negative number",
+      "0",
+      "true"
+    ],
+    "answer": "A negative number",
+    "hint": "The `compareTo` method performs a lexicographical (alphabetical) comparison.",
+    "explanation": "`compareTo` compares strings based on the Unicode value of their characters. Since 'a' comes before 'b' in the alphabet, \"apple\" is considered lexicographically \"less than\" \"banana\", so the method returns a negative integer."
+  },
+  {
+    "question": "Which of these is the correct way to declare an array of `String` objects?",
+    "options": [
+      "string[] names;",
+      "String names[];",
+      "String names = new String;",
+      "Array<String> names;"
+    ],
+    "answer": "String names[];",
+    "hint": "The square brackets indicate an array type.",
+    "explanation": "Both `String[] names;` and `String names[];` are valid syntaxes in Java for declaring a variable that can hold a reference to an array of `String` objects. `string` with a lowercase 's' is incorrect."
+  },
+  {
+    "question": "What is the correct way to create a `Pattern` object in Java?",
+    "options": [
+      "new Pattern(\"\\d+\");",
+      "Pattern.create(\"\\d+\");",
+      "Pattern.compile(\"\\d+\");",
+      "Pattern p = \"\\d+\";"
+    ],
+    "answer": "Pattern.compile(\"\\d+\");",
+    "hint": "The `Pattern` class does not have a public constructor; it uses a static factory method.",
+    "explanation": "To create a `Pattern` object, you must use the static method `Pattern.compile(String regex)`. This method compiles the given regular expression into a pattern that can be used by a `Matcher`."
+  },
+  {
+    "question": "What is a key difference between a primitive data type and a reference data type?",
+    "options": [
+      "Primitives are faster.",
+      "Primitives store the actual value, while reference types store the memory address of an object.",
+      "Primitives can have methods, while reference types cannot.",
+      "Primitives are stored on the Heap, while reference types are stored on the Stack."
+    ],
+    "answer": "Primitives store the actual value, while reference types store the memory address of an object.",
+    "hint": "Think about what the variable itself holds.",
+    "explanation": "A variable of a primitive type (like `int`) directly contains the value (e.g., the number 42). A variable of a reference type (like `String` or any other object) holds a reference (a memory address) that points to the location of the actual object in the Heap."
+  },
+  {
+    "question": "You have an `ArrayList<Integer>`. Which line of code correctly adds the number 10 to it, demonstrating autoboxing?",
+    "options": [
+      "list.add(new Integer(10));",
+      "list.add(10);",
+      "list.add(Integer.valueOf(10));",
+      "list.add((Integer)10);"
+    ],
+    "answer": "list.add(10);",
+    "hint": "Autoboxing makes the code simpler by handling the object creation for you.",
+    "explanation": "Because of autoboxing, you can provide the primitive `int` value `10` directly to the `add` method. The Java compiler automatically converts it into an `Integer` object (`new Integer(10)`) behind the scenes."
+  },
+  {
+    "question": "What is the result of `\"test\".equals(\"Test\")`?",
+    "options": [
+      "true",
+      "false",
+      "0",
+      "Compilation Error"
+    ],
+    "answer": "false",
+    "hint": "The `equals` method is case-sensitive.",
+    "explanation": "The `equals` method performs a case-sensitive comparison. Since 't' and 'T' are different characters, the strings are not considered equal, and the method returns `false`."
+  },
+  {
+    "question": "A `Date` object is created as `new Date(1000L)`. What date and time does this represent?",
+    "options": [
+      "One second after midnight, January 1st, 1970 GMT.",
+      "One millisecond after midnight, January 1st, 1970 GMT.",
+      "1000 AD, January 1st.",
+      "It is an invalid date."
+    ],
+    "answer": "One second after midnight, January 1st, 1970 GMT.",
+    "hint": "The constructor argument is in milliseconds.",
+    "explanation": "The `Date` constructor takes a `long` representing the number of milliseconds since the epoch (Jan 1, 1970, 00:00:00 GMT). Since there are 1000 milliseconds in a second, `1000L` represents one second past the epoch."
+  },
+  {
+    "question": "The regular expression `[7-9]\\d{9}` is designed to validate a 10-digit phone number. What is the specific constraint it enforces?",
+    "options": [
+      "The phone number must contain the digits 7, 8, and 9.",
+      "The phone number must start with a 7, 8, or 9, followed by exactly nine more digits.",
+      "The phone number must end with a 7, 8, or 9.",
+      "The phone number can only be made up of the digits 7, 8, and 9."
+    ],
+    "answer": "The phone number must start with a 7, 8, or 9, followed by exactly nine more digits.",
+    "hint": "Break down the pattern: `[7-9]` is the first character, and `\\d{9}` is the rest.",
+    "explanation": "The character class `[7-9]` matches a single digit that is either 7, 8, or 9. `\\d{9}` matches exactly nine of any digit (`[0-9]`). Together, they validate a 10-digit number that must begin with one of the specified starting digits."
+  }
 ]
