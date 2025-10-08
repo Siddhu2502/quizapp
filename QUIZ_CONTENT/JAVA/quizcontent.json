@@ -1275,5 +1275,605 @@
     "answer": "stressed",
     "hint": "The `reverse()` method modifies the StringBuilder in place.",
     "explanation": "The `reverse()` method of the `StringBuilder` class reverses the sequence of characters. Reversing \"desserts\" results in \"stressed\"."
+  },
+  {
+    "question": "According to the lecture, what is the primary reason wrapper classes are needed in Java?",
+    "options": [
+      "Because primitive types are slow and inefficient.",
+      "To perform complex mathematical calculations.",
+      "Because features like Java Collections can only operate on objects, not primitives.",
+      "To secure primitive data types from unauthorized access."
+    ],
+    "answer": "Because features like Java Collections can only operate on objects, not primitives.",
+    "hint": "The transcript mentions a specific area in Java where objects are required.",
+    "explanation": "The transcript explicitly states, '...there are certain Concepts like collection in Java which operates on objects when Primitives are to be used in those areas use Rapid class.' This is the main motivation for their existence."
+  },
+  {
+    "question": "What happens if you try to instantiate a wrapper class like `Integer` by passing a badly formatted string, such as `new Integer(\"abc\")`?",
+    "options": [
+      "It returns null.",
+      "It throws a NumberFormatException.",
+      "It throws a ClassCastException.",
+      "The program compiles, but the value is 0."
+    ],
+    "answer": "It throws a NumberFormatException.",
+    "hint": "The transcript mentions a specific exception for this scenario.",
+    "explanation": "As stated in the transcript, 'if the string passed is not in the right format, it will end up in a number format exception.'"
+  },
+  {
+    "question": "Besides using a constructor, what static method is available in all wrapper classes to create an instance from a primitive or a String?",
+    "options": [
+      "getInstance()",
+      "create()",
+      "valueOf()",
+      "newInstance()"
+    ],
+    "answer": "valueOf()",
+    "hint": "This method is mentioned as an alternative to constructors for creating wrapper objects.",
+    "explanation": "The transcript says, 'there is a static method value of in all wrapper classes, which takes either primitive or a string as parameter. We can use this method to create a wrapper class object.'"
+  },
+  {
+    "question": "The process of converting a wrapper object back to a primitive data type using a method like `.intValue()` is known as what?",
+    "options": [
+      "Wrapping",
+      "Boxing",
+      "Unwrapping",
+      "Parsing"
+    ],
+    "answer": "Unwrapping",
+    "hint": "This is the reverse process of converting a primitive to an object.",
+    "explanation": "The transcript defines this process clearly: 'Unwrapping is converting wrapper to primitive... value in wrapper class can be unwrapped and stored in primitive using the method triple x value.'"
+  },
+  {
+    "question": "Which static method is used to convert a String representation of a number into a primitive integer?",
+    "options": [
+      "Integer.getInt()",
+      "Integer.parseInt()",
+      "Integer.valueOf()",
+      "Integer.convert()"
+    ],
+    "answer": "Integer.parseInt()",
+    "hint": "The transcript shows this method being used to handle command line arguments.",
+    "explanation": "The transcript states, 'a string can be converted to primitive using static method pass triple X... the pass in method in integer class converts the string to indata type.' This refers to the `parseInt` method."
+  },
+  {
+    "question": "What is the term for the feature introduced in Java 5 that allows a primitive value to be directly assigned to a wrapper class reference, like `Integer i = 10;`?",
+    "options": [
+      "Autocasting",
+      "Unboxing",
+      "Autoboxing",
+      "Wrapping"
+    ],
+    "answer": "Autoboxing",
+    "hint": "The transcript contrasts this new way with the pre-Java 5 method.",
+    "explanation": "The transcript defines this concept: 'In autoboxing a primitive data type can be directly assigned to a wrapper class reference. It gets automatically wrapped into an object... Example integer and object equals 10.'"
+  },
+  {
+    "question": "How are arguments passed from the command line to a Java application's `main` method?",
+    "options": [
+      "As an array of integers",
+      "As a List of Objects",
+      "As an array of Strings",
+      "As a single concatenated String"
+    ],
+    "answer": "As an array of Strings",
+    "hint": "Consider the signature of the `main` method.",
+    "explanation": "The transcript explains, 'These arguments will be passed to the main method as string array and processed.' This is why `main` has the `String[] args` parameter."
+  },
+  {
+    "question": "In Java, what is the primary mechanism for achieving modularity?",
+    "options": [
+      "Classes",
+      "Methods",
+      "Packages",
+      "Interfaces"
+    ],
+    "answer": "Packages",
+    "hint": "The transcript introduces this concept as a way to organize code into smaller units.",
+    "explanation": "The transcript begins the packages session by stating, 'Modularity is one of the main object oriented principles... in Java modularity is achieved through packages.'"
+  },
+  {
+    "question": "According to Java design guidelines mentioned in the transcript, what is the naming convention for package names?",
+    "options": [
+      "camelCase",
+      "PascalCase",
+      "UPPERCASE",
+      "lowercase"
+    ],
+    "answer": "lowercase",
+    "hint": "This convention helps distinguish package names from class names.",
+    "explanation": "One of the design guidelines listed in the transcript is, 'package names should be in lowercase.'"
+  },
+  {
+    "question": "What is the command line option used with `javac` to specify where to create the package directory structure?",
+    "options": [
+      "-p",
+      "-d",
+      "-classpath",
+      "-dir"
+    ],
+    "answer": "-d",
+    "hint": "This option is followed by a path, like '.' for the current directory.",
+    "explanation": "The transcript details the compilation command: 'Java c space hyphen d space path for the package... Hyphen, D is used to inform the compiler to create a package structure.'"
+  },
+  {
+    "question": "When executing a class that is inside a package, how must you specify the class name to the `java` command?",
+    "options": [
+      "Just the class name",
+      "The path to the .class file",
+      "The fully qualified class name (packageName.ClassName)",
+      "The class name in all caps"
+    ],
+    "answer": "The fully qualified class name (packageName.ClassName)",
+    "hint": "The JVM needs to know which package to look in.",
+    "explanation": "The transcript states, 'to execute a file. We have to use the fully qualified name of a class... It should be as packaged name.class name.'"
+  },
+  {
+    "question": "What does the `*` (star) wildcard character signify in an import statement like `import java.util.*;`?",
+    "options": [
+      "It imports all classes and all sub-packages within the package.",
+      "It imports only the most important class from the package.",
+      "It imports all the classes in that specific package level, but not sub-packages.",
+      "It is a syntax error."
+    ],
+    "answer": "It imports all the classes in that specific package level, but not sub-packages.",
+    "hint": "The star acts as a wildcard for class names.",
+    "explanation": "The transcript clarifies, 'here star is a wildcard character that Imports all the classes in that package... that replaces all classes in that level.'"
+  },
+  {
+    "question": "What is the purpose of the `classpath` environment variable?",
+    "options": [
+      "To specify the version of the Java compiler.",
+      "To list directories where the compiler and JVM should look for .class files.",
+      "To set the memory limit for the Java application.",
+      "To define the main class for an executable JAR file."
+    ],
+    "answer": "To list directories where the compiler and JVM should look for .class files.",
+    "hint": "It tells Java where to find the necessary compiled code.",
+    "explanation": "The transcript defines it as: 'class path is an environmental variable that contains the list of directories or the jar files location compiler searches these directories to look for the needed dot class files.'"
+  },
+  {
+    "question": "What is the primary benefit of using a static import, such as `import static java.lang.Math.PI;`?",
+    "options": [
+      "It makes the program run faster.",
+      "It allows you to refer to static members without using the class name.",
+      "It automatically creates an instance of the Math class.",
+      "It imports non-static members of the class as well."
+    ],
+    "answer": "It allows you to refer to static members without using the class name.",
+    "hint": "Think about how you would normally access `PI`.",
+    "explanation": "As explained in the transcript, 'when using static import static attributes and methods can be referred without using the class name... we don't need to same at dot Pi instead. It's enough if we write just Pi.'"
+  },
+  {
+    "question": "According to the transcript, which fundamental Java package is implicitly imported into every Java program?",
+    "options": [
+      "java.util",
+      "java.io",
+      "java.lang",
+      "java.sql"
+    ],
+    "answer": "java.lang",
+    "hint": "This package contains fundamental classes like `Object` and `String`.",
+    "explanation": "The transcript mentions, 'Java.language package has classes and interfaces related to the fundamental design of java programs. This package is implicitly imported in any program.'"
+  },
+  {
+    "question": "In the context of object-oriented programming, how does the transcript define a class?",
+    "options": [
+      "A real-world entity that occupies memory.",
+      "A tangible, physical object.",
+      "A template or blueprint for a collection of objects.",
+      "A running instance of a program."
+    ],
+    "answer": "A template or blueprint for a collection of objects.",
+    "hint": "A class itself is not the real entity.",
+    "explanation": "The transcript states, 'class is a template or blueprint for a collection of objects that share a common set of attributes and behavior.'"
+  },
+  {
+    "question": "What are the three properties every object in a domain will hold, as mentioned in the transcript?",
+    "options": [
+      "Name, Size, and Color",
+      "State, Behavior, and Identity",
+      "Public, Private, and Protected",
+      "Constructor, Method, and Field"
+    ],
+    "answer": "State, Behavior, and Identity",
+    "hint": "These properties define what an object is and what it can do.",
+    "explanation": "The transcript lists these three properties: 'The objects in any domain will hold three properties State behavior and identity.'"
+  },
+  {
+    "question": "What is the rule regarding public classes within a single `.java` source file?",
+    "options": [
+      "A .java file can have multiple public classes.",
+      "A .java file must have at least two public classes.",
+      "A .java file can have at most one public class.",
+      "A .java file cannot contain any public classes."
+    ],
+    "answer": "A .java file can have at most one public class.",
+    "hint": "This rule relates to how the file must be named.",
+    "explanation": "The transcript specifies this rule: 'Kindly note that a DOT. Java file can have many classes but only one class can be declared as public.'"
+  },
+  {
+    "question": "Variables defined within a class but outside of any method are known as what?",
+    "options": [
+      "Local variables",
+      "Static variables",
+      "Instance variables",
+      "Global variables"
+    ],
+    "answer": "Instance variables",
+    "hint": "The transcript says every instance of the class gets a copy of these.",
+    "explanation": "The transcript explains, 'We know that an object is an instance of a class, hence. We call the attributes as instance variables.'"
+  },
+  {
+    "question": "In Java, where is an object's reference variable stored, and where is the actual object's data stored?",
+    "options": [
+      "Reference in Heap, Object in Stack",
+      "Reference in Stack, Object in Heap",
+      "Both are stored in the Heap",
+      "Both are stored in the Stack"
+    ],
+    "answer": "Reference in Stack, Object in Heap",
+    "hint": "The heap is for dynamically created objects, while the stack is for method calls and local variables.",
+    "explanation": "The transcript clarifies this: 'objects are created during runtime. So they will be stored in the Heap... This reference variable is stored in stack.'"
+  },
+  {
+    "question": "What is the term for the object-oriented principle of wrapping up data and the methods that operate on that data into a single unit (a class)?",
+    "options": [
+      "Inheritance",
+      "Polymorphism",
+      "Abstraction",
+      "Encapsulation"
+    ],
+    "answer": "Encapsulation",
+    "hint": "This principle is closely related to information hiding.",
+    "explanation": "The transcript defines this concept: 'wrapping up of data and methods that operate on that data into a single unit class leads to encapsulation.'"
+  },
+  {
+    "question": "Public methods that allow reading the value of a private attribute are called Getters. What is another name for them mentioned in the transcript?",
+    "options": [
+      "Mutators",
+      "Constructors",
+      "Accessors",
+      "Initializers"
+    ],
+    "answer": "Accessors",
+    "hint": "These methods 'access' the data.",
+    "explanation": "The transcript states, 'These methods are called accesses or Getters and mutators or setters.'"
+  },
+  {
+    "question": "What is the naming convention for class names in Java, according to the transcript?",
+    "options": [
+      "They should start with a lowercase letter (camelCase).",
+      "They should be all uppercase.",
+      "They should start with an uppercase letter (PascalCase).",
+      "They can start with a number."
+    ],
+    "answer": "They should start with an uppercase letter (PascalCase).",
+    "hint": "This helps distinguish them from variable and method names.",
+    "explanation": "The transcript's naming convention table states: 'class name should start with uppercase letter.'"
+  },
+  {
+    "question": "What is the purpose of the `Date` class constructor that takes a `long` as an argument, like `new Date(milliseconds)`?",
+    "options": [
+      "To create a date for a specific year.",
+      "To create a date object for the given milliseconds from January 1st, 1970.",
+      "To create a date with a specific time zone offset in milliseconds.",
+      "To set the current time with millisecond precision."
+    ],
+    "answer": "To create a date object for the given milliseconds from January 1st, 1970.",
+    "hint": "This `long` value represents a specific point in time.",
+    "explanation": "The transcript describes this constructor: 'new date long milliseconds creates a date object for the given milliseconds from January 1st, 1970 here.'"
+  },
+  {
+    "question": "The transcript mentions that many methods in the `Date` class are deprecated. What API is recommended as an alternative for date manipulation?",
+    "options": [
+      "String API",
+      "Math API",
+      "Calendar API",
+      "System API"
+    ],
+    "answer": "Calendar API",
+    "hint": "This class provides methods for adding/subtracting days, months, etc.",
+    "explanation": "The transcript advises: 'avoid using deprecated methods alternate methods are provided in calendar API.'"
+  },
+  {
+    "question": "In the context of Java's date handling, what is 'parsing'?",
+    "options": [
+      "Converting a Date object to a formatted String.",
+      "Converting a String in a specific format to a Date object.",
+      "Calculating the difference between two dates.",
+      "Extracting the year from a Date object."
+    ],
+    "answer": "Converting a String in a specific format to a Date object.",
+    "hint": "This is the reverse of formatting.",
+    "explanation": "The transcript defines this term: 'users provide the date in DD / m dot m / a format, which is not understood by Java converting a string to date we call as parsing.'"
+  },
+  {
+    "question": "Which class is used to format and parse dates in a customizable pattern like 'dd/MM/yyyy'?",
+    "options": [
+      "DateFormat",
+      "DateFormatter",
+      "SimpleDateFormat",
+      "CalendarFormat"
+    ],
+    "answer": "SimpleDateFormat",
+    "hint": "This class takes a pattern string in its constructor.",
+    "explanation": "The transcript introduces this class for custom patterns: 'Using SimpleDateFormat we can format and Parse date the format of the date can be of any format like DD / mm /yyyy...'"
+  },
+  {
+    "question": "When using the `parse` method of `SimpleDateFormat` to convert a String to a Date, what checked exception must be handled?",
+    "options": [
+      "NumberFormatException",
+      "IOException",
+      "ParseException",
+      "IllegalArgumentException"
+    ],
+    "answer": "ParseException",
+    "hint": "This exception is thrown if the String does not match the expected pattern.",
+    "explanation": "The transcript explicitly warns about this: 'So when using the parse method parse exception is to be handled.'"
+  },
+  {
+    "question": "If you need to perform operations like adding 5 days to a date or subtracting 2 years, which class is most suitable for the task?",
+    "options": [
+      "Date",
+      "SimpleDateFormat",
+      "System",
+      "Calendar"
+    ],
+    "answer": "Calendar",
+    "hint": "This class is designed for date arithmetic.",
+    "explanation": "The transcript recommends this class for manipulation: 'When we want to do any processing on a date like adding few days to it or subtracting some years from it. These can be easily done using the calendar class.'"
+  },
+  {
+    "question": "What happens in the process of 'unboxing'?",
+    "options": [
+      "A wrapper class reference is assigned a primitive value, which is automatically wrapped.",
+      "A wrapper class reference is assigned to a primitive variable, and the value is automatically extracted.",
+      "A String is converted to a primitive type.",
+      "A primitive type is converted to a String."
+    ],
+    "answer": "A wrapper class reference is assigned to a primitive variable, and the value is automatically extracted.",
+    "hint": "This is the reverse of autoboxing.",
+    "explanation": "The transcript defines unboxing: 'a wrapper class reference can be assigned directly to A Primitive in which case it gets unwrapped from the object and assigned to the Primitive example in y equals in object.'"
+  },
+  {
+    "question": "What is the return type of the `.compareTo()` method in the `Date` class?",
+    "options": [
+      "boolean",
+      "int",
+      "long",
+      "Date"
+    ],
+    "answer": "int",
+    "hint": "Comparison methods often return a negative, zero, or positive integer.",
+    "explanation": "The `compareTo` method returns an integer. It returns 0 if the dates are equal, a value less than 0 if the calling date is before the argument date, and a value greater than 0 if it's after."
+  },
+  {
+    "question": "Which access specifier restricts access to members only within the same class they are declared in?",
+    "options": [
+      "public",
+      "protected",
+      "default",
+      "private"
+    ],
+    "answer": "private",
+    "hint": "This is the most restrictive access level.",
+    "explanation": "The transcript states: 'Private methods and Fields can be accessed only within the same class to which they belong.'"
+  },
+  {
+    "question": "If no access specifier is written for a class member, what is its access level?",
+    "options": [
+      "public",
+      "private",
+      "protected",
+      "default"
+    ],
+    "answer": "default",
+    "hint": "This is also called package-level access.",
+    "explanation": "The transcript explains: 'If we don't specify any modifier, it means default... we can access them only within the same package.'"
+  },
+  {
+    "question": "The methods `before()` and `after()` in the `Date` class are used for comparison. What do they return?",
+    "options": [
+      "An integer indicating the difference",
+      "A boolean value (true or false)",
+      "A new Date object",
+      "A long value representing milliseconds"
+    ],
+    "answer": "A boolean value (true or false)",
+    "hint": "These methods answer a 'yes' or 'no' question about the relationship between two dates.",
+    "explanation": "The `before(Date when)` and `after(Date when)` methods return `true` or `false` depending on whether the date object invoking the method is chronologically before or after the date passed as an argument."
+  },
+  {
+    "question": "Which of these is NOT a primitive data type in Java?",
+    "options": [
+      "long",
+      "char",
+      "double",
+      "string"
+    ],
+    "answer": "string",
+    "hint": "Java is case-sensitive. One of these is a class, not a primitive.",
+    "explanation": "Java has 8 primitive types, including `long`, `char`, and `double`. `String` (with a capital S) is a class. Lowercase `string` is not a data type in Java."
+  },
+  {
+    "question": "What is the purpose of a 'Setter' method (also called a mutator)?",
+    "options": [
+      "To retrieve the value of a private attribute.",
+      "To create a new object of the class.",
+      "To change the state of an object by updating a private attribute's value.",
+      "To delete an object from memory."
+    ],
+    "answer": "To change the state of an object by updating a private attribute's value.",
+    "hint": "They often include validation logic before 'setting' a value.",
+    "explanation": "The transcript defines Setters or mutators as methods that 'change the state of the object', for example, `setSalary` which takes a parameter and updates the instance variable."
+  },
+  {
+    "question": "When creating a `SimpleDateFormat` object, what do you pass to its constructor?",
+    "options": [
+      "A Date object",
+      "A Calendar object",
+      "A String representing the desired date/time pattern",
+      "A Locale object"
+    ],
+    "answer": "A String representing the desired date/time pattern",
+    "hint": "This is how you define the format, e.g., 'yyyy-MM-dd'.",
+    "explanation": "The transcript shows the syntax: 'create an object for simple date format as SimpleDateFormat, stf = new SimpleDateFormat pattern. This pattern is a string representing the pattern required.'"
+  },
+  {
+    "question": "What is the correct syntax to create an object of a class named `Calculator`?",
+    "options": [
+      "Calculator calc = Calculator();",
+      "Calculator calc = new Calculator;",
+      "Calculator calc = new Calculator();",
+      "new Calculator() = calc;"
+    ],
+    "answer": "Calculator calc = new Calculator();",
+    "hint": "The `new` keyword is essential, and the constructor call needs parentheses.",
+    "explanation": "Object creation in Java requires the `new` keyword followed by a call to the class's constructor, which looks like a method call with parentheses."
+  },
+  {
+    "question": "If a method does not return any value, what should its return type be declared as?",
+    "options": [
+      "null",
+      "none",
+      "void",
+      "int"
+    ],
+    "answer": "void",
+    "hint": "This keyword explicitly states that no value is returned.",
+    "explanation": "The transcript states, 'If the method does not return anything then it should be mentioned as void.'"
+  },
+  {
+    "question": "In the command `javac -d . Calculator.java`, what does the `.` (dot) signify?",
+    "options": [
+      "To compile all files in the directory.",
+      "To create the package structure in the parent directory.",
+      "To create the package structure in the current directory.",
+      "To separate the command from the filename."
+    ],
+    "answer": "To create the package structure in the current directory.",
+    "hint": "The `-d` option needs a path to tell it where to place the packages.",
+    "explanation": "The transcript explains: 'For example dot specifies the current directory. So to create a package in the current directory the syntax of the command would be...'."
+  },
+  {
+    "question": "Which of these is NOT a valid way to use an `import` statement to make a class from another package available?",
+    "options": [
+      "Importing a specific class: `import com.info.mymath.Calculator;`",
+      "Importing all classes in a package: `import com.info.mymath.*;`",
+      "Using the fully qualified class name directly in the code.",
+      "Importing a specific method: `import com.info.mymath.Calculator.add;`"
+    ],
+    "answer": "Importing a specific method: `import com.info.mymath.Calculator.add;`",
+    "hint": "The standard `import` works on classes, not individual methods.",
+    "explanation": "Standard `import` statements are for importing classes or entire packages of classes. A `static import` is required to import individual static members, but a regular `import` cannot be used for methods."
+  },
+  {
+    "question": "Which `Character` wrapper class method can be used to convert a `String` to a `char`?",
+    "options": [
+      "Character.parseChar()",
+      "The `charAt()` method of the String class",
+      "Character.valueOf()",
+      "The Character class cannot be used for this conversion."
+    ],
+    "answer": "The `charAt()` method of the String class",
+    "hint": "The transcript mentions this is an exception to the `parseXXX` pattern.",
+    "explanation": "The transcript notes: 'This can be done for all data types except character. To convert a string to character use the character at method in string class...'"
+  },
+  {
+    "question": "Why is it a good practice to declare class attributes as `private`?",
+    "options": [
+      "To make the program run faster.",
+      "To prevent other classes from directly accessing and potentially setting invalid values.",
+      "To save memory.",
+      "Because public variables are not allowed in Java."
+    ],
+    "answer": "To prevent other classes from directly accessing and potentially setting invalid values.",
+    "hint": "The transcript uses the example of setting a salary to a negative number.",
+    "explanation": "By making attributes private and providing public setters, you can control how the data is modified. The setter method can contain validation logic (e.g., ensuring salary is not negative) to maintain the object's integrity, which is a key part of encapsulation."
+  },
+  {
+    "question": "A method that only reads an object's state but does not change it is a...",
+    "options": [
+      "Setter / Mutator",
+      "Getter / Accessor",
+      "Constructor",
+      "Business Method"
+    ],
+    "answer": "Getter / Accessor",
+    "hint": "This type of method provides read-only access to a private field.",
+    "explanation": "The transcript states: 'Using accessor we cannot change an object State we can only access the value of the private attribute.'"
+  },
+  {
+    "question": "The method `System.currentTimeMillis()` returns the number of milliseconds since when?",
+    "options": [
+      "The program started.",
+      "The computer was last rebooted.",
+      "January 1st, 1970 (the Unix epoch).",
+      "The beginning of the current year."
+    ],
+    "answer": "January 1st, 1970 (the Unix epoch).",
+    "hint": "This is a standard reference point in time for many computer systems.",
+    "explanation": "The transcript mentions this in the context of the `Date(long)` constructor, explaining that the `long` represents milliseconds from 'January 1st, 1970'."
+  },
+  {
+    "question": "What is the conventional way to name a multi-word method or variable in Java?",
+    "options": [
+      "Using underscores: `calculate_gross_pay`",
+      "Using PascalCase: `CalculateGrossPay`",
+      "Using camelCase: `calculateGrossPay`",
+      "Using all lowercase: `calculategrosspay`"
+    ],
+    "answer": "Using camelCase: `calculateGrossPay`",
+    "hint": "The first word is lowercase, and subsequent words start with an uppercase letter.",
+    "explanation": "The transcript explains the 'Kim K's notation' (camelCase) for multi-word names: 'except. The first word. The following words first letter should be in capital letter.'"
+  },
+  {
+    "question": "In the statement `Employee emp = new Employee()`, `emp` is called a...",
+    "options": [
+      "Class",
+      "Keyword",
+      "Primitive variable",
+      "Reference variable"
+    ],
+    "answer": "Reference variable",
+    "hint": "It doesn't hold the object itself, but rather its location in memory.",
+    "explanation": "The transcript explains this term: 'We call this as reference variable because it holds the address of the object created in Heap.'"
+  },
+  {
+    "question": "The `DateFormat` class's `getDateInstance()` method can take a style parameter. Which of the following is NOT a valid style?",
+    "options": [
+      "SHORT",
+      "MEDIUM",
+      "LONG",
+      "SIMPLE"
+    ],
+    "answer": "SIMPLE",
+    "hint": "The transcript lists four valid styles, including 'FULL'.",
+    "explanation": "The transcript lists the valid styles as 'short ,medium , long or full'. `SIMPLE` is not one of the predefined styles for `DateFormat`."
+  },
+  {
+    "question": "What is a major advantage of using packages in a large project with many developers?",
+    "options": [
+      "It automatically formats the code.",
+      "It makes the final program smaller.",
+      "It prevents name collisions between classes created by different people.",
+      "It improves the performance of the garbage collector."
+    ],
+    "answer": "It prevents name collisions between classes created by different people.",
+    "hint": "The transcript uses the example of two different `Date` classes.",
+    "explanation": "The transcript highlights this benefit: 'there can be two classes with different functionality, but with the same name... If we don't have different packages, this will lead to name Collision.'"
+  },
+  {
+    "question": "To use a class from another package without an import statement, you must...",
+    "options": [
+      "Declare the class as `static`.",
+      "Use the fully qualified class name every time you refer to it.",
+      "Place both classes in the same directory.",
+      "This is not possible."
+    ],
+    "answer": "Use the fully qualified class name every time you refer to it.",
+    "hint": "This is the third way of making a class available, as mentioned in the transcript.",
+    "explanation": "The transcript explains this alternative: 'In this case, we don't use import statement instead. We have to use the fully qualified class name wherever necessary to make the class available.'"
   }
 ]
