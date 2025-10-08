@@ -1,1539 +1,1785 @@
 WEBVTT
 
 1
-00:00:01.000 --> 00:00:03.000
-Hi, welcome to the session on
+00:00:01.130 --> 00:00:03.460
+Welcome to the session on continuous
 
 2
-00:00:03.000 --> 00:00:04.866
-design thinking.
+00:00:03.470 --> 00:00:05.840
+integration and continuous delivery.
 
 3
-00:00:06.700 --> 00:00:07.533
-In this module,
+00:00:07.180 --> 00:00:10.110
+Module objective. After completing this
 
 4
-00:00:07.533 --> 00:00:11.100
-you will gain an insight
-into the various stages of design
+00:00:10.120 --> 00:00:12.970
+module you will be able to understand
 
 5
-00:00:11.100 --> 00:00:16.300
-thinking, lifecycle of design thinking
-tools used in various stages of design
+00:00:12.980 --> 00:00:15.670
+CI/CD Tools, CI/CD as a
 
 6
-00:00:16.300 --> 00:00:22.100
-thinking, detailed learning on stage
-one, empathize research your users needs.
+00:00:15.680 --> 00:00:18.660
+Service. Let us discuss on
 
 7
-00:00:22.266 --> 00:00:26.233
-Stage two, Define
-still a user's needs and problems.
+00:00:18.670 --> 00:00:20.120
+CI/CD tools.
 
 8
-00:00:26.400 --> 00:00:30.666
-Stage three, Ideate challenge assumptions
-and create ideas.
+00:00:23.750 --> 00:00:25.979
+Bamboo is a continuous integration
 
 9
-00:00:31.066 --> 00:00:34.600
-Stage
-four, Prototype start to create solutions.
+00:00:26.029 --> 00:00:28.779
+CI server that can be used to automate
 
 10
-00:00:35.000 --> 00:00:38.200
-Stage five, Test Try your solutions out.
+00:00:28.789 --> 00:00:30.749
+the release management for a software
 
 11
-00:00:39.166 --> 00:00:41.833
-Let us now understand
-what is design thinking,
+00:00:30.759 --> 00:00:32.799
+application, creating a continuous
 
 12
-00:00:42.166 --> 00:00:45.900
-an iterative process that helps understand
-the user requirements
+00:00:32.809 --> 00:00:35.519
+delivery pipeline. It was developed by
 
 13
-00:00:45.900 --> 00:00:48.900
-and identifies
-various angles to solve the problem.
+00:00:35.529 --> 00:00:38.379
+Atlassian. Bamboo ties automated
 
 14
-00:00:49.466 --> 00:00:51.833
-Once various alternatives as analyzed,
+00:00:38.389 --> 00:00:41.279
+builds, tests and releases together in a
 
 15
-00:00:51.833 --> 00:00:55.033
-the best strategic solution is identified
-and applied.
+00:00:41.289 --> 00:00:43.659
+single workflow by integrating with other
 
 16
-00:00:55.666 --> 00:00:59.033
-This approach to fully analyze
-the given problem and bring about
+00:00:43.669 --> 00:00:45.799
+Atlassian products such as Jira,
 
 17
-00:00:59.033 --> 00:01:03.500
-a solution based approach to solving
-problems is the aspect of design thinking.
+00:00:45.849 --> 00:00:48.709
+Bitbucket and so on. People who
 
 18
-00:01:04.766 --> 00:01:07.000
-Let us now understand the various steps
+00:00:48.719 --> 00:00:51.039
+want to utilize the branches safely done
 
 19
-00:01:07.000 --> 00:01:10.366
-that is done in design
-thinking to reach the optimal solution.
+00:00:51.049 --> 00:00:53.669
+by CI server itself want easier
 
 20
-00:01:10.966 --> 00:01:14.900
-The key steps include process is iterative
-and expansive,
+00:00:53.679 --> 00:00:56.169
+deployment capability and are willing to
 
 21
-00:01:15.066 --> 00:01:16.733
-focusing on the stated problem
+00:00:56.179 --> 00:00:58.229
+use simple new. I should give it a try.
 
 22
-00:01:16.733 --> 00:01:18.166
-than to arrive at a solution
+00:00:58.779 --> 00:01:01.099
+With the Bamboo server you get end to end
 
 23
-00:01:18.166 --> 00:01:22.266
-immediately, more time to be spent
-to understand the fundamental issue.
+00:01:01.109 --> 00:01:02.729
+visibility into the release,
 
 24
-00:01:22.300 --> 00:01:26.833
-A solution is arrived only after
-the root issue is identified and analyzed.
+00:01:02.799 --> 00:01:05.609
+implementation, quality and status with
 
 25
-00:01:26.966 --> 00:01:29.900
-A wide range of potential solutions
-is identified
+00:01:05.619 --> 00:01:07.869
+seamless integration of Jira and
 
 26
-00:01:29.900 --> 00:01:32.000
-before zeroing on the best solution.
+00:01:07.879 --> 00:01:10.649
+Bitbucket servers. It also comes with
 
 27
-00:01:32.133 --> 00:01:36.100
-After identifying the solution,
-the final proposal is put forward.
+00:01:10.659 --> 00:01:12.619
+features such as built-in deployment
 
 28
-00:01:37.166 --> 00:01:40.600
-The life cycle of design
-thinking can be broadly classified
+00:01:12.629 --> 00:01:15.109
+support, automated merging and git
 
 29
-00:01:40.600 --> 00:01:46.033
-into three categories as understand,
-explore, materialize where understand stage
+00:01:15.119 --> 00:01:17.708
+branching. Bamboo is available for
 
 30
-00:01:46.033 --> 00:01:51.533
-has empathize and define some stages.
-Explore has ideas and prototypes, upstages.
+00:01:17.718 --> 00:01:20.238
+platforms. Such as Windows, Mac OS
 
 31
-00:01:51.633 --> 00:01:54.633
-Materialize has test and implement
-some stages.
+00:01:20.248 --> 00:01:23.238
+and Linux. For heavy usage,
 
 32
-00:01:55.566 --> 00:01:57.700
-The five stages of design thinking.
+00:01:23.248 --> 00:01:25.258
+you can take advantage of remote build
 
 33
-00:01:57.866 --> 00:01:58.800
-Stage one.
+00:01:25.268 --> 00:01:27.678
+agents, including Elastic build agents
 
 34
-00:01:58.800 --> 00:02:01.533
-Empathize, research your users needs.
+00:01:27.688 --> 00:01:29.218
+like Amazon EC2.
 
 35
-00:02:01.733 --> 00:02:05.766
-Stage two Define, state to a user's
-needs and problems.
+00:01:30.378 --> 00:01:33.108
+Bamboo provides automatic deployment to a
 
 36
-00:02:06.200 --> 00:02:10.433
-Stage three Ideate,
-challenge assumptions and create ideas.
+00:01:33.118 --> 00:01:35.728
+server such as the App Store or Google
 
 37
-00:02:10.800 --> 00:02:14.366
-Stage
-four Prototype, start to create solutions.
+00:01:35.738 --> 00:01:38.688
+Play. It provides an automated and
 
 38
-00:02:14.733 --> 00:02:17.966
-Stage five Test. Try your solutions out.
+00:01:38.698 --> 00:01:41.458
+reliable build/test process leaving
 
 39
-00:02:19.233 --> 00:02:20.033
-Let's briefly
+00:01:41.468 --> 00:01:43.808
+you free to code more. You can deploy
 
 40
-00:02:20.033 --> 00:02:22.966
-understand the iterative design
-thinking solutions.
+00:01:43.818 --> 00:01:46.068
+continuously, for example to User
 
 41
-00:02:23.600 --> 00:02:26.866
-The explanation is referenced from
+00:01:46.078 --> 00:01:48.948
+Acceptance Testing. UAT. Bamboo
 
 42
-00:02:26.866 --> 00:02:30.433
-https://canvas.unl.edu/
+00:01:48.958 --> 00:01:51.428
+has a much user friendly approach with a
 
 43
-00:02:31.100 --> 00:02:35.000
-Stage one Empathize research
-your users needs here,
+00:01:51.438 --> 00:01:53.588
+need and intuitive user interface,
 
 44
-00:02:35.100 --> 00:02:38.000
-you should gain an empathetic
-understanding of the problem
+00:01:53.918 --> 00:01:56.768
+so every time a new task is added, it
 
 45
-00:02:38.000 --> 00:02:41.033
-you are trying to solve,
-typically through user research.
+00:01:56.778 --> 00:01:58.728
+provides proper guidance throughout the
 
 46
-00:02:41.366 --> 00:02:44.966
-Empathy is crucial
-to a human centered design process, such
+00:01:58.738 --> 00:02:01.198
+plans build and deployment states
 
 47
-00:02:44.966 --> 00:02:48.966
-as design thinking, because it allows you
-to set aside your own assumptions
+00:02:01.488 --> 00:02:04.238
+Bamboo supports built in Bitbucket Server
 
 48
-00:02:48.966 --> 00:02:52.633
-about the world and gain
-real insight into users and their needs.
+00:02:04.248 --> 00:02:06.857
+integration. It supports built-
 
 49
-00:02:53.300 --> 00:02:57.300
-Stage two define stating
-a user's needs and problems.
+00:02:06.867 --> 00:02:08.667
+in git branching workflows.
 
 50
-00:02:57.900 --> 00:03:02.266
-It's time to accumulate the information
-gathered during the empathize stage.
+00:02:10.037 --> 00:02:12.447
+The following are the features of Bamboo
 
 51
-00:03:02.866 --> 00:03:05.800
-You then analyze your observations
-and synthesize them
+00:02:12.657 --> 00:02:15.607
+documentation, Bamboo provides good
 
 52
-00:03:05.800 --> 00:03:09.166
-to define the core problems
-you and your team have identified.
+00:02:15.617 --> 00:02:17.987
+online documentation. platform
 
 53
-00:03:09.500 --> 00:03:12.233
-These definitions are called problem
-statements.
+00:02:17.997 --> 00:02:20.647
+dependency, Bamboo works on
 
 54
-00:03:12.566 --> 00:03:15.300
-You can create personas to help
-keep your efforts
+00:02:20.737 --> 00:02:23.107
+operating systems like Windows,
 
 55
-00:03:15.300 --> 00:03:17.966
-human centered
-before proceeding to ideation.
+00:02:23.177 --> 00:02:25.727
+Linux, Solaris. It works
 
 56
-00:03:18.600 --> 00:03:22.866
-Stage three Ideate challenge assumptions
-and create ideas.
+00:02:25.737 --> 00:02:27.887
+on browsers like Chrome,
 
 57
-00:03:23.466 --> 00:03:25.866
-Now you're ready to generate ideas.
+00:02:27.937 --> 00:02:30.427
+Firefox, Safari, Edge,
 
 58
-00:03:26.233 --> 00:03:29.666
-The solid background of knowledge
-from the first two phases means
+00:02:30.637 --> 00:02:33.527
+plugin support, Few plugins available
 
 59
-00:03:29.666 --> 00:03:31.966
-you can start to think outside the box.
+00:02:33.537 --> 00:02:35.867
+and supported. compatibility,
 
 60
-00:03:32.133 --> 00:03:35.766
-Look for alternative ways to view
-the problem and identify innovative
+00:02:36.157 --> 00:02:39.007
+Bamboo supports built in JIRA software
 
 61
-00:03:35.766 --> 00:03:38.433
-solutions to the problem statement
-you've created.
+00:02:39.017 --> 00:02:41.437
+integration. Built-in Git branching
 
 62
-00:03:38.833 --> 00:03:41.333
-Brainstorming is particularly useful here.
+00:02:41.447 --> 00:02:43.797
+workflows, Built-in Bitbucket Server
 
 63
-00:03:41.966 --> 00:03:45.500
-Stage
-four Prototype start to create solutions.
+00:02:43.807 --> 00:02:46.077
+integration and built-in deployment
 
 64
-00:03:46.133 --> 00:03:48.300
-This is an experimental phase.
+00:02:46.087 --> 00:02:48.617
+projects. It also supports REST
 
 65
-00:03:48.300 --> 00:03:52.633
-The aim is to identify the best
-possible solution for each problem found.
+00:02:48.627 --> 00:02:50.527
+API and test automation.
 
 66
-00:03:52.966 --> 00:03:57.566
-Your team should produce some inexpensive,
-scaled down versions of the product
+00:02:51.937 --> 00:02:54.207
+Bamboo is the central management server
 
 67
-00:03:57.733 --> 00:04:00.366
-or specific features
-found within the product.
+00:02:54.297 --> 00:02:56.976
+that schedules and coordinates all work.
 
 68
-00:04:00.566 --> 00:04:03.066
-To investigate the ideas you've generated.
+00:02:57.096 --> 00:03:00.026
+Bamboo itself has interfaces and plugins
 
 69
-00:04:03.433 --> 00:04:05.933
-This could involve simply paper
-prototyping.
+00:03:00.036 --> 00:03:02.846
+for lots of types of work. Bamboo first
 
 70
-00:04:06.533 --> 00:04:07.533
-Stage five.
+00:03:02.856 --> 00:03:04.856
+gets your source from a source
 
 71
-00:04:07.533 --> 00:04:09.733
-Test, try your solutions out.
+00:03:04.866 --> 00:03:07.706
+repository. Bamboo starts the build.
 
 72
-00:04:10.333 --> 00:04:13.100
-Evaluators rigorously test the prototypes.
+00:03:07.716 --> 00:03:09.986
+That can be done by calling something
 
 73
-00:04:13.466 --> 00:04:17.266
-Although this is the final phase, design
-thinking is iterative.
+00:03:10.076 --> 00:03:12.286
+like Ms. Build to build your Visual
 
 74
-00:04:17.866 --> 00:04:21.733
-Teams often use the results to redefine
-one or more for their problems,
+00:03:12.296 --> 00:03:14.686
+Studio solution or even to call your
 
 75
-00:04:22.100 --> 00:04:26.166
-so you can return to previous stages
-to make further iterations,
+00:03:14.696 --> 00:03:17.626
+compiler and linker. Whatever you use,
 
 76
-00:04:26.333 --> 00:04:30.966
-alterations and refinements
-to fine or rule out alternative solutions.
+00:03:17.736 --> 00:03:20.446
+once your solution or project is built,
 
 77
-00:04:32.300 --> 00:04:33.000
-Let us now
+00:03:20.516 --> 00:03:23.246
+you have artifacts. Like build results,
 
 78
-00:04:33.000 --> 00:04:38.266
-understand deeply about empathize,
-explanation referenced from
+00:03:23.316 --> 00:03:26.126
+config files, and so on. You can
 
 79
-00:04:38.266 --> 00:04:41.866
-https://canvas.unl.edu/
+00:03:26.136 --> 00:03:28.106
+do additional things with the build
 
 80
-00:04:42.466 --> 00:04:45.000
-While not a typical step in the career
-planning
+00:03:28.116 --> 00:03:30.726
+artifacts. Zip up into a zip
 
 81
-00:04:45.000 --> 00:04:47.866
-process, empathy is incredibly important.
+00:03:30.736 --> 00:03:33.626
+file and copy them somewhere. Run an
 
 82
-00:04:48.200 --> 00:04:51.933
-You need to think about yourself,
-your needs and the factors
+00:03:33.636 --> 00:03:36.076
+install builder on them and create an
 
 83
-00:04:51.933 --> 00:04:55.100
-that impact your decisions
-when creating your IDP.
+00:03:36.086 --> 00:03:38.986
+MSI. Install them on a test server
 
 84
-00:04:55.666 --> 00:04:58.266
-You need to connect who you are
-and what you believe with
+00:03:39.096 --> 00:03:41.346
+to make sure everything installs just
 
 85
-00:04:58.266 --> 00:05:01.333
-what do you want to do
-in order to create a coherent life.
+00:03:41.356 --> 00:03:44.146
+fine. Bamboo provides a web front
 
 86
-00:05:01.566 --> 00:05:06.300
-Burnett and Evans 2019
-There are a few ways to achieve this.
+00:03:44.156 --> 00:03:46.485
+end for configuration and for reporting
 
 87
-00:05:06.933 --> 00:05:10.133
-Think of the pressures
-you faced that influence your decision.
+00:03:46.495 --> 00:03:47.755
+the status of bills.
 
 88
-00:05:10.466 --> 00:05:11.766
-Are you pursuing a career
+00:03:49.155 --> 00:03:51.765
+Bamboo uses the concept of a plan
 
 89
-00:05:11.766 --> 00:05:15.866
-because it's something you want to do
-or because of an external influence.
+00:03:51.875 --> 00:03:54.645
+with jobs and tasks to configure and
 
 90
-00:05:16.500 --> 00:05:17.766
-Develop a personal life.
+00:03:54.655 --> 00:03:56.735
+order the actions in the workflow.
 
 91
-00:05:17.766 --> 00:05:22.133
-View what is important in your life
-outside of your career and why
+00:03:56.915 --> 00:03:59.665
+Project. Has none One or
 
 92
-00:05:22.700 --> 00:05:24.066
-develop a worldview.
+00:03:59.675 --> 00:04:02.605
+more plans. Provides reporting across
 
 93
-00:05:24.066 --> 00:05:26.466
-Think about topics
-like the purpose of work,
+00:04:02.615 --> 00:04:05.315
+all plans in the project. Provides links
 
 94
-00:05:26.633 --> 00:05:29.833
-how your career will impact others,
-and how your career
+00:04:05.325 --> 00:04:08.005
+to other applications. Allows setting up
 
 95
-00:05:29.866 --> 00:05:32.433
-can further
-your personal growth and development.
+00:04:08.015 --> 00:04:09.915
+permissions for all the plans it
 
 96
-00:05:33.066 --> 00:05:34.966
-What are you curious about?
+00:04:09.925 --> 00:04:12.515
+contains. Plan has a single
 
 97
-00:05:34.966 --> 00:05:37.600
-What sparks
-your interest in your daily life?
+00:04:12.525 --> 00:04:15.485
+stage by default, but can be used to
 
 98
-00:05:37.966 --> 00:05:40.066
-Instead of thinking about your passion,
+00:04:15.495 --> 00:04:17.745
+group jobs into multiple stages.
 
 99
-00:05:40.066 --> 00:05:43.366
-think about a problem
-you want to solve or investigate further.
+00:04:18.055 --> 00:04:20.575
+Processes a series of. One or more stages
 
 100
-00:05:43.700 --> 00:05:46.466
-Most people
-can't identify a single passion.
+00:04:20.665 --> 00:04:22.645
+that are run sequentially using the same
 
 101
-00:05:46.600 --> 00:05:49.500
-So when you're thinking about career
-exploration, trying
+00:04:22.655 --> 00:04:25.195
+repository. Specifies the default
 
 102
-00:05:49.500 --> 00:05:52.666
-to figure out what you are
-passionate about can be a fool's errand.
+00:04:25.205 --> 00:04:28.015
+repository. Specifies how the build
 
 103
-00:05:53.266 --> 00:05:56.266
-The answers to these questions
-will continuously change
+00:04:28.025 --> 00:04:29.665
+is triggered and the triggering
 
 104
-00:05:56.266 --> 00:05:59.233
-as you move through life and face
-new challenges.
+00:04:29.675 --> 00:04:32.175
+dependencies between the plan and other
 
 105
-00:05:59.566 --> 00:06:03.366
-But it's always important to understand
-how you fit into your career
+00:04:32.185 --> 00:04:34.735
+plans in the project. Specifies
 
 106
-00:06:03.366 --> 00:06:05.233
-goals and development plans.
+00:04:34.805 --> 00:04:36.854
+notification of bill results.
 
 107
-00:06:06.533 --> 00:06:08.333
-Listed here are the various tools
+00:04:37.164 --> 00:04:39.974
+Specifies who has permission to view and
 
 108
-00:06:08.333 --> 00:06:11.333
-that can be used to conduct the Empathize
-sub stage.
+00:04:39.984 --> 00:04:41.894
+configure the plan and its jobs.
 
 109
-00:06:12.366 --> 00:06:15.166
-Listed here is the approach
-to understand the problem
+00:04:42.224 --> 00:04:45.034
+Stage by default has a single job,
 
 110
-00:06:15.166 --> 00:06:18.133
-and to analyze what the user
-is trying to express.
+00:04:45.084 --> 00:04:47.514
+but can be used to group multiple jobs.
 
 111
-00:06:19.033 --> 00:06:23.700
-Here we understand the user requirements
-in more detail by asking the what, how
+00:04:47.824 --> 00:04:50.664
+Processes its jobs. In parallel on
 
 112
-00:06:23.700 --> 00:06:26.933
-and why questions to get a deeper clarity
-on the requirements.
+00:04:50.674 --> 00:04:53.264
+multiple agents must successfully
 
 113
-00:06:28.200 --> 00:06:31.600
-Some steps that are often taken
-during the stage of the design
+00:04:53.274 --> 00:04:55.744
+complete all its jobs before the next
 
 114
-00:06:31.600 --> 00:06:36.000
-thinking methodology
-are consulting subject matter experts
+00:04:55.754 --> 00:04:58.344
+stage in the plan can be processed. May
 
 115
-00:06:36.000 --> 00:06:40.000
-about their insights, engaging
-more personally with an issue to gain
+00:04:58.354 --> 00:05:00.764
+produce artifacts that can be made
 
 116
-00:06:40.000 --> 00:06:43.266
-a better understanding
-of a user's POV of having
+00:05:00.774 --> 00:05:03.374
+available for use by a subsequent stage
 
 117
-00:06:43.266 --> 00:06:46.466
-in-depth conversations
-about the topic with other designers
+00:05:03.594 --> 00:05:06.404
+job. Processes a series of 1 or more
 
 118
-00:06:46.566 --> 00:06:49.266
-immersing oneself
-in a physical environment.
+00:05:06.414 --> 00:05:08.824
+tasks that are run sequentially on the
 
 119
-00:06:50.566 --> 00:06:53.166
-An empathy map is a collaborative tool,
-teams
+00:05:08.834 --> 00:05:11.504
+same agent. Controls the order in which
 
 120
-00:06:53.166 --> 00:06:56.366
-can use to gain a deeper insight
-into their customers.
+00:05:11.514 --> 00:05:13.624
+tasks are performed. Collects the
 
 121
-00:06:56.966 --> 00:07:00.666
-Much like a user persona,
-an empathy map can represent
+00:05:13.634 --> 00:05:15.824
+requirements of individual tasks in the
 
 122
-00:07:00.666 --> 00:07:03.700
-a group of users,
-such as a customer segment.
+00:05:15.834 --> 00:05:18.464
+job so that these requirements can be
 
 123
-00:07:04.333 --> 00:07:07.033
-The empathy map was originally created
-by Dave
+00:05:18.474 --> 00:05:20.324
+matched with the agent capabilities.
 
 124
-00:07:07.033 --> 00:07:10.833
-Gray and has gained much popularity
-within the agile community.
+00:05:20.634 --> 00:05:23.324
+Defines the artifacts that the build will
 
 125
-00:07:12.000 --> 00:07:14.800
-Empathy maps can be used whenever you find
-a need
+00:05:23.334 --> 00:05:26.223
+produce. Can only use artifacts produced
 
 126
-00:07:14.800 --> 00:07:17.400
-to immerse yourself
-in a user's environment.
+00:05:26.233 --> 00:05:29.063
+in a previous stage. Specifies any
 
 127
-00:07:18.066 --> 00:07:19.333
-They can be helpful.
+00:05:29.073 --> 00:05:31.303
+labels with which the build results or
 
 128
-00:07:19.333 --> 00:07:24.500
-For example, when diving into the customer
-segments of a business model, canvas
+00:05:31.313 --> 00:05:34.063
+build artifacts will be tagged. Task.
 
 129
-00:07:24.633 --> 00:07:29.633
-elaborating on user personas capturing
-behaviors when interviewing a customer.
+00:05:34.313 --> 00:05:37.003
+It is a small, discrete unit of work such
 
 130
-00:07:29.800 --> 00:07:32.033
-Building out the user in the user story.
+00:05:37.013 --> 00:05:39.383
+as source code checkout, executing a
 
 131
-00:07:33.266 --> 00:07:35.100
-Shown here is a simple empathy
+00:05:39.393 --> 00:05:42.243
+Maven goal, running a script, or parsing
 
 132
-00:07:35.100 --> 00:07:38.700
-map of a person buying a TV.
+00:05:42.253 --> 00:05:44.843
+test results. It is run sequentially
 
 133
-00:07:39.133 --> 00:07:42.266
-Empathy interviews,
-usually a one on one conversations
+00:05:44.853 --> 00:05:46.903
+within a job on a Bamboo working
 
 134
-00:07:42.266 --> 00:07:46.166
-that use open ended questions
-to elicit stories about specific
+00:05:46.913 --> 00:05:49.663
+directory. GitLab CI
 
 135
-00:07:46.300 --> 00:07:49.600
-experiences
-that help uncover unacknowledged needs,
+00:05:49.673 --> 00:05:52.233
+CD was integrated into the main GitLab
 
 136
-00:07:50.233 --> 00:07:52.666
-a protocol
-allows the interviewer to probe more
+00:05:52.243 --> 00:05:55.133
+software with the GitLab 8.0 release in
 
 137
-00:07:52.666 --> 00:07:55.700
-deeply into stories
-than a more traditional interview.
+00:05:55.143 --> 00:05:57.893
+September 2015. A GitLab
 
 138
-00:07:56.700 --> 00:08:01.300
-Analogies are a great way for us to build
-empathy with uses to synthesize
+00:05:57.903 --> 00:06:00.233
+CICD server can manage more than
 
 139
-00:08:01.300 --> 00:08:05.400
-and define information and to generate
-new ideas around a problem.
+00:06:00.243 --> 00:06:02.973
+25,000 users. GitLab
 
 140
-00:08:06.000 --> 00:08:09.966
-We use analogies to gain a fresh way
-of looking at an environment,
+00:06:02.983 --> 00:06:05.823
+CICD and GitLab are written in Ruby
 
 141
-00:08:10.100 --> 00:08:14.066
-and we use them in instances where direct
-observation is hard to achieve.
+00:06:05.833 --> 00:06:08.453
+and Go and launched under an MIT license.
 
 142
-00:08:15.333 --> 00:08:17.333
-This method helps you uncover needs
+00:06:08.723 --> 00:06:11.493
+GitLab CICD is a UI based
 
 143
-00:08:17.333 --> 00:08:21.533
-users are often unaware of
-or can't always accurately express.
+00:06:11.503 --> 00:06:13.353
+web application that manages your
 
 144
-00:08:22.133 --> 00:08:24.900
-Typically, users are observed
-in either their natural
+00:06:13.363 --> 00:06:15.913
+projects or bills. It is also
 
 145
-00:08:24.900 --> 00:08:27.766
-setting
-or during a set up observation test.
+00:06:15.923 --> 00:06:18.752
+accessible through APIs. Git
 
 146
-00:08:28.133 --> 00:08:31.400
-Once you've identified
-the right end, users record them
+00:06:18.822 --> 00:06:21.432
+Lab run a process builds Git Lab
 
 147
-00:08:31.400 --> 00:08:34.366
-while they're experiencing the problem
-you're aiming to solve.
+00:06:21.442 --> 00:06:23.992
+CICD also provides planning,
 
 148
-00:08:34.933 --> 00:08:38.000
-Observing what was said,
-the feelings that were evoked
+00:06:24.062 --> 00:06:26.552
+packaging, SCM release
 
 149
-00:08:38.000 --> 00:08:41.833
-and behaviors noted will help guide you
-in innovative solutions.
+00:06:26.642 --> 00:06:28.892
+configuration, and scrutinizing in
 
 150
-00:08:42.866 --> 00:08:46.633
-Extreme users are a select group of people
-that will typically provide
+00:06:28.902 --> 00:06:31.902
+addition to CICD that other CICD
 
 151
-00:08:46.633 --> 00:08:50.066
-excellent insights
-that other users often won't disclose.
+00:06:31.912 --> 00:06:34.882
+tools are focused on. GitLab CI
 
 152
-00:08:50.700 --> 00:08:53.833
-These groups will often magnify problems
-and needs.
+00:06:34.892 --> 00:06:37.762
+CD also provides repositories. Thus
 
 153
-00:08:54.433 --> 00:08:57.600
-Once you've identified your group, engage
-with them to
+00:06:37.772 --> 00:06:40.632
+the integration of GitLab CICD is quite
 
 154
-00:08:57.600 --> 00:09:01.766
-establish their feelings, thoughts
-and behaviors from there
+00:06:40.642 --> 00:06:43.402
+simple and straightforward. GitLab
 
 155
-00:09:01.866 --> 00:09:06.033
-evaluate the needs that mainstream users
-might have trouble expressing.
+00:06:43.412 --> 00:06:46.062
+allows you to trigger builds, run tests
 
 156
-00:09:06.633 --> 00:09:09.700
-While you may not be able to please
-the extreme users,
+00:06:46.152 --> 00:06:48.682
+and deploy code with each commit or push.
 
 157
-00:09:09.866 --> 00:09:13.066
-this is a good reference point
-for improving the experience
+00:06:49.112 --> 00:06:51.462
+You can build jobs in a virtual machine,
 
 158
-00:09:13.066 --> 00:09:15.966
-for your motor average
-or the majority of your users.
+00:06:51.572 --> 00:06:53.982
+docker container or on another server.
 
 159
-00:09:16.933 --> 00:09:18.100
-Body storming is an
+00:06:55.372 --> 00:06:58.142
+The main benefit of using GitLab is that
 
 160
-00:09:18.100 --> 00:09:21.233
-exceptional way to practice
-empathy as it immerses
+00:06:58.152 --> 00:06:59.952
+it allows all the team members to
 
 161
-00:09:21.233 --> 00:09:25.133
-you fully in the user's environment
-to perform body storming.
+00:06:59.962 --> 00:07:01.682
+collaborate in every phase of the
 
 162
-00:09:25.166 --> 00:09:28.766
-You wear a special pair of goggles
-that simulate vision impairments
+00:07:01.692 --> 00:07:04.192
+project. GitLab is used by
 
 163
-00:09:28.766 --> 00:09:32.266
-and try to accomplish a simple task
-while wearing the goggles
+00:07:04.202 --> 00:07:06.561
+developers for the following Dev and
 
 164
-00:09:32.900 --> 00:09:34.933
-in order to implement body storming.
+00:07:06.571 --> 00:07:09.441
+OPS teams working together. Everyone
 
 165
-00:09:34.966 --> 00:09:39.333
-Create an environment, an atmosphere
-that accurately depict the user's setting
+00:07:09.451 --> 00:07:11.621
+working in the same system, Shared
 
 166
-00:09:39.333 --> 00:09:42.900
-and is filled with things you would find
-in a real world environment.
+00:07:11.631 --> 00:07:13.701
+feedback loops. No messy
 
 167
-00:09:43.500 --> 00:09:46.433
-Duplicating the real world environment
-helps boosts
+00:07:13.711 --> 00:07:16.621
+integrations, only single application
 
 168
-00:09:46.433 --> 00:09:49.500
-your empathy, understand
-how solutions will work,
+00:07:16.671 --> 00:07:19.521
+for the entire DevOps cycle GitLab
 
 169
-00:09:49.633 --> 00:09:53.200
-and give you a hands on reference
-point for later in the process.
+00:07:19.531 --> 00:07:21.761
+is the first application built to cover
 
 170
-00:09:54.366 --> 00:09:57.766
-A design thinking empathy map provides
-four major areas
+00:07:21.771 --> 00:07:24.441
+all stages of the DevOps cycle. This
 
 171
-00:09:57.766 --> 00:10:02.666
-to focus our attention on, which gives us
-an overview of a person's experience.
+00:07:24.451 --> 00:07:27.161
+means product development, QA
 
 172
-00:10:03.000 --> 00:10:06.700
-The four major areas
-reflect four key traits and refer to what
+00:07:27.261 --> 00:07:29.461
+and OPS teams can all work together
 
 173
-00:10:06.700 --> 00:10:10.066
-the user said, did, thought and felt.
+00:07:29.471 --> 00:07:31.421
+concurrently, making the software
 
 174
-00:10:10.700 --> 00:10:14.733
-The first two are a bit easier,
-but determining what they thought and felt
+00:07:31.431 --> 00:07:33.501
+development life cycle three times
 
 175
-00:10:14.733 --> 00:10:20.100
-requires careful observations and analysis
-when asking what the user thought.
+00:07:33.511 --> 00:07:36.461
+faster. Built in continuous integration
 
 176
-00:10:20.466 --> 00:10:24.300
-Consider what the user might be thinking
-their motivations,
+00:07:36.551 --> 00:07:38.781
+and continuous delivery features make it
 
 177
-00:10:24.500 --> 00:10:28.033
-goals, needs and desires from this
+00:07:38.791 --> 00:07:41.291
+seamless. To go from a code change to a
 
 178
-00:10:28.233 --> 00:10:31.066
-ask yourself
-what does this tell you about his
+00:07:41.301 --> 00:07:44.041
+running pipeline. On top of that,
 
 179
-00:10:31.066 --> 00:10:34.233
-or her beliefs.
-In reference to what they felt,
+00:07:44.091 --> 00:07:46.731
+GitLab has project management, issue
 
 180
-00:10:34.366 --> 00:10:36.566
-You're asking about the user's emotions.
+00:07:46.741 --> 00:07:49.061
+tracking and free private repository
 
 181
-00:10:36.966 --> 00:10:40.433
-Subtle cues
-such as body language, word choice
+00:07:49.071 --> 00:07:51.481
+hosting to make it easier to plan and
 
 182
-00:10:40.433 --> 00:10:43.233
-and tone of voice
-can be infinitely valuable.
+00:07:51.491 --> 00:07:54.341
+manage projects. Since GitLab is
 
 183
-00:10:44.433 --> 00:10:47.233
-A simple body storm example is shown here.
+00:07:54.351 --> 00:07:57.040
+open, it has great integrations with many
 
 184
-00:10:50.333 --> 00:10:51.266
-A simple journey
+00:07:57.050 --> 00:07:58.920
+other tools, including container
 
 185
-00:10:51.266 --> 00:10:54.866
-map is shown in this picture.
+00:07:58.930 --> 00:08:01.460
+orchestration tools like Kubernetes.
 
 186
-00:10:56.166 --> 00:10:57.600
-This stage of the process
+00:08:01.810 --> 00:08:04.360
+Security is built in. Some of our
 
 187
-00:10:57.600 --> 00:11:01.500
-involves designers succinctly
-articulating the challenge or problem
+00:08:04.370 --> 00:08:07.160
+integrated security features include
 
 188
-00:11:01.500 --> 00:11:05.300
-they need to solve with their design.
-After empathizing,
+00:08:07.210 --> 00:08:10.120
+dependency scanning, static application,
 
 189
-00:11:05.366 --> 00:11:09.900
-a designer integrates their researched
-understanding into the human centric issue
+00:08:10.130 --> 00:08:12.560
+security testing, SAST,
 
 190
-00:11:09.900 --> 00:11:12.533
-at hand and outlines
-the problem statement.
+00:08:12.880 --> 00:08:15.360
+dynamic application security testing,
 
 191
-00:11:13.133 --> 00:11:17.100
-In this stage, designers
-will analyze their observations completed
+00:08:15.640 --> 00:08:18.560
+container scanning. In GitLab, every
 
 192
-00:11:17.100 --> 00:11:21.166
-throughout the empathy stage
-and work on synthesizing that information.
+00:08:18.570 --> 00:08:20.980
+code change can be scanned automatically.
 
 193
-00:11:21.533 --> 00:11:24.933
-Forming a problem statement
-that is succinct as an important part
+00:08:21.200 --> 00:08:24.050
+Transparency is by default. Building
 
 194
-00:11:24.933 --> 00:11:29.066
-of this phase that ensures a human
-centered approach by focusing on the end
+00:08:24.060 --> 00:08:26.170
+and maintaining open and honest
 
 195
-00:11:29.066 --> 00:11:30.100
-user.
+00:08:26.180 --> 00:08:28.310
+relationships with users is at the core
 
 196
-00:11:30.200 --> 00:11:34.033
-So instead of focusing on what
-the company might need to do,
+00:08:28.320 --> 00:08:31.290
+of our value system. Everything we do is
 
 197
-00:11:34.066 --> 00:11:37.300
-the definition stage of the design
-thinking process should help
+00:08:31.300 --> 00:08:33.750
+public by default. Everyone can
 
 198
-00:11:37.300 --> 00:11:40.533
-state what the user needs
-as a way of defining the problem.
+00:08:33.760 --> 00:08:36.470
+contribute. Anyone can create an issue to
 
 199
-00:11:41.100 --> 00:11:45.333
-For example, company centered thinking,
-we need to increase
+00:08:36.480 --> 00:08:39.020
+improve Git Lab. We welcome
 
 200
-00:11:45.333 --> 00:11:50.233
-our educational software sales
-by X percent. Human centered thinking
+00:08:39.030 --> 00:08:41.750
+community celebrations and celebrate them
 
 201
-00:11:50.433 --> 00:11:55.000
-students need great technology in order
-to successfully master tech concepts.
+00:08:41.760 --> 00:08:44.200
+by designating a Most Valuable Person
 
 202
-00:11:56.266 --> 00:11:57.600
-Listed here are the tools
+00:08:44.320 --> 00:08:47.009
+MVP every month With a
 
 203
-00:11:57.600 --> 00:12:00.600
-that can be used
-for design stage of design thinking.
+00:08:47.019 --> 00:08:49.949
+public issue tracker, anyone can propose,
 
 204
-00:12:02.100 --> 00:12:06.866
-Point of view POV in design
-thinking is a written, actionable
+00:08:49.999 --> 00:08:52.449
+contribute to, and discuss GitLabs
 
 205
-00:12:06.866 --> 00:12:11.300
-statement that expresses the problem
-that the design team is trying to address.
+00:08:52.459 --> 00:08:55.409
+features. The following are the
 
 206
-00:12:11.933 --> 00:12:16.300
-This is also often called
-a problem statement that is an expression
+00:08:55.419 --> 00:08:57.769
+features of Git Lab. High
 
 207
-00:12:16.300 --> 00:12:21.066
-of the problem or problems that customers
-identified the empathize stage.
+00:08:57.779 --> 00:09:00.709
+Availability deployments. It is widely
 
 208
-00:12:22.066 --> 00:12:24.933
-An approach to point of view is done
-by asking
+00:09:00.719 --> 00:09:02.789
+used and one of the newest open source
 
 209
-00:12:24.933 --> 00:12:28.433
-a few questions and brainstorming
-on the initial responses.
+00:09:02.799 --> 00:09:04.749
+CICD tools available.
 
 210
-00:12:29.300 --> 00:12:33.166
-Use why how laddering to flesh out
-varying user needs and find a
+00:09:05.279 --> 00:09:07.669
+Installation as well as configuration for
 
 211
-00:12:33.166 --> 00:12:37.600
-middle ground that's both meaningful
-and actionable. As a general rule
+00:09:07.679 --> 00:09:10.589
+GitLab CICD easy. It
 
 212
-00:12:37.733 --> 00:12:42.700
-asking why yields abstract statements
-and asking how yield specific statements,
+00:09:10.599 --> 00:09:12.989
+is a free and self hosted CI tool built
 
 213
-00:12:43.300 --> 00:12:48.133
-oftentimes abstract statements
-are more meaningful but not as actionable.
+00:09:12.999 --> 00:09:15.919
+in to GitLab. GitLab
 
 214
-00:12:49.100 --> 00:12:50.000
-Ideation is a
+00:09:15.929 --> 00:09:18.529
+CICD gradually evolved as one of the most
 
 215
-00:12:50.000 --> 00:12:54.000
-creative process where designers
-generate ideas in sessions,
+00:09:18.539 --> 00:09:21.029
+popular free CICD tools used for
 
 216
-00:12:54.033 --> 00:12:57.533
-for example,
-brainstorming worst possible idea,
+00:09:21.039 --> 00:09:23.469
+automation of deployments. Multi
 
 217
-00:12:57.833 --> 00:13:00.766
-it is the third stage in the design
-thinking process.
+00:09:23.479 --> 00:09:25.989
+environment, multi platform, multi
 
 218
-00:13:01.366 --> 00:13:05.133
-Participants gather with open minds
-to produce as many ideas
+00:09:25.999 --> 00:09:28.409
+language GitLab
 
 219
-00:13:05.133 --> 00:13:07.400
-as they can to address a problem statement
+00:09:28.419 --> 00:09:31.279
+CICD can be used to execute build scripts
 
 220
-00:13:07.400 --> 00:13:10.266
-in a facilitated judgment
-free environment.
+00:09:31.289 --> 00:09:33.599
+on any platform that supports Go,
 
 221
-00:13:11.200 --> 00:13:14.100
-In the ideation phase,
-you'll explore and come up
+00:09:33.649 --> 00:09:35.819
+including Windows, Mac OS,
 
 222
-00:13:14.100 --> 00:13:16.200
-with as many ideas as possible.
+00:09:35.929 --> 00:09:38.818
+Unix, etc. It works with any language
 
 223
-00:13:16.566 --> 00:13:20.466
-Some of these ideas will go on
-to be potential solutions to your design
+00:09:38.828 --> 00:09:41.078
+including PHP, Python,
 
 224
-00:13:20.466 --> 00:13:21.300
-challenge.
+00:09:41.228 --> 00:09:43.858
+Java, C, Ruby, etc.
 
 225
-00:13:21.300 --> 00:13:24.733
-Some will end up on the reject pile
-at this stage.
+00:09:43.868 --> 00:09:46.438
+GitLab CICD Cloud versus self
 
 226
-00:13:24.866 --> 00:13:28.066
-The focus is on quantity of ideas
-rather than quality.
+00:09:46.448 --> 00:09:49.378
+hosted, You can use GitLab Cloud on
 
 227
-00:13:28.366 --> 00:13:31.066
-The main aim of an ideation
-session is to uncover
+00:09:49.428 --> 00:09:52.238
+gitlab.com or you can
 
 228
-00:13:31.066 --> 00:13:34.900
-and explore new angles and avenues
-to think outside the box.
+00:09:52.248 --> 00:09:55.208
+self host it. You can self host it on
 
 229
-00:13:35.533 --> 00:13:39.033
-For the sake of innovation and creativity,
-it is essential
+00:09:55.218 --> 00:09:57.248
+the infrastructure as well as on a bare
 
 230
-00:13:39.033 --> 00:13:41.933
-that the ideation phase be a judgment free
-zone.
+00:09:57.258 --> 00:09:59.738
+metal server or in Kubernetes on a public
 
 231
-00:13:42.866 --> 00:13:46.400
-Listed here are the various tools
-that can be used for ideation
+00:09:59.748 --> 00:10:02.548
+cloud. Integrations Git
 
 232
-00:13:46.400 --> 00:13:48.033
-process in design thinking.
+00:10:02.598 --> 00:10:04.888
+Lab CI can be used with GitHub,
 
 233
-00:13:49.066 --> 00:13:50.666
-Brain writing offers an
+00:10:04.948 --> 00:10:07.688
+Bitbucket or any other Git based server.
 
 234
-00:13:50.666 --> 00:13:54.533
-alternative to classical brainstorming.
-In brain writing
+00:10:08.008 --> 00:10:10.648
+GitLab platform can also be used with
 
 235
-00:13:54.666 --> 00:13:58.700
-the participants do not discuss
-and exchange their ideas verbally,
+00:10:10.658 --> 00:10:13.028
+Jenkins CI, HipChat,
 
 236
-00:13:58.700 --> 00:14:01.400
-but rather produce
-their ideas in written form.
+00:10:13.098 --> 00:10:15.298
+Slack, Vault and several other
 
 237
-00:14:02.300 --> 00:14:05.433
-Design thinking celebrates
-ideation techniques such
+00:10:15.308 --> 00:10:17.588
+integrations are available to streamline
 
 238
-00:14:05.433 --> 00:14:07.066
-as challenging assumptions.
+00:10:17.598 --> 00:10:19.768
+project life cycle management,
 
 239
-00:14:07.066 --> 00:14:09.633
-Worst possible idea and scamper.
+00:10:19.958 --> 00:10:22.608
+security and performance. Auto
 
 240
-00:14:09.733 --> 00:14:12.500
-All of which help us as designers
-to be creative
+00:10:22.618 --> 00:10:25.548
+scaling, Auto DevOps, Parallel bills
 
 241
-00:14:12.500 --> 00:14:15.700
-and use our imaginations
-by questioning status quo.
+00:10:25.618 --> 00:10:27.967
+and container registry features aimed to
 
 242
-00:14:16.933 --> 00:14:19.966
-Mind mapping is used to represent
-how ideas or
+00:10:27.977 --> 00:10:30.977
+improve the performance of GitLab CICD
 
 243
-00:14:19.966 --> 00:14:23.166
-other items are linked to a central idea
-and to each other.
+00:10:31.307 --> 00:10:34.217
+GitLab provides dependency scanning, fuzz
 
 244
-00:14:23.733 --> 00:14:28.733
-Mind maps are used to generate,
-visualize, structure and classify ideas
+00:10:34.227 --> 00:10:36.997
+testing, secret detection and license
 
 245
-00:14:28.733 --> 00:14:32.500
-to look for patterns and insights
-that provide key design criteria.
+00:10:37.007 --> 00:10:39.377
+compliance features for delivering highly
 
 246
-00:14:32.600 --> 00:14:35.566
-Look for connections between clusters
-and insights.
+00:10:39.387 --> 00:10:42.077
+secure applications. Milestone
 
 247
-00:14:36.833 --> 00:14:40.366
-A simple mind map example.
+00:10:42.087 --> 00:10:44.967
+setting. Milestone setting in a tool
 
 248
-00:14:42.700 --> 00:14:43.200
-Perhaps
+00:10:44.977 --> 00:10:47.507
+is a great means to track issues, improve
 
 249
-00:14:43.200 --> 00:14:46.233
-the simplest creative technique
-is the creative pause,
+00:10:47.517 --> 00:10:49.987
+on a series of issues, and draw requests
 
 250
-00:14:46.833 --> 00:14:49.600
-with the creative pause,
-you practiced clearing your mind
+00:10:49.997 --> 00:10:52.907
+in a repository. You can easily assign
 
 251
-00:14:49.600 --> 00:14:51.900
-and becoming more aware
-of your surroundings.
+00:10:52.917 --> 00:10:55.327
+project milestones to any issue or
 
 252
-00:14:52.500 --> 00:14:56.433
-The point of the pause is to avoid getting
-so wrapped up in the flow of life
+00:10:55.337 --> 00:10:57.547
+combine requests in that project barely
 
 253
-00:14:56.433 --> 00:14:59.366
-that you become oblivious
-to the possibilities around you.
+00:10:57.557 --> 00:11:00.247
+or assign group milestones to issues or
 
 254
-00:15:00.166 --> 00:15:04.633
-The power of ten considers challenges
-through frames of various magnitudes.
+00:11:00.257 --> 00:11:02.487
+combined requests of any project in the
 
 255
-00:15:06.133 --> 00:15:09.333
-A prototype is
-a simple, experimental model of a proposed
+00:11:02.497 --> 00:11:04.917
+group. Code reviews and merge
 
 256
-00:15:09.333 --> 00:15:13.200
-solution used to test or validate
-ideas, design assumptions
+00:11:04.927 --> 00:11:07.917
+Requests, GitLab CICD
 
 257
-00:15:13.200 --> 00:15:18.366
-and other aspects of its conceptualization
-quickly and cheaply so that the designer
+00:11:07.927 --> 00:11:10.207
+is not only used for building code, but
 
 258
-00:15:19.066 --> 00:15:23.333
-involved can make appropriate refinements
-or possible changes in direction.
+00:11:10.217 --> 00:11:12.407
+to scrutinize or review code as well.
 
 259
-00:15:24.500 --> 00:15:26.633
-Low fidelity prototyping involves
+00:11:13.127 --> 00:11:15.397
+Allows improved collaboration with easy
 
 260
-00:15:26.633 --> 00:15:30.266
-the use of basic models
-or examples of the product being tested,
+00:11:15.407 --> 00:11:17.506
+merge requests and mergers management
 
 261
-00:15:30.866 --> 00:15:34.533
-low fidelity prototypes
-can either be models that are cheaply
+00:11:17.516 --> 00:11:20.196
+systems. There is support for more or
 
 262
-00:15:34.533 --> 00:15:38.600
-and easily made or simply recounts
-or visualizations of them.
+00:11:20.206 --> 00:11:22.336
+less all version control systems and
 
 263
-00:15:39.166 --> 00:15:42.966
-Examples of low fidelity prototypes
-storyboarding.
+00:11:22.346 --> 00:11:25.166
+build environments, issue tracking and
 
 264
-00:15:43.900 --> 00:15:46.100
-Let us now understand the advantages
+00:11:25.176 --> 00:11:28.026
+issue shuffling. Due to its great tissue
 
 265
-00:15:46.100 --> 00:15:49.100
-and disadvantages of low fidelity
-prototyping.
+00:11:28.036 --> 00:11:30.186
+tracking and issue shuffling features,
 
 266
-00:15:50.100 --> 00:15:54.833
-High fidelity prototypes tend to include
-all the visual components, interactive
+00:11:30.296 --> 00:11:33.066
+GitLab is a preferred CICD tool for
 
 267
-00:15:54.833 --> 00:15:58.600
-elements and content that will be featured
-on the final product.
+00:11:33.076 --> 00:11:35.826
+numerous open source projects. It
 
 268
-00:15:58.966 --> 00:16:02.300
-In fact,
-they look just like a real app or website,
+00:11:35.836 --> 00:11:37.786
+smartly allows parallel test pull
 
 269
-00:16:02.400 --> 00:16:05.700
-which is hugely beneficial
-when it comes to user testing.
+00:11:37.796 --> 00:11:40.786
+requests and branches. For simple and
 
 270
-00:16:06.633 --> 00:16:09.933
-Let us now understand the advantages
-and disadvantages
+00:11:40.796 --> 00:11:42.866
+trouble free monitoring, the testing
 
 271
-00:16:09.933 --> 00:16:11.733
-of high fidelity prototyping.
+00:11:42.876 --> 00:11:45.526
+outcomes are displayed on the GitHub UI
 
 272
-00:16:12.966 --> 00:16:13.766
-Testing is the
+00:11:46.096 --> 00:11:48.646
+Jekyll Plugin support. Jekyll
 
 273
-00:16:13.766 --> 00:16:16.900
-fifth stage in the five stage design
-thinking process.
+00:11:48.656 --> 00:11:51.166
+plugin is a static website generator with
 
 274
-00:16:17.533 --> 00:16:22.266
-Testing is often undertaken concurrently
-with prototyping and performed well.
+00:11:51.176 --> 00:11:53.406
+great support for GitHub Pages and it
 
 275
-00:16:22.366 --> 00:16:26.766
-It can provide many learning opportunities
-to help you learn more about the user
+00:11:53.416 --> 00:11:56.166
+makes the build process simpler. Jekyll
 
 276
-00:16:26.766 --> 00:16:31.066
-and opportunities to refine your prototype
-and even the problem statement.
+00:11:56.176 --> 00:11:58.946
+plugins support takes HTML files and
 
 277
-00:16:31.966 --> 00:16:37.300
-Wizard of Oz Prototyping, WOz
-Prototyping is a design methodology
+00:11:58.956 --> 00:12:01.386
+mark down and creates a completely static
 
 278
-00:16:37.300 --> 00:16:41.300
-used in rapid product development
-to improve the user experience.
+00:12:01.396 --> 00:12:03.906
+site based on your preference of layouts.
 
 279
-00:16:41.433 --> 00:16:42.800
-UX.
+00:12:05.256 --> 00:12:07.665
+You need to install and register runner
 
 280
-00:16:42.800 --> 00:16:47.233
-Once the prototype has been created,
-developers use Role-Playing to test
+00:12:07.675 --> 00:12:10.445
+for the project. Define the CICD
 
 281
-00:16:47.233 --> 00:16:49.600
-how end users will interact
-with the product.
+00:12:10.455 --> 00:12:12.605
+jobs in a structured order and with well
 
 282
-00:16:50.833 --> 00:16:53.966
-Card sorting is a technique
-that involves asking users
+00:12:12.615 --> 00:12:15.005
+defined actions if certain conditions are
 
 283
-00:16:53.966 --> 00:16:56.766
-to organize information
-into logical groups.
+00:12:15.015 --> 00:12:17.955
+met while executing these jobs, save
 
 284
-00:16:57.100 --> 00:17:00.900
-Users are given a series of labeled cards
-and asked to organize
+00:12:17.965 --> 00:12:20.825
+this yaml file as a gitlab-ci.yml
 
 285
-00:17:00.900 --> 00:17:03.966
-and sort them into groups
-that they think are appropriate.
+00:12:20.835 --> 00:12:23.825
+file in the root directory
 
 286
-00:17:04.533 --> 00:17:08.166
-Card sorting helps you to design
-and information architecture,
+00:12:23.835 --> 00:12:26.085
+of the project. When you push config
 
 287
-00:17:08.233 --> 00:17:11.600
-workflow, menu
-structure or website navigation paths.
+00:12:26.095 --> 00:12:28.585
+files to the repository, the runner runs
 
 288
-00:17:11.600 --> 00:17:15.666
-Card sorting is a relatively low
-tech and inexpensive
+00:12:28.595 --> 00:12:31.265
+these specified jobs. Usually a
 
 289
-00:17:15.666 --> 00:17:19.733
-method used to understand how a user would
-organize and structure content
+00:12:31.275 --> 00:12:34.245
+GitLab CICD pipeline would contain full
 
 290
-00:17:19.733 --> 00:17:21.700
-that makes sense to them.
+00:12:34.255 --> 00:12:37.215
+stages. Build, Test Staggering
 
 291
-00:17:21.700 --> 00:17:25.933
-Card sorting can be conducted
-in a number of ways, such as actual cards,
+00:12:37.285 --> 00:12:40.005
+and Production. If the code commit passes
 
 292
-00:17:26.066 --> 00:17:30.533
-pieces of paper, Post-it notes
-or online tools such as optimal thought,
+00:12:40.015 --> 00:12:42.405
+all these stages, it is successfully
 
 293
-00:17:30.666 --> 00:17:33.266
-which allow you to conduct the research
-remotely.
+00:12:42.415 --> 00:12:45.365
+delivered/deployed. Let us
 
 294
-00:17:33.866 --> 00:17:38.166
-This insight allows you to understand
-how users would expect to see content
+00:12:45.375 --> 00:12:48.205
+discuss on CICD as a service.
 
 295
-00:17:38.166 --> 00:17:41.666
-grouped on a website and how they might
-see these groups labeled.
+00:12:51.035 --> 00:12:53.455
+Let us discuss on. Azure
 
 296
-00:17:42.266 --> 00:17:45.833
-Wild card sorting might not provide you
-with the final information,
+00:12:53.465 --> 00:12:55.735
+pipelines, AWS
 
 297
-00:17:45.833 --> 00:17:47.966
-architecture or menu for your site.
+00:12:55.745 --> 00:12:58.694
+pipelines, Bitbucket pipelines,
 
 298
-00:17:48.066 --> 00:17:52.800
-It can help to identify trends and how
-many potential categories there could be.
+00:12:59.284 --> 00:13:00.994
+Gitlab pipelines.
 
 299
-00:17:53.666 --> 00:17:56.300
-When conducting a user test
-on your prototype,
+00:13:02.164 --> 00:13:04.624
+As more software development teams aim to
 
 300
-00:17:56.366 --> 00:17:59.766
-it is ideal to utilize
-a natural setting, IE
+00:13:04.634 --> 00:13:06.544
+meet the growing demand for faster
 
 301
-00:17:59.766 --> 00:18:03.266
-the normal environment in which your users
-would use the prototype
+00:13:06.554 --> 00:13:08.804
+release cycles and increased software
 
 302
-00:18:03.833 --> 00:18:06.600
-if testing in a natural setting proves
-difficult.
+00:13:08.814 --> 00:13:11.184
+quality, many are looking to implement a
 
 303
-00:18:06.766 --> 00:18:11.700
-Try to get users to perform a task or play
-a role when testing the prototype.
+00:13:11.194 --> 00:13:13.124
+continuous development pipeline to
 
 304
-00:18:12.300 --> 00:18:15.033
-The key is to get users
-to be using the prototype
+00:13:13.134 --> 00:13:15.904
+streamline their process. Adopting
 
 305
-00:18:15.033 --> 00:18:17.900
-as they would in real life
-as much as possible.
+00:13:15.914 --> 00:13:18.864
+CICID practices enable teams to adapt
 
 306
-00:18:18.866 --> 00:18:21.866
-Feedback
-capture matrix, facilitate realtime
+00:13:18.874 --> 00:13:20.964
+their software on demand to meet user
 
 307
-00:18:21.866 --> 00:18:25.066
-time, capture of feedback on presentations
-and prototypes.
+00:13:20.974 --> 00:13:23.504
+feedback, market shifts, and any
 
 308
-00:18:25.700 --> 00:18:30.000
-You can use a feedback capture matrix
-either to give feedback on progress
+00:13:23.514 --> 00:13:25.534
+adjustments to the overarching business
 
 309
-00:18:30.000 --> 00:18:32.900
-within the design team
-or to capture user feedback.
+00:13:25.544 --> 00:13:28.124
+strategy. Pipeline is a runnable
 
 310
-00:18:33.266 --> 00:18:37.300
-The Matrix itself for changes, thoughts
-and ideas into four categories
+00:13:28.134 --> 00:13:30.264
+specification of steps that reduce the
 
 311
-00:18:37.300 --> 00:18:38.500
-for easy assessment.
+00:13:30.274 --> 00:13:32.604
+developer's manual work by delivering a
 
 312
-00:18:39.533 --> 00:18:40.800
-A few references for
+00:13:32.614 --> 00:13:34.904
+new version of software productively and
 
 313
-00:18:40.800 --> 00:18:43.800
-further reading and learning.
+00:13:34.914 --> 00:13:37.704
+saves time. CICD
 
 314
-00:18:45.533 --> 00:18:48.600
-After completing this model,
-you would have got the concepts
+00:13:37.714 --> 00:13:39.964
+pipeline is used to automate the process
 
 315
-00:18:48.600 --> 00:18:53.666
-behind the various stages of design
-thinking, lifecycle of design thinking,
+00:13:39.974 --> 00:13:42.384
+of continuous integration and continuous
 
 316
-00:18:53.833 --> 00:18:57.933
-tools used in various stages of design
-thinking, detailed
+00:13:42.394 --> 00:13:45.304
+deployment. The pipeline facilitates the
 
 317
-00:18:57.933 --> 00:19:03.000
-learning on stage
-one empathize, research your users needs.
+00:13:45.314 --> 00:13:47.823
+software delivery process via stages like
 
 318
-00:19:03.200 --> 00:19:07.200
-Stage two Define, state
-a user's needs and problems.
+00:13:47.833 --> 00:13:50.363
+build, test, merge and deploy.
 
 319
-00:19:07.333 --> 00:19:11.500
-Stage three Ideate,
-challenge assumptions and create ideas.
+00:13:51.733 --> 00:13:54.343
+The following are the stages of CICD
 
 320
-00:19:11.666 --> 00:19:15.233
-Stage
-four Prototype, start to create solutions.
+00:13:54.353 --> 00:13:57.023
+pipeline. Source stage. In
 
 321
-00:19:15.366 --> 00:19:18.633
-Stage five Best Try your solutions out.
+00:13:57.033 --> 00:13:59.803
+most cases a pipeline run is triggered by
 
 322
-00:19:20.000 --> 00:19:22.200
-Thank you. Have a happy learning.
+00:13:59.813 --> 00:14:02.803
+a source code repository. A change in
+
+323
+00:14:02.813 --> 00:14:05.723
+code triggers a notification to the CICD
+
+324
+00:14:05.733 --> 00:14:07.713
+tool which runs the corresponding
+
+325
+00:14:07.723 --> 00:14:10.683
+pipeline. Build stage. The
+
+326
+00:14:10.693 --> 00:14:12.703
+source code and its dependencies are
+
+327
+00:14:12.713 --> 00:14:14.773
+combined to build a runnable instance of
+
+328
+00:14:14.783 --> 00:14:16.923
+the product that can be potentially
+
+329
+00:14:16.933 --> 00:14:19.543
+shipped to the end users. Programs
+
+330
+00:14:19.553 --> 00:14:22.263
+written in languages such as Java, C or
+
+331
+00:14:22.273 --> 00:14:24.943
+C++ or Go need to be compiled,
+
+332
+00:14:25.003 --> 00:14:27.623
+whereas Ruby, Python, and JavaScript
+
+333
+00:14:27.633 --> 00:14:29.963
+programs work without this step.
+
+334
+00:14:30.213 --> 00:14:32.663
+Regardless of the language. Cloud native
+
+335
+00:14:32.673 --> 00:14:34.423
+software is typically deployed with
+
+336
+00:14:34.433 --> 00:14:36.803
+Docker, in which case the stage of the C
+
+337
+00:14:36.813 --> 00:14:38.822
+ICD pipeline builds the Docker
+
+338
+00:14:38.832 --> 00:14:41.572
+containers. Failure to pass the build
+
+339
+00:14:41.582 --> 00:14:43.732
+stage is an indicator of a fundamental
+
+340
+00:14:43.742 --> 00:14:46.272
+problem in the projects configuration and
+
+341
+00:14:46.282 --> 00:14:48.992
+it's best to address it immediately. Test
+
+342
+00:14:49.002 --> 00:14:51.672
+Stage. In this phase we run
+
+343
+00:14:51.682 --> 00:14:53.992
+automated tests to validate our codes
+
+344
+00:14:54.002 --> 00:14:55.912
+correctness and the behavior of our
+
+345
+00:14:55.922 --> 00:14:58.872
+product. The test stage prevents easily
+
+346
+00:14:58.882 --> 00:15:01.052
+reproducible bugs from reaching the end
+
+347
+00:15:01.062 --> 00:15:03.952
+users. The responsibility of writing
+
+348
+00:15:03.962 --> 00:15:06.852
+tests falls on the developers depending
+
+349
+00:15:06.862 --> 00:15:09.412
+on the size and complexity of the project
+
+350
+00:15:09.462 --> 00:15:11.462
+this phase. And last from seconds to
+
+351
+00:15:11.472 --> 00:15:14.422
+hours. Many large scale projects run
+
+352
+00:15:14.432 --> 00:15:17.082
+tests in multiple stages. It is
+
+353
+00:15:17.092 --> 00:15:19.002
+essential for this stage to produce
+
+354
+00:15:19.012 --> 00:15:21.822
+feedback to developers. Quickly deploy
+
+355
+00:15:21.832 --> 00:15:24.662
+stage. Once we have a built a runnable
+
+356
+00:15:24.672 --> 00:15:27.062
+instance of our code that has passed all
+
+357
+00:15:27.072 --> 00:15:29.601
+predefined tests, we have to deploy it.
+
+358
+00:15:30.171 --> 00:15:31.911
+There are usually multiple deploy
+
+359
+00:15:31.921 --> 00:15:34.871
+environments. For example, a beta
+
+360
+00:15:34.881 --> 00:15:37.171
+or staging environment which is used
+
+361
+00:15:37.181 --> 00:15:39.231
+internally by the product team, and a
+
+362
+00:15:39.241 --> 00:15:41.571
+production environment for end users.
+
+363
+00:15:42.141 --> 00:15:44.431
+Teams that have embraced the agile model
+
+364
+00:15:44.441 --> 00:15:46.611
+of development deploy work in progress
+
+365
+00:15:46.621 --> 00:15:48.971
+manually to a staging environment for
+
+366
+00:15:48.981 --> 00:15:51.431
+additional manual testing and review, and
+
+367
+00:15:51.441 --> 00:15:53.511
+automatically deploy approved changes
+
+368
+00:15:53.521 --> 00:15:55.501
+from the master branch to production.
+
+369
+00:15:56.911 --> 00:15:58.821
+Azure DevOps is a collection of
+
+370
+00:15:58.831 --> 00:16:01.461
+services given by Microsoft Azure.
+
+371
+00:16:01.751 --> 00:16:03.861
+It provides development services for a
+
+372
+00:16:03.871 --> 00:16:06.591
+team to support, plan, collaborate,
+
+373
+00:16:06.631 --> 00:16:09.241
+build and deploy applications. It
+
+374
+00:16:09.251 --> 00:16:11.841
+provides integrated features in a browser
+
+375
+00:16:11.971 --> 00:16:14.481
+or an IDE, integrated development
+
+376
+00:16:14.491 --> 00:16:17.001
+environment. Some of the services for
+
+377
+00:16:17.011 --> 00:16:19.940
+developers are Azure Repos, Azure
+
+378
+00:16:19.950 --> 00:16:22.780
+Pipelines, Azure Boards,
+
+379
+00:16:22.790 --> 00:16:25.590
+Azure test plans, Azure artifacts,
+
+380
+00:16:25.890 --> 00:16:28.090
+these resources are quite useful,
+
+381
+00:16:28.140 --> 00:16:29.960
+especially as your pipelines.
+
+382
+00:16:31.180 --> 00:16:34.020
+Azure Pipeline is a cloud service that we
+
+383
+00:16:34.030 --> 00:16:36.330
+can use to build and test our code
+
+384
+00:16:36.340 --> 00:16:38.870
+project automatically. The Azure
+
+385
+00:16:38.880 --> 00:16:41.490
+pipeline has a lot of capabilities such
+
+386
+00:16:41.500 --> 00:16:44.190
+as continuous integration and continuous
+
+387
+00:16:44.200 --> 00:16:46.730
+delivery to regularly and consistently
+
+388
+00:16:46.740 --> 00:16:49.370
+test and build our code and ship to any
+
+389
+00:16:49.380 --> 00:16:52.170
+target Azure pipelines off For cloud
+
+390
+00:16:52.180 --> 00:16:55.050
+hosted pipelines for Linux, Mac OS,
+
+391
+00:16:55.140 --> 00:16:58.030
+and Windows. Build and release pipelines
+
+392
+00:16:58.140 --> 00:17:00.770
+can be defined using YAML, yet another
+
+393
+00:17:00.780 --> 00:17:03.780
+markup language. The following are
+
+394
+00:17:03.790 --> 00:17:06.090
+the advantages of Azure Pipelines.
+
+395
+00:17:06.740 --> 00:17:09.489
+Version control systems. Having the
+
+396
+00:17:09.499 --> 00:17:11.829
+code into a version control system is the
+
+397
+00:17:11.839 --> 00:17:14.789
+first step of building an Azure CICD
+
+398
+00:17:14.799 --> 00:17:17.469
+pipeline. You can manage your source
+
+399
+00:17:17.479 --> 00:17:20.349
+code in GitHub, Bitbucket, Subversion,
+
+400
+00:17:20.399 --> 00:17:23.029
+or any other Git repository. It
+
+401
+00:17:23.039 --> 00:17:25.409
+also supports Team Foundation version
+
+402
+00:17:25.419 --> 00:17:28.279
+control, TFVC programming
+
+403
+00:17:28.289 --> 00:17:31.229
+languages and application types. You
+
+404
+00:17:31.239 --> 00:17:33.409
+can use different languages with Azure
+
+405
+00:17:33.419 --> 00:17:35.549
+Pipelines like Java, Ruby,
+
+406
+00:17:35.619 --> 00:17:38.229
+C, Python,
+
+407
+00:17:38.399 --> 00:17:41.169
+PHP, Go and JavaScript
+
+408
+00:17:41.719 --> 00:17:44.249
+deployment targets. The applications with
+
+409
+00:17:44.259 --> 00:17:47.129
+Azure CICD pipelines can be deployed to
+
+410
+00:17:47.139 --> 00:17:49.729
+multiple target environments. This
+
+411
+00:17:49.739 --> 00:17:52.609
+includes virtual machines, containers or
+
+412
+00:17:52.619 --> 00:17:54.879
+any on premises or cloud platform.
+
+413
+00:17:55.549 --> 00:17:58.319
+Pricing. It is free for public projects,
+
+414
+00:17:58.888 --> 00:18:01.838
+but for private projects you can run up
+
+415
+00:18:01.848 --> 00:18:04.778
+to 1800 minutes of pipeline jobs free
+
+416
+00:18:04.788 --> 00:18:07.438
+per month. Follow the basic
+
+417
+00:18:07.448 --> 00:18:10.338
+steps. Configure as your pipelines to use
+
+418
+00:18:10.348 --> 00:18:13.178
+your git repo. Edit your azure-pipelines.yml
+
+419
+00:18:13.398 --> 00:18:16.318
+file to define your build. Push
+
+420
+00:18:16.328 --> 00:18:18.218
+your code to your version control
+
+421
+00:18:18.228 --> 00:18:20.788
+repository. This action kicks off the
+
+422
+00:18:20.798 --> 00:18:23.208
+default trigger to build and deploy and
+
+423
+00:18:23.218 --> 00:18:25.798
+then monitor the results. Your code is
+
+424
+00:18:25.808 --> 00:18:28.498
+now updated, built, tested and
+
+425
+00:18:28.508 --> 00:18:30.918
+packaged. It can be deployed to any
+
+426
+00:18:30.928 --> 00:18:33.898
+target. Follow these basic
+
+427
+00:18:33.908 --> 00:18:36.698
+steps. Configure as your pipelines
+
+428
+00:18:36.768 --> 00:18:39.398
+to use your Git repo. Use the Azure
+
+429
+00:18:39.408 --> 00:18:41.798
+Pipelines classic editor to create and
+
+430
+00:18:41.808 --> 00:18:43.688
+configure your build and release
+
+431
+00:18:43.698 --> 00:18:46.578
+pipelines. Push your code to your version
+
+432
+00:18:46.588 --> 00:18:49.557
+control repository. This action triggers
+
+433
+00:18:49.567 --> 00:18:51.957
+your pipeline and runs tasks such as
+
+434
+00:18:51.967 --> 00:18:54.177
+building or testing code. The build
+
+435
+00:18:54.187 --> 00:18:56.937
+creates an artifact that is used by the
+
+436
+00:18:56.947 --> 00:18:59.467
+rest of your pipeline to run tasks such
+
+437
+00:18:59.477 --> 00:19:01.737
+as deploying to staging or production
+
+438
+00:19:02.047 --> 00:19:04.637
+your code. Is now updated, built,
+
+439
+00:19:04.707 --> 00:19:07.577
+tested and packaged. It can be deployed
+
+440
+00:19:07.587 --> 00:19:10.437
+to any target. The steps for
+
+441
+00:19:10.447 --> 00:19:12.987
+building as your CICD pipeline and
+
+442
+00:19:12.997 --> 00:19:14.997
+the prerequisites is specified here.
+
+443
+00:19:16.117 --> 00:19:18.397
+Having completed this module, you would
+
+444
+00:19:18.407 --> 00:19:21.287
+have gained knowledge on. CICD
+
+445
+00:19:21.337 --> 00:19:23.927
+Tools and CICD as a Service.
+
+446
+00:19:25.337 --> 00:19:27.487
+Thank you, have a happy learning.
