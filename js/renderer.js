@@ -103,7 +103,7 @@ export function renderQuiz(container) {
                     </div>
                     <button class="button exit-button" id="exit-quiz-btn">Exit Quiz</button>
                 </div>
-                <h2 class="question-text">${question.question}</h2>
+                <h2 class="question-text">${renderInlineCode(question.question)}</h2>
                 ${codeBlockHTML}
             </div>
             <div class="options-container">${optionsHTML}</div>
@@ -185,7 +185,7 @@ export function renderReviewScreen(container) {
         <div class="quiz-container">
             <div class="quiz-header">
                 <p class="question-counter">Reviewing ${AppState.currentReviewIndex + 1} / ${AppState.reviewQuestions.length}</p>
-                <h2 class="question-text">${question.question}</h2>
+                <h2 class="question-text">${renderInlineCode(question.question)}</h2>
                 ${codeBlockHTML}
             </div>
             <div class="options-container">${optionsHTML}</div>

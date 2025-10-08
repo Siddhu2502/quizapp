@@ -1,6 +1,6 @@
-// Service Worker for Quiz App - Offline Support
-const CACHE_NAME = 'quiz-app-v1';
-const RUNTIME_CACHE = 'quiz-runtime-v1';
+const CACHE_VERSION = 2; // <-- Change this number when you update the app
+const CACHE_NAME = `quiz-app-v${CACHE_VERSION}`;
+const RUNTIME_CACHE = `quiz-runtime-v${CACHE_VERSION}`;
 
 // Files to cache immediately on install
 const PRECACHE_URLS = [

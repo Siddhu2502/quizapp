@@ -1,5 +1,4 @@
-// --- MAIN APPLICATION MODULE ---
-import { CONFIG } from './state.js';
+import { CONFIG, AppState } from './state.js';
 import { prefetchAllData } from './dataService.js';
 import { initRouter } from './router.js';
 import { attachEventListeners } from './eventHandlers.js';
@@ -10,6 +9,30 @@ if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('./service-worker.js')
             .then(registration => {
                 console.log('Service Worker registered successfully:', registration.scope);
+                
+                // Check for updates immediately
+                registration.update();
+                
+                // Handle updates
+                registration.addEventListener('updatefound', () => {
+                    const newWorker = registration.installing;
+                    newWorker.addEventListener('statechange', () => {
+                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                            // New service worker is installed but waiting
+                            console.log('New version available!');
+                            
+                            // ✅ SAFE: Only reload if NOT in active quiz
+                            if (!AppState.quizSessionActive) {
+                                console.log('Reloading to apply update...');
+                                window.location.reload();
+                            } else {
+                                console.log('Update pending - will reload after quiz ends');
+                                // Store update flag
+                                sessionStorage.setItem('updatePending', 'true');
+                            }
+                        }
+                    });
+                });
             })
             .catch(error => {
                 console.log('Service Worker registration failed:', error);
@@ -26,7 +49,15 @@ async function init() {
         return;
     }
 
-    // Show loading state
+    // Check if there's a pending update from previous session
+    if (sessionStorage.getItem('updatePending') === 'true') {
+        sessionStorage.removeItem('updatePending');
+        console.log('Applying pending update...');
+        window.location.reload();
+        return;
+    }
+
+    // ...existing code...
     appContainer.innerHTML = `
         <div class="screen-container">
             <h1 class="screen-title">Loading Quiz...</h1>
@@ -40,15 +71,10 @@ async function init() {
     `;
 
     try {
-        // Attach global event listeners
         attachEventListeners(document.body);
-
         await prefetchAllData(CONFIG.TOPICS);
-
-        // Initialize the router, which will handle the initial render
         initRouter();
         
-        // Start background update checks
         const { startAutoUpdateCheck } = await import('./dataService.js');
         startAutoUpdateCheck(CONFIG.TOPICS);
     } catch (error) {
@@ -70,13 +96,10 @@ async function init() {
     }
 }
 
-// Start the application when DOM is ready
 document.addEventListener('DOMContentLoaded', init);
 
-// Handle online/offline events
 window.addEventListener('online', () => {
     console.log('Connection restored');
-    // Show a subtle notification if needed
 });
 
 window.addEventListener('offline', () => {
