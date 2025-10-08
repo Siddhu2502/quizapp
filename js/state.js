@@ -15,5 +15,5 @@ export const AppState = {
 
 export const CONFIG = {
     QUIZ_LENGTH: 25,
-    TOPICS: ['DEVOPS', 'JAVA', 'GENAI', 'PYTHON'], // Removed AZURE since it doesn't exist
+    TOPICS: ['DEVOPS', 'JAVA', 'GENAI', 'PYTHON', 'MYSQL'],
 };

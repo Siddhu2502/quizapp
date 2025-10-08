@@ -1,0 +1,186 @@
+[
+  {
+    "question": "The ______ join produces the cross product, or Cartesian product, of two tables.",
+    "options": [
+      "Self",
+      "Equi",
+      "Outer",
+      "Cross"
+    ],
+    "answer": "Cross",
+    "hint": "This type of join does not require a condition to link the tables.",
+    "explanation": "A Cross join returns all possible combinations of rows from the joined tables, resulting in the Cartesian product."
+  },
+  {
+    "question": "Which join is based on all columns in the two tables that have the same name and data type?",
+    "options": [
+      "Left Outer",
+      "Full Outer",
+      "Cross",
+      "Natural"
+    ],
+    "answer": "Natural",
+    "hint": "This join type automatically infers the join condition, so you don't need an ON or USING clause.",
+    "explanation": "A Natural join implicitly joins tables based on all columns that share the same name and a compatible data type."
+  },
+  {
+    "question": "Which type of join is specifically used to retrieve records that do not meet the join condition, along with those that do?",
+    "options": [
+      "Self Join",
+      "Non Equi Join",
+      "Outer Join",
+      "Equi Join"
+    ],
+    "answer": "Outer Join",
+    "hint": "This join is useful for finding unmatched records between two tables.",
+    "explanation": "An Outer Join retrieves all records that match the join condition, plus all records from one or both tables that do not have a match."
+  },
+  {
+    "question": "Joining a table to itself is referred to as a ______.",
+    "options": [
+      "Equi Join",
+      "Outer Join",
+      "Non Equi Join",
+      "Self Join"
+    ],
+    "answer": "Self Join",
+    "hint": "This technique is often used to query hierarchical data, such as an employee and their manager within the same table.",
+    "explanation": "A Self Join is a join where a table is joined with itself, typically using table aliases to differentiate the two instances of the table."
+  },
+  {
+    "question": "Which operator is NOT appropriate in the join condition of a non-equi join statement?",
+    "options": [
+      "greater than or equal to operator",
+      "LIKE operator",
+      "BETWEEN operator",
+      "equal operator"
+    ],
+    "answer": "equal operator",
+    "hint": "The name 'non-equi' itself suggests which operator is excluded.",
+    "explanation": "A non-equi join is defined by using any comparison operator other than the equals (=) operator in its join condition."
+  },
+  {
+    "question": "Given the following SQL statement, what is its primary purpose?",
+    "code": "CREATE INDEX emp_dept_id_idx ON employee(dept_id);",
+    "options": [
+      "To increase the chance of full table scans.",
+      "To store a backup of the index in the EMPLOYEE table.",
+      "To may reduce the amount of disk I/O for SELECT statements.",
+      "To override a foreign key relationship's unique index."
+    ],
+    "answer": "To may reduce the amount of disk I/O for SELECT statements.",
+    "hint": "Think about why you would create an index on a frequently queried column.",
+    "explanation": "Indexes are created on table columns to speed up the performance of data retrieval, thereby reducing disk I/O for SELECT queries."
+  },
+  {
+    "question": "Which SQL statement correctly grants a privilege to all database users?",
+    "options": [
+      "grant select on department to ALL USERS;",
+      "grant select on department to EVERYONE;",
+      "grant select on department to PUBLIC;",
+      "grant select on department to PRIVATE;"
+    ],
+    "answer": "grant select on department to PUBLIC;",
+    "hint": "There is a special keyword in SQL that represents all current and future users in the database.",
+    "explanation": "In many SQL databases, `PUBLIC` is a special role that represents all users, so granting a privilege to PUBLIC makes it available to everyone."
+  },
+  {
+    "question": "Which SQL statement would you use to remove a view called EMP_DEPT_VU from your schema?",
+    "options": [
+      "REMOVE VIEW emp_dept_vu;",
+      "DELETE emp_dept_vu;",
+      "DROP VIEW emp_dept_vu;",
+      "TRUNCATE VIEW emp_dept_vu;"
+    ],
+    "answer": "DROP VIEW emp_dept_vu;",
+    "hint": "Removing database objects like tables and views often uses the same initial DDL command.",
+    "explanation": "The correct DDL (Data Definition Language) syntax to remove a view from a database schema is `DROP VIEW view_name;`."
+  },
+  {
+    "question": "To display the names of employees who earn more than the average salary, the initial query is written incorrectly. What change is needed?",
+    "code": "SELECT last_name, first_name\nFROM employee\nWHERE salary > AVG(salary);",
+    "options": [
+      "Use a subquery in the WHERE clause to compare the average salary value.",
+      "Change the AVG() function to a different function.",
+      "Move the AVG(salary) function to the SELECT clause.",
+      "Add a GROUP BY clause."
+    ],
+    "answer": "Use a subquery in the WHERE clause to compare the average salary value.",
+    "hint": "Aggregate functions like AVG() cannot be used directly in a standard WHERE clause.",
+    "explanation": "Aggregate functions are not permitted directly in a WHERE clause. A subquery `(SELECT AVG(salary) FROM employee)` must be used to calculate the value for comparison."
+  },
+  {
+    "question": "What will be the output of the following SQL query?",
+    "code": "select ceil(5.3) from dual;",
+    "options": [
+      "5",
+      "6",
+      "5.0",
+      "5.5"
+    ],
+    "answer": "6",
+    "hint": "Think of the word 'ceiling' - this function always rounds in one direction.",
+    "explanation": "The `CEIL()` or `CEILING()` function in SQL rounds a number up to the next largest integer."
+  },
+  {
+    "question": "A report must display 'Not Available' if an order's total is NULL. Which query correctly achieves this?",
+    "options": [
+      "SELECT ordid, CASE(total, 'Not Available') FROM order;",
+      "SELECT ordid, REPLACE(total, NULL, 'Not Available') FROM order;",
+      "SELECT ordid, IFNULL(total, 'Not Available') FROM order;",
+      "SELECT ordid, DECODE(total, 'Not Available') FROM order;"
+    ],
+    "answer": "SELECT ordid, IFNULL(total, 'Not Available') FROM order;",
+    "hint": "Look for a function specifically designed to handle NULL values by providing a default replacement.",
+    "explanation": "The `IFNULL()` (or `COALESCE` in standard SQL) function checks if an expression is NULL, and if it is, returns a specified alternative value."
+  },
+  {
+    "question": "Which statement is true regarding the default behavior of the ORDER BY clause?",
+    "options": [
+      "In a character sort, the values are case-sensitive.",
+      "Numeric values are sorted from maximum to minimum by default.",
+      "Only columns present in the SELECT list can be used.",
+      "NULL values are always ignored by the sort operation."
+    ],
+    "answer": "In a character sort, the values are case-sensitive.",
+    "hint": "Consider how a database would sort the strings 'Apple' and 'apple' without any special functions.",
+    "explanation": "By default, SQL's ORDER BY clause performs a case-sensitive sort for character data, meaning uppercase letters are typically sorted before lowercase letters."
+  },
+  {
+    "question": "To find employees who are not assigned to any department, the `dept_id` column is checked. What is the correct operator for this?",
+    "code": "SELECT last_name, first_name FROM employee WHERE dept_id ... ;",
+    "options": [
+      "= NULL",
+      "<> NULL",
+      "IS NULL",
+      "== NULL"
+    ],
+    "answer": "IS NULL",
+    "hint": "Standard comparison operators like '=' or '<>' do not work correctly with NULL values.",
+    "explanation": "In SQL, NULL represents an unknown value, so you must use the `IS NULL` or `IS NOT NULL` operator to check for its presence."
+  },
+  {
+    "question": "Which keyword is used to retrieve a list of unique values from a column, eliminating any duplicates?",
+    "options": [
+      "UNIQUE",
+      "DISTINCT",
+      "SINGLE",
+      "DIFFERENT"
+    ],
+    "answer": "DISTINCT",
+    "hint": "This keyword precedes the column name in the SELECT clause.",
+    "explanation": "The `DISTINCT` keyword in a SELECT statement is used to return only unique (different) values, removing duplicate rows from the result set."
+  },
+  {
+    "question": "You need to remove all data from the `employee` table quickly while keeping the table structure, but this action cannot be undone. Which command should you use?",
+    "options": [
+      "DELETE FROM employee;",
+      "DROP TABLE employee;",
+      "TRUNCATE TABLE employee;",
+      "CLEAR TABLE employee;"
+    ],
+    "answer": "TRUNCATE TABLE employee;",
+    "hint": "This DDL command is faster than DELETE for removing all rows but is not a logged operation, so it can't be rolled back.",
+    "explanation": "`TRUNCATE TABLE` is a DDL operation that removes all rows from a table. It is generally faster than `DELETE` and cannot be rolled back."
+  }
+]
