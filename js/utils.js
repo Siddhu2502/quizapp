@@ -24,3 +24,11 @@ export function formatTopicName(topic) {
     // Improved formatting for multi-word topics like "devops_devsecops"
     return topic.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
 }
+
+export function renderInlineCode(text) {
+    if (!text) return '';
+    // Convert newlines to <br>, then backticks to <code> tags
+    return escapeHtml(text)
+        .replace(/\\n/g, '<br>')
+        .replace(/`([^`]+)`/g, '<code>$1</code>');
+}

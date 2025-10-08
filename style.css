@@ -226,6 +226,16 @@ body {
     color: var(--text-muted);
 }
 
+.option-text code {
+    background-color: #1e1e2e;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    color: #89b4fa;
+    border: 1px solid var(--border-color);
+}
+
 .option.correct {
     border-color: var(--correct-color);
     background-color: rgba(166, 227, 161, 0.1);

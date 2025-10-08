@@ -41,6 +41,13 @@ export function handleQuizStart(topic, quizType = 'new') {
 
     // Create a deep copy of the questions for this session to isolate it from background updates
     AppState.quizQuestions = JSON.parse(JSON.stringify(selectedQuestions));
+    
+    // Shuffle options for each question so correct answer isn't always first
+    AppState.quizQuestions.forEach(q => {
+        if (q.options && Array.isArray(q.options)) {
+            q.options = shuffleArray(q.options);
+        }
+    });
 
     AppState.currentQuestionIndex = 0;
     AppState.userAnswers = [];
@@ -146,8 +153,14 @@ export function handleReviewStart(topic) {
         const currentQuestion = allQuestionsForTopic.find(q => q.question === questionText);
         
         if (currentQuestion) {
+            // Create a copy and shuffle options for review
+            const questionCopy = JSON.parse(JSON.stringify(currentQuestion));
+            if (questionCopy.options && Array.isArray(questionCopy.options)) {
+                questionCopy.options = shuffleArray(questionCopy.options);
+            }
+            
             validReviewQuestions.push({
-                question: currentQuestion,
+                question: questionCopy,
                 userAnswer: attemptedData[questionText].userAnswer
             });
         }

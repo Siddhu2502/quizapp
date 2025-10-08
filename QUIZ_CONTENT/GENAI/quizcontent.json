@@ -1,0 +1,603 @@
+[
+  {
+    "question": "In sequence-to-sequence tasks, what is the primary role of the attention mechanism?",
+    "options": [
+      "To reduce the model's computational complexity",
+      "To speed up the training process significantly",
+      "To help the model focus on relevant parts of the input",
+      "To ensure the output sequence has a fixed length"
+    ],
+    "answer": "To help the model focus on relevant parts of the input",
+    "hint": "Think about how a human translator focuses on specific words when translating a sentence.",
+    "explanation": "The attention mechanism allows the model to weigh the importance of different parts of the input sequence, enabling it to focus on the most relevant information when generating the output."
+  },
+  {
+    "question": "What was the main innovation introduced by the famous 'Attention Is All You Need' paper?",
+    "options": [
+      "The Recurrent Neural Network (RNN) architecture",
+      "The concept of Variational Autoencoders (VAEs)",
+      "The Transformer architecture",
+      "The introduction of Convolutional Neural Networks (CNNs) for text"
+    ],
+    "answer": "The Transformer architecture",
+    "hint": "The paper's title itself is a clue about the core mechanism that it proposes to use exclusively.",
+    "explanation": "The 2017 paper 'Attention Is All You Need' introduced the Transformer architecture, which relies solely on attention mechanisms, dispensing with recurrence and convolutions entirely."
+  },
+  {
+    "question": "In a Recurrent Neural Network (RNN) used for sentiment analysis, which layer is responsible for converting words into dense numerical vectors?",
+    "options": [
+      "Dense Layer",
+      "Embedding Layer",
+      "Dropout Layer",
+      "SimpleRNN Layer"
+    ],
+    "answer": "Embedding Layer",
+    "hint": "This layer creates a meaningful vector representation for each word in the vocabulary.",
+    "explanation": "The Embedding layer maps each word (or token) from the vocabulary to a dense vector of fixed size, capturing semantic relationships between words."
+  },
+  {
+    "question": "Which of the following problems is a significant challenge when training deep neural networks, especially RNNs on long sequences?",
+    "options": [
+      "Over-regularization",
+      "Lack of sufficient data",
+      "Vanishing/Exploding gradients",
+      "Linear activation functions"
+    ],
+    "answer": "Vanishing/Exploding gradients",
+    "hint": "This problem relates to how the error signal changes as it is propagated back through many layers or time steps.",
+    "explanation": "During backpropagation in deep networks, gradients can become extremely small (vanish) or large (explode), making it difficult for the model to learn long-range dependencies."
+  },
+  {
+    "question": "What is the primary objective of the Generator in a Generative Adversarial Network (GAN)?",
+    "options": [
+      "To accurately classify real data",
+      "To distinguish between real and fake data",
+      "To fool the discriminator with realistic fake data",
+      "To minimize the diversity of the generated data"
+    ],
+    "answer": "To fool the discriminator with realistic fake data",
+    "hint": "The Generator is in a constant competition with its counterpart, the Discriminator.",
+    "explanation": "The Generator's goal is to create data so realistic that the Discriminator cannot distinguish it from genuine data, effectively 'fooling' it."
+  },
+  {
+    "question": "How does multi-head attention differ from standard attention?",
+    "options": [
+      "It is significantly faster but less accurate",
+      "It uses fewer parameters",
+      "It allows the model to focus on multiple parts of the input simultaneously",
+      "It only works for image-based tasks"
+    ],
+    "answer": "It allows the model to focus on multiple parts of the input simultaneously",
+    "hint": "Consider the benefit of having multiple 'perspectives' on the input sequence.",
+    "explanation": "Multi-head attention runs the attention mechanism in parallel multiple times, allowing the model to jointly attend to information from different representation subspaces at different positions."
+  },
+  {
+    "question": "In machine learning, what does the term 'overfitting' describe?",
+    "options": [
+      "A model that performs poorly on both training and validation data",
+      "A model that is too simple to capture the underlying data patterns",
+      "A model that performs very well on training data but poorly on unseen data",
+      "A model that trains extremely quickly"
+    ],
+    "answer": "A model that performs very well on training data but poorly on unseen data",
+    "hint": "This happens when the model learns the training data, including its noise and outliers, too well.",
+    "explanation": "Overfitting occurs when a model memorizes the training data instead of generalizing from it, resulting in high training accuracy but low accuracy on new, unseen data."
+  },
+  {
+    "question": "What is the main advantage of using an LSTM (Long Short-Term Memory) network over a basic RNN?",
+    "options": [
+      "LSTMs have a simpler architecture",
+      "LSTMs require less training data",
+      "LSTMs are better at handling long-term dependencies",
+      "LSTMs can only be used for text generation"
+    ],
+    "answer": "LSTMs are better at handling long-term dependencies",
+    "hint": "LSTMs were designed to overcome a key limitation of simple RNNs related to memory over long sequences.",
+    "explanation": "LSTMs use a system of gates (input, forget, output) to regulate the flow of information, which helps them remember relevant information over long sequences and mitigate the vanishing gradient problem."
+  },
+  {
+    "question": "What is the primary purpose of the `epochs` parameter in a model's training function, such as `model.fit()`?",
+    "options": [
+      "It defines the size of data chunks processed at one time",
+      "It specifies the learning rate of the optimizer",
+      "It determines the total number of times the model is exposed to the entire training dataset",
+      "It sets the function used to measure the model's error"
+    ],
+    "answer": "It determines the total number of times the model is exposed to the entire training dataset",
+    "hint": "One epoch means that every sample in the training dataset has had an opportunity to update the internal model parameters.",
+    "explanation": "An epoch is one complete pass through the entire training dataset. The `epochs` parameter specifies how many times this full cycle of training should be repeated."
+  },
+  {
+    "question": "Which of these is NOT a generative model?",
+    "options": [
+      "Variational Autoencoder (VAE)",
+      "Generative Adversarial Network (GAN)",
+      "Support Vector Machine (SVM)",
+      "Transformer-based models like GPT"
+    ],
+    "answer": "Support Vector Machine (SVM)",
+    "hint": "Think about which model is primarily used for classification by finding a boundary between data points.",
+    "explanation": "SVMs are discriminative models used for classification tasks. They learn a decision boundary to separate classes, rather than learning the underlying data distribution to generate new samples."
+  },
+  {
+    "question": "Why is the reparameterization trick crucial for training Variational Autoencoders (VAEs)?",
+    "options": [
+      "It simplifies the model's architecture",
+      "It reduces the dimensionality of the latent space",
+      "It makes the model deterministic",
+      "It allows backpropagation to work through random sampling nodes"
+    ],
+    "answer": "It allows backpropagation to work through random sampling nodes",
+    "hint": "This technique cleverly separates the random part from the deterministic part of a process.",
+    "explanation": "The reparameterization trick allows gradients to be backpropagated through the stochastic sampling process in the latent space by re-framing the sampling as a deterministic function of model parameters and a random variable."
+  },
+  {
+    "question": "What is the main difference between a generative model and a discriminative model?",
+    "options": [
+      "Generative models are always unsupervised, while discriminative models are supervised",
+      "Generative models learn the joint probability P(x,y), while discriminative models learn the conditional probability P(y|x)",
+      "Generative models are only used for images, while discriminative models are for text",
+      "Generative models are faster to train than discriminative models"
+    ],
+    "answer": "Generative models learn the joint probability P(x,y), while discriminative models learn the conditional probability P(y|x)",
+    "hint": "One type of model learns how the data is generated, while the other learns the boundary between classes.",
+    "explanation": "A generative model learns the full distribution of the data and can generate new samples, whereas a discriminative model learns to distinguish between different classes of data."
+  },
+  {
+    "question": "How do Transformers manage to process entire sequences at once, giving them an advantage over sequential RNNs?",
+    "options": [
+      "By using a recursive structure",
+      "Through parallel processing",
+      "By processing tokens one by one in a loop",
+      "By using fewer parameters"
+    ],
+    "answer": "Through parallel processing",
+    "hint": "Unlike RNNs that must process data in order, Transformers can handle all tokens simultaneously.",
+    "explanation": "The architecture of Transformers, based on self-attention, does not rely on sequential processing. This allows for massive parallelization, as the relationships between all tokens can be computed at the same time."
+  },
+  {
+    "question": "What does the '<OOV>' token represent during the text tokenization process?",
+    "options": [
+      "A placeholder for punctuation",
+      "A token indicating the start of a sentence",
+      "A placeholder for out-of-vocabulary words",
+      "A special token for numerical digits"
+    ],
+    "answer": "A placeholder for out-of-vocabulary words",
+    "hint": "This token is used when the tokenizer encounters a word it has not seen in its training vocabulary.",
+    "explanation": "The 'Out-Of-Vocabulary' (OOV) token is used to represent any word that is not present in the tokenizer's pre-defined vocabulary, preventing errors and handling unknown words."
+  },
+  {
+    "question": "Which component in a neural network introduces non-linearity, allowing the network to learn complex patterns?",
+    "options": [
+      "The weight initialization",
+      "The loss function",
+      "The activation function",
+      "The optimizer"
+    ],
+    "answer": "The activation function",
+    "hint": "Without this component, a deep neural network would behave just like a single linear model.",
+    "explanation": "Activation functions like ReLU, Sigmoid, or Tanh apply a non-linear transformation to the output of a neuron, which is crucial for the network to learn complex, non-linear relationships in the data."
+  },
+  {
+    "question": "A machine learning model designed to predict whether an email is 'spam' or 'not spam' is an example of what kind of task?",
+    "options": [
+      "Regression",
+      "Classification",
+      "Clustering",
+      "Reinforcement Learning"
+    ],
+    "answer": "Classification",
+    "hint": "This task involves assigning a discrete category or label to an input.",
+    "explanation": "Classification is a supervised learning task where the goal is to predict a discrete class label. Predicting 'spam' or 'not spam' fits this definition perfectly."
+  },
+  {
+    "question": "What is the primary purpose of a loss function in training a machine learning model?",
+    "options": [
+      "To initialize the model's weights",
+      "To speed up the training process",
+      "To define the network's architecture",
+      "To quantify the difference between predicted and actual values"
+    ],
+    "answer": "To quantify the difference between predicted and actual values",
+    "hint": "This function gives a measure of how 'wrong' the model's predictions are.",
+    "explanation": "The loss function calculates an error value that represents the discrepancy between the model's predictions and the true target values. The training process aims to minimize this value."
+  },
+  {
+    "question": "Which of these RNN architectures is known for using a 'reset gate' and an 'update gate' and is generally simpler than an LSTM?",
+    "options": [
+      "Simple RNN",
+      "Bidirectional RNN",
+      "GRU (Gated Recurrent Unit)",
+      "Deep RNN"
+    ],
+    "answer": "GRU (Gated Recurrent Unit)",
+    "hint": "This architecture was introduced as a slightly more streamlined alternative to LSTMs.",
+    "explanation": "GRUs simplify the LSTM architecture by combining the forget and input gates into a single 'update gate' and also employ a 'reset gate'. This makes them computationally more efficient in some cases."
+  },
+  {
+    "question": "In the context of generative AI, which tool is known for grounding its data on the OpenAI Codex model and the vast amount of code on GitHub?",
+    "options": [
+      "ChatGPT",
+      "DALL-E 2",
+      "GitHub Copilot",
+      "Google Bard"
+    ],
+    "answer": "GitHub Copilot",
+    "hint": "This tool is designed specifically to assist programmers by suggesting code.",
+    "explanation": "GitHub Copilot is an AI pair programmer that is powered by the OpenAI Codex model and trained on billions of lines of code from public GitHub repositories."
+  },
+  {
+    "question": "What is the primary purpose of backpropagation in a neural network?",
+    "options": [
+      "To perform the initial forward pass of data",
+      "To activate the neurons in the hidden layers",
+      "To adjust the model's weights based on the calculated error",
+      "To randomly initialize the weights and biases"
+    ],
+    "answer": "To adjust the model's weights based on the calculated error",
+    "hint": "It's the process of propagating the error 'backward' from the output layer.",
+    "explanation": "Backpropagation is an algorithm used to train neural networks by calculating the gradient of the loss function with respect to the network's weights, and then updating the weights to minimize the loss."
+  },
+  {
+    "question": "Which of the following is NOT a common application of Recurrent Neural Networks (RNNs)?",
+    "options": [
+      "Text Generation",
+      "Speech Recognition",
+      "Image Classification",
+      "Time Series Prediction"
+    ],
+    "answer": "Image Classification",
+    "hint": "RNNs excel at sequential data. Think about which task doesn't inherently have a sequential nature.",
+    "explanation": "While RNNs can be adapted for image tasks (like captioning), static image classification is typically and more effectively handled by Convolutional Neural Networks (CNNs)."
+  },
+  {
+    "question": "If a discriminator in a GAN becomes too powerful and accurate early in training, what is the likely outcome?",
+    "options": [
+      "The generator will improve very quickly",
+      "The overall model will achieve perfect accuracy",
+      "The generator may struggle to improve because its gradients vanish",
+      "The training process will speed up significantly"
+    ],
+    "answer": "The generator may struggle to improve because its gradients vanish",
+    "hint": "If the discriminator can always tell the difference, the generator gets no useful feedback.",
+    "explanation": "If the discriminator is too good, it rejects all of the generator's outputs with high confidence. This causes the gradients passed back to the generator to become too small (vanish), providing no meaningful signal for it to learn and improve."
+  },
+  {
+    "question": "What is the primary function of padding when processing text data for an RNN?",
+    "options": [
+      "To increase the size of the vocabulary",
+      "To handle sequences of variable lengths by making them uniform",
+      "To remove unnecessary words from the text",
+      "To improve the model's accuracy on short sentences"
+    ],
+    "answer": "To handle sequences of variable lengths by making them uniform",
+    "hint": "Neural networks typically expect inputs of a fixed size. This technique helps standardize text inputs.",
+    "explanation": "Padding involves adding a special token to shorter sequences so that all sequences in a batch have the same length, which is a requirement for efficient batch processing in most deep learning frameworks."
+  },
+  {
+    "question": "The loss function of a Variational Autoencoder (VAE) is typically composed of which two components?",
+    "options": [
+      "Mean Squared Error and KL Divergence",
+      "Cross-Entropy and Hinge Loss",
+      "Classification Error and Regression Loss",
+      "L1 Loss and L2 Loss"
+    ],
+    "answer": "Mean Squared Error and KL Divergence",
+    "hint": "One part measures how well the data is reconstructed, and the other part acts as a regularizer for the latent space.",
+    "explanation": "A VAE's loss function has a reconstruction term (often Mean Squared Error or MSE) to make the output similar to the input, and a regularization term (the KL Divergence) to ensure the latent space has a well-formed, continuous distribution."
+  },
+  {
+    "question": "Which type of machine learning involves an agent learning to make decisions by taking actions in an environment to maximize a cumulative reward?",
+    "options": [
+      "Supervised Learning",
+      "Unsupervised Learning",
+      "Reinforcement Learning",
+      "Semi-supervised Learning"
+    ],
+    "answer": "Reinforcement Learning",
+    "hint": "This paradigm is inspired by behavioral psychology and is often used to train agents for games or robotics.",
+    "explanation": "Reinforcement Learning is a goal-oriented learning approach where an agent learns optimal behavior through trial-and-error interactions with an environment, guided by rewards and punishments."
+  },
+  {
+    "question": "Select the missing line of pseudocode that completes the loop for checking if a number is a 'Strong Number' (sum of the factorial of its digits).",
+    "code": "BEGIN\n  DECLARE number, sum, temp, remainder, fact\n  READ number\n  SET sum=0, temp=number\n  // Missing loop condition\n  {\n    remainder = number % 10\n    SET fact = 1\n    FOR i IN 1 to remainder DO\n      fact = fact * i\n    END FOR\n    sum = sum + fact\n    number = number / 10\n  }\n  IF sum == temp THEN PRINT \"Strong number\"\nEND",
+    "options": [
+      "WHILE number == 0",
+      "WHILE number > temp",
+      "WHILE number != 0",
+      "FOR i IN 1 to number"
+    ],
+    "answer": "WHILE number != 0",
+    "hint": "The loop should continue as long as there are digits left in the number to process.",
+    "explanation": "The loop's purpose is to extract each digit from the number one by one. The condition `WHILE number != 0` ensures the loop continues until all digits have been processed and the number is reduced to zero."
+  },
+  {
+    "question": "What is the primary goal of generative AI?",
+    "options": [
+      "To classify existing data into predefined categories",
+      "To predict future numerical values based on historical data",
+      "To generate new, original data samples that resemble a training dataset",
+      "To find hidden clusters within a dataset"
+    ],
+    "answer": "To generate new, original data samples that resemble a training dataset",
+    "hint": "The name 'generative' itself points to the core function of this type of AI.",
+    "explanation": "Generative AI models learn the underlying patterns and distribution of a training dataset in order to produce new, synthetic data that is similar to the original data."
+  },
+  {
+    "question": "What is the primary task for which the BERT model is designed?",
+    "options": [
+      "Generating long, coherent paragraphs of text",
+      "Translating text from one language to another",
+      "Bidirectional understanding of text for tasks like question answering",
+      "Generating realistic images from text descriptions"
+    ],
+    "answer": "Bidirectional understanding of text for tasks like question answering",
+    "hint": "Unlike earlier models that read text in one direction, BERT considers the full context of a word.",
+    "explanation": "BERT (Bidirectional Encoder Representations from Transformers) is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers."
+  },
+  {
+    "question": "What is a common technique used to prevent overfitting in neural networks where a random proportion of neurons are ignored during training?",
+    "options": [
+      "Gradient Clipping",
+      "Early Stopping",
+      "Dropout",
+      "Batch Normalization"
+    ],
+    "answer": "Dropout",
+    "hint": "This method acts as a form of regularization by preventing neurons from co-adapting too much.",
+    "explanation": "Dropout is a regularization technique where, during each training iteration, a random set of neurons are temporarily 'dropped' or ignored. This forces the network to learn more robust features."
+  },
+  {
+    "question": "Which generative model is known for its ability to transform images from one domain to another without paired examples, such as turning photos of horses into zebras?",
+    "options": [
+      "VAE",
+      "BigGAN",
+      "DCGAN",
+      "CycleGAN"
+    ],
+    "answer": "CycleGAN",
+    "hint": "This model learns mappings between domains using a cycle consistency loss.",
+    "explanation": "CycleGAN is designed for unpaired image-to-image translation. It learns to translate between two domains by enforcing the idea that if you translate an image to another domain and back again, you should get the original image."
+  },
+  {
+    "question": "In the context of Transformers, what does the encoder primarily focus on during a language translation task?",
+    "options": [
+      "Generating the final translated text word-by-word",
+      "Processing and representing the source language sentence",
+      "Calculating the attention scores for the decoder",
+      "Correcting grammatical errors in the output"
+    ],
+    "answer": "Processing and representing the source language sentence",
+    "hint": "The Transformer architecture has two main parts: one that 'reads' the input and one that 'writes' the output.",
+    "explanation": "The encoder's role is to process the input sequence (the source language) and create a rich numerical representation that captures its meaning and context. This representation is then passed to the decoder."
+  },
+  {
+    "question": "Which of the following is an improved feature of DALL-E 2 compared to its predecessor, DALL-E?",
+    "options": [
+      "Faster text generation",
+      "Lower computational cost",
+      "Higher resolution image generation",
+      "Ability to write code"
+    ],
+    "answer": "Higher resolution image generation",
+    "hint": "The successor model was noted for producing more detailed and visually impressive images.",
+    "explanation": "DALL-E 2 introduced several improvements over the original, most notably the ability to generate images at a much higher resolution with greater realism and detail."
+  },
+  {
+    "question": "What problem does 'mode collapse' describe in the context of GANs?",
+    "options": [
+      "The discriminator becomes too weak to train",
+      "The GAN can only be trained on a single computer",
+      "The generator produces only a very limited variety of outputs",
+      "The model's training speed suddenly decreases"
+    ],
+    "answer": "The generator produces only a very limited variety of outputs",
+    "hint": "This occurs when the generator finds a few 'safe' outputs that can fool the discriminator and stops exploring.",
+    "explanation": "Mode collapse is a common failure case for GANs where the generator learns to produce only one or a few types of samples, failing to capture the full diversity of the training data."
+  },
+  {
+    "question": "What kind of problem would you be solving if you were to predict the exact price of a house based on its features?",
+    "options": [
+      "Clustering",
+      "Classification",
+      "Regression",
+      "Anomaly Detection"
+    ],
+    "answer": "Regression",
+    "hint": "The goal is to predict a continuous numerical value, not a category.",
+    "explanation": "Regression tasks involve predicting a continuous output. Since a house price can be any value within a range, this is a classic example of a regression problem."
+  },
+  {
+    "question": "In a neural network, what does a neuron compute?",
+    "options": [
+      "The gradient of the loss function",
+      "A weighted sum of its inputs followed by an activation function",
+      "The overall accuracy of the model",
+      "Only a fixed value"
+    ],
+    "answer": "A weighted sum of its inputs followed by an activation function",
+    "hint": "Each neuron takes multiple inputs, processes them, and passes the result forward.",
+    "explanation": "A neuron calculates the weighted sum of its inputs, adds a bias, and then passes this result through a non-linear activation function to produce its output."
+  },
+  {
+    "question": "Why would an organization choose to use a pre-trained model like BERT or GPT and then fine-tune it?",
+    "options": [
+      "To build a model from scratch with less data",
+      "To leverage the general language understanding learned from a massive dataset",
+      "Because pre-trained models are simpler to understand",
+      "To ensure the model has no prior biases"
+    ],
+    "answer": "To leverage the general language understanding learned from a massive dataset",
+    "hint": "This approach, also known as transfer learning, avoids the need to train a large model from zero.",
+    "explanation": "Fine-tuning a pre-trained model allows developers to leverage the powerful, generalized knowledge learned from vast amounts of text, and then adapt it to a specific task with a much smaller dataset and less computational cost."
+  },
+  {
+    "question": "Which of the following is NOT a real-world application of Generative AI?",
+    "options": [
+      "Creating realistic CGI characters",
+      "Generating synthetic voices",
+      "Predicting stock market prices",
+      "Creating virtual fashion designs"
+    ],
+    "answer": "Predicting stock market prices",
+    "hint": "Think about which task is predictive/analytical rather than creative/generative.",
+    "explanation": "Predicting stock market prices is a regression or time-series forecasting problem, which is a form of predictive AI, not generative AI. Generative AI focuses on creating new content."
+  },
+  {
+    "question": "What is the key idea behind the self-attention mechanism in Transformers?",
+    "options": [
+      "Each word attends only to the word immediately preceding it",
+      "It allows each word in a sequence to look at and weigh the importance of all other words in the same sequence",
+      "It randomly assigns attention scores to different words",
+      "It is a mechanism for paying attention to the training loss"
+    ],
+    "answer": "It allows each word in a sequence to look at and weigh the importance of all other words in the same sequence",
+    "hint": "This mechanism helps the model understand the context of a word by relating it to all other words.",
+    "explanation": "Self-attention calculates a score for every other word in the sequence relative to a given word, allowing the model to create context-aware representations by understanding how words relate to each other."
+  },
+  {
+    "question": "Which activation function is commonly used and is defined as f(x) = max(0, x)?",
+    "options": [
+      "Sigmoid",
+      "Hyperbolic Tangent (tanh)",
+      "Softmax",
+      "ReLU (Rectified Linear Unit)"
+    ],
+    "answer": "ReLU (Rectified Linear Unit)",
+    "hint": "This function is computationally efficient and helps mitigate the vanishing gradient problem.",
+    "explanation": "ReLU is a popular activation function in deep learning that outputs the input directly if it is positive, and zero otherwise. Its simplicity and effectiveness have made it a default choice for many network types."
+  },
+  {
+    "question": "What is a significant challenge when evaluating the performance of GANs?",
+    "options": [
+      "They are too slow to generate samples for evaluation",
+      "The loss values directly correlate with image quality",
+      "Determining the objective quality and diversity of the generated data is difficult",
+      "They always outperform other generative models"
+    ],
+    "answer": "Determining the objective quality and diversity of the generated data is difficult",
+    "hint": "Unlike classification, there isn't a simple 'accuracy' metric for how good a generated image is.",
+    "explanation": "Evaluating GANs is challenging because there are no straightforward, objective metrics that perfectly capture both the visual quality (realism) and the diversity of the generated samples. Often, human evaluation is still required."
+  },
+  {
+    "question": "How did implementing Transformer-based models impact the scalability of GlobeTech's machine translation services for new languages?",
+    "options": [
+      "It made scaling impossible due to hardware requirements",
+      "It required complete manual rule-writing for each new language",
+      "It improved scalability by leveraging pre-trained models that could be fine-tuned",
+      "It had no effect on scalability"
+    ],
+    "answer": "It improved scalability by leveraging pre-trained models that could be fine-tuned",
+    "hint": "Consider the concept of transfer learning.",
+    "explanation": "By using large, pre-trained Transformer models like BERT and GPT, adding a new language became a matter of fine-tuning the existing model, which is far more efficient and scalable than training a new model from scratch."
+  },
+  {
+    "question": "What is a potential drawback of using a tokenizer with a fixed, limited vocabulary size?",
+    "options": [
+      "It makes the model train much slower",
+      "It can lead to a limited understanding of text due to missed or unknown words",
+      "It increases memory usage significantly",
+      "It simplifies the model too much, causing underfitting"
+    ],
+    "answer": "It can lead to a limited understanding of text due to missed or unknown words",
+    "hint": "What happens when the model encounters words that are not in its dictionary?",
+    "explanation": "If the vocabulary is too small, many words will be classified as out-of-vocabulary (OOV). This loss of specific information can limit the model's ability to understand the full nuance of the text."
+  },
+  {
+    "question": "Which of the following would be an appropriate algorithm for grouping similar customers based on their purchasing behavior without any pre-existing labels?",
+    "options": [
+      "Linear Regression",
+      "K-Means Clustering",
+      "Support Vector Machine",
+      "Decision Tree"
+    ],
+    "answer": "K-Means Clustering",
+    "hint": "This is an unsupervised learning task where the goal is to find natural groupings in data.",
+    "explanation": "K-Means Clustering is an unsupervised algorithm that aims to partition data points into a specified number of clusters, where each data point belongs to the cluster with the nearest mean."
+  },
+  {
+    "question": "What is the primary advantage of pre-training a large Transformer model on a vast text corpus?",
+    "options": [
+      "It makes the model smaller and faster",
+      "It allows the model to leverage general language understanding for downstream tasks",
+      "It guarantees the model will be free of bias",
+      "It eliminates the need for any task-specific fine-tuning"
+    ],
+    "answer": "It allows the model to leverage general language understanding for downstream tasks",
+    "hint": "The model learns grammar, facts, and reasoning skills before it's ever shown a specific task.",
+    "explanation": "Pre-training on a large corpus allows the model to learn a robust and nuanced understanding of language, which can then be transferred and adapted efficiently to various specific tasks through fine-tuning."
+  },
+  {
+    "question": "In the context of VAEs for anomaly detection, how is an anomaly typically identified?",
+    "options": [
+      "By a very low reconstruction error",
+      "When the data point falls into the largest cluster",
+      "By a very high reconstruction error",
+      "When the encoder output is zero"
+    ],
+    "answer": "By a very high reconstruction error",
+    "hint": "The model learns to reconstruct 'normal' data well. What happens when it sees something 'abnormal'?",
+    "explanation": "A VAE trained on normal data learns to reconstruct it with low error. When an anomalous data point is input, the model struggles to reconstruct it, resulting in a high reconstruction error, which flags it as an anomaly."
+  },
+  {
+    "question": "What does a GAN variant like 'Conditional GAN' allow a user to do?",
+    "options": [
+      "Generate images at progressively higher resolutions",
+      "Generate specific outputs by providing a condition or label",
+      "Improve the stability of the training process",
+      "Translate images from one domain to another"
+    ],
+    "answer": "Generate specific outputs by providing a condition or label",
+    "hint": "This adds a layer of control over what the GAN generates.",
+    "explanation": "A Conditional GAN (cGAN) extends the basic GAN architecture by providing both the generator and discriminator with additional information, such as a class label, allowing it to generate specific, targeted outputs."
+  },
+  {
+    "question": "If a model's validation loss is consistently decreasing while its training loss remains high and is also decreasing (but at a slower rate), what can be inferred?",
+    "options": [
+      "The model is overfitting",
+      "The model architecture is flawed",
+      "The model is underfitting",
+      "The model is perfectly trained"
+    ],
+    "answer": "The model is underfitting",
+    "hint": "This scenario suggests the model is too simple and has not yet learned the patterns even in the training data.",
+    "explanation": "Underfitting occurs when the model is not complex enough to capture the underlying structure of the data. High training loss indicates it's struggling to learn the training set, a classic sign of underfitting."
+  },
+  {
+    "question": "Which statement best describes the primary goal of machine learning?",
+    "options": [
+      "To design new, faster computer hardware",
+      "To allow computers to learn from data without being explicitly programmed",
+      "To program explicit, rule-based systems for every task",
+      "To increase the computational speed of algorithms"
+    ],
+    "answer": "To allow computers to learn from data without being explicitly programmed",
+    "hint": "It's about finding patterns, not following a strict set of instructions.",
+    "explanation": "The core concept of machine learning is to develop algorithms that can analyze data, learn patterns from it, and make decisions or predictions, rather than relying on hard-coded rules."
+  },
+  {
+    "question": "For a machine translation task, what was a major challenge for pre-Transformer methods that Transformers successfully addressed?",
+    "options": [
+      "Slow processing speed",
+      "Handling of graphics in text",
+      "Real-time voice translation",
+      "Handling long-range contextual meaning"
+    ],
+    "answer": "Handling long-range contextual meaning",
+    "hint": "Earlier models like RNNs struggled to maintain context over long sentences.",
+    "explanation": "Pre-Transformer models, particularly RNNs, had difficulty capturing dependencies between words that were far apart in a sentence. The self-attention mechanism in Transformers allows the model to look at the entire sentence at once, effectively solving this long-range dependency problem."
+  },
+  {
+    "question": "Which of these is NOT a common layer type in a typical neural network?",
+    "options": [
+      "Input Layer",
+      "Convolutional Layer",
+      "Hidden Layer",
+      "Quantum Layer"
+    ],
+    "answer": "Quantum Layer",
+    "hint": "One of these options belongs to an emerging field of computing, not standard deep learning.",
+    "explanation": "While Quantum Machine Learning is a field of research, Quantum Layers are not a standard component in typical, classical neural networks, which are composed of layers like Input, Hidden, Output, Convolutional, and Recurrent layers."
+  }
+]

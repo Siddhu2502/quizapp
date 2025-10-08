@@ -1,7 +1,7 @@
 // --- RENDERING COMPONENTS MODULE ---
 import { AppState, CONFIG } from './state.js';
 import { StorageManager } from './storage.js';
-import { escapeHtml, formatTopicName } from './utils.js';
+import { escapeHtml, formatTopicName, renderInlineCode } from './utils.js';
 
 export function renderHeader() {
     const breadcrumbsContainer = document.getElementById('breadcrumbs');
@@ -85,7 +85,7 @@ export function renderQuiz(container) {
         const letter = String.fromCharCode(65 + index);
         return `<div class="option" data-answer="${option}">
                     <span class="option-letter">${letter}</span>
-                    <span class="option-text">${option}</span>
+                    <span class="option-text">${renderInlineCode(option)}</span>
                 </div>`;
     }).join('');
 
@@ -173,7 +173,7 @@ export function renderReviewScreen(container) {
         else if (option === userAnswer) classes += " incorrect";
         return `<div class="${classes}">
                     <span class="option-letter">${letter}</span>
-                    <span class="option-text">${option}</span>
+                    <span class="option-text">${renderInlineCode(option)}</span>
                 </div>`;
     }).join('');
 

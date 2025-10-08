@@ -6,6 +6,7 @@ Each object in the JSON array must follow this strict schema:
 
 1.  **For standard questions:**
     * `question` (string): The question text derived from the document.
+    * `code` (string, optional): A code snippet if the question pertains to code; otherwise, omit this key.
     * `options` (array of strings): Exactly four potential answers. At least three should be plausible but incorrect distractors.
     * `answer` (string): The correct answer, which must *exactly* match one of the items in the `options` array.
     * `hint` (string): A short, helpful clue to guide the user without giving away the answer.

@@ -1,0 +1,643 @@
+[
+    {
+        "question": "Which command creates a venv and also ensures pip is upgraded inside it in a single step (assuming python refers to the desired interpreter)?",
+        "options": [
+            "python -m venv env && env/bin/python -m pip install --upgrade pip",
+            "python -m venv env --upgrade-pip",
+            "python create-env env --pip-upgrade",
+            "pip install venv env && pip install --upgrade pip"
+        ],
+        "answer": "python -m venv env && env/bin/python -m pip install --upgrade pip",
+        "hint": "venv creates the environment; pip upgrade is a separate action.",
+        "explanation": "venv doesn't auto-upgrade pip; you run python -m venv env then run the venv's python to upgrade pip (cross-platform differences may change the activation path)."
+    },
+    {
+        "question": "Given `a = 3/2` and `b = 3//2` in Python 3, which of the following is true?",
+        "options": [
+            "a is float 1.5, b is int 1",
+            "a is 1, b is 1",
+            "a is 1.5, b is float 1.0",
+            "a is int 1, b is float 1.0"
+        ],
+        "answer": "a is float 1.5, b is int 1",
+        "hint": "/ vs // differ in true division vs floor division.",
+        "explanation": "/ returns float true division (1.5); // is floor division returning an int when operands are ints (1)."
+    },
+    {
+        "question": "Which loop construct plus built-in gives the cleanest way to loop with an index and also access the previous element (or None if none)?",
+        "options": [
+            "for i, cur in enumerate(seq): prev = seq[i-1] if i else None",
+            "for cur in seq: remember prev externally",
+            "for i in range(len(seq)): prev = None",
+            "Use itertools.pairwise (or chain with None) with enumerate"
+        ],
+        "answer": "Use itertools.pairwise (or chain with None) with enumerate",
+        "hint": "Look for itertools utilities (Python 3.10+ or recipes).",
+        "explanation": "itertools.pairwise (3.10+) yields adjacent pairs; combining chain([None], seq) with zip or enumerate yields current plus previous without manual index checks—cleaner and less error-prone."
+    },
+    {
+        "question": "What does this code print and why?",
+        "code": "for i in range(3):\n    print(i)\n    if i == 1:\n        break\nelse:\n    print('completed')",
+        "options": [
+            "0\\n1",
+            "0\\n1\\ncompleted",
+            "0\\n1\\n2",
+            "completed"
+        ],
+        "answer": "0\\n1",
+        "hint": "The while/for else fires only when loop doesn't break.",
+        "explanation": "Loop prints 0 and 1, then breaks at i==1; the else block is skipped when break occurs."
+    },
+    {
+        "question": "Which statement correctly both skips the current iteration and ensures a specified cleanup action executes immediately afterwards every time the iteration is skipped?",
+        "options": [
+            "use continue then a finally-style cleanup via try/finally inside loop body",
+            "use break and then cleanup after loop",
+            "use pass and cleanup after loop",
+            "use continue and rely on garbage collector"
+        ],
+        "answer": "use continue then a finally-style cleanup via try/finally inside loop body",
+        "hint": "finally inside loop iteration runs before continue moves to next iteration.",
+        "explanation": "A try/finally inside the loop guarantees cleanup even when continue is used; a bare continue would skip code after it."
+    },
+    {
+        "question": "Given `lst = [0,1,2,3,4]`, what does `lst[1:4:-1]` return and why?",
+        "options": [
+            "[] because slice step direction conflicts with start/stop",
+            "[1,0]",
+            "[4,3,2]",
+            "Raises ValueError"
+        ],
+        "answer": "[] because slice step direction conflicts with start/stop",
+        "hint": "Slicing with negative step reads elements right-to-left; start < stop yields empty result.",
+        "explanation": "A slice with negative step expects start>stop to produce a sequence; since 1<4 with step -1, result is empty."
+    },
+    {
+        "question": "Average-case time complexity of removing an arbitrary element from a Python set and of popping an arbitrary element using set.pop() respectively are:",
+        "options": [
+            "O(1) and O(1)",
+            "O(n) and O(1)",
+            "O(1) and O(n)",
+            "O(log n) and O(1)"
+        ],
+        "answer": "O(1) and O(1)",
+        "hint": "Sets are hash-based; removal by value is constant on average; pop removes an arbitrary element efficiently.",
+        "explanation": "Both removal by known hashed key and pop (which removes an arbitrary element) are average O(1) operations on hash table based set; worst-case can degenerate."
+    },
+    {
+        "question": "Which of these list append/extend behaviors is correct and which is most memory-efficient when concatenating many small lists into one?",
+        "options": [
+            "Use list.extend for each small list in a loop (more efficient than repeated +)",
+            "Use repeated a = a + small (most efficient)",
+            "Use append and then flatten later (always best)",
+            "Use sum(list_of_lists, [])"
+        ],
+        "answer": "Use list.extend for each small list in a loop (more efficient than repeated +)",
+        "hint": "Repeated concatenation allocates new lists repeatedly.",
+        "explanation": "list.extend mutates in-place and avoids repeated allocations; repeated + creates new lists each time. The fastest pattern for many lists is to collect and use itertools.chain or a single comprehension."
+    },
+    {
+        "question": "Given `d = {'a':1}`, what is the result and final state after `d.setdefault('a', 99); d.setdefault('b', 2)`?",
+        "options": [
+            "Returns 1, then 2; final d {'a':1,'b':2}",
+            "Returns 99, then 2; final d {'a':99,'b':2}",
+            "Returns None, None; final d {'a':1,'b':2}",
+            "Raises KeyError"
+        ],
+        "answer": "Returns 1, then 2; final d {'a':1,'b':2}",
+        "hint": "setdefault returns existing value if key exists; otherwise sets and returns default.",
+        "explanation": "setdefault('a',99) finds 'a' exists so returns 1 and doesn't change it; setdefault('b',2) inserts 'b':2 and returns 2."
+    },
+    {
+        "question": "Which NumPy expression creates a 3x3 identity-like float array and then multiplies only its diagonal by 10 without a Python loop?",
+        "options": [
+            "a = np.eye(3, dtype=float); a[np.diag_indices(3)] *= 10",
+            "a = np.identity((3))*10",
+            "a = np.zeros((3,3)); a[0,0]=10; a[1,1]=10; a[2,2]=10",
+            "a = np.eye(3); for i in range(3): a[i,i]*=10"
+        ],
+        "answer": "a = np.eye(3, dtype=float); a[np.diag_indices(3)] *= 10",
+        "hint": "Use vectorized indexing to avoid Python loops.",
+        "explanation": "np.diag_indices returns index tuple for diagonal; using it with boolean or advanced indexing multiplies diagonal elements in-place efficiently."
+    },
+    {
+        "question": "What does this list comprehension produce and why?",
+        "code": "vals = [x+y for x,y in zip(range(5), range(1,10,2))]",
+        "options": [
+            "[0+1,1+3,2+5,3+7,4+9] -> [1,4,7,10,13]",
+            "[1,3,5,7,9]",
+            "[0,1,2,3,4,5,6,7,8]",
+            "Raises ValueError due to mismatched lengths"
+        ],
+        "answer": "[0+1,1+3,2+5,3+7,4+9] -> [1,4,7,10,13]",
+        "hint": "zip truncates to shortest iterable.",
+        "explanation": "zip stops at shortest sequence; range(5) pairs with range(1,10,2) values [1,3,5,7,9], producing the sums listed."
+    },
+    {
+        "question": "Which of the following is an accurate statement about Python functions and closures?",
+        "options": [
+            "A closure captures variables by binding to names from the enclosing scope at runtime; using mutable objects may show later changes.",
+            "Closures copy values at definition time and are immutable snapshots.",
+            "Nested functions cannot access nonlocal variables unless declared global.",
+            "A closure automatically creates a deep copy of outer variables."
+        ],
+        "answer": "A closure captures variables by binding to names from the enclosing scope at runtime; using mutable objects may show later changes.",
+        "hint": "Closure binds names, not snapshot values; nonlocal captures name binding.",
+        "explanation": "Closures capture references to names in enclosing scopes; if those names refer to mutable objects, changes are visible; use default args or copy to capture snapshot."
+    },
+    {
+        "question": "Which pattern correctly implements a module-level API while preventing expensive startup work on import?",
+        "options": [
+            "Expose lightweight functions and perform heavy initialization lazily inside functions or via an explicit init() call",
+            "Run heavy work at import time; users should import earlier",
+            "Use print() at import to indicate status and continue heavy work",
+            "Require top-level code to call heavy_initializer() during import"
+        ],
+        "answer": "Expose lightweight functions and perform heavy initialization lazily inside functions or via an explicit init() call",
+        "hint": "Avoid side-effects at import time; prefer lazy init.",
+        "explanation": "Modules should avoid heavy side-effects on import to be testable and fast; lazy initialization or explicit setup functions are preferred."
+    },
+    {
+        "question": "Which docstring convention will most tools (like Sphinx or help()) recognize and support parameter/return descriptions for automated docs?",
+        "options": [
+            "reStructuredText (numpy or Google style) placed in the triple-quoted docstring immediately after def/class",
+            "Inline # comments above the function",
+            "External README only",
+            "Using print() statements inside the function body"
+        ],
+        "answer": "reStructuredText (numpy or Google style) placed in the triple-quoted docstring immediately after def/class",
+        "hint": "Docstrings must be in the triple-quoted literal directly under def/class.",
+        "explanation": "Structured docstrings (NumPy/Google/reST) inside the function/class docstring enable tools like Sphinx or IDEs to parse parameters, returns, and types."
+    },
+    {
+        "question": "Which import style is best for avoiding namespace pollution while importing many names from a package submodule you use heavily?",
+        "options": [
+            "import package.submodule as sm and use sm.name",
+            "from package.submodule import *",
+            "from package.submodule import a,b,c (explicit list)",
+            "import package; use package.submodule.name directly"
+        ],
+        "answer": "import package.submodule as sm and use sm.name",
+        "hint": "Alias keeps calls concise and explicit; avoids *.",
+        "explanation": "Using an alias keeps namespace clean, is explicit, and makes calls concise. Explicit from-import lists are okay but get verbose; star import is discouraged."
+    },
+    {
+        "question": "Which `with`-context implementation correctly creates a temporary file that is automatically deleted on exit and gives a file path for use by other processes (careful about Windows)?",
+        "options": [
+            "use tempfile.NamedTemporaryFile(delete=False) and manually remove in finally or use tempfile.TemporaryDirectory and create a file inside it",
+            "use open(tempfile.mktemp()) directly",
+            "use os.tmpfile()",
+            "create a random filename in /tmp and open it"
+        ],
+        "answer": "use tempfile.NamedTemporaryFile(delete=False) and manually remove in finally or use tempfile.TemporaryDirectory and create a file inside it",
+        "hint": "NamedTemporaryFile with delete=False is more cross-platform; TemporaryDirectory is safer for other processes.",
+        "explanation": "On Windows an open file cannot be reopened by other process while open; using TemporaryDirectory and creating files inside it or NamedTemporaryFile with delete=False (and manual cleanup) is portable."
+    },
+    {
+        "question": "When reading a large JSONL (JSON lines) file with unknown record size, which method minimizes memory use while parsing but still allows transforming records?",
+        "options": [
+            "Read and parse line by line with json.loads per line",
+            "json.load whole file",
+            "Use eval on each line",
+            "Read into a giant string then split"
+        ],
+        "answer": "Read and parse line by line with json.loads per line",
+        "hint": "JSONL is designed for line-per-record streaming.",
+        "explanation": "JSONL can be processed streaming by reading lines and applying json.loads on each; avoids loading entire file into memory."
+    },
+    {
+        "question": "What encoding-related issue can cause a UnicodeDecodeError when opening a text file and how to defensively handle files with uncertain encodings?",
+        "options": [
+            "Assuming default locale encoding can fail; open with errors='replace' or detect using chardet/charset-normalizer then decode",
+            "Always opening as 'rb' prevents decoding errors",
+            "Using ascii mode is best",
+            "Use eval to coerce encoding"
+        ],
+        "answer": "Assuming default locale encoding can fail; open with errors='replace' or detect using chardet/charset-normalizer then decode",
+        "hint": "Files from different sources may have differing encodings; defensive strategies exist.",
+        "explanation": "Use explicit encoding, or detect encoding heuristically and handle decode errors via errors='replace'/'ignore' when necessary."
+    },
+    {
+        "question": "Which approach properly reads an XML file with nested elements and extracts values using ElementTree while avoiding common pitfalls with namespaces?",
+        "options": [
+            "Use ElementTree.parse and register namespaces (or strip namespace prefixes) before find/findall using fully-qualified tags",
+            "Use regex to parse XML",
+            "Read XML as text and split on tags",
+            "Use json.load on the XML file"
+        ],
+        "answer": "Use ElementTree.parse and register namespaces (or strip namespace prefixes) before find/findall using fully-qualified tags",
+        "hint": "XML namespaces change tag names; ElementTree supports namespace maps.",
+        "explanation": "ElementTree supports namespace-aware lookups; you should pass a namespace map or handle namespace URIs when using find/findall."
+    },
+    {
+        "question": "Which binary serialization approach is recommended for a cross-platform small-struct layout (integers and floats) and deterministic byte order?",
+        "options": [
+            "struct.pack with explicit endianness and format string",
+            "pickle.dumps with protocol 4",
+            "json.dumps then encode",
+            "str(object).encode()"
+        ],
+        "answer": "struct.pack with explicit endianness and format string",
+        "hint": "struct gives explicit control over sizes and endianness.",
+        "explanation": "struct.pack/unpack lets you define exact binary layouts and byte order for deterministic cross-platform binary formats; pickle is Python-specific and not safe for untrusted data."
+    },
+    {
+        "question": "Which debugging approach is best when you need to profile CPU hotspots and memory allocations for an intermittent bug that only appears under load?",
+        "options": [
+            "Use cProfile for CPU hotspots and tracemalloc for memory allocations, reproduce load in a controlled environment",
+            "Scatter print() calls and hope to catch it",
+            "Use pdb for CPU profiling",
+            "Rely on try/except logging.exception only"
+        ],
+        "answer": "Use cProfile for CPU hotspots and tracemalloc for memory allocations, reproduce load in a controlled environment",
+        "hint": "Profilers are designed for hotspots; tracemalloc tracks allocations.",
+        "explanation": "cProfile helps find expensive functions; tracemalloc can help find allocation sources. Reproducing under load in a controlled environment makes profiling meaningful."
+    },
+    {
+        "question": "When 'x' is missing from a dictionary `d`, and `factory()` has side effects, which is the safest pattern to avoid unwanted execution of `factory()`?",
+        "options": [
+            "value = d.get('x');\nif value is None: value = factory()",
+            "value = d.setdefault('x', factory())",
+            "value = d['x'] or factory()",
+            "try: value = d['x']\nexcept KeyError: value = factory()"
+        ],
+        "answer": "try: value = d['x']\nexcept KeyError: value = factory()",
+        "hint": "setdefault evaluates its second argument before call; beware side-effects.",
+        "explanation": "setdefault evaluates the default argument unconditionally before the call. Using `try/except` or `get` followed by an `if` check ensures the factory function is only called when the key is actually missing."
+    },
+    {
+        "question": "Which of the following demonstrates a correct decorator that preserves the wrapped function's metadata (name and docstring)?",
+        "options": [
+            "def deco(f):\n    @functools.wraps(f)\n    def wrapper(*a, **kw):\n        return f(*a, **kw)\n    return wrapper",
+            "def deco(f):\n    def wrapper(*a, **kw):\n        return f(*a, **kw)\n    return wrapper",
+            "def deco(f):\n    return f",
+            "def deco(f):\n    f.__name__ = 'wrapped'\n    return f"
+        ],
+        "answer": "def deco(f):\n    @functools.wraps(f)\n    def wrapper(*a, **kw):\n        return f(*a, **kw)\n    return wrapper",
+        "hint": "Use functools.wraps to copy metadata.",
+        "explanation": "functools.wraps is a decorator that copies metadata like __name__ and __doc__ from the original function to the wrapper function, which aids debugging and introspection."
+    },
+    {
+        "question": "Which pattern provides a deterministic way to persist and later resume progress of a long-running data-processing loop, minimizing data loss on interruption?",
+        "options": [
+            "Write checkpoints to disk atomically (write temp file then os.replace) containing progress state after each chunk, and on start read last checkpoint",
+            "Keep everything in memory and hope nothing fails",
+            "Pickle the entire in-memory state each iteration to the same file directly (no atomic swap)",
+            "Log progress to stdout only"
+        ],
+        "answer": "Write checkpoints to disk atomically (write temp file then os.replace) containing progress state after each chunk, and on start read last checkpoint",
+        "hint": "Atomic replace avoids partial files; smaller checkpoints reduce rework.",
+        "explanation": "Atomic writes (writing to a temporary file then using os.replace) prevent corrupt checkpoints if the process is interrupted. Frequent, small checkpoints allow resuming with minimal reprocessing."
+    },
+    {
+        "question": "Which technique is safest to log exceptions with context (stack trace and custom fields) without exposing sensitive data in production logs?",
+        "options": [
+            "Use logging.exception with structured logging fields, sanitize PII before logging, and configure log level/rotations",
+            "print the exception and traceback to stdout",
+            "Write full exception and request body to logs always",
+            "Swallow exceptions silently"
+        ],
+        "answer": "Use logging.exception with structured logging fields, sanitize PII before logging, and configure log level/rotations",
+        "hint": "Structured logs + sanitization + proper log config is best practice.",
+        "explanation": "Use logging.exception to capture stack trace, include structured/contextual fields, and ensure you redact or omit sensitive fields before writing logs."
+    },
+    {
+        "question": "Which of the following is the correct way to create a virtual environment using the built-in venv module?",
+        "options": [
+            "python -m venv env",
+            "python create venv env",
+            "venv create env",
+            "pip install venv env"
+        ],
+        "answer": "python -m venv env",
+        "hint": "Use the -m flag to run modules as scripts.",
+        "explanation": "The correct command uses python -m venv <env_name> to create a virtual environment; other options are not valid commands."
+    },
+    {
+        "question": "What is the output type of the expression 3 / 2 in Python 3?",
+        "options": [
+            "float",
+            "int",
+            "str",
+            "complex"
+        ],
+        "answer": "float",
+        "hint": "Division with a single slash yields a non-integer result when necessary.",
+        "explanation": "In Python 3, the / operator always returns a float (3 / 2 == 1.5)."
+    },
+    {
+        "question": "Which control structure is most appropriate to iterate a fixed number of times?",
+        "options": [
+            "for loop",
+            "while True with break",
+            "if-elif-else",
+            "try-except"
+        ],
+        "answer": "for loop",
+        "hint": "Think in terms of ranges and sequences.",
+        "explanation": "A for loop (often with range()) is ideal for iterating a known number of times."
+    },
+    {
+        "question": "What will this code print?",
+        "code": "count = 0\nwhile count < 3:\n    print(count)\n    count += 1\nelse:\n    print('done')",
+        "options": [
+            "0\\n1\\n2\\ndone",
+            "0\\n1\\n2",
+            "0\\n1\\n2\\n3\\ndone",
+            "done"
+        ],
+        "answer": "0\\n1\\n2\\ndone",
+        "hint": "The while loop runs while condition is true; else executes when loop finishes normally.",
+        "explanation": "The loop prints 0, 1, and 2. Since the loop completes without being terminated by a `break` statement, the `else` clause is executed, printing 'done'."
+    },
+    {
+        "question": "Which statement correctly skips the current iteration and continues with the next in a loop?",
+        "options": [
+            "continue",
+            "break",
+            "pass",
+            "skip"
+        ],
+        "answer": "continue",
+        "hint": "It sounds like 'carry on'.",
+        "explanation": "'continue' immediately proceeds to the next loop iteration; 'break' exits the loop, 'pass' is a no-op."
+    },
+    {
+        "question": "Given the list nums = [1,2,3,4], what is the result of nums[-1]?",
+        "options": [
+            "4",
+            "1",
+            "IndexError",
+            "-1"
+        ],
+        "answer": "4",
+        "hint": "Negative indices count from the end.",
+        "explanation": "Index -1 accesses the last element of the list, which is 4."
+    },
+    {
+        "question": "What is the time complexity of checking membership (x in s) for a Python set of size n on average?",
+        "options": [
+            "O(1)",
+            "O(n)",
+            "O(log n)",
+            "O(n log n)"
+        ],
+        "answer": "O(1)",
+        "hint": "Sets are implemented as hash tables.",
+        "explanation": "Average-case membership for sets uses hashing and is O(1); worst-case can degrade but typical complexity is constant."
+    },
+    {
+        "question": "Which of the following operations will modify the original list `a` in-place to append element 5?",
+        "options": [
+            "a.append(5)",
+            "a = a + [5]",
+            "a = a.append(5)",
+            "append(a,5)"
+        ],
+        "answer": "a.append(5)",
+        "hint": "Look for the list method that returns None and mutates the list.",
+        "explanation": "a.append(5) mutates the list in-place; a = a + [5] creates a new list; a = a.append(5) assigns None to a because append returns None."
+    },
+    {
+        "question": "Which dictionary method returns a view of its key-value pairs as tuples?",
+        "options": [
+            "items()",
+            "keys()",
+            "values()",
+            "pairs()"
+        ],
+        "answer": "items()",
+        "hint": "Think key-value pairs.",
+        "explanation": "dict.items() returns a view of (key, value) tuples; keys() and values() return separate views, and pairs() doesn't exist."
+    },
+    {
+        "question": "Which NumPy object is best for fixed-shape, homogeneous numeric computations?",
+        "options": [
+            "ndarray",
+            "list",
+            "tuple",
+            "dict"
+        ],
+        "answer": "ndarray",
+        "hint": "It's the central array type in NumPy.",
+        "explanation": "NumPy's ndarray provides fixed-shape, efficient, homogeneous numeric arrays for operations like vectorized math."
+    },
+    {
+        "question": "What will be the output of this snippet using list comprehension?",
+        "code": "nums = [i*i for i in range(5) if i%2==0]\nprint(nums)",
+        "options": [
+            "[0, 4, 16]",
+            "[0, 1, 4, 9, 16]",
+            "[1, 9]",
+            "[0, 4]"
+        ],
+        "answer": "[0, 4, 16]",
+        "hint": "Squares of even numbers from 0 to 4.",
+        "explanation": "The list comprehension iterates through numbers 0, 1, 2, 3, 4. The `if` condition filters for even numbers (0, 2, 4), which are then squared, resulting in [0, 4, 16]."
+    },
+    {
+        "question": "Which of the following statements about Python functions is true?",
+        "options": [
+            "Functions are first-class objects and can be passed as arguments.",
+            "Functions cannot be nested inside other functions.",
+            "Functions must always return a value explicitly.",
+            "Functions cannot have default parameter values."
+        ],
+        "answer": "Functions are first-class objects and can be passed as arguments.",
+        "hint": "Consider whether functions can be used like other objects.",
+        "explanation": "Python treats functions as first-class objects; they can be passed, returned, and assigned to variables."
+    },
+    {
+        "question": "How do you define a module in Python so that its functions can be used elsewhere?",
+        "options": [
+            "Create a .py file containing the functions and import it elsewhere.",
+            "Write functions inside the interactive shell only.",
+            "Modules must be compiled binaries.",
+            "You need to register the module with pip first."
+        ],
+        "answer": "Create a .py file containing the functions and import it elsewhere.",
+        "hint": "Modules are simply files in Python.",
+        "explanation": "Any .py file is a module; defining functions in it and using import allows reuse in other scripts."
+    },
+    {
+        "question": "Which docstring style lets tools like help() display a description for a function?",
+        "options": [
+            "Triple-quoted string immediately below the def line",
+            "Single-line comment above the function using #",
+            "A standalone text file README only",
+            "Using print statements inside the function"
+        ],
+        "answer": "Triple-quoted string immediately below the def line",
+        "hint": "Where does Python look for __doc__?",
+        "explanation": "Docstrings are triple-quoted literals placed right after the function or class definition; they populate the `__doc__` attribute and are shown by `help()`."
+    },
+    {
+        "question": "Which import will bring only the `sqrt` function into the current namespace from the math module?",
+        "options": [
+            "from math import sqrt",
+            "import math.sqrt",
+            "import math.",
+            "from math import *"
+        ],
+        "answer": "from math import sqrt",
+        "hint": "Use direct 'from...import' for selected names.",
+        "explanation": "'from math import sqrt' imports only sqrt; 'from math import *' imports all public names, and 'import math.sqrt' is invalid syntax."
+    },
+    {
+        "question": "What is the correct way to open a text file for writing in a way that ensures it will be closed automatically?",
+        "options": [
+            "with open('file.txt', 'w') as f:",
+            "f = open('file.txt', 'w')",
+            "open('file.txt','w')",
+            "file('file.txt','w')"
+        ],
+        "answer": "with open('file.txt', 'w') as f:",
+        "hint": "Context managers help with resource cleanup.",
+        "explanation": "Using the `with` statement creates a context manager that ensures the file is closed automatically when the block exits, even if errors occur."
+    },
+    {
+        "question": "Which Python module is built-in and used for working with JSON data?",
+        "options": [
+            "json",
+            "csv",
+            "xml.etree",
+            "pickle"
+        ],
+        "answer": "json",
+        "hint": "The name matches the data format.",
+        "explanation": "The json module handles JSON serialization/deserialization; csv handles comma-separated values and xml.etree handles XML."
+    },
+    {
+        "question": "Which mode should you use to read a binary file?",
+        "options": [
+            "'rb'",
+            "'r'",
+            "'w'",
+            "'a'"
+        ],
+        "answer": "'rb'",
+        "hint": "Binary read mode combines 'r' with another letter.",
+        "explanation": "Use 'rb' to open files for reading in binary mode; 'r' is text mode, 'w' and 'a' are write/append modes."
+    },
+    {
+        "question": "Which library is most appropriate for efficiently reading large CSV files row by row with minimal memory overhead?",
+        "options": [
+            "csv (the built-in module)",
+            "xml.etree.ElementTree",
+            "json",
+            "tkinter"
+        ],
+        "answer": "csv (the built-in module)",
+        "hint": "Think structured tabular text format and streaming parsing.",
+        "explanation": "The built-in `csv` module can read a file row-by-row, which is memory-efficient for large files as it doesn't load the entire file into memory at once."
+    },
+    {
+        "question": "Assuming `data.json` exists and contains valid JSON, what is a primary result of running this snippet?",
+        "code": "import json\nwith open('data.json') as f:\n    data = json.load(f)\nprint(type(data))",
+        "options": [
+            "The JSON data is parsed into a Python dictionary or list.",
+            "A JSON module object is created.",
+            "A SyntaxError is raised.",
+            "The raw string content of the file is printed."
+        ],
+        "answer": "The JSON data is parsed into a Python dictionary or list.",
+        "hint": "json.load converts JSON from a file into Python objects.",
+        "explanation": "`json.load` parses a JSON file into corresponding Python types; a JSON object becomes a `dict` and a JSON array becomes a `list`."
+    },
+    {
+        "question": "Which approach is best when you need to debug a function by printing intermediate values without changing its return behavior?",
+        "options": [
+            "Insert temporary print statements",
+            "Rewrite the function entirely",
+            "Change the return type to include debug info",
+            "Delete the function and recreate it"
+        ],
+        "answer": "Insert temporary print statements",
+        "hint": "This is the fastest, simplest method when not using a full debugger.",
+        "explanation": "Adding `print()` statements to inspect the state of variables at different points is a common and quick debugging technique. More sophisticated approaches use the `logging` module or an interactive debugger."
+    },
+    {
+        "question": "Which tool allows line-by-line inspection, breakpoints, and stepping through code interactively?",
+        "options": [
+            "pdb",
+            "flake8",
+            "black",
+            "pytest"
+        ],
+        "answer": "pdb",
+        "hint": "It's the standard interactive debugger module.",
+        "explanation": "`pdb` is Python's built-in debugger for stepping through code, setting breakpoints, and inspecting variables. `flake8` is a linter, `black` is a formatter, and `pytest` is a testing framework."
+    },
+    {
+        "question": "What will be the result of attempting to access a missing key with `d['missing']` if `d` is a dict and the key is absent?",
+        "options": [
+            "KeyError",
+            "None",
+            "False",
+            "Empty string"
+        ],
+        "answer": "KeyError",
+        "hint": "Direct bracket access raises an exception for absent keys.",
+        "explanation": "Accessing a non-existent key with `d['key']` raises a `KeyError`. Use `d.get('key')` to get `None` or a specified default value instead."
+    },
+    {
+        "question": "Which method serializes a Python object to a JSON-formatted `str`?",
+        "options": [
+            "json.dumps(obj)",
+            "json.dump(obj, file)",
+            "pickle.dumps(obj)",
+            "str(obj)"
+        ],
+        "answer": "json.dumps(obj)",
+        "hint": "Think 'dump to string' vs 'dump to file'.",
+        "explanation": "`json.dumps` returns a JSON string representation of an object (dump string), whereas `json.dump` writes the JSON representation to a file-like object."
+    },
+    {
+        "question": "What is a recommended way to write portable binary data structures in Python?",
+        "options": [
+            "Use the struct module to pack/unpack binary formats",
+            "Write text representations and encode them",
+            "Use eval() to serialize objects to binary",
+            "Use pickle for all cross-platform data"
+        ],
+        "answer": "Use the struct module to pack/unpack binary formats",
+        "hint": "struct helps pack numbers into bytes with defined endianness and size.",
+        "explanation": "The `struct` module allows packing/unpacking of data into standard C-like structs, providing control over byte order, size, and alignment, which is essential for creating portable binary formats."
+    },
+    {
+        "question": "Which practice helps make modules easier to test and reuse?",
+        "options": [
+            "Keep functions small and document their behavior with docstrings",
+            "Hardcode config values at top-level code that runs on import",
+            "Use print statements at import time to display status",
+            "Open resources at module import time without context managers"
+        ],
+        "answer": "Keep functions small and document their behavior with docstrings",
+        "hint": "Modularity and documentation improve reuse and testability.",
+        "explanation": "Small, well-documented functions with clear purposes are easier to test individually and reuse. Avoiding side effects at import-time (like opening files or running heavy computations) is crucial for testability."
+    },
+    {
+        "question": "What is a common cause of an IndexError when working with lists and how can you defensively avoid it?",
+        "options": [
+            "Accessing an out-of-range index; check length or use try/except",
+            "Using append instead of extend; avoid append",
+            "Calling list.sort() incorrectly; always pass a key",
+            "Not converting list to tuple first"
+        ],
+        "answer": "Accessing an out-of-range index; check length or use try/except",
+        "hint": "IndexError happens when an index doesn't exist.",
+        "explanation": "An `IndexError` arises from using an index that is outside the valid range of the list. You can prevent this by checking `if index < len(my_list)` or by catching the exception with a `try...except IndexError` block."
+    },
+    {
+        "question": "Which element of defensive debugging helps capture exceptions with context and a stack trace without stopping a long-running script?",
+        "options": [
+            "Using logging.exception inside an except block",
+            "Removing all try/except blocks",
+            "Using only print statements and ignoring errors",
+            "Changing exceptions to return values always"
+        ],
+        "answer": "Using logging.exception inside an except block",
+        "hint": "Logging libraries can record stack traces when exceptions occur.",
+        "explanation": "`logging.exception` logs the exception message and stack trace from within an `except` block, allowing for detailed diagnostics while the program continues to run or exits gracefully."
+    }
+]
