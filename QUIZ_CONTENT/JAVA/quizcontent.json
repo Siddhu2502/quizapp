@@ -23,5 +23,1257 @@
     "answer": "string",
     "hint": "One of these is a commonly used Class, but not a reserved word in the language.",
     "explanation": "`String` (with a capital S) is a class in the `java.lang` package. `string` (lowercase) is not a keyword. `static`, `try`, and `instanceof` are all reserved keywords in Java."
+  },
+  {
+    "question": "Determine the output of the following Java code snippet.",
+    "code": "public class A {\n    public static void main(String argv[]) {\n        int ary[] = new int[]{1,2,3};\n        System.out.println(ary[1]);\n    }\n}",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "Compilation Error"
+    ],
+    "answer": "2",
+    "hint": "Array indices in Java start from 0.",
+    "explanation": "The array 'ary' is initialized with three elements. The element at index 1 is the second element, which is 2."
+  },
+  {
+    "question": "What will be the content of the array variable 'table' after executing the following code?",
+    "code": "public class Trial {\n    public static void main(String[] args) {\n        int[][] table = new int[5][5];\n        for(int i = 0; i < 3; i++) {\n            for(int j = 0; j < 3; j++) {\n                if(j == i) {\n                    table[i][j] = 1;\n                } else {\n                    table[i][j] = 0;\n                }\n                System.out.print(table[i][j]);\n            }\n            System.out.println();\n        }\n    }\n}",
+    "options": [
+      "100\n110\n111",
+      "000\n000\n000",
+      "100\n010\n001",
+      "Compilation error"
+    ],
+    "answer": "100\n010\n001",
+    "hint": "The code prints a 3x3 matrix. A '1' is placed where the row index equals the column index.",
+    "explanation": "The code iterates through a 3x3 portion of the 'table' array. When the row index 'i' equals the column index 'j', it assigns 1; otherwise, it assigns 0, effectively creating an identity matrix pattern."
+  },
+  {
+    "question": "Determine the output of the following code.",
+    "code": "public class Test {\n    public static void main(String[] args) {\n        int[] x = new int[3];\n        System.out.println(\"x[0] is \" + x[0]);\n    }\n}",
+    "options": [
+      "The program runs fine and displays x[0] is 0.",
+      "The program has a compile error because the array elements are not initialized.",
+      "The program has a runtime error because the array elements are not initialized.",
+      "The program runs fine and displays x[0] is null."
+    ],
+    "answer": "The program runs fine and displays x[0] is 0.",
+    "hint": "How are numeric arrays initialized by default in Java when using the 'new' keyword?",
+    "explanation": "When an array of a primitive numeric type like 'int' is created with the 'new' keyword, its elements are automatically initialized to their default value, which is 0."
+  },
+  {
+    "question": "The '+' operator can be used to concatenate two or more String objects in Java.",
+    "options": [
+      "True",
+      "False",
+      "Only for two strings",
+      "Only inside a System.out.println statement"
+    ],
+    "answer": "True",
+    "hint": "This is one of the most common ways to join strings in Java.",
+    "explanation": "Java overloads the '+' operator for String objects, allowing it to be used for concatenation in addition to its standard arithmetic function for numbers."
+  },
+  {
+    "question": "Predict the output of the following code snippet.",
+    "code": "class String_demo {\n    public static void main(String args[]) {\n        char chars[] = {'a', 'b', 'c'};\n        String s = new String(chars);\n        System.out.println(s);\n    }\n}",
+    "options": [
+      "a",
+      "c",
+      "abc",
+      "[C@..."
+    ],
+    "answer": "abc",
+    "hint": "The String class has a constructor that accepts a character array.",
+    "explanation": "A character array `chars` is initialized with 'a', 'b', and 'c'. A new String object `s` is created from this array, which results in the string \"abc\" being printed."
+  },
+  {
+    "question": "Which keyword is used to allocate memory for an array variable in Java?",
+    "options": [
+      "malloc",
+      "calloc",
+      "alloc",
+      "new"
+    ],
+    "answer": "new",
+    "hint": "This keyword is fundamental for creating objects and arrays in Java.",
+    "explanation": "The 'new' keyword is used in Java to dynamically allocate memory for new objects and arrays on the heap."
+  },
+  {
+    "question": "Given a one-dimensional array `arr`, what is the correct way of getting the number of elements in it?",
+    "options": [
+      "arr.length()",
+      "arr.size",
+      "arr.length",
+      "arr.size()"
+    ],
+    "answer": "arr.length",
+    "hint": "For arrays, the size is a property, not a method.",
+    "explanation": "`length` is a public final field (a property) of an array that contains the number of elements in the array. It is not a method, so parentheses are not used."
+  },
+  {
+    "question": "What is the string contained in 's' after the following lines of code are executed?",
+    "code": "StringBuffer s = new StringBuffer(\"Hello\");\ns.deleteCharAt(0);",
+    "options": [
+      "ello",
+      "Hel",
+      "hell",
+      "H"
+    ],
+    "answer": "ello",
+    "hint": "The `deleteCharAt()` method removes the character at a specified index.",
+    "explanation": "The `deleteCharAt(0)` method removes the character at index 0, which is 'H', from the StringBuffer. The remaining content of the mutable string is \"ello\"."
+  },
+  {
+    "question": "Is it mandatory to specify the column size when creating a multi-dimensional array in Java?",
+    "options": [
+      "True",
+      "False",
+      "Only for arrays of strings",
+      "Only if the row size is not specified"
+    ],
+    "answer": "False",
+    "hint": "Consider jagged arrays where each row can have a different number of columns.",
+    "explanation": "In Java, only the size of the first dimension (rows) is mandatory. You can create a jagged array where each sub-array (column) is initialized later with a different size."
+  },
+  {
+    "question": "What is the output of the following Java code?",
+    "code": "class Output {\n    public static void main(String args[]) {\n        int a1[] = new int[10];\n        int a2[] = {1, 2, 3, 4, 5};\n        System.out.println(a1.length + \" \" + a2.length);\n    }\n}",
+    "options": [
+      "5 10",
+      "10 5",
+      "0 5",
+      "10 0"
+    ],
+    "answer": "10 5",
+    "hint": "The `length` property reflects the declared size or the number of initializers.",
+    "explanation": "Array `a1` is created with a size of 10, so its length is 10. Array `a2` is initialized with 5 elements, so its length is 5."
+  },
+  {
+    "question": "What is the result of attempting to compile and run this code?",
+    "code": "public class Trial {\n    public static void main(String[] args) {\n        int arr[4] = {};\n        System.out.print(arr[0]);\n    }\n}",
+    "options": [
+      "0",
+      "Compile time error",
+      "Runtime error",
+      "Garbage value"
+    ],
+    "answer": "Compile time error",
+    "hint": "This array declaration syntax is not valid in Java.",
+    "explanation": "The declaration `int arr[4] = {};` is syntactically incorrect in Java. The size should be specified after the `new` keyword, like `new int[4]`, not in the declaration with the variable name."
+  },
+  {
+    "question": "Predict the output of the following code snippet.",
+    "code": "class String_demo {\n    public static void main(String args[]) {\n        int ascii[] = { 65, 66, 67, 68};\n        String s = new String(ascii, 1, 3);\n        System.out.println(s);\n    }\n}",
+    "options": [
+      "ABC",
+      "BCD",
+      "CDA",
+      "ABCD"
+    ],
+    "answer": "BCD",
+    "hint": "The String constructor `new String(int[] codePoints, int offset, int count)` creates a string from a sub-array of integer ASCII values.",
+    "explanation": "A new string `s` is created from the `ascii` array, starting from index 1 and taking 3 elements. The ASCII values 66, 67, and 68 correspond to the characters 'B', 'C', and 'D'."
+  },
+  {
+    "question": "What will s2 contain after the following lines of code execute?",
+    "code": "String s1 = \"one\";\nString s2 = s1.concat(\"two\");",
+    "options": [
+      "twoone",
+      "one",
+      "onetwo",
+      "two"
+    ],
+    "answer": "onetwo",
+    "hint": "The `concat` method appends a string to the end of another string.",
+    "explanation": "The `concat(\"two\")` method appends the string \"two\" to the end of `s1` (\"one\"). Since Strings are immutable, a new string \"onetwo\" is created and assigned to `s2`."
+  },
+  {
+    "question": "A programmer needs to make a logging class that uses a string builder thread-safe. How should the code be changed?",
+    "code": "public class MyLogger {\n    private StringBuilder logger = new StringBuilder();\n    public void log(String message) {\n        logger.append(message);\n    }\n}",
+    "options": [
+      "Synchronize the log method",
+      "Replace StringBuilder with StringBuffer",
+      "No change is necessary, StringBuilder is already thread-safe",
+      "Replace StringBuilder with a String object and use +="
+    ],
+    "answer": "Replace StringBuilder with StringBuffer",
+    "hint": "One of these two builder classes is synchronized, and the other is not.",
+    "explanation": "StringBuffer is synchronized and therefore thread-safe, making it suitable for multi-threaded environments. StringBuilder is not synchronized but offers better performance in single-threaded scenarios."
+  },
+  {
+    "question": "Consider the following code. How many objects are created in total, how many are in heap memory (outside the pool), and how many are in the string pool?",
+    "code": "String st1 = new String(\"JAVA\");\nString st2 = new String(\"JAVA\");\nString st3 = \"JAVA\";",
+    "options": [
+      "3 objects, 2 in heap memory and 1 in string pool",
+      "3 objects, 1 in heap memory and 2 in string pool",
+      "2 objects, 1 in heap memory and 1 in string pool",
+      "3 objects, 3 in heap memory and 0 in string pool"
+    ],
+    "answer": "3 objects, 2 in heap memory and 1 in string pool",
+    "hint": "Using 'new' creates a new object on the heap, while string literals are placed in the string pool.",
+    "explanation": "`st1` and `st2` use `new`, creating two distinct objects on the heap. The literal \"JAVA\" is placed in the string pool once. `st3` references this object in the pool."
+  },
+  {
+    "question": "Which method is used to find the length of a String object in Java?",
+    "options": [
+      "size()",
+      "len",
+      "length",
+      "length()"
+    ],
+    "answer": "length()",
+    "hint": "Unlike arrays, finding the length of a String is done via a method call.",
+    "explanation": "The `String` class provides the `length()` method to return the number of characters in the string. `length` is a property for arrays, not strings."
+  },
+  {
+    "question": "What is the output of the following program?",
+    "code": "public class Test {\n    public static void main(String[] args) {\n        int[] x = {1, 2, 3, 4};\n        int[] y = x;\n        x = new int[2];\n        for(int i = 0; i < x.length; i++) {\n            System.out.print(y[i] + \" \");\n        }\n    }\n}",
+    "options": [
+      "1 2 ",
+      "0 0 ",
+      "1 2 3 4 ",
+      "Compilation Error"
+    ],
+    "answer": "1 2 ",
+    "hint": "Changing where the reference `x` points does not affect the array that `y` is still pointing to.",
+    "explanation": "Initially, `y` is assigned the reference of `x`. Then, `x` is reassigned to a new array of size 2. The loop iterates based on the length of the *new* `x` (which is 2), but prints elements from `y`, which still points to the original array {1, 2, 3, 4}. Thus, it prints `y[0]` and `y[1]`."
+  },
+  {
+    "question": "What is the output of the `substring` method in the code below?",
+    "code": "String name=\"Sudha learns Oracle\";\nSystem.out.println(name.substring(7,12));",
+    "options": [
+      "learns",
+      "learn",
+      " earns",
+      "earns"
+    ],
+    "answer": "earns",
+    "hint": "The `substring(beginIndex, endIndex)` method extracts characters from `beginIndex` up to, but not including, `endIndex`.",
+    "explanation": "The method extracts the substring starting at index 7 ('e') and ending before index 12 ('s'), resulting in the string \"earns\"."
+  },
+  {
+    "question": "What will the following code print?",
+    "code": "String emailId=\"john#global.com\";\nSystem.out.println(emailId.indexOf('@'));",
+    "options": [
+      "0",
+      "-1",
+      "14",
+      "An exception is thrown"
+    ],
+    "answer": "-1",
+    "hint": "The `indexOf` method returns a specific value when the character is not found.",
+    "explanation": "The `indexOf` method searches for the specified character. Since '@' is not present in the string \"john#global.com\", the method returns -1."
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "code": "String course=\"Java Programming\";\nchar c=course.charAt(16);",
+    "options": [
+      "ArrayIndexOutOfBoundsException",
+      "StringIndexOutOfBoundsException",
+      "g",
+      "Compilation error"
+    ],
+    "answer": "StringIndexOutOfBoundsException",
+    "hint": "The valid indices for a string of length N are 0 to N-1.",
+    "explanation": "The string \"Java Programming\" has a length of 16, so its valid indices are 0 to 15. Attempting to access the character at index 16 results in a `StringIndexOutOfBoundsException`."
+  },
+  {
+    "question": "Which of the following is NOT a valid Java modifier?",
+    "options": [
+      "public",
+      "protected",
+      "virtual",
+      "private"
+    ],
+    "answer": "virtual",
+    "hint": "This keyword is used in other languages like C++ for polymorphism, but not in Java.",
+    "explanation": "Java uses `public`, `protected`, `private`, and the default (package-private) access modifiers. The `virtual` keyword is not a modifier in the Java language."
+  },
+  {
+    "question": "What is the output of the following code, given the command line invocation `java Sample`?",
+    "code": "public class Sample {\n    public static void main(String[] args) {\n        int x = 6;\n        Sample p = new Sample();\n        p.display(x);\n        System.out.print(\" main x = \" + x);\n    }\n    void display(int x) {\n        System.out.print(\" display x = \" + x++);\n    }\n}",
+    "options": [
+      "display x = 7 main x = 6",
+      "display x = 6 main x = 7",
+      "display x = 7 main x = 7",
+      "display x = 6 main x = 6"
+    ],
+    "answer": "display x = 6 main x = 6",
+    "hint": "Java passes primitive types by value, and `x++` is a post-increment operator.",
+    "explanation": "The primitive `int x` is passed by value to the `display` method. Inside `display`, the post-increment `x++` prints the original value (6) before incrementing the local copy. The original `x` in `main` remains unchanged."
+  },
+  {
+    "question": "What is the output of this code?",
+    "code": "Integer x1 = new Integer(120);\nint x2 = 120;\nSystem.out.println(x1 == x2);",
+    "options": [
+      "true",
+      "false",
+      "Compilation Error",
+      "Runtime Exception"
+    ],
+    "answer": "true",
+    "hint": "Consider how Java handles comparisons between wrapper objects and primitives.",
+    "explanation": "When a wrapper type object (like `Integer`) is compared to a primitive type (like `int`) using `==`, the wrapper object is unboxed to its primitive value. Therefore, the comparison becomes `120 == 120`, which is true."
+  },
+  {
+    "question": "A method in a class in package `p1` needs to be accessed by a class in package `p2`. What must be the access specifier for that method?",
+    "options": [
+      "private",
+      "default",
+      "protected",
+      "public"
+    ],
+    "answer": "public",
+    "hint": "Which access level provides the least restriction?",
+    "explanation": "For a member of a class to be accessible from any other class in any other package, it must be declared `public`."
+  },
+  {
+    "question": "What is the correct order of elements in a Java source file?",
+    "options": [
+      "import, package, class",
+      "class, import, package",
+      "package, import, class",
+      "package, class, import"
+    ],
+    "answer": "package, import, class",
+    "hint": "The package declaration must always come first.",
+    "explanation": "A Java source file must follow a strict order: an optional `package` declaration first, followed by any `import` statements, and finally the class and/or interface declarations."
+  },
+  {
+    "question": "The regular expression meta-character `\\B` matches 'a non-word boundary'.",
+    "options": [
+      "True",
+      "False",
+      "It matches both word and non-word boundaries",
+      "It matches the beginning of a word"
+    ],
+    "answer": "True",
+    "hint": "`\\b` matches a word boundary. What does its uppercase counterpart do?",
+    "explanation": "`\\B` is the negated version of `\\b`. It matches any position where `\\b` does not match, which is a position that is not at the beginning or end of a word."
+  },
+  {
+    "question": "What is the regular expression to match a whitespace character in a string?",
+    "options": [
+      "\\w",
+      "\\s",
+      "\\d",
+      "\\W"
+    ],
+    "answer": "\\s",
+    "hint": "Think of 's' for space.",
+    "explanation": "The metacharacter `\\s` is a shorthand character class that matches any whitespace character, including spaces, tabs, and newlines."
+  },
+  {
+    "question": "What will be the output of the following code?",
+    "code": "import java.util.regex.*;\n\npublic class TestRegEx {\n    public static void main(String args[]) {\n        Pattern p = Pattern.compile(\".ech\");\n        Matcher m = p.matcher(\"tech\");\n        boolean b = m.matches();\n        System.out.println(b);\n    }\n}",
+    "options": [
+      "false",
+      "true",
+      "Runtime Error",
+      "compile time error"
+    ],
+    "answer": "true",
+    "hint": "The dot `.` in a regular expression matches any single character.",
+    "explanation": "The pattern `.ech` matches any single character followed by \"ech\". The string \"tech\" fits this pattern perfectly, so the `matches()` method returns true."
+  },
+  {
+    "question": "Which is the correct regular expression to match an email address like 'user@domain.com'?",
+    "options": [
+      "[A-Za-z0-9]+",
+      "\\w+@\\w+\\.\\w+",
+      "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
+      "\\d+@\\d+\\.\\d+"
+    ],
+    "answer": "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
+    "hint": "A robust email regex needs to account for various characters in the username, domain, and a top-level domain of at least two letters.",
+    "explanation": "This regex correctly models the structure of an email: a local part with allowed characters, an '@' symbol, a domain name with allowed characters, a dot, and a top-level domain of two or more letters."
+  },
+  {
+    "question": "What is the correct regular expression to match any date in the format 'yyyy-mm-dd'?",
+    "options": [
+      "\\d{2}/\\d{2}/\\d{4}",
+      "\\d{4}-\\d{2}-\\d{2}",
+      "\\d{2}-\\d{2}-\\d{4}",
+      "\\d{4}/\\d{2}/\\d{2}"
+    ],
+    "answer": "\\d{4}-\\d{2}-\\d{2}",
+    "hint": "`\\d` matches a digit, and `{n}` specifies the quantity.",
+    "explanation": "The regex `\\d{4}-\\d{2}-\\d{2}` specifically matches a sequence of four digits, a hyphen, two digits, a hyphen, and two final digits, which is the 'yyyy-mm-dd' format."
+  },
+  {
+    "question": "Which text will return true when matched with the regular expression `[a-zA-Z&&[^aeiou]]+`?",
+    "options": [
+      "cry",
+      "must",
+      "Good",
+      "aeiou"
+    ],
+    "answer": "cry",
+    "hint": "The regex is looking for one or more characters that are letters AND are NOT lowercase vowels.",
+    "explanation": "The character class `[a-zA-Z&&[^aeiou]]` matches any character that is a letter (a-z, A-Z) but is not a lowercase vowel (a, e, i, o, u). 'cry' consists only of such characters. 'must' and 'Good' contain vowels."
+  },
+  {
+    "question": "Consider a class `Student` with a constructor that accepts an id, name, and mark. This constructor then calls a method within the class to calculate the grade. Is this valid?",
+    "code": "public class Student {\n    //... fields\n    public Student(int id, String name, float mark) {\n        this.id = id;\n        this.name = name;\n        calculateGrade(mark);\n    }\n    public void calculateGrade(float mark) {\n        //... logic\n    }\n}",
+    "options": [
+      "Compiles successfully",
+      "Compilation error because methods cannot be called from a constructor",
+      "Runtime error because the object is not fully constructed",
+      "Compilation error because of the parameter name 'mark'"
+    ],
+    "answer": "Compiles successfully",
+    "hint": "Constructors are special methods, but they can still invoke other methods of the same class.",
+    "explanation": "It is perfectly valid to call other methods of the same class from within a constructor. The code will compile and run without errors."
+  },
+  {
+    "question": "How can a parameterized constructor invoke the no-argument constructor of the same class?",
+    "options": [
+      "Product()",
+      "super()",
+      "new Product()",
+      "this()"
+    ],
+    "answer": "this()",
+    "hint": "This keyword has a special use when called as a method.",
+    "explanation": "The `this()` call is used to invoke another constructor within the same class. It must be the very first statement in the constructor body."
+  },
+  {
+    "question": "Which statement accurately describes the access capabilities of static and non-static methods?",
+    "options": [
+      "Static methods can access both static and non-static members.",
+      "Non-static methods can only access non-static members.",
+      "Static methods can only access static members; non-static methods can access both.",
+      "Neither method type can access the other's members."
+    ],
+    "answer": "Static methods can only access static members; non-static methods can access both.",
+    "hint": "Static members belong to the class, while non-static (instance) members belong to an object.",
+    "explanation": "Static methods don't have an associated object instance (`this`), so they cannot access instance variables or methods directly. Non-static methods have an instance, so they can access both instance members and class-level (static) members."
+  },
+  {
+    "question": "A static variable is incremented in a class's constructor. What is the output after creating three objects and printing the variable each time?",
+    "code": "class Product {\n    static int count = 0;\n    public Product() {\n        count++;\n        System.out.println(\"Count is \" + count);\n    }\n}\n// in main:\nnew Product();\nnew Product();\nnew Product();",
+    "options": [
+      "Count is 1, Count is 1, Count is 1",
+      "Count is 1, Count is 2, Count is 3",
+      "Count is 0, Count is 1, Count is 2",
+      "Compilation Error"
+    ],
+    "answer": "Count is 1, Count is 2, Count is 3",
+    "hint": "Static variables are shared among all instances of a class.",
+    "explanation": "The `count` variable is static, so there is only one copy for the `Product` class. Each time the constructor is called, this single variable is incremented, leading to the sequence 1, 2, 3."
+  },
+  {
+    "question": "What happens when a class tries to access a private member of another class?",
+    "code": "class Sample {\n    private double num = 100;\n}\nclass Test {\n    public static void main(String args[]) {\n        Sample obj = new Sample();\n        System.out.println(obj.num);\n    }\n}",
+    "options": [
+      "Run time error",
+      "Executes but no output",
+      "100.0",
+      "Compile time error"
+    ],
+    "answer": "Compile time error",
+    "hint": "The `private` access specifier is the most restrictive.",
+    "explanation": "A member declared as `private` is only accessible within its own class. The `Test` class cannot access the private member `num` of the `Sample` class, causing a compilation error."
+  },
+  {
+    "question": "Moving an existing Eclipse project to another location by compressing it is known as...",
+    "options": [
+      "Exporting",
+      "Importing",
+      "Archiving",
+      "Compressing"
+    ],
+    "answer": "Exporting",
+    "hint": "This action prepares a project to be moved or shared.",
+    "explanation": "In Eclipse, the 'Export' feature is used to package a project, often into an archive file like a ZIP, so it can be moved and then imported into another workspace."
+  },
+  {
+    "question": "What is the name of the standard Eclipse plugin needed for Java Development?",
+    "options": [
+      "CDT (C/C++ Development Tooling)",
+      "PyDev",
+      "JDT (Java Development Tools)",
+      "JavaPlugin"
+    ],
+    "answer": "JDT (Java Development Tools)",
+    "hint": "The acronym stands for Java Development Tools.",
+    "explanation": "JDT is the core plugin for Eclipse that provides all the essential tools for Java development, including the editor, compiler, debugger, and project management features."
+  },
+  {
+    "question": "What is the result of the following code snippet in Java?",
+    "code": "int a = 0;\nif (a) {\n    System.out.println(\"Hello\");\n} else {\n    System.out.println(\"Hai\");\n}",
+    "options": [
+      "Hello",
+      "Hai",
+      "Compilation Fails",
+      "Runtime Error"
+    ],
+    "answer": "Compilation Fails",
+    "hint": "The condition in an `if` statement must evaluate to a specific data type in Java.",
+    "explanation": "In Java, the condition of an `if` statement must be a boolean value (true or false). An integer like 0 cannot be used as a condition, unlike in some other languages like C/C++. This results in a compilation error."
+  },
+  {
+    "question": "Which Java edition is primarily used for developing web and enterprise applications?",
+    "options": [
+      "J2ME (Micro Edition)",
+      "J2SE (Standard Edition)",
+      "J2EE (Enterprise Edition)",
+      "JavaFX"
+    ],
+    "answer": "J2EE (Enterprise Edition)",
+    "hint": "The 'E' stands for Enterprise.",
+    "explanation": "J2EE (now Jakarta EE) provides a platform and APIs for developing and running large-scale, multi-tiered, and reliable server-side applications, including web applications."
+  },
+  {
+    "question": "Which component of the Java platform is responsible for generating byte code from a .java source file?",
+    "options": [
+      "JRE (Java Runtime Environment)",
+      "JVM (Java Virtual Machine)",
+      "JDK (Java Development Kit)",
+      "JIT (Just-In-Time Compiler)"
+    ],
+    "answer": "JDK (Java Development Kit)",
+    "hint": "Which package includes the compiler (`javac`)?",
+    "explanation": "The JDK contains all the tools necessary for developing Java applications, including the `javac` compiler, which translates .java source files into .class files containing Java bytecode."
+  },
+  {
+    "question": "Which component is responsible for executing Java byte code?",
+    "options": [
+      "JRE (Java Runtime Environment)",
+      "JVM (Java Virtual Machine)",
+      "JDK (Java Development Kit)",
+      "The Operating System"
+    ],
+    "answer": "JVM (Java Virtual Machine)",
+    "hint": "This component is the cornerstone of Java's 'write once, run anywhere' philosophy.",
+    "explanation": "The JVM is an abstract computing machine that enables a computer to run a Java program. It interprets the compiled Java bytecode and executes it."
+  },
+  {
+    "question": "What is the output of this program, which demonstrates switch fall-through?",
+    "code": "for(int i = 0; i < 3; i++) {\n    switch(i) {\n        case 0: break;\n        case 1: System.out.print(\"one \");\n        case 2: System.out.print(\"two \");\n        case 3: System.out.print(\"three \");\n    }\n}\nSystem.out.println(\"done\");",
+    "options": [
+      "one two three done",
+      "one two two three done",
+      "one two three two three done",
+      "done"
+    ],
+    "answer": "one two three two three done",
+    "hint": "Execution continues to the next case if a `break` statement is not present.",
+    "explanation": "When i=1, it prints 'one ', then falls through to case 2 and prints 'two ', then to case 3 and prints 'three '. When i=2, it starts at case 2, prints 'two ', then falls through to case 3 and prints 'three '. The final output concatenates these results followed by 'done'."
+  },
+  {
+    "question": "What happens when this code is compiled in Java?",
+    "code": "int i = 1;\nswitch (i) {\n    case 0, 1: System.out.println(\"A\"); break; // Line 3\n    case 2: System.out.println(\"B\"); break;\n}",
+    "options": [
+      "It prints A",
+      "It prints B",
+      "Compilation fails",
+      "Runtime error"
+    ],
+    "answer": "Compilation fails",
+    "hint": "Java has a specific syntax for handling multiple values for a single block of code in a switch statement, but this isn't it (in older versions).",
+    "explanation": "The comma-separated syntax `case 0, 1:` is not valid in Java versions before Java 12. For older versions, each case label must be specified separately (e.g., `case 0: case 1:`). This code will cause a compilation error."
+  },
+  {
+    "question": "What is the output of this program?",
+    "code": "class selection_statements {\n    public static void main(String args[]) {\n        int var1 = 5;\n        int var2 = 6;\n        if ((var2 = 1) == var1) {\n            System.out.print(var2);\n        } else {\n            System.out.print(++var2);\n        }\n    }\n}",
+    "options": [
+      "1",
+      "2",
+      "6",
+      "7"
+    ],
+    "answer": "2",
+    "hint": "The expression inside the `if` condition performs an assignment first, then a comparison. Note the pre-increment in the `else` block.",
+    "explanation": "First, `var2` is assigned the value 1. The condition then becomes `1 == 5`, which is false. The `else` block is executed. `++var2` pre-increments `var2` (which is currently 1) to 2, and then prints it."
+  },
+  {
+    "question": "What is the primary characteristic of the Java programming language?",
+    "options": [
+      "Platform dependent",
+      "Platform independent",
+      "Procedural",
+      "Functional only"
+    ],
+    "answer": "Platform independent",
+    "hint": "Think of the 'Write Once, Run Anywhere' slogan.",
+    "explanation": "Java achieves platform independence through the Java Virtual Machine (JVM). Java code is compiled into bytecode, which can be executed by any JVM, regardless of the underlying operating system or hardware."
+  },
+  {
+    "question": "Who is known as the 'father of Java'?",
+    "options": [
+      "James Gosling",
+      "Dennis Ritchie",
+      "Bjarne Stroustrup",
+      "Guido van Rossum"
+    ],
+    "answer": "James Gosling",
+    "hint": "He initiated the Java language project at Sun Microsystems.",
+    "explanation": "James Gosling is a Canadian computer scientist, best known as the founder and lead designer behind the Java programming language."
+  },
+  {
+    "question": "What is the primary purpose of Wrapper classes in Java?",
+    "options": [
+      "To make primitive data types run faster",
+      "To allow primitive data types to be treated as objects",
+      "To provide extra mathematical functions",
+      "To secure primitive data types"
+    ],
+    "answer": "To allow primitive data types to be treated as objects",
+    "hint": "Consider why you can't put an `int` directly into an `ArrayList`.",
+    "explanation": "Wrapper classes (like Integer, Double, Boolean) 'wrap' primitive values in an object, allowing them to be used in contexts that require objects, such as Java's Collection Framework."
+  },
+  {
+    "question": "Which of the following loops will always execute its body at least once?",
+    "options": [
+      "for",
+      "while",
+      "enhanced for",
+      "do-while"
+    ],
+    "answer": "do-while",
+    "hint": "Which loop checks its condition after the loop body has run?",
+    "explanation": "A do-while loop executes the code block first and then checks the condition. This guarantees that the loop body is executed at least one time, even if the condition is initially false."
+  },
+  {
+    "question": "What was the initial name for the Java programming language?",
+    "options": [
+      "C++--",
+      "GreenTalk",
+      "The Oak",
+      "Latte"
+    ],
+    "answer": "The Oak",
+    "hint": "The name was inspired by a tree outside James Gosling's office.",
+    "explanation": "Before being renamed to Java, the language was developed under the name 'The Oak', inspired by an oak tree that stood outside the developers' window."
+  },
+  {
+    "question": "What value is stored in `i` at the end of this loop?",
+    "code": "int i = 0;\nfor (i = 1; i <= 10; i++) {\n    // loop body\n}",
+    "options": [
+      "9",
+      "10",
+      "11",
+      "The variable is out of scope"
+    ],
+    "answer": "11",
+    "hint": "The loop terminates when the condition `i <= 10` becomes false.",
+    "explanation": "The loop continues as long as `i` is less than or equal to 10. In the last iteration, `i` is 10. The increment part `i++` then runs, making `i` become 11. The condition `11 <= 10` is checked and found to be false, causing the loop to terminate. The value of `i` after the loop is 11."
+  },
+  {
+    "question": "What is the result of this code snippet, demonstrating String immutability?",
+    "code": "String text = \"java\";\ntext.toUpperCase();\nSystem.out.println(text);",
+    "options": [
+      "java",
+      "JAVA",
+      "null",
+      "Compilation Error"
+    ],
+    "answer": "java",
+    "hint": "String objects in Java cannot be changed after they are created.",
+    "explanation": "The `toUpperCase()` method does not modify the original string. Instead, it returns a new string, which is not assigned back to the `text` variable. Thus, the original value of `text` is printed."
+  },
+  {
+    "question": "Which statement best describes a static block in Java?",
+    "options": [
+      "It is executed every time an object of the class is created.",
+      "It is executed only once when the class is loaded into memory.",
+      "It can only be placed inside the main method.",
+      "It is used to initialize non-static instance variables."
+    ],
+    "answer": "It is executed only once when the class is loaded into memory.",
+    "hint": "Think about when class-level information is needed for the first time.",
+    "explanation": "A static block is used for static initialization of a class. The code inside the static block is executed only once, the first time the class is loaded by the JVM."
+  },
+  {
+    "question": "In regular expressions, what does the `^` metacharacter signify when used at the beginning of a pattern?",
+    "options": [
+      "Matches the end of the string.",
+      "Matches any single character except a newline.",
+      "Negates the character class that follows.",
+      "Matches the beginning of the string."
+    ],
+    "answer": "Matches the beginning of the string.",
+    "hint": "This is often referred to as an anchor.",
+    "explanation": "The caret `^` is an anchor that asserts the position at the start of the string. For example, the pattern `^A` would match 'Apple' but not 'Banana'."
+  },
+  {
+    "question": "What is the purpose of the `Scanner` class in Java?",
+    "options": [
+      "To scan for viruses in a file.",
+      "To parse text using regular expressions.",
+      "To obtain primitive type input from a user or a file.",
+      "To scan the classpath for other .class files."
+    ],
+    "answer": "To obtain primitive type input from a user or a file.",
+    "hint": "It's commonly used with `System.in` for console input.",
+    "explanation": "The `Scanner` class, found in the `java.util` package, is used to get user input and parse text for primitive values like `int`, `double`, and `String`."
+  },
+  {
+    "question": "What will be the output of the following Java code?",
+    "code": "public class Test {\n    public static void main(String[] args) {\n        String s1 = new String(\"Hello\");\n        String s2 = new String(\"Hello\");\n        System.out.println(s1 == s2);\n    }\n}",
+    "options": [
+      "true",
+      "false",
+      "Compilation Error",
+      "Hello"
+    ],
+    "answer": "false",
+    "hint": "The `==` operator compares object references, not their content.",
+    "explanation": "Since `s1` and `s2` are created using the `new` keyword, they are two different objects in memory, each with its own address. The `==` operator checks if the references are the same, which they are not, so it returns false."
+  },
+
+  {
+    "question": "Which keyboard shortcut is commonly used in Eclipse to format the source code automatically?",
+    "options": [
+      "Ctrl + S",
+      "Ctrl + F",
+      "Ctrl + Shift + F",
+      "Ctrl + Shift + O"
+    ],
+    "answer": "Ctrl + Shift + F",
+    "hint": "This shortcut helps in maintaining consistent code style and indentation.",
+    "explanation": "`Ctrl + Shift + F` is the default shortcut in Eclipse to format the selected code or the entire file according to the configured code style preferences."
+  },
+  {
+    "question": "What does the 'ternary operator' in Java do?",
+    "options": [
+      "Performs a bitwise operation on three operands.",
+      "A shorthand for an if-then-else statement.",
+      "Defines a method with three parameters.",
+      "Compares three variables for equality."
+    ],
+    "answer": "A shorthand for an if-then-else statement.",
+    "hint": "It has the syntax `condition ? value_if_true : value_if_false`.",
+    "explanation": "The ternary operator `?:` is a conditional operator that provides a concise way to write a simple if-then-else statement. It evaluates a boolean condition and returns one of two values."
+  },
+  {
+    "question": "What is the output of the following code snippet that uses the `continue` statement?",
+    "code": "for (int i = 1; i <= 5; i++) {\n    if (i == 3) {\n        continue;\n    }\n    System.out.print(i + \" \");\n}",
+    "options": [
+      "1 2 4 5 ",
+      "1 2 ",
+      "1 2 3 4 5 ",
+      "1 2 5 "
+    ],
+    "answer": "1 2 4 5 ",
+    "hint": "The `continue` statement skips the current iteration of a loop.",
+    "explanation": "When the loop variable `i` becomes 3, the `continue` statement is executed. This skips the rest of the loop body for that iteration (the `System.out.print` call) and proceeds to the next iteration where `i` is 4."
+  },
+  {
+    "question": "What is the main difference between `StringBuilder` and `StringBuffer`?",
+    "options": [
+      "StringBuilder is for numbers, StringBuffer is for text.",
+      "StringBuilder is faster and not thread-safe, while StringBuffer is synchronized and thread-safe.",
+      "StringBuilder can be extended, StringBuffer cannot.",
+      "There is no difference; they are interchangeable."
+    ],
+    "answer": "StringBuilder is faster and not thread-safe, while StringBuffer is synchronized and thread-safe.",
+    "hint": "The difference lies in how they handle concurrent access in multi-threaded environments.",
+    "explanation": "Both classes create mutable strings. However, `StringBuffer` methods are synchronized, making it safe for use by multiple threads, which adds a performance overhead. `StringBuilder` is not synchronized and is thus faster for single-threaded applications."
+  },
+  {
+    "question": "What is a jagged array in Java?",
+    "options": [
+      "An array where elements are stored in a random order.",
+      "A two-dimensional array where each row has a different number of columns.",
+      "An array that can only hold String objects.",
+      "An array whose size cannot be determined at compile time."
+    ],
+    "answer": "A two-dimensional array where each row has a different number of columns.",
+    "hint": "It's an array of arrays, where the inner arrays can have varying lengths.",
+    "explanation": "A jagged array is a multi-dimensional array in which the member arrays can be of different sizes. This allows for more flexible and memory-efficient data structures."
+  },
+  {
+    "question": "Which of these data types is allowed in a `switch` statement in modern Java?",
+    "options": [
+      "long",
+      "double",
+      "String",
+      "boolean"
+    ],
+    "answer": "String",
+    "hint": "Support for this type was added in Java 7. Floating-point types are not allowed.",
+    "explanation": "Java `switch` statements support `byte`, `short`, `char`, `int`, their wrapper types, `enum` types, and, since Java 7, `String` objects."
+  },
+  {
+    "question": "In regular expressions, what does the quantifier `{3}` mean?",
+    "options": [
+      "Matches the preceding element at least 3 times.",
+      "Matches the preceding element exactly 3 times.",
+      "Matches the preceding element at most 3 times.",
+      "Matches the character '3'."
+    ],
+    "answer": "Matches the preceding element exactly 3 times.",
+    "hint": "Curly braces are used to specify an exact number of occurrences.",
+    "explanation": "The quantifier `{n}` specifies that the preceding character or group must occur exactly `n` times. For example, `\\d{3}` matches exactly three digits."
+  },
+  {
+    "question": "What is the result of running this code?",
+    "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(args.length);\n    }\n}\n// Command line: java Main hello world",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "An exception is thrown."
+    ],
+    "answer": "2",
+    "hint": "Command-line arguments are passed into the `main` method as an array of strings.",
+    "explanation": "The words 'hello' and 'world' provided after the class name on the command line are passed as two separate elements into the `String[] args` array. Therefore, the length of the array is 2."
+  },
+  {
+    "question": "The process by which the JVM automatically reclaims memory occupied by objects that are no longer in use is called?",
+    "options": [
+      "Memory Allocation",
+      "Garbage Collection",
+      "Stack Unwinding",
+      "Heap Compaction"
+    ],
+    "answer": "Garbage Collection",
+    "hint": "This is a key feature of Java that helps prevent memory leaks.",
+    "explanation": "Garbage Collection is the automated process of managing memory in Java. The garbage collector identifies and discards objects that are no longer accessible by the program, freeing up their memory."
+  },
+  {
+    "question": "In Eclipse, what is a 'Perspective'?",
+    "options": [
+      "The color theme of the editor.",
+      "A collection of views and editors arranged for a specific task.",
+      "A type of project, like a Java Project or a Web Project.",
+      "The version of the Java compiler being used."
+    ],
+    "answer": "A collection of views and editors arranged for a specific task.",
+    "hint": "Common examples include the 'Java' perspective and the 'Debug' perspective.",
+    "explanation": "A perspective in Eclipse defines the initial set and layout of views in the Workbench window. For example, the Java perspective is tailored for writing code, while the Debug perspective is arranged for debugging it."
+  },
+  {
+    "question": "What will the following code print?",
+    "code": "StringBuilder sb = new StringBuilder(\"start\");\nsb.insert(2, \"xx\");\nSystem.out.println(sb);",
+    "options": [
+      "staxxrt",
+      "stxxart",
+      "xxstart",
+      "startxx"
+    ],
+    "answer": "stxxart",
+    "hint": "The `insert` method adds characters at a specific index, shifting existing characters.",
+    "explanation": "The code inserts the string \"xx\" into the `StringBuilder` at index 2. The original characters 'a', 'r', 't' are shifted to the right, resulting in the string \"stxxart\"."
+  },
+  {
+    "question": "Which of the following is a correct way to declare and initialize a 2D array in Java?",
+    "options": [
+      "int matrix[,] = {{1,2}, {3,4}};",
+      "int[][] matrix = new int[2,2];",
+      "int matrix[][] = {{1,2}, {3,4}};",
+      "int matrix[2][2] = {1,2,3,4};"
+    ],
+    "answer": "int matrix[][] = {{1,2}, {3,4}};",
+    "hint": "Java uses curly braces for array initializers and square brackets after the type or variable name.",
+    "explanation": "Both `int[][] matrix = ...` and `int matrix[][] = ...` are valid declaration syntaxes. The initializer `{{1,2}, {3,4}}` correctly creates a 2x2 array."
+  },
+  {
+    "question": "What is the return type of the `.equals()` method of the `String` class?",
+    "options": [
+      "int",
+      "String",
+      "Object",
+      "boolean"
+    ],
+    "answer": "boolean",
+    "hint": "This method is used for comparison, so it should indicate a true or false result.",
+    "explanation": "The `String.equals(Object anObject)` method compares the character sequence of two strings for equality and returns `true` if they are the same, and `false` otherwise."
+  },
+  {
+    "question": "Which `java.util.regex.Matcher` method attempts to find the next subsequence of the input that matches the pattern?",
+    "options": [
+      "matches()",
+      "lookingAt()",
+      "find()",
+      "next()"
+    ],
+    "answer": "find()",
+    "hint": "This method can be called multiple times to find all occurrences of a pattern in a string.",
+    "explanation": "The `find()` method scans the input sequence looking for the next subsequence that matches the pattern. In contrast, `matches()` attempts to match the entire input sequence against the pattern."
+  },
+  {
+    "question": "What is 'autoboxing' in Java?",
+    "options": [
+      "The automatic creation of a `try-catch` block.",
+      "The automatic conversion of a primitive type to its corresponding wrapper class.",
+      "The automatic packaging of a project into a JAR file.",
+      "The automatic generation of getter and setter methods."
+    ],
+    "answer": "The automatic conversion of a primitive type to its corresponding wrapper class.",
+    "hint": "This feature simplifies code by eliminating the need to manually create wrapper objects.",
+    "explanation": "Autoboxing is the process where the Java compiler automatically converts a primitive type (e.g., `int`) into its corresponding object wrapper class (e.g., `Integer`) when an object is required."
+  },
+  {
+    "question": "What is the value of `z` after this code executes?",
+    "code": "int x = 5;\nint y = 10;\nint z = x > y ? x : y;",
+    "options": [
+      "5",
+      "10",
+      "0",
+      "The code will not compile."
+    ],
+    "answer": "10",
+    "hint": "This is an example of the ternary operator being used to find the maximum of two numbers.",
+    "explanation": "The condition `x > y` (5 > 10) is false. Therefore, the ternary operator evaluates to the second expression, `y`, which is 10. This value is then assigned to `z`."
+  },
+  {
+    "question": "Which String method removes leading and trailing whitespace?",
+    "options": [
+      "strip()",
+      "trim()",
+      "clean()",
+      "removeWhitespace()"
+    ],
+    "answer": "trim()",
+    "hint": "This method is useful for cleaning up user input.",
+    "explanation": "The `trim()` method returns a copy of the string, with leading and trailing whitespace omitted. The `strip()` method is similar but is Unicode-aware."
+  },
+  {
+    "question": "What is the purpose of the `package` keyword in Java?",
+    "options": [
+      "To create a compressed archive file (like a JAR).",
+      "To declare a namespace that organizes a set of related classes and interfaces.",
+      "To specify the version of the Java compiler to use.",
+      "To include external libraries in the current file."
+    ],
+    "answer": "To declare a namespace that organizes a set of related classes and interfaces.",
+    "hint": "It helps in avoiding naming conflicts and controlling access.",
+    "explanation": "A package is a grouping of related types providing access protection and namespace management. The `package` statement must be the first line in a Java source file."
+  },
+  {
+    "question": "In regular expressions, what does `[aeiou]` represent?",
+    "options": [
+      "The literal string \"[aeiou]\".",
+      "Matches any character that is 'a', 'e', 'i', 'o', or 'u'.",
+      "Matches any character that is NOT a vowel.",
+      "Matches the sequence of characters 'aeiou'."
+    ],
+    "answer": "Matches any character that is 'a', 'e', 'i', 'o', or 'u'.",
+    "hint": "Square brackets define a set of characters to match.",
+    "explanation": "`[aeiou]` is a character class (or character set) that will match any single character that is present within the brackets. It will match 'a', 'e', 'i', 'o', or 'u'."
+  },
+  {
+    "question": "What is the output of the following code?",
+    "code": "class Test {\n    public Test() {\n        System.out.print(\"A\");\n    }\n    public Test(int i) {\n        this();\n        System.out.print(\"B\");\n    }\n    public static void main(String[] args) {\n        new Test(10);\n    }\n}",
+    "options": [
+      "A",
+      "B",
+      "AB",
+      "BA"
+    ],
+    "answer": "AB",
+    "hint": "The `this()` call invokes another constructor from the same class.",
+    "explanation": "Creating `new Test(10)` calls the parameterized constructor. Its first line is `this()`, which calls the no-argument constructor, printing 'A'. After that returns, the rest of the parameterized constructor executes, printing 'B'."
+  },
+  {
+    "question": "Which of these is NOT a primitive data type in Java?",
+    "options": [
+      "int",
+      "float",
+      "boolean",
+      "String"
+    ],
+    "answer": "String",
+    "hint": "One of these is a class, not a basic, built-in type.",
+    "explanation": "`int`, `float`, and `boolean` are all primitive data types in Java. `String` is a reference type; it is a class provided in the `java.lang` package."
+  },
+  {
+    "question": "If a class does not have an explicitly defined constructor, what happens when you try to create an object of that class?",
+    "options": [
+      "A compilation error occurs.",
+      "A runtime error occurs.",
+      "The Java compiler provides a default, no-argument constructor.",
+      "The object is created but its fields are not initialized."
+    ],
+    "answer": "The Java compiler provides a default, no-argument constructor.",
+    "hint": "Java ensures that every class has at least one constructor.",
+    "explanation": "If a programmer does not supply any constructor for a class, the compiler will automatically add a public, no-argument constructor known as the default constructor."
+  },
+  {
+    "question": "What is the output of this bitwise operation?",
+    "code": "System.out.println(5 & 3);",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "5"
+    ],
+    "answer": "1",
+    "hint": "The `&` operator is a bitwise AND. Convert the numbers to binary first.",
+    "explanation": "In binary, 5 is `101` and 3 is `011`. The bitwise AND operation (`&`) results in `001`, where a bit is set to 1 only if it's 1 in both operands. The decimal representation of `001` is 1."
+  },
+  {
+    "question": "Which of these statements about final variables is true?",
+    "options": [
+      "A final variable can only be of a primitive type.",
+      "A final variable can be assigned a value multiple times.",
+      "A final variable can only be initialized at the time of declaration.",
+      "A final variable's value cannot be changed once it has been initialized."
+    ],
+    "answer": "A final variable's value cannot be changed once it has been initialized.",
+    "hint": "The `final` keyword is used to create constants.",
+    "explanation": "The `final` keyword makes a variable a constant, meaning its value can be assigned only once, either at declaration or within the constructor. Any subsequent attempt to change it will result in a compilation error."
+  },
+  {
+    "question": "What does the `String.split(\",\")` method do?",
+    "options": [
+      "It concatenates the string with a comma.",
+      "It checks if the string contains a comma.",
+      "It splits the string into an array of substrings based on the comma delimiter.",
+      "It replaces all commas in the string with spaces."
+    ],
+    "answer": "It splits the string into an array of substrings based on the comma delimiter.",
+    "hint": "This method is useful for parsing comma-separated values (CSV).",
+    "explanation": "The `split()` method takes a regular expression as a delimiter and breaks the string into an array of strings. `split(\",\")` would turn \"a,b,c\" into the array `[\"a\", \"b\", \"c\"]`."
+  },
+  {
+    "question": "In the Eclipse IDE, what is the 'Console' view primarily used for?",
+    "options": [
+      "Editing source code files.",
+      "Navigating the project's file structure.",
+      "Displaying the standard output (`System.out`) and standard error of a running application.",
+      "Listing all compilation errors and warnings."
+    ],
+    "answer": "Displaying the standard output (`System.out`) and standard error of a running application.",
+    "hint": "When you use `System.out.println()`, where does the output appear?",
+    "explanation": "The Console view in Eclipse is the standard place to see program output, error messages, and to provide keyboard input when using `System.in`."
+  },
+  {
+    "question": "What is the correct syntax for a static import in Java?",
+    "options": [
+      "import static java.lang.Math.*;",
+      "static import java.lang.Math.*;",
+      "import java.lang.Math.* static;",
+      "import java.lang.Math.static.*;"
+    ],
+    "answer": "import static java.lang.Math.*;",
+    "hint": "The `static` keyword comes after `import`.",
+    "explanation": "A static import allows you to refer to static members of a class (fields and methods) without specifying the class name. The syntax is `import static <package>.<class>.<member>;` or `import static <package>.<class>.*;`."
+  },
+  {
+    "question": "What will be printed by the following code?",
+    "code": "System.out.println(\"Result: \" + 3 + 4);",
+    "options": [
+      "Result: 7",
+      "Result: 34",
+      "7",
+      "Compilation Error"
+    ],
+    "answer": "Result: 34",
+    "hint": "The `+` operator is evaluated from left to right. What happens when a String is involved?",
+    "explanation": "Evaluation proceeds left-to-right. First, \"Result: \" + 3 results in the string \"Result: 3\". Then, \"Result: 3\" + 4 results in the string \"Result: 34\", as the second `+` is also treated as string concatenation."
+  },
+  {
+    "question": "Which of the following regular expressions will match the strings 'color' and 'colour'?",
+    "options": [
+      "colou?r",
+      "colou*r",
+      "colou+r",
+      "colo(u)r"
+    ],
+    "answer": "colou?r",
+    "hint": "Which quantifier means 'zero or one' of the preceding character?",
+    "explanation": "The question mark `?` is a quantifier that means the preceding element (in this case, the letter 'u') can occur zero or one time. This allows it to match both 'color' (zero 'u's) and 'colour' (one 'u')."
+  },
+  {
+    "question": "What is the purpose of the `this` keyword in a constructor like `this.name = name;`?",
+    "options": [
+      "It refers to the parent class object.",
+      "It is a syntax error and will not compile.",
+      "It invokes another constructor in the same class.",
+      "It distinguishes the instance variable from the local parameter with the same name."
+    ],
+    "answer": "It distinguishes the instance variable from the local parameter with the same name.",
+    "hint": "It resolves ambiguity when names are the same.",
+    "explanation": "When a parameter has the same name as an instance variable, `this` is used to explicitly refer to the instance variable. `this.name` refers to the field of the object, while `name` refers to the method parameter."
+  },
+  {
+    "question": "Which of these is the correct way to get the character at the third position of a string `str`?",
+    "options": [
+      "str[2]",
+      "str.get(3)",
+      "str.charAt(2)",
+      "str.char(3)"
+    ],
+    "answer": "str.charAt(2)",
+    "hint": "String indexing starts at 0, and accessing characters is done through a method.",
+    "explanation": "The `charAt()` method returns the character at a specified index. Since indexing is zero-based, the third position is at index 2."
+  },
+  {
+    "question": "In Java, what is the default value for an uninitialized boolean instance variable?",
+    "options": [
+      "true",
+      "false",
+      "null",
+      "0"
+    ],
+    "answer": "false",
+    "hint": "This is the 'safer' or more conservative default state.",
+    "explanation": "If an instance variable of type `boolean` is not explicitly initialized, it is automatically given the default value of `false`."
+  },
+  {
+    "question": "What does the `break` statement do inside a loop?",
+    "options": [
+      "Skips the current iteration and continues with the next one.",
+      "Terminates the program immediately.",
+      "Exits the innermost loop or switch statement immediately.",
+      "Pauses the execution of the loop for debugging."
+    ],
+    "answer": "Exits the innermost loop or switch statement immediately.",
+    "hint": "It provides a way to stop a loop prematurely.",
+    "explanation": "The `break` statement is used to terminate the execution of the nearest enclosing loop (`for`, `while`, `do-while`) or `switch` statement in which it appears."
+  },
+  {
+    "question": "What will be printed by the following code?",
+    "code": "System.out.println(3 + 4 + \" :Result\");",
+    "options": [
+      "34 :Result",
+      "7 :Result",
+      "12 :Result",
+      "Compilation Error"
+    ],
+    "answer": "7 :Result",
+    "hint": "The `+` operator is evaluated from left to right. What happens before a String is involved?",
+    "explanation": "Evaluation proceeds left-to-right. First, `3 + 4` is an arithmetic addition, resulting in the integer 7. Then, `7 + \" :Result\"` is a string concatenation, resulting in the string \"7 :Result\"."
+  },
+  {
+    "question": "Which of the following is true about Java's `main` method signature?",
+    "options": [
+      "It must be declared `private`.",
+      "It must be named `Main` with a capital M.",
+      "It must accept an array of Strings as an argument.",
+      "It must return an `int` status code."
+    ],
+    "answer": "It must accept an array of Strings as an argument.",
+    "hint": "The standard entry point is `public static void main(String[] args)`.",
+    "explanation": "The standard signature for the main method, which serves as the entry point for a Java application, requires it to be public, static, have a void return type, and accept a single argument of type `String[]`."
+  },
+  {
+    "question": "What is the output of this code snippet?",
+    "code": "int[] numbers = {10, 20, 30};\nSystem.out.println(numbers[3]);",
+    "options": [
+      "30",
+      "0",
+      "Compilation Error",
+      "ArrayIndexOutOfBoundsException"
+    ],
+    "answer": "ArrayIndexOutOfBoundsException",
+    "hint": "Valid array indices range from 0 to length-1.",
+    "explanation": "The array `numbers` has a length of 3, so its valid indices are 0, 1, and 2. Attempting to access the element at index 3 is outside the valid range and will cause an `ArrayIndexOutOfBoundsException` at runtime."
+  },
+  {
+    "question": "Which of these is not a Java keyword?",
+    "options": [
+      "static",
+      "interface",
+      "string",
+      "class"
+    ],
+    "answer": "string",
+    "hint": "Java keywords are case-sensitive. Think about how you declare a string variable.",
+    "explanation": "`String` (with a capital S) is a class name in Java. The lowercase `string` is not a reserved keyword in the language. `static`, `interface`, and `class` are all keywords."
+  },
+  {
+    "question": "What is the 'unboxing' process in Java?",
+    "options": [
+      "Extracting files from a ZIP archive.",
+      "Converting an object of a wrapper type to its corresponding primitive value.",
+      "Manually allocating memory for an object.",
+      "Removing an object from a Collection."
+    ],
+    "answer": "Converting an object of a wrapper type to its corresponding primitive value.",
+    "hint": "It is the reverse of autoboxing.",
+    "explanation": "Unboxing is the automatic conversion that the Java compiler makes to convert a wrapper type object (e.g., `Integer`) to its corresponding primitive type (e.g., `int`) when a primitive is expected."
+  },
+  {
+    "question": "A project developed on one machine is added to the current Eclipse workspace. This action is called...?",
+    "options": [
+      "Exporting",
+      "Importing",
+      "Cloning",
+      "Syncing"
+    ],
+    "answer": "Importing",
+    "hint": "You are bringing an existing project *into* your workspace.",
+    "explanation": "In Eclipse, the 'Import' feature is used to bring an existing project, which might be in an archive file or another directory, into the current workspace so you can work on it."
+  },
+  {
+    "question": "In regular expressions, what does the `$` metacharacter signify?",
+    "options": [
+      "Matches the beginning of the string.",
+      "Matches the end of the string.",
+      "Matches a literal dollar sign.",
+      "Matches any digit character."
+    ],
+    "answer": "Matches the end of the string.",
+    "hint": "This is the counterpart anchor to `^`.",
+    "explanation": "The dollar sign `$` is an anchor that asserts the position at the end of the string. For example, the pattern `end$` would match 'the end' but not 'ending'."
+  },
+  {
+    "question": "What is the value of `result` after execution?",
+    "code": "int i = 5;\nboolean result = i instanceof Integer;",
+    "options": [
+      "true",
+      "false",
+      "Compilation Error",
+      "Runtime Error"
+    ],
+    "answer": "Compilation Error",
+    "hint": "The `instanceof` operator checks if an object is an instance of a specific type.",
+    "explanation": "The `instanceof` operator can only be used on reference types (objects), not primitive types like `int`. This code will result in a compilation error because `i` is a primitive."
+  },
+  {
+    "question": "Which method must be implemented by a class that implements the `Runnable` interface?",
+    "options": [
+      "start()",
+      "execute()",
+      "run()",
+      "main()"
+    ],
+    "answer": "run()",
+    "hint": "This method contains the code that will be executed in a new thread.",
+    "explanation": "The `Runnable` interface is a functional interface that declares a single abstract method: `public void run()`. Any class implementing this interface must provide an implementation for the `run` method."
+  },
+  {
+    "question": "Explicit type casting in Java is used to...",
+    "options": [
+      "Automatically convert a smaller data type to a larger one.",
+      "Manually convert a larger data type to a smaller one, with a risk of data loss.",
+      "Convert a primitive type to a String.",
+      "Convert a String to a primitive type."
+    ],
+    "answer": "Manually convert a larger data type to a smaller one, with a risk of data loss.",
+    "hint": "This is also known as narrowing conversion.",
+    "explanation": "Explicit casting (e.g., `int i = (int) myDouble;`) is required when you want to convert a value from a data type with a larger range to one with a smaller range. It tells the compiler you are aware of the potential for losing information."
+  },
+  {
+    "question": "What does the `String.valueOf(123)` method do?",
+    "options": [
+      "It parses the number 123 from a string.",
+      "It returns the character with ASCII value 123.",
+      "It converts the integer 123 into its string representation \"123\".",
+      "It checks if the number 123 is a valid string."
+    ],
+    "answer": "It converts the integer 123 into its string representation \"123\".",
+    "hint": "This is a common way to get the string representation of various data types.",
+    "explanation": "The static `String.valueOf()` method is an overloaded method that provides a string representation for all primitive data types and for objects."
+  },
+  {
+    "question": "What is the output of the following code snippet?",
+    "code": "StringBuilder rev = new StringBuilder(\"desserts\");\nrev.reverse();\nSystem.out.println(rev);",
+    "options": [
+      "desserts",
+      "stressed",
+      "sstressed",
+      "sstr"
+    ],
+    "answer": "stressed",
+    "hint": "The `reverse()` method modifies the StringBuilder in place.",
+    "explanation": "The `reverse()` method of the `StringBuilder` class reverses the sequence of characters. Reversing \"desserts\" results in \"stressed\"."
   }
 ]

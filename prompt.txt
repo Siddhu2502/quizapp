@@ -23,7 +23,7 @@ example
 [
   {
     "question": "Code question text...",
-    "code": "Code snippet text...", // optional only where there is code
+    "code": "Code snippet text...", // optional only where there is code for the question part
     "options": [
       "Option 1",
       "Option 2",
