@@ -1,4 +1,4 @@
-const CACHE_VERSION = 3; // <-- Change this number when you update the app
+const CACHE_VERSION = 4; // <-- Change this number when you update the app
 const CACHE_NAME = `quiz-app-v${CACHE_VERSION}`;
 const RUNTIME_CACHE = `quiz-runtime-v${CACHE_VERSION}`;
 

@@ -1,0 +1,604 @@
+[
+  {
+    "question": "In visualizing relationships between configuration objects, what does a double-headed straight arrow indicate?",
+    "options": [
+      "An interrelationship",
+      "A compositional relation",
+      "A one-way dependency",
+      "A data flow path"
+    ],
+    "answer": "An interrelationship",
+    "hint": "This type of arrow shows a mutual connection, not a parent-child or curved relationship.",
+    "explanation": "A double-headed straight arrow signifies an interrelationship between objects, while a curved arrow indicates a compositional relation."
+  },
+  {
+    "question": "In Version Management, what is the primary purpose of locking a file?",
+    "options": [
+      "To serialize changes to the file",
+      "To create an automatic backup",
+      "To roll back to a previous version",
+      "To create a new branch for isolated work"
+    ],
+    "answer": "To serialize changes to the file",
+    "hint": "This action prevents multiple people from editing the same file at the same time, ensuring changes happen one after another.",
+    "explanation": "Locking a file ensures that only one person can edit it at a time, which serializes the changes made to it and prevents conflicts."
+  },
+  {
+    "question": "Which activity is responsible for reviewing configuration items against specifications to assess their quality and correctness?",
+    "options": [
+      "Configuration audit",
+      "Change Management",
+      "Version Control",
+      "Configuration Management"
+    ],
+    "answer": "Configuration audit",
+    "hint": "Think of this as a formal inspection or examination of the configured items.",
+    "explanation": "A configuration audit is the formal process of reviewing items to verify that they conform to specifications and control documentation."
+  },
+  {
+    "question": "Is it true that Version Control allows users to lock files so they can only be edited by one person at a time?",
+    "options": [
+      "True",
+      "False",
+      "Only for text files",
+      "Only in centralized systems"
+    ],
+    "answer": "True",
+    "hint": "This feature is fundamental to preventing conflicting edits in a collaborative environment.",
+    "explanation": "Version control is a mechanism used to manage multiple versions of files, and file locking is a key feature to prevent concurrent modification issues."
+  },
+  {
+    "question": "In the standard Change Control Process, what is the immediate step after 'Identify and submit change request'?",
+    "options": [
+      "Evaluate impacts of change request",
+      "Plan the change",
+      "Implement and test the change",
+      "Close change request"
+    ],
+    "answer": "Evaluate impacts of change request",
+    "hint": "Before planning or implementing, you must understand what the proposed change will affect.",
+    "explanation": "The correct sequence is to first identify a change, then evaluate its impacts, plan it, implement it, verify it, and finally close the request."
+  },
+
+  {
+    "question": "When software maintenance is performed to adapt the software to a new operating system, what type of maintenance is it?",
+    "options": [
+      "Adaptive",
+      "Perfective",
+      "Corrective",
+      "Preventive"
+    ],
+    "answer": "Adaptive",
+    "hint": "This type of maintenance is about adapting to changes in the software's external environment.",
+    "explanation": "Adaptive maintenance involves modifying the software to cope with changes in its environment, such as a new platform or operating system."
+  },
+  {
+    "question": "An online shopping site adds an autocomplete feature to a city text field to improve user-friendliness. What kind of maintenance is this?",
+    "options": [
+      "Perfective",
+      "Adaptive",
+      "Corrective",
+      "Preventive"
+    ],
+    "answer": "Perfective",
+    "hint": "This change enhances existing functionality and improves performance or usability without fixing a bug.",
+    "explanation": "Perfective maintenance involves improving or enhancing the software's functionality and performance based on user feedback or new requirements."
+  },
+  {
+    "question": "The effort to fix the 'Y2K problem' by modifying systems to handle the year 2000 is an example of which type of maintenance?",
+    "options": [
+      "Preventive",
+      "Corrective",
+      "Adaptive",
+      "Perfective"
+    ],
+    "answer": "Preventive",
+    "hint": "This maintenance was done to prevent future system failures when the year changed.",
+    "explanation": "Preventive maintenance involves making changes to a system to prevent the occurrence of future errors, as was the case with the Y2K bug."
+  },
+  {
+    "question": "In software maintenance, changes are only implemented by adding new components, not by modifying existing ones. State if True or False.",
+    "options": [
+      "False",
+      "True",
+      "True only for small systems",
+      "False only for legacy systems"
+    ],
+    "answer": "False",
+    "hint": "Think about what is more common: slightly changing existing code or always adding brand new parts for every change.",
+    "explanation": "Software maintenance involves both modifying existing components and adding new components to implement required changes."
+  },
+  {
+    "question": "Any change made to software after it is deployed is known as maintenance. State if True or False.",
+    "options": [
+      "True",
+      "False",
+      "Only if it fixes a bug",
+      "Only if it's a major change"
+    ],
+    "answer": "True",
+    "hint": "The key factor is the timing of the change relative to the software's release.",
+    "explanation": "Maintenance refers to any modification of a software product after it has been delivered to the customer to correct faults, improve performance, or adapt to a changed environment."
+  },
+  {
+    "question": "A client wants to add a new 'Discount Offers' feature to an existing application. What kind of maintenance is this?",
+    "options": [
+      "Perfective",
+      "Preventive",
+      "Corrective",
+      "Adaptive"
+    ],
+    "answer": "Perfective",
+    "hint": "This activity adds new capabilities and enhances the system's functionality.",
+    "explanation": "Perfective maintenance involves making functional enhancements to the system, such as adding new features requested by the client."
+  },
+  {
+    "question": "What is the term for the difference between the actual output of a software and the expected correct output?",
+    "options": [
+      "Error",
+      "Bug",
+      "Fault",
+      "Defect"
+    ],
+    "answer": "Error",
+    "hint": "This term describes the observable discrepancy itself, not the underlying cause.",
+    "explanation": "An 'Error' is the discrepancy between a computed, observed, or measured value or condition and the true, specified, or theoretically correct value or condition."
+  },
+  {
+    "question": "During which phase of the Software Testing Life Cycle (STLC) are test scenarios, test cases, and test scripts prepared?",
+    "options": [
+      "Test Design",
+      "Test Plan",
+      "Test Execution",
+      "Requirements Analysis"
+    ],
+    "answer": "Test Design",
+    "hint": "This phase focuses on the 'how' of testing, creating the specific artifacts that will be used later.",
+    "explanation": "The Test Design phase is where the detailed test cases, test scenarios, and test scripts are created based on the requirements and test plan."
+  },
+  {
+    "question": "In static testing, what is the role of the 'Scribe'?",
+    "options": [
+      "Records each defect found",
+      "Inspects the document for defects",
+      "Presents the document to the team",
+      "Leads the review process"
+    ],
+    "answer": "Records each defect found",
+    "hint": "This role is responsible for documenting the findings during a review meeting.",
+    "explanation": "The Scribe (or Recorder) is responsible for documenting all the defects, issues, and action items that are identified during a static testing review session."
+  },
+  {
+    "question": "What type of testing is performed when the tester has knowledge of the input and expected output, but no knowledge of the internal implementation?",
+    "options": [
+      "Black Box Testing",
+      "White Box Testing",
+      "Integration Testing",
+      "Usability Testing"
+    ],
+    "answer": "Black Box Testing",
+    "hint": "This testing method treats the software as an opaque box, focusing only on external behavior.",
+    "explanation": "In Black Box testing, the functionality of the software is tested without knowledge of the internal implementation, code structure, or logic."
+  },
+  {
+    "question": "Which option correctly lists the initial phases of the software testing life cycle in order?",
+    "options": [
+      "Requirements Analysis, Test Planning, Test Case Development",
+      "Test Planning, Requirements Analysis, Test Execution",
+      "Requirements Analysis, Test Execution, Test Case Development",
+      "Test Case Development, Test Planning, Requirements Analysis"
+    ],
+    "answer": "Requirements Analysis, Test Planning, Test Case Development",
+    "hint": "You must understand what to test before you can plan how to test it, and you must plan before you design the specific tests.",
+    "explanation": "The correct sequence for the start of the STLC is understanding the requirements, creating a high-level test plan, and then developing detailed test cases."
+  },
+  {
+    "question": "In black box testing, which technique represents causes and effects as nodes in a graph?",
+    "options": [
+      "Cause-Effect Graphing",
+      "State Transition Diagram",
+      "Boundary Value Analysis",
+      "Equivalence Partitioning"
+    ],
+    "answer": "Cause-Effect Graphing",
+    "hint": "The name of this technique directly describes its core concept of graphing inputs and outputs.",
+    "explanation": "Cause-Effect Graphing is a technique where the inputs (causes) and outputs (effects) are represented as nodes in a graph to derive test cases."
+  },
+  {
+    "question": "Which of the following is a key activity performed during basis path testing?",
+    "options": [
+      "Statement Coverage",
+      "Usability Coverage",
+      "Requirements Coverage",
+      "Performance Coverage"
+    ],
+    "answer": "Statement Coverage",
+    "hint": "This type of testing focuses on the structural paths through the code.",
+    "explanation": "Basis path testing is a white-box technique that aims to execute specific paths through the code, which inherently involves achieving statement and branch coverage."
+  },
+  {
+    "question": "The testing technique that deals with the internal logic and structure of the code is called:",
+    "options": [
+      "WhiteBox Testing",
+      "BlackBox Testing",
+      "GreyBox Testing",
+      "Acceptance Testing"
+    ],
+    "answer": "WhiteBox Testing",
+    "hint": "This method is also known as glass-box or structural testing because you can 'see' inside the code.",
+    "explanation": "WhiteBox Testing is a method where the internal structure, design, and implementation of the item being tested are known to the tester."
+  },
+  {
+    "question": "Which statement accurately describes the difference between a Walkthrough and an Inspection in static testing?",
+    "options": [
+      "An Inspection is led by a trained moderator, while a Walkthrough is often led by the author.",
+      "A Walkthrough is more formal and structured than an Inspection.",
+      "Only Inspections can be used to find defects; Walkthroughs are for knowledge sharing.",
+      "The author is not allowed to be present during an Inspection."
+    ],
+    "answer": "An Inspection is led by a trained moderator, while a Walkthrough is often led by the author.",
+    "hint": "Think about the level of formality and who typically leads the meeting.",
+    "explanation": "The key difference is formality and leadership: an Inspection is a formal process led by a trained moderator, whereas a Walkthrough is less formal and usually conducted by the author of the document."
+  },
+  {
+    "question": "After implementation, a tester finds that coding standards were violated in several modules. What type of testing was performed to identify these errors?",
+    "options": [
+      "Static Testing",
+      "Dynamic Testing",
+      "Debugging",
+      "Regression Testing"
+    ],
+    "answer": "Static Testing",
+    "hint": "This type of error is found by reviewing the code without actually running it.",
+    "explanation": "Static Testing involves examining the code and associated documents without executing the program, making it ideal for finding issues like coding standard violations."
+  },
+  {
+    "question": "A tester is verifying that the values in a drop-down menu are listed correctly according to the requirements. What type of testing is this?",
+    "options": [
+      "Black box testing",
+      "White box testing",
+      "Unit testing",
+      "Performance testing"
+    ],
+    "answer": "Black box testing",
+    "hint": "The tester is checking the functionality based on specifications, without looking at the underlying code that populates the list.",
+    "explanation": "This is a form of Black box testing because the functionality of the software (the drop-down list) is being tested against requirements, not against its internal implementation."
+  },
+  {
+    "question": "For a password field that accepts 5 to 25 characters, which set of test cases is derived using Boundary Value Analysis?",
+    "options": [
+      "4, 5, 25, 26",
+      "5, 15, 25",
+      "4, 6, 24, 26",
+      "1, 5, 25, 30"
+    ],
+    "answer": "4, 5, 25, 26",
+    "hint": "BVA focuses on the values at the minimum and maximum boundaries, plus the values immediately inside and outside them.",
+    "explanation": "Boundary Value Analysis tests the values just below the minimum (4), at the minimum (5), at the maximum (25), and just above the maximum (26)."
+  },
+  {
+    "question": "Boundary value analysis can only be used during white-box testing. State if True or False.",
+    "options": [
+      "False",
+      "True",
+      "Only for numerical inputs",
+      "Only when combined with code reviews"
+    ],
+    "answer": "False",
+    "hint": "Does BVA require you to see the internal code, or just the input specifications?",
+    "explanation": "Boundary Value Analysis is a black-box testing technique, as it is based on requirements and specifications for input boundaries, not the internal code structure."
+  },
+  {
+    "question": "What is the cyclomatic complexity for a standard 'if-else' block?",
+    "code": "if (condition) {\n  // block 1\n} else {\n  // block 2\n}",
+    "options": [
+      "2",
+      "1",
+      "3",
+      "4"
+    ],
+    "answer": "2",
+    "hint": "Count the number of distinct paths through the code. One path for the 'if' and one for the 'else'.",
+    "explanation": "Cyclomatic complexity for an if-else structure is 2, representing the two possible execution paths: one where the condition is true and one where it is false."
+  },
+  {
+    "question": "Which of the following are essential steps in Requirements Analysis?",
+    "options": [
+      "Requirements Elicitation and Analysis of gathered requirements",
+      "Requirements Design and Specification",
+      "Requirements Elicitation and Unit Testing",
+      "Analysis of gathered requirements and Code Implementation"
+    ],
+    "answer": "Requirements Elicitation and Analysis of gathered requirements",
+    "hint": "The process starts with gathering information and then making sense of that information.",
+    "explanation": "The core of requirements analysis involves first eliciting (gathering) the requirements from stakeholders and then analyzing them for completeness, consistency, and feasibility."
+  },
+  {
+    "question": "From the options below, what is a primary role of a system analyst?",
+    "options": [
+      "Creates the Software Requirement Specification (SRS)",
+      "Creates the High-Level Design (HLD) document",
+      "Writes pseudo code for modules",
+      "Creates high-level test cases"
+    ],
+    "answer": "Creates the Software Requirement Specification (SRS)",
+    "hint": "This person is responsible for translating business needs into a formal technical document.",
+    "explanation": "A key responsibility of the system analyst is to analyze the user and business requirements and formally document them in the Software Requirement Specification (SRS)."
+  },
+  {
+    "question": "Which statement correctly describes the sequence of design and analysis phases?",
+    "options": [
+      "Analysis is performed, followed by High-level design, and then Low-level design.",
+      "High-level design is performed, followed by Low-level design, and then Analysis.",
+      "Analysis is performed, followed by Low-level design, and then High-level design.",
+      "Low-level design is performed, followed by Analysis, and then High-level design."
+    ],
+    "answer": "Analysis is performed, followed by High-level design, and then Low-level design.",
+    "hint": "The process moves from understanding 'what' the system should do, to 'how' it will be structured, to the detailed implementation logic.",
+    "explanation": "The logical progression in software development is to first analyze the requirements, then create a high-level architectural design, and finally develop the detailed low-level design."
+  },
+  {
+    "question": "In Requirements Engineering, which phase involves gathering requirements from users and stakeholders?",
+    "options": [
+      "Requirements Elicitation",
+      "Requirements Analysis",
+      "Requirements Specification",
+      "Requirements Validation"
+    ],
+    "answer": "Requirements Elicitation",
+    "hint": "This is the initial step of collecting or 'drawing out' information from various sources.",
+    "explanation": "Requirements Elicitation is the process of seeking, uncovering, acquiring, and elaborating requirements for a software system from users, customers, and other stakeholders."
+  },
+  {
+    "question": "Which type of design transforms the data model created during requirements analysis into data structures for implementation?",
+    "options": [
+      "Data Design",
+      "Architectural Design",
+      "Interface Design",
+      "GUI Design"
+    ],
+    "answer": "Data Design",
+    "hint": "This design phase focuses specifically on how data will be structured and stored in the system.",
+    "explanation": "Data Design focuses on creating the data architecture for a system, which includes defining the data models and data structures that will be used."
+  },
+  {
+    "question": "Which design type defines the system's major modules and the functions that each module will perform?",
+    "options": [
+      "Architecture design",
+      "Interface design",
+      "Low Level Design",
+      "Data Design"
+    ],
+    "answer": "Architecture design",
+    "hint": "This is the high-level, structural view of the system, like a blueprint for a building.",
+    "explanation": "Architecture design is the high-level design phase that defines the overall structure of the system, its modules, and how they interact to fulfill the specified requirements."
+  },
+  {
+    "question": "The requirement 'Whenever a new product arrives, the stock needs to be updated' is an example of a functional requirement. State True or False.",
+    "options": [
+      "True",
+      "False",
+      "It is a non-functional requirement",
+      "It is a business rule, not a requirement"
+    ],
+    "answer": "True",
+    "hint": "Does this requirement describe *what* the system must do?",
+    "explanation": "This is a functional requirement because it specifies a function the system must perform—updating stock levels in response to an event."
+  },
+  {
+    "question": "Testing to check if a report is generated within 5 seconds as agreed in the SRS is what type of testing?",
+    "options": [
+      "Performance Testing",
+      "Security Testing",
+      "Load Testing",
+      "Usability Testing"
+    ],
+    "answer": "Performance Testing",
+    "hint": "This type of testing measures the system's responsiveness and stability under a particular workload.",
+    "explanation": "Performance testing is a non-functional testing type that evaluates the speed, responsiveness, and stability of a system."
+  },
+  {
+    "question": "Which of the following are typically included in a Software Requirements Specification (SRS) Document?",
+    "options": [
+      "Functional Requirements, Non-Functional Requirements, and Constraints",
+      "Design documents, Code, and Test cases",
+      "Functional Requirements, Project plan, and Budget",
+      "Non-Functional Requirements, User manuals, and Marketing materials"
+    ],
+    "answer": "Functional Requirements, Non-Functional Requirements, and Constraints",
+    "hint": "An SRS document describes what the system will do, how well it will do it, and any limitations it must operate under.",
+    "explanation": "An SRS document comprehensively details the functional requirements (system behavior), non-functional requirements (quality attributes), and any constraints on the system."
+  },
+  {
+    "question": "A requirement states that an SMS must be sent to all customers within 10 minutes of a new offer being published. What kind of non-functional requirement is this?",
+    "options": [
+      "Performance Requirement",
+      "Usability Requirement",
+      "Security Requirement",
+      "Portability Requirement"
+    ],
+    "answer": "Performance Requirement",
+    "hint": "This requirement specifies a time-based constraint on a system operation.",
+    "explanation": "This is a performance requirement because it defines a criterion for the system's timeliness and responsiveness."
+  },
+  {
+    "question": "A team has many players, and each player belongs to only one team. What is the cardinality of the relationship from Player to Team?",
+    "options": [
+      "M:1 (Many-to-One)",
+      "1:M (One-to-Many)",
+      "1:1 (One-to-One)",
+      "M:M (Many-to-Many)"
+    ],
+    "answer": "M:1 (Many-to-One)",
+    "hint": "Consider how many players can be on one team, and how many teams one player can be on.",
+    "explanation": "The relationship is Many-to-One because many players can belong to one team, but each player is associated with only that single team."
+  },
+  {
+    "question": "From the given options, which two are most likely to be considered 'entities' in a data model for a sales system?",
+    "options": [
+      "Customer, Sale",
+      "Customer, CustomerAge",
+      "Sale, SalesID",
+      "CustomerAge, SalesID"
+    ],
+    "answer": "Customer, Sale",
+    "hint": "Entities are typically nouns representing a person, place, object, or concept about which you store data. Attributes describe entities.",
+    "explanation": "Customer and Sale are entities because they represent core objects in the system. CustomerAge and SalesID are attributes that describe those entities."
+  },
+  {
+    "question": "What is the standard document that describes all the requirements of a system?",
+    "options": [
+      "Software Requirement Specification (SRS)",
+      "Contract Document",
+      "Test Case Document",
+      "User Requirement Specification (URS)"
+    ],
+    "answer": "Software Requirement Specification (SRS)",
+    "hint": "This formal document serves as a contract between the development team and the client.",
+    "explanation": "The Software Requirement Specification (SRS) is the official document that contains a complete description of the behavior of a system to be developed."
+  },
+  {
+    "question": "An SRS requirement states: 'The stock exchange shall show the stock report for the next 24 hours.' What is the primary issue with this requirement?",
+    "options": [
+      "It is Ambiguous",
+      "It is Inconsistent",
+      "It is Incorrect",
+      "It is Untestable"
+    ],
+    "answer": "It is Ambiguous",
+    "hint": "Does 'next 24 hours' have a clear, single meaning? Does it mean a rolling window or a fixed end-of-day report?",
+    "explanation": "The requirement is ambiguous because 'next 24 hours' is open to interpretation. It could mean from the current time, from the start of the next business day, or something else."
+  },
+  {
+    "question": "Which of the following are essential qualities of a good Software Requirement Specification (SRS)?",
+    "options": [
+      "Complete, Consistent, and Traceable",
+      "Brief, Flexible, and Technical",
+      "Complete, Generic, and Abstract",
+      "Consistent, Code-based, and Testable"
+    ],
+    "answer": "Complete, Consistent, and Traceable",
+    "hint": "A good SRS should leave no room for doubt, should not contradict itself, and should be linkable to design and test artifacts.",
+    "explanation": "A high-quality SRS must be complete (all requirements are included), consistent (no contradictions), and traceable (each requirement can be traced through the development lifecycle)."
+  },
+  {
+    "question": "When a client approaches a company for a new banking solution, which SDLC phase is best suited for gathering what is expected from the client?",
+    "options": [
+      "Requirement analysis",
+      "System Analysis",
+      "Feasibility Analysis",
+      "Customer Analysis"
+    ],
+    "answer": "Requirement analysis",
+    "hint": "This phase is dedicated to understanding and documenting the client's needs.",
+    "explanation": "Requirement analysis is the specific SDLC phase focused on identifying stakeholder needs and defining the requirements for the proposed system."
+  },
+  {
+    "question": "A requirement for a remote-control car states the indicator should be red when fuel is low, but the output section says the indicator will glow pink. What is this issue called?",
+    "options": [
+      "Contradicting",
+      "Ambiguous",
+      "Incomplete",
+      "Consistent"
+    ],
+    "answer": "Contradicting",
+    "hint": "Two statements within the same specification are in direct conflict with each other.",
+    "explanation": "This is a contradiction because two parts of the requirement specify conflicting outcomes (red vs. pink) for the same condition."
+  },
+  {
+    "question": "During which SDLC phase are activities like identifying major modules, how they integrate, and describing pseudo code for them performed?",
+    "options": [
+      "Design",
+      "Analysis",
+      "Implementation",
+      "Maintenance"
+    ],
+    "answer": "Design",
+    "hint": "This phase acts as the blueprint for the construction (coding) phase.",
+    "explanation": "The design phase is where the system's architecture is defined, modules are identified, and the internal logic for each module is planned out before coding begins."
+  },
+  {
+    "question": "What term describes the application of a systematic, disciplined, quantifiable approach to the design, development, and maintenance of software?",
+    "options": [
+      "Software Engineering",
+      "Software Testing",
+      "Requirement Engineering",
+      "Software Development Process"
+    ],
+    "answer": "Software Engineering",
+    "hint": "This is the broad discipline that encompasses all aspects of building high-quality software.",
+    "explanation": "Software Engineering is the formal discipline concerned with all aspects of software production, applying engineering principles to software development."
+  },
+  {
+    "question": "For a high-risk military project where a delay could have severe consequences, which software development model is most suitable?",
+    "options": [
+      "Spiral model",
+      "Waterfall model",
+      "Agile model",
+      "Prototype model"
+    ],
+    "answer": "Spiral model",
+    "hint": "This model is specifically designed to handle risk through iterative development and risk analysis at each stage.",
+    "explanation": "The Spiral model is ideal for large, complex, and high-risk projects because it incorporates risk analysis and mitigation in each iteration of the development process."
+  },
+  {
+    "question": "The aesthetics of a website, such as color scheme and font choices, are part of the functional requirements. State true or false.",
+    "options": [
+      "False",
+      "True",
+      "Only if specified by the client",
+      "This is a usability requirement, not functional"
+    ],
+    "answer": "False",
+    "hint": "Functional requirements define *what* the system does, not *how* it looks.",
+    "explanation": "Aesthetics are a type of non-functional requirement, as they define the quality and characteristics of the user interface rather than a specific system function."
+  },
+  {
+    "question": "What process confirms that the software meets its technical specifications?",
+    "options": [
+      "Verification",
+      "Validation",
+      "Defect finding",
+      "Testing"
+    ],
+    "answer": "Verification",
+    "hint": "Think of the question: 'Are we building the product right?'",
+    "explanation": "Verification is the process of evaluating software to determine whether the products of a given development phase satisfy the conditions imposed at the start of that phase."
+  },
+  {
+    "question": "After deployment, a client requests an enhancement to the UI to attract more customers. This phase is called:",
+    "options": [
+      "Maintenance",
+      "Development",
+      "Deployment",
+      "Testing"
+    ],
+    "answer": "Maintenance",
+    "hint": "Any change made to the software after it is in operation falls under this general category.",
+    "explanation": "Any modification to a software system after it has been put into operation is considered maintenance, including enhancements like UI improvements."
+  },
+  {
+    "question": "When system requirements are unstable and change frequently, which prototyping model is most appropriate?",
+    "options": [
+      "Evolutionary prototype",
+      "Throw away prototype",
+      "Incremental model",
+      "Waterfall model"
+    ],
+    "answer": "Evolutionary prototype",
+    "hint": "This model is designed to be refined and built upon, eventually becoming the final product.",
+    "explanation": "The Evolutionary prototype model is used when requirements are not stable, as the prototype is iteratively refined and enhanced over time to become the final system."
+  },
+  {
+    "question": "Which of the following is a key phase of the prototype model?",
+    "options": [
+      "Quick design",
+      "Extensive testing",
+      "Detailed HLD phase",
+      "Detailed Coding"
+    ],
+    "answer": "Quick design",
+    "hint": "The goal of prototyping is to build something fast to get feedback.",
+    "explanation": "The prototype model emphasizes speed and user feedback, so it involves a 'Quick design' phase to rapidly create a preliminary version of the system."
+  }
+]
