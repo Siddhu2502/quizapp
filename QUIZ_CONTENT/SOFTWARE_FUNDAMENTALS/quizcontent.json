@@ -59,7 +59,6 @@
     "hint": "Before planning or implementing, you must understand what the proposed change will affect.",
     "explanation": "The correct sequence is to first identify a change, then evaluate its impacts, plan it, implement it, verify it, and finally close the request."
   },
-
   {
     "question": "When software maintenance is performed to adapt the software to a new operating system, what type of maintenance is it?",
     "options": [
@@ -600,5 +599,2016 @@
     "answer": "Quick design",
     "hint": "The goal of prototyping is to build something fast to get feedback.",
     "explanation": "The prototype model emphasizes speed and user feedback, so it involves a 'Quick design' phase to rapidly create a preliminary version of the system."
+  },
+  {
+    "question": "In the Rapid Application Development (RAD) model, which phase involves using automated tools to convert process models into the actual system?",
+    "options": [
+      "Application Generation",
+      "Business Modeling",
+      "Data Modeling",
+      "Process Modeling"
+    ],
+    "answer": "Application Generation",
+    "hint": "This phase focuses on turning the design blueprints into a functional product, often with the help of computer-aided software engineering (CASE) tools.",
+    "explanation": "Application Generation in RAD is the phase where automated tools are used to facilitate construction of the software, converting the design specifications into the final system."
+  },
+  {
+    "question": "Which SDLC process model is characterized by addressing major functions in the initial cycles to deliver a working, operational product as quickly as possible?",
+    "options": [
+      "Incremental Model",
+      "Waterfall Model",
+      "RAD Model",
+      "Spiral Model"
+    ],
+    "answer": "Incremental Model",
+    "hint": "This model builds and delivers the product piece by piece, with each piece adding more functionality.",
+    "explanation": "The Incremental Model delivers an operational product in the first increment, with additional functionality being delivered in subsequent increments."
+  },
+  {
+    "question": "A student mark processing system was developed and deployed, but it incorrectly shows the grade as '0' for all students. The failure to catch this issue indicates which SDLC phase was not performed properly?",
+    "options": [
+      "Software Testing",
+      "Software Analysis",
+      "Software Design",
+      "Software Maintenance"
+    ],
+    "answer": "Software Testing",
+    "hint": "This phase is responsible for finding defects and ensuring the software meets requirements before deployment.",
+    "explanation": "The presence of such a critical defect after deployment indicates a failure in the Software Testing phase, which should have identified and reported the bug."
+  },
+  {
+    "question": "Which of the following pseudocode options correctly copies the elements from an array named 'quizmark' to another array named 'copyquizmark' of the same size 'n'?",
+    "options": [
+      "FOR index <- 0 to n, copyquizmark[index] <- quizmark[index], END FOR",
+      "copyquizmark <- quizmark",
+      "copyquizmark[n] <- quizmark[n]",
+      "We cannot copy values from one array to another."
+    ],
+    "answer": "FOR index <- 0 to n, copyquizmark[index] <- quizmark[index], END FOR",
+    "hint": "To copy an array, you must iterate through each element and assign its value to the corresponding position in the new array.",
+    "explanation": "A loop is required to copy an array element by element. Direct assignment like 'copyquizmark <- quizmark' typically copies the reference, not the values."
+  },
+  {
+    "question": "Given the pseudocode 'number[100] <- 99', how many elements can be stored in the array named 'number'?",
+    "options": [
+      "The statement provides no clue about the total size",
+      "101",
+      "100",
+      "99"
+    ],
+    "answer": "The statement provides no clue about the total size",
+    "hint": "This line of code is an assignment to a specific index, not a declaration of the array's total capacity.",
+    "explanation": "This statement assigns the value 99 to the 101st element (at index 100), but it doesn't define the array's total size. The total capacity must be specified in a separate declaration statement."
+  },
+  {
+    "question": "What is the most appropriate data structure for implementing matrix multiplication?",
+    "options": [
+      "2D Array",
+      "1D Array",
+      "Stack",
+      "Linked List"
+    ],
+    "answer": "2D Array",
+    "hint": "Matrices are mathematical structures organized by rows and columns.",
+    "explanation": "A 2D array is the ideal data structure for representing matrices as it naturally maps to the row and column structure required for matrix operations."
+  },
+  {
+    "question": "Which statement is typically TRUE about arrays in most statically-typed programming languages?",
+    "options": [
+      "Elements of an array are stored in contiguous memory locations.",
+      "An array can store heterogeneous data (e.g., numbers and strings together).",
+      "It is possible to dynamically increase the size of an array after declaration.",
+      "Arrays are accessed using key-value pairs."
+    ],
+    "answer": "Elements of an array are stored in contiguous memory locations.",
+    "hint": "This core characteristic is what allows for efficient, direct access to any element using its index.",
+    "explanation": "Arrays store elements in a continuous block of memory, which allows for fast, constant-time access using an index. Most basic array implementations require homogeneous data and have a fixed size."
+  },
+  {
+    "question": "An array is declared as 'associate_name[50]'. How would you correctly retrieve the 5th associate's name?",
+    "options": [
+      "associate_name[4]",
+      "associate_name[5]",
+      "associate_name[5th]",
+      "associate_name(5)"
+    ],
+    "answer": "associate_name[4]",
+    "hint": "Array indexing almost always starts from 0, not 1.",
+    "explanation": "Since array indexing is zero-based, the first element is at index 0, the second at index 1, and therefore the fifth element is at index 4."
+  },
+  {
+    "question": "When declaring an array, which piece of information is NOT mandatory at the time of declaration itself?",
+    "options": [
+      "The specific elements to be stored in the array",
+      "The data type of the array elements",
+      "The name of the array",
+      "The size or capacity of the array"
+    ],
+    "answer": "The specific elements to be stored in the array",
+    "hint": "You can create an empty container first and fill it with values later.",
+    "explanation": "An array can be declared with a name, type, and size without being initialized with values. The elements can be assigned later in the program."
+  },
+  {
+    "question": "It is impossible to perform a search operation in an array that is not sorted. State True or False.",
+    "options": [
+      "False",
+      "True",
+      "True, because binary search requires a sorted array.",
+      "False, but it is highly inefficient."
+    ],
+    "answer": "False",
+    "hint": "Consider a simple, element-by-element check. Does that require the array to be sorted?",
+    "explanation": "It is possible to search an unsorted array using a linear search, which checks each element one by one. While less efficient than a binary search on a sorted array, it is not impossible."
+  },
+  {
+    "question": "Random access is not possible in an array. State True or False.",
+    "options": [
+      "False",
+      "True",
+      "Only possible in 2D arrays",
+      "Only possible in dynamically sized arrays"
+    ],
+    "answer": "False",
+    "hint": "The ability to jump directly to any element using its index is a defining feature of this data structure.",
+    "explanation": "Random access is a key advantage of arrays. Because elements are stored contiguously, the memory location of any element can be calculated directly from its index, allowing for constant-time access."
+  },
+  {
+    "question": "Assume you have an array named 'numbers' of size 10. Which of the following assignments is valid?",
+    "options": [
+      "numbers[9] <- 5",
+      "numbers[10] <- 11",
+      "numbers[11] <- 6",
+      "numbers[-1] <- 2"
+    ],
+    "answer": "numbers[9] <- 5",
+    "hint": "For an array of size 10, what are the minimum and maximum valid index values?",
+    "explanation": "For an array of size 10, the valid indices range from 0 to 9. Any index outside this range, such as 10 or 11, is out of bounds and invalid."
+  },
+  {
+    "question": "Which of the following statements is a correct and fundamental characteristic of arrays?",
+    "options": [
+      "Elements in an array are arranged contiguously in memory.",
+      "Elements in an array are arranged in descending order by default.",
+      "Elements in an array are arranged in ascending order by default.",
+      "Elements in an array are linked by pointers."
+    ],
+    "answer": "Elements in an array are arranged contiguously in memory.",
+    "hint": "This physical storage layout is what enables fast, index-based access.",
+    "explanation": "A defining feature of an array is that its elements are stored in a continuous, unbroken block of memory, which is essential for its performance."
+  },
+  {
+    "question": "Consider you want to compare the prices of 3 different mobile phones across 3 different online stores (e.g., Amazon, Flipkart, eBay). Which array type is most suitable for this comparison?",
+    "options": [
+      "Two-dimensional array",
+      "Single-dimensional array",
+      "Three-dimensional array",
+      "Jagged array"
+    ],
+    "answer": "Two-dimensional array",
+    "hint": "You are organizing data in a grid-like structure: phone models as rows and online stores as columns.",
+    "explanation": "A two-dimensional array is perfect for this scenario, as it can represent a table or grid where rows correspond to the phones and columns correspond to the online stores."
+  },
+  {
+    "question": "An array that consists of rows and columns is also known as a __________.",
+    "options": [
+      "Two-dimensional array",
+      "One-dimensional array",
+      "Three-dimensional array",
+      "Complex array"
+    ],
+    "answer": "Two-dimensional array",
+    "hint": "This structure has two indices, one for the row and one for the column, to locate an element.",
+    "explanation": "A two-dimensional array, often called a matrix or a table, is an array of arrays, organized into rows and columns."
+  },
+  {
+    "question": "Which of the following pseudocode snippets shows the correct logical sequence to store a user's name in an array and then display it?",
+    "code": "1. PRINT name\n2. DECLARE name[20]\n3. END\n4. INPUT name\n5. BEGIN",
+    "options": [
+      "BEGIN, DECLARE name[20], INPUT name, PRINT name, END",
+      "BEGIN, INPUT name, DECLARE name[20], PRINT name, END",
+      "DECLARE name[20], BEGIN, INPUT name, PRINT name, END",
+      "BEGIN, DECLARE name[20], PRINT name, INPUT name, END"
+    ],
+    "answer": "BEGIN, DECLARE name[20], INPUT name, PRINT name, END",
+    "hint": "You must declare a variable before you can use it to store input, and you must have input before you can print it.",
+    "explanation": "The correct program flow is to start the program (BEGIN), declare variables (DECLARE), get input from the user (INPUT), process or display the input (PRINT), and then end the program (END)."
+  },
+  {
+    "question": "In pseudocode, what is the standard closing block for a FOR loop statement?",
+    "options": [
+      "END FOR",
+      "END",
+      "END LOOP",
+      "NEXT"
+    ],
+    "answer": "END FOR",
+    "hint": "Matching keywords are often used to define the start and end of a specific control structure.",
+    "explanation": "To clearly define the scope of a FOR loop, the 'FOR' statement is paired with a corresponding 'END FOR' statement in standard pseudocode."
+  },
+  {
+    "question": "Which type of looping logic is considered 'exit-controlled'?",
+    "options": [
+      "do-while loop",
+      "while loop",
+      "for loop",
+      "nested loop"
+    ],
+    "answer": "do-while loop",
+    "hint": "This loop's condition is checked at the end of the loop body, not at the beginning.",
+    "explanation": "A do-while loop is exit-controlled because its condition is evaluated after the loop body has been executed, guaranteeing the body runs at least once."
+  },
+  {
+    "question": "A programmer is writing pseudocode to find the factorial of 5. What is the correct calculation that should be placed inside the loop?",
+    "code": "DECLARE i, factorial\nSET factorial <-- 1\nFOR i <-- 1 to 5 do\n  // MISSING STATEMENT\nEND FOR",
+    "options": [
+      "factorial <-- factorial * i",
+      "factorial <-- factorial + i",
+      "factorial <-- 5 * i",
+      "factorial <-- factorial + 1"
+    ],
+    "answer": "factorial <-- factorial * i",
+    "hint": "Factorial is the product of all positive integers up to that number.",
+    "explanation": "To calculate a factorial, you must multiply the current result by the loop counter in each iteration (1*1, then 1*2, then 2*3, and so on)."
+  },
+  {
+    "question": "Which of the following pseudocode snippets will produce the output: '1 2'?",
+    "options": [
+      "Start; count=1; Print count; count=count+1; if count <= 1 then repeat else Stop; Print count",
+      "Start; count=1; Print count; count=count+1; Stop",
+      "Start; count=1; if count >= 10 then Print count; count=count+1; Stop",
+      "Start; count=2; Print count; count=count-1; if count > 0 then Print count; Stop"
+    ],
+    "answer": "Start; count=1; Print count; count=count+1; if count <= 1 then repeat else Stop; Print count",
+    "hint": "Trace the execution flow carefully. The first print happens before any checks. A second print happens after the loop condition becomes false.",
+    "explanation": "The flowchart first prints count (1), increments it to 2, checks if 2>=10 (false), exits the loop, and then executes the final 'Print count', which prints the current value of count (2)."
+  },
+  {
+    "question": "Which statement best describes a fundamental truth about FOR loops?",
+    "options": [
+      "The exact number of iterations is known before the loop begins.",
+      "The loop executes at least once, even if the condition is false.",
+      "The loop's condition is checked at the end of each iteration.",
+      "A FOR loop cannot be nested inside another loop."
+    ],
+    "answer": "The exact number of iterations is known before the loop begins.",
+    "hint": "This type of loop is ideal for iterating a specific number of times, like over a sequence or a range.",
+    "explanation": "A key characteristic of a FOR loop is that it is a count-controlled loop, where the number of iterations is determined at the start."
+  },
+  {
+    "question": "A user needs to enter details for each of the five members of their family on a flight booking portal. The data entry process is identical for each person. Which loop statement is most suitable for this scenario?",
+    "options": [
+      "For loop",
+      "While loop",
+      "Do-while loop",
+      "If-else statement"
+    ],
+    "answer": "For loop",
+    "hint": "The number of repetitions is known in advance.",
+    "explanation": "Since the process needs to be repeated a fixed number of times (five), a FOR loop is the most appropriate and clearest choice."
+  },
+  {
+    "question": "What will be the final value printed by the following pseudocode?",
+    "code": "BEGIN\n  DECLARE number\n  SET number <-- 30\n  WHILE number > 0\n    number <-- number - 4\n  END WHILE\n  PRINT number\nEND",
+    "options": [
+      "-2",
+      "0",
+      "2",
+      "30"
+    ],
+    "answer": "-2",
+    "hint": "Trace the value of 'number' through each iteration of the while loop until the condition 'number > 0' becomes false.",
+    "explanation": "The loop executes with number as 30, 26, 22, 18, 14, 10, 6, 2. In the next iteration, number becomes -2. The condition '(-2 > 0)' is false, the loop terminates, and the final value of -2 is printed."
+  },
+  {
+    "question": "What is the output for the following FOR-loop pseudocode snippet?",
+    "code": "FOR i <-- 1 to 15\n  PRINT i\n  i <-- i + 3\nEND FOR",
+    "options": [
+      "1 4 7 10 13",
+      "1 5 9 13",
+      "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15",
+      "1 4 7 10 13 16"
+    ],
+    "answer": "1 4 7 10 13",
+    "hint": "The loop variable 'i' is being modified inside the loop body in addition to the loop's own incrementing mechanism. Trace carefully.",
+    "explanation": "The loop prints 1, then i becomes 4. The loop's own increment might be skipped or combined. Assuming the loop structure's increment is separate: print 1, i becomes 4. Next iter: print 4, i becomes 7. Next iter: print 7, i becomes 10. Next iter: print 10, i becomes 13. Next iter: print 13, i becomes 16. The condition 16<=15 is false, so the loop terminates."
+  },
+  {
+    "question": "Which of the following flowchart symbols is inappropriate for building a flowchart that represents a purely sequential program flow?",
+    "options": [
+      "Diamond",
+      "Oval",
+      "Rectangle",
+      "Parallelogram"
+    ],
+    "answer": "Diamond",
+    "hint": "A sequential flow has only one path, while one of these symbols is specifically for creating multiple paths.",
+    "explanation": "The diamond symbol represents a decision or a condition, which creates branching paths (e.g., if-else). It is not used in a purely sequential flow where steps execute one after another without branching."
+  },
+  {
+    "question": "A statement within a loop must get executed at least once, except for a do-while loop. State True or False.",
+    "options": [
+      "False",
+      "True",
+      "This is true for all loops",
+      "This only applies to For loops"
+    ],
+    "answer": "False",
+    "hint": "The statement has the logic reversed. Which loop type guarantees at least one execution?",
+    "explanation": "The statement is false. Entry-controlled loops (for, while) may not execute at all if the condition is initially false. The do-while loop is the one that guarantees execution at least once."
+  },
+  {
+    "question": "Which two conditions are essential for constructing a valid, non-infinite loop?",
+    "options": [
+      "An initial condition must be set, and a termination condition must be reachable.",
+      "A loop counter must always be used, and it must be an integer.",
+      "Conditional statements are not allowed within the loop.",
+      "The loop must run a fixed number of times."
+    ],
+    "answer": "An initial condition must be set, and a termination condition must be reachable.",
+    "hint": "A loop needs a starting point and a defined way to eventually stop.",
+    "explanation": "For a loop to function correctly, variables used in the condition must be initialized before the loop starts, and the logic inside the loop must eventually cause the termination condition to be met."
+  },
+  {
+    "question": "You are solving a Rubik's cube. You continue to rotate the sides until you reach the goal of having the same color on all faces. This process is a real-world example of which looping statement?",
+    "options": [
+      "While loop",
+      "For loop",
+      "Nested-if",
+      "Do-while loop"
+    ],
+    "answer": "While loop",
+    "hint": "The logic is: *while* the cube is not solved, keep performing an action. The number of rotations is not known beforehand.",
+    "explanation": "This is a classic example of a while loop because the condition ('is the cube solved?') is checked before each rotation, and the loop continues as long as the condition is false. The number of iterations is unknown."
+  },
+  {
+    "question": "The following flowchart, where a condition is checked first, and a code block is executed only if the condition is 'Yes' before looping back, represents which logic?",
+    "options": [
+      "While loop",
+      "Do-while loop",
+      "For loop",
+      "If-else statement"
+    ],
+    "answer": "While loop",
+    "hint": "This is an 'entry-controlled' loop structure.",
+    "explanation": "This flowchart depicts an entry-controlled loop. The condition is checked at the beginning of the loop, and the code block is only entered if the condition is true, which is the exact logic of a while loop."
+  },
+  {
+    "question": "Looping statements are also referred to as __________.",
+    "options": [
+      "Iteration logic",
+      "Sequence logic",
+      "Selection logic",
+      "Program logic"
+    ],
+    "answer": "Iteration logic",
+    "hint": "The term for a single pass through a loop is an 'iteration'.",
+    "explanation": "Looping is the process of repeatedly executing a block of code. Each repetition is called an iteration, so loops are a form of iteration logic."
+  },
+  {
+    "question": "In a flowchart designed to calculate the area of a circle, which of the following steps belongs in the 'process' section, represented by a rectangle?",
+    "options": [
+      "Area = 3.14 * radius * radius",
+      "Read the value of radius",
+      "Print the area",
+      "Check if radius has a positive value"
+    ],
+    "answer": "Area = 3.14 * radius * radius",
+    "hint": "The process symbol is used for calculations and data manipulation.",
+    "explanation": "A rectangle in a flowchart denotes a process or action, such as performing a calculation. Reading input and printing output are represented by parallelograms."
+  },
+  {
+    "question": "In a standard flowchart, what does a parallelogram symbol represent?",
+    "options": [
+      "Input / Output",
+      "Process",
+      "Decision",
+      "Start / Stop"
+    ],
+    "answer": "Input / Output",
+    "hint": "This shape is used when the program needs to get data from a user or display data to them.",
+    "explanation": "The parallelogram is the standard symbol used in flowcharts to represent any input (e.g., reading data) or output (e.g., printing results) operation."
+  },
+  {
+    "question": "An algorithm described in a formal, language-agnostic way using programming-like constructs is known as __________.",
+    "options": [
+      "Pseudo code",
+      "Program code",
+      "Flowchart",
+      "Machine code"
+    ],
+    "answer": "Pseudo code",
+    "hint": "It's a 'fake' code used for planning and communication before writing the actual program.",
+    "explanation": "Pseudo code is a detailed yet readable description of what a computer program or algorithm must do, expressed in a formally-styled natural language rather than in a programming language."
+  },
+  {
+    "question": "An expression in programming is a combination of which of the following elements?",
+    "options": [
+      "Operators, constants, and variables",
+      "Functions, loops, and conditions",
+      "Keywords, comments, and declarations",
+      "Data types, pointers, and arrays"
+    ],
+    "answer": "Operators, constants, and variables",
+    "hint": "Think about a simple mathematical formula like 'x + 5'. What are its components?",
+    "explanation": "An expression is a combination of one or more operands (constants, variables) and operators (e.g., +, -, *) that the programming language interprets and computes to produce a value."
+  },
+  {
+    "question": "What does the oval symbol typically represent in a flowchart?",
+    "options": [
+      "Start / Stop",
+      "Input / Output",
+      "Connector",
+      "Process"
+    ],
+    "answer": "Start / Stop",
+    "hint": "This symbol, also called a 'terminator', marks the beginning and end points of the program flow.",
+    "explanation": "The oval or rounded rectangle symbol is used in flowcharts to indicate the terminator points, signifying the start and end of the algorithm."
+  },
+  {
+    "question": "Which of the following represents the correct logical sequence for an algorithm that adds two numbers?",
+    "options": [
+      "Start -> Get two numbers -> Add them -> Display the sum -> Stop",
+      "Start -> Add two numbers -> Get two numbers -> Display the sum -> Stop",
+      "Start -> Get two numbers -> Display the sum -> Add them -> Stop",
+      "Get two numbers -> Add them -> Display the sum -> Start -> Stop"
+    ],
+    "answer": "Start -> Get two numbers -> Add them -> Display the sum -> Stop",
+    "hint": "You must acquire the data before you can perform a calculation on it.",
+    "explanation": "The correct logical flow for this algorithm is to first get the necessary inputs, then perform the processing (addition), and finally produce the output (display the sum)."
+  },
+  {
+    "question": "Arrange the following in a meaningful logical sequence from smallest component to largest structure: 1. Paragraph, 2. Word, 3. Letter, 4. Sentence, 5. Phrase",
+    "options": [
+      "3, 2, 5, 4, 1",
+      "3, 2, 4, 5, 1",
+      "2, 3, 5, 4, 1",
+      "3, 5, 2, 4, 1"
+    ],
+    "answer": "3, 2, 5, 4, 1",
+    "hint": "Start with the most basic building block of written language.",
+    "explanation": "The correct sequence of composition is: Letters form a Word, words form a Phrase, phrases form a Sentence, and sentences form a Paragraph."
+  },
+  {
+    "question": "A flowchart for adding two numbers uses a rectangle for the 'Read number1, number2' step. What is the error?",
+    "options": [
+      "The symbol for reading input is incorrect.",
+      "The symbol for the process is incorrect.",
+      "The flowchart has no error.",
+      "The symbol for start/stop is incorrect."
+    ],
+    "answer": "The symbol for reading input is incorrect.",
+    "hint": "Rectangles are for processing, but 'reading' a number is a different kind of operation.",
+    "explanation": "Reading input from a user should be represented by a parallelogram, not a rectangle. Rectangles are reserved for internal processing steps like calculations."
+  },
+  {
+    "question": "Which of the following represents the correct logical sequence for a pseudocode program that multiplies two numbers?",
+    "options": [
+      "BEGIN -> DECLARE -> READ -> CALCULATE -> PRINT -> END",
+      "BEGIN -> READ -> DECLARE -> CALCULATE -> PRINT -> END",
+      "DECLARE -> BEGIN -> READ -> CALCULATE -> PRINT -> END",
+      "BEGIN -> DECLARE -> CALCULATE -> READ -> PRINT -> END"
+    ],
+    "answer": "BEGIN -> DECLARE -> READ -> CALCULATE -> PRINT -> END",
+    "hint": "Variables must be declared before they can be used to store input, and input must be read before it can be used in a calculation.",
+    "explanation": "The standard program structure is to begin, declare all necessary variables, read the input values, perform calculations with those values, print the result, and then end."
+  },
+  {
+    "question": "Which of the following is the correct logical sequence for a pseudocode algorithm to calculate and print the average of five marks?",
+    "code": "[1] PRINT average\n[2] total <- mark1 + mark2 + mark3 + mark4 + mark5\n[3] READ mark1, mark2, mark3, mark4, mark5\n[4] DECLARE marks, total, average\n[5] average <- total / 5",
+    "options": [
+      "4, 3, 2, 5, 1",
+      "4, 2, 3, 5, 1",
+      "3, 4, 2, 5, 1",
+      "4, 3, 5, 2, 1"
+    ],
+    "answer": "4, 3, 2, 5, 1",
+    "hint": "Follow the sequence: Declare variables, get input, process the input to get a total, process the total to get the average, then display the final result.",
+    "explanation": "The correct order of operations is to first declare the variables (4), then read the input marks (3), calculate the total (2), calculate the average from the total (5), and finally print the average (1)."
+  },
+  {
+    "question": "Which of the following variable names is considered meaningful and correctly formatted?",
+    "options": [
+      "registerNumber",
+      "1num",
+      "user name",
+      "user!"
+    ],
+    "answer": "registerNumber",
+    "hint": "Variable names typically cannot start with a number, contain spaces, or include special characters other than underscores.",
+    "explanation": "A valid variable name should not start with a number, contain spaces, or have special symbols. 'registerNumber' uses camelCase, which is a common and valid convention."
+  },
+  {
+    "question": "Examine the following pseudocode. What is its primary purpose?",
+    "code": "BEGIN\n  DECLARE principal, years, rate, result\n  READ principal, years, rate\n  result <-- (principal * years * rate) / 100\n  PRINT result\nEND",
+    "options": [
+      "Calculating simple interest",
+      "Finding the average of three numbers",
+      "Calculating the perimeter of a rectangle",
+      "Converting currency"
+    ],
+    "answer": "Calculating simple interest",
+    "hint": "The formula (P * T * R) / 100 is a standard financial calculation.",
+    "explanation": "The pseudocode implements the standard formula for calculating simple interest, which is (Principal * Time * Rate) / 100."
+  },
+  {
+    "question": "What is the result of the following mathematical expression, following the standard order of operations (PEMDAS/BODMAS)? `600 * 400 / 800 - 300 + 200`",
+    "options": [
+      "200",
+      "0",
+      "-100",
+      "500"
+    ],
+    "answer": "200",
+    "hint": "Multiplication and division have equal precedence and are performed from left to right, followed by addition and subtraction.",
+    "explanation": "First, 600 * 400 = 240000. Then, 240000 / 800 = 300. Then, 300 - 300 = 0. Finally, 0 + 200 = 200."
+  },
+  {
+    "question": "When developing a new application for a startup where user requirements are very unclear, which SDLC model is best for clarifying these requirements by providing an early, tangible version of the system?",
+    "options": [
+      "Throw away prototype",
+      "Evolutionary prototype",
+      "Waterfall model",
+      "Spiral model"
+    ],
+    "answer": "Throw away prototype",
+    "hint": "This model focuses on building a quick, preliminary version specifically to gather feedback and refine requirements, with the intention of discarding it afterward.",
+    "explanation": "The Throw away prototype model is used when requirements are unclear. A simple prototype is built to help stakeholders visualize the system, and once the requirements are clarified, this prototype is discarded and the actual system is built from scratch."
+  },
+  {
+    "question": "It is possible for negative numerical values to be stored as elements inside an array. State true or false.",
+    "options": [
+      "True",
+      "False",
+      "Only in dynamically-sized arrays",
+      "Only if the array's data type is 'float'"
+    ],
+    "answer": "True",
+    "hint": "The constraints on an array typically apply to its size and index, not the sign of the values it holds.",
+    "explanation": "The size and indices of an array must be non-negative, but the elements stored within the array can be positive, negative, or zero, as long as they match the array's data type."
+  },
+  {
+    "question": "The operation of ordering the elements in a list, either in ascending or descending order, is known as __________.",
+    "options": [
+      "Sorting",
+      "Searching",
+      "Indexing",
+      "Traversing"
+    ],
+    "answer": "Sorting",
+    "hint": "This process arranges data in a specific sequence to make it easier to search and analyze.",
+    "explanation": "Sorting is the fundamental process of arranging the elements of a list or array into a specific order."
+  },
+  {
+    "question": "What is the term for the numerical value used to locate a specific element within an array?",
+    "options": [
+      "Index",
+      "Pointer",
+      "Key",
+      "Address"
+    ],
+    "answer": "Index",
+    "hint": "This value is typically provided within square brackets `[]` after the array name.",
+    "explanation": "An index is a non-negative integer that corresponds to the position of an element in an array, used for direct access."
+  },
+  {
+    "question": "The expression inside the square brackets `[]` used for an array's size or for accessing an element should always resolve to a __________.",
+    "options": [
+      "Positive number or zero",
+      "Variable name",
+      "Negative number",
+      "Floating-point number"
+    ],
+    "answer": "Positive number or zero",
+    "hint": "Array positions are counted starting from 0 and going up.",
+    "explanation": "Array indices must be non-negative integers (zero or a positive number) to correctly reference a position within the array's memory block."
+  },
+  {
+    "question": "Is it possible to store the details of a laptop (price, model_name, model_number) in a single, standard array in most programming languages?",
+    "options": [
+      "No, because a standard array can only store data of the same type.",
+      "Yes, if the array is declared as a generic object type.",
+      "Yes, because all the data can be converted to strings.",
+      "No, because the array size is too small."
+    ],
+    "answer": "No, because a standard array can only store data of the same type.",
+    "hint": "Consider the data types: price is a number, while model_name is a string. This is known as heterogeneous data.",
+    "explanation": "A standard array is a homogeneous data structure, meaning all its elements must be of the same data type. Storing a mix of numbers and strings requires a more complex structure, like a struct, class, or object."
+  },
+  {
+    "question": "A list of songs stored in your mobile phone is a good real-world example of what kind of data structure?",
+    "options": [
+      "A single-dimensional array",
+      "A two-dimensional array",
+      "A hash map",
+      "A binary tree"
+    ],
+    "answer": "A single-dimensional array",
+    "hint": "It's a simple, ordered sequence of items.",
+    "explanation": "A list of songs represents a simple, linear sequence of items, which can be effectively modeled by a single-dimensional array where each element stores a song title or object."
+  },
+  {
+    "question": "It is possible to traverse through an array from the first position to the last, but not from the last position back to the first. State true or false.",
+    "options": [
+      "False",
+      "True",
+      "True for static arrays, false for dynamic arrays",
+      "False, but reverse traversal is very inefficient"
+    ],
+    "answer": "False",
+    "hint": "A loop can be constructed to count downwards just as easily as it can count upwards.",
+    "explanation": "An array can be traversed in any direction. Forward traversal is done by incrementing the index from 0 to the end, while reverse traversal is done by decrementing the index from the end back to 0."
+  },
+  {
+    "question": "Which of the following pseudocode snippets will produce the output: '0, 2, 4, 6, 8, 10, 12, 14'?",
+    "options": [
+      "BEGIN; SET count <-- 8, number <-- 0, even <-- 0; WHILE number < count; PRINT even; SET even <-- even + 2; number <-- number + 1; END WHILE; END",
+      "BEGIN; SET count <-- 8, number <-- 0, even <-- 0; WHILE number < count; PRINT even; SET even <-- even + 1; number <-- number + 1; END WHILE; END",
+      "BEGIN; SET count <-- 16, number <-- 0, even <-- 0; WHILE number < count; PRINT even; SET even <-- even + 2; number <-- number + 1; END WHILE; END",
+      "BEGIN; SET count <-- 8, number <-- 0, even <-- 0; WHILE number < count; PRINT even; SET even <-- even + 2; number <-- number + 2; END WHILE; END"
+    ],
+    "answer": "BEGIN; SET count <-- 8, number <-- 0, even <-- 0; WHILE number < count; PRINT even; SET even <-- even + 2; number <-- number + 1; END WHILE; END",
+    "hint": "The loop must run 8 times, and in each iteration, a variable that starts at 0 should be incremented by 2.",
+    "explanation": "This code correctly sets up a loop to run 8 times (WHILE number < count). Inside the loop, it prints the 'even' variable and then increments it by 2 for the next iteration, producing the desired sequence."
+  },
+  {
+    "question": "In the context of programming, looping or iteration is the repetition of __________.",
+    "options": [
+      "A single statement or a block of statements",
+      "Only a single operation",
+      "Only a block of statements",
+      "Only variable declarations"
+    ],
+    "answer": "A single statement or a block of statements",
+    "hint": "A loop can be used for a very simple, single-line task or for a complex, multi-line process.",
+    "explanation": "The body of a loop can consist of either a single statement or a compound block of multiple statements that are executed repeatedly."
+  },
+  {
+    "question": "In terms of control flow, a do-while loop is functionally almost the same as which other loop, with the key difference being the guarantee of at least one execution?",
+    "options": [
+      "While loop",
+      "For loop",
+      "Recursive call",
+      "For-each loop"
+    ],
+    "answer": "While loop",
+    "hint": "Both loops continue to execute based on a boolean condition, but they check the condition at different points.",
+    "explanation": "Both 'do-while' and 'while' loops are condition-controlled. The 'while' loop is entry-controlled (checks before executing), while the 'do-while' loop is exit-controlled (checks after executing)."
+  },
+  {
+    "question": "Which of the following statements about expressions is true?",
+    "options": [
+      "An operand is a mandatory element in an expression.",
+      "An operand in an expression must always be a constant.",
+      "An operand in an expression must always be a variable.",
+      "An expression cannot contain more than one operator."
+    ],
+    "answer": "An operand is a mandatory element in an expression.",
+    "hint": "An operator, like '+', needs something to operate on.",
+    "explanation": "An expression is meaningless without operands (the values or variables being acted upon). An operator without an operand is a syntax error."
+  },
+  {
+    "question": "A step-by-step list of instructions to solve a particular problem is known as an __________.",
+    "options": [
+      "Algorithm",
+      "Iteration",
+      "Flowchart",
+      "Compiler"
+    ],
+    "answer": "Algorithm",
+    "hint": "This is the fundamental plan or recipe that a computer program implements.",
+    "explanation": "An algorithm is a finite sequence of well-defined, computer-implementable instructions, typically to solve a class of problems or to perform a computation."
+  },
+  {
+    "question": "You are going trick-or-treating and must return home once you collect exactly 100 candies, getting 2 from each house. Which sequence represents the correct logic for this loop activity?",
+    "code": "1. BEGIN\n2. SET candy_count <- 0\n3. END WHILE\n4. DECLARE candy_count\n5. WHILE candy_count < 100\n6. candy_count <- candy_count + 2\n7. END",
+    "options": [
+      "1, 4, 2, 5, 6, 3, 7",
+      "1, 4, 5, 2, 6, 3, 7",
+      "1, 2, 4, 5, 6, 3, 7",
+      "4, 1, 2, 5, 6, 7, 3"
+    ],
+    "answer": "1, 4, 2, 5, 6, 3, 7",
+    "hint": "The sequence is: Start, Declare, Initialize, Loop Condition, Loop Body, End Loop, End Program.",
+    "explanation": "The correct pseudocode structure is to BEGIN the program (1), DECLARE the variable (4), SET its initial value (2), start the WHILE loop with its condition (5), define the loop body (6), close the WHILE loop (3), and finally END the program (7)."
+  },
+  {
+    "question": "Which of the following pseudocode examples is the most correct and meaningful way to add two numbers?",
+    "options": [
+      "BEGIN; DECLARE number1, number2, sum; READ number1, number2; sum <- number1 + number2; PRINT sum; END",
+      "BEGIN; READ a, b; sum=a+b; PRINT sum; END",
+      "Start the process; READ a,b; ADD a,b and store it in sum; Display sum; Stop",
+      "BEGIN; READ a, b; sum=add(a,b); DISPLAY sum; END"
+    ],
+    "answer": "BEGIN; DECLARE number1, number2, sum; READ number1, number2; sum <- number1 + number2; PRINT sum; END",
+    "hint": "Good pseudocode uses clear, descriptive variable names and explicitly declares variables before use.",
+    "explanation": "This option is the best because it follows a clear structure, uses meaningful variable names (number1, sum) instead of generic ones (a, b), and includes the essential step of declaring variables."
+  },
+  {
+    "question": "A requirement in an SRS document states, 'The system should be user friendly.' Why is this considered a poor requirement?",
+    "options": [
+      "It is not verifiable.",
+      "It is not concise.",
+      "It is not complete.",
+      "It is not modifiable."
+    ],
+    "answer": "It is not verifiable.",
+    "hint": "How would you create a definitive test to prove 'user friendliness'?",
+    "explanation": "A requirement is only useful if there is a finite process to test whether the product meets it. 'User friendly' is subjective and cannot be objectively verified."
+  },
+  {
+    "question": "An SRS document should specify what the system must do, but not how to do it. The 'how' is determined in which later phase?",
+    "options": [
+      "Design",
+      "Testing",
+      "Maintenance",
+      "Deployment"
+    ],
+    "answer": "Design",
+    "hint": "This phase acts as the blueprint, detailing the implementation approach before coding begins.",
+    "explanation": "The SRS focuses on 'what' the system does (the requirements), while the Design phase focuses on 'how' it will be implemented (the architecture and logic)."
+  },
+  {
+    "question": "A game that was running on a Windows 10 laptop is installed on a new Mac OS laptop and works just as efficiently. This demonstrates which non-functional requirement?",
+    "options": [
+      "Portability",
+      "Maintainability",
+      "Usability",
+      "Robustness"
+    ],
+    "answer": "Portability",
+    "hint": "This quality attribute relates to how easily software can be transferred from one environment to another.",
+    "explanation": "Portability is the degree to which a software component or system can be transferred from one hardware or software environment to another."
+  },
+  {
+    "question": "A banking website is designed so that the 'back' button is disabled after a transaction is complete. This is an example of which non-functional requirement?",
+    "options": [
+      "Security",
+      "Performance",
+      "Usability",
+      "Reliability"
+    ],
+    "answer": "Security",
+    "hint": "This feature is implemented to prevent unauthorized resubmission or viewing of sensitive data.",
+    "explanation": "Disabling the back button is a security measure to prevent issues like duplicate transactions and unauthorized access to pages within an authenticated session."
+  },
+  {
+    "question": "A system must send a notification to a user within 5 seconds of a transaction, even when 5,000 users are active simultaneously. This is a requirement related to:",
+    "options": [
+      "Performance",
+      "Volume",
+      "Security",
+      "Scalability"
+    ],
+    "answer": "Performance",
+    "hint": "This requirement specifies a time-based response under a specific load condition.",
+    "explanation": "Performance requirements define how well a system accomplishes certain functions under specific conditions, such as its speed, responsiveness, and stability."
+  },
+  {
+    "question": "An online shopping site displays an error message 'Username or password is incorrect.' A better implementation for usability would be to:",
+    "options": [
+      "Specify whether the username or the password was incorrect.",
+      "Lock the account after three failed attempts.",
+      "Redirect the user to a 'forgot password' page.",
+      "Display a generic 'Login failed' message."
+    ],
+    "answer": "Specify whether the username or the password was incorrect.",
+    "hint": "Good usability provides clear and specific feedback to help the user correct their mistakes.",
+    "explanation": "This is a usability requirement. Providing specific error messages helps the user understand and fix the problem more efficiently, improving their experience."
+  },
+  {
+    "question": "In an Entity-Relationship Diagram (ERD), what is the term for the properties or characteristics of an entity?",
+    "options": [
+      "Attribute",
+      "Relationship",
+      "Cardinality",
+      "Object"
+    ],
+    "answer": "Attribute",
+    "hint": "If 'Student' is an entity, then 'studentID' and 'name' are its...",
+    "explanation": "An attribute is a property or characteristic of an entity. For example, 'Name' and 'Date of Birth' are attributes of the 'Employee' entity."
+  },
+  {
+    "question": "In an ERD, what does 'Cardinality' specify?",
+    "options": [
+      "How many instances of one entity are related to another entity.",
+      "Whether an entity is mandatory or optional in a relationship.",
+      "The primary key of an entity.",
+      "The number of attributes an entity has."
+    ],
+    "answer": "How many instances of one entity are related to another entity.",
+    "hint": "This concept defines relationships as one-to-one, one-to-many, or many-to-many.",
+    "explanation": "Cardinality specifies the number of instances of one entity that can be associated with the number of instances of another entity (e.g., one department can have *many* students)."
+  },
+  {
+    "question": "A college management system states that one department can have many students, but one student belongs to only one department. This is an example of what type of relationship?",
+    "options": [
+      "One-to-Many",
+      "One-to-One",
+      "Many-to-Many",
+      "Optional-to-Mandatory"
+    ],
+    "answer": "One-to-Many",
+    "hint": "Look at the relationship from the perspective of the 'One' side (Department) to the 'Many' side (Students).",
+    "explanation": "This is a classic one-to-many relationship because one instance of the 'Department' entity is related to multiple instances of the 'Student' entity."
+  },
+  {
+    "question": "The property of a good SRS that ensures no two requirements are in conflict with each other is called:",
+    "options": [
+      "Consistency",
+      "Completeness",
+      "Traceability",
+      "Verifiability"
+    ],
+    "answer": "Consistency",
+    "hint": "If one requirement says the light should be green and another says it should be red under the same condition, the SRS lacks this quality.",
+    "explanation": "A consistent SRS has no conflicting requirements. All statements must be in agreement with each other."
+  },
+  {
+    "question": "The process of gathering requirements from users, customers, and other stakeholders is known as:",
+    "options": [
+      "Requirements Elicitation",
+      "Requirements Analysis",
+      "Requirements Documentation",
+      "Requirements Engineering"
+    ],
+    "answer": "Requirements Elicitation",
+    "hint": "This is the initial 'pulling out' or discovery phase of understanding what the system needs to do.",
+    "explanation": "Requirements Elicitation is the practice of collecting the requirements of a system from users and stakeholders through various techniques like interviews and workshops."
+  },
+  {
+    "question": "Which elicitation technique is most resource-efficient for resolving conflicts and concluding requirements among a group of stakeholders in a structured meeting?",
+    "options": [
+      "Workshops",
+      "Interviews",
+      "Surveys",
+      "Document Analysis"
+    ],
+    "answer": "Workshops",
+    "hint": "This technique brings all key parties together in one room to facilitate direct discussion and decision-making.",
+    "explanation": "Workshops are highly effective for gaining consensus, resolving conflicts, and finalizing requirements quickly because all stakeholders are present to discuss issues in real-time."
+  },
+  {
+    "question": "A team is trying to understand user needs for a new project, but the requirements seem to change frequently due to evolving market conditions. This challenge is known as the problem of:",
+    "options": [
+      "Volatility",
+      "Scope",
+      "Ambiguity",
+      "Clarity"
+    ],
+    "answer": "Volatility",
+    "hint": "This term describes something that is liable to change rapidly and unpredictably.",
+    "explanation": "Volatility in requirements analysis refers to the challenge that requirements change over time due to factors like market changes, new regulations, or evolving user needs."
+  },
+  {
+    "question": "In the MoSCoW prioritization technique, what does the 'M' stand for?",
+    "options": [
+      "Must",
+      "Mandatory",
+      "Minimum",
+      "Major"
+    ],
+    "answer": "Must",
+    "hint": "This category represents a non-negotiable requirement for the success of the project.",
+    "explanation": "MoSCoW stands for Must have, Should have, Could have, and Won't have. 'Must' requirements are critical and must be included in the final product."
+  },
+  {
+    "question": "A feature is desirable but the project can still be considered a success without it. According to the MoSCoW technique, this requirement should be classified as:",
+    "options": [
+      "Should",
+      "Must",
+      "Could",
+      "Won't"
+    ],
+    "answer": "Should",
+    "hint": "This is an important feature that should be included if possible, but it is not critical for launch.",
+    "explanation": "'Should' requirements are important but not vital. If left out, the product will still work, but it will be less effective or valuable."
+  },
+  {
+    "question": "What is the primary artifact or outcome produced at the end of the requirements analysis phase?",
+    "options": [
+      "Software Requirements Specification (SRS) document",
+      "A working prototype",
+      "The project plan",
+      "The design document"
+    ],
+    "answer": "Software Requirements Specification (SRS) document",
+    "hint": "This formal document captures and organizes all the findings from the analysis process.",
+    "explanation": "The analysis phase culminates in the production of the SRS document, which formally specifies what the software is supposed to do."
+  },
+  {
+    "question": "An analyst is studying existing procedures and talking to end users to gather information for a new system. This activity is part of:",
+    "options": [
+      "Requirements gathering",
+      "System design",
+      "Code implementation",
+      "Unit testing"
+    ],
+    "answer": "Requirements gathering",
+    "hint": "This is the first step within the broader analysis phase.",
+    "explanation": "This is a core activity of requirements gathering (or elicitation), which involves using techniques like observation and discussion to collect information."
+  },
+  {
+    "question": "Requirements analysis primarily answers the question 'What is to be built?', not 'How is it to be built?'. State True or False.",
+    "options": [
+      "True",
+      "False",
+      "It answers both 'What' and 'How'",
+      "It primarily answers 'Why is it to be built?'"
+    ],
+    "answer": "True",
+    "hint": "This phase focuses on defining the problem and system capabilities, leaving the solution's implementation details for a later phase.",
+    "explanation": "This statement is true. Requirements analysis defines the functional and non-functional requirements (the 'what'), while the design phase defines the architecture and implementation plan (the 'how')."
+  },
+  {
+    "question": "When a client has very unclear requirements for a new application, which prototyping model is best suited to help clarify them, with the intention that the prototype will be discarded?",
+    "options": [
+      "Throwaway Prototyping",
+      "Evolutionary Prototyping",
+      "Incremental Model",
+      "Waterfall Model"
+    ],
+    "answer": "Throwaway Prototyping",
+    "hint": "This model's main purpose is to serve as a learning tool that is not intended to become the final product.",
+    "explanation": "Throwaway prototyping is used to resolve unclear requirements. A quick, simple model is built, evaluated by the user to clarify needs, and then discarded before development of the actual system begins."
+  },
+  {
+    "question": "A project's requirements are known to be unstable and are expected to change frequently. Which prototyping model allows the initial prototype to be refined and built upon until it becomes the final product?",
+    "options": [
+      "Evolutionary Prototyping",
+      "Throwaway Prototyping",
+      "V-Model",
+      "Waterfall Model"
+    ],
+    "answer": "Evolutionary Prototyping",
+    "hint": "This model evolves over time through user feedback, rather than being discarded.",
+    "explanation": "Evolutionary prototyping is used for unstable requirements. The prototype is iteratively refined and enhanced based on user feedback, eventually evolving into the final, complete system."
+  },
+  {
+    "question": "In the Rapid Application Development (RAD) model, which phase focuses on identifying the information flow between various modules?",
+    "options": [
+      "Business Modeling",
+      "Data Modeling",
+      "Process Modeling",
+      "Application Generation"
+    ],
+    "answer": "Business Modeling",
+    "hint": "This is the initial high-level phase that looks at the overall business process and how data moves through it.",
+    "explanation": "The Business Modeling phase in RAD is where the flow of information between different business functions is analyzed and defined."
+  },
+  {
+    "question": "During which phase of the RAD model are data objects defined based on information gathered in the previous phase?",
+    "options": [
+      "Data Modeling",
+      "Business Modeling",
+      "Process Modeling",
+      "Testing and Turnover"
+    ],
+    "answer": "Data Modeling",
+    "hint": "This phase focuses specifically on the structure of the data itself.",
+    "explanation": "In the Data Modeling phase, the information gathered during Business Modeling is used to define and model the data objects needed for the system."
+  },
+  {
+    "question": "Which software development model is described as a risk-driven combination of the waterfall and iterative models, often represented by loops?",
+    "options": [
+      "Spiral Model",
+      "RAD Model",
+      "V-Model",
+      "Incremental Model"
+    ],
+    "answer": "Spiral Model",
+    "hint": "This model's primary characteristic is its focus on identifying and mitigating risks in each cycle.",
+    "explanation": "The Spiral Model is a risk-driven process model where development is organized into a series of iterations or spirals, with each spiral including risk analysis."
+  },
+  {
+    "question": "What are the four primary phases that are repeated in each loop of the Spiral Model?",
+    "options": [
+      "Planning, Risk Analysis, Engineering, Evaluation",
+      "Analysis, Design, Coding, Testing",
+      "Elicitation, Analysis, Specification, Validation",
+      "Modeling, Generation, Testing, Turnover"
+    ],
+    "answer": "Planning, Risk Analysis, Engineering, Evaluation",
+    "hint": "The phases reflect the model's core activities: setting goals, identifying problems, building the product, and getting feedback.",
+    "explanation": "Each loop of the Spiral Model progresses through four key phases: determining objectives (Planning), identifying and resolving risks (Risk Analysis), developing and testing the product (Engineering), and evaluating the results with the client (Evaluation)."
+  },
+  {
+    "question": "The Incremental Model is most suitable for projects where:",
+    "options": [
+      "Most requirements are known upfront but are expected to evolve.",
+      "Requirements are completely unknown.",
+      "The project is small and has no risk.",
+      "No user feedback is required until the very end."
+    ],
+    "answer": "Most requirements are known upfront but are expected to evolve.",
+    "hint": "This model needs a good initial understanding of the system to plan the increments, but it can accommodate changes.",
+    "explanation": "The Incremental Model works best when there is a clear overall vision of the system, allowing for the definition of increments, but flexibility is needed to handle evolving details."
+  },
+  {
+    "question": "In which development model are testers often in a 'blocked state', starting their work only after the entire implementation phase is complete?",
+    "options": [
+      "Waterfall Model",
+      "V-Model",
+      "Spiral Model",
+      "RAD Model"
+    ],
+    "answer": "Waterfall Model",
+    "hint": "This model follows a strict, linear sequence where one phase must finish completely before the next begins.",
+    "explanation": "In the pure Waterfall model, the testing phase does not begin until the implementation phase is 100% complete, leaving testers idle during development."
+  },
+  {
+    "question": "Which model is considered an extension of the Waterfall model where testing activities are planned and developed in parallel with development phases?",
+    "options": [
+      "V-Model",
+      "Spiral Model",
+      "Prototype Model",
+      "Incremental Model"
+    ],
+    "answer": "V-Model",
+    "hint": "This model's diagrammatic representation shows development and testing phases as two arms of a 'V'.",
+    "explanation": "The V-Model is an enhancement of the Waterfall model that integrates testing more deeply into the lifecycle, with each development phase having a corresponding, parallel testing phase."
+  },
+  {
+    "question": "What is the primary difference between Verification and Validation?",
+    "options": [
+      "Verification does not involve code execution, while Validation does.",
+      "Verification is done by testers, while Validation is done by developers.",
+      "Verification asks 'Are we building the right product?', while Validation asks 'Are we building the product right?'.",
+      "Verification happens after deployment, while Validation happens before."
+    ],
+    "answer": "Verification does not involve code execution, while Validation does.",
+    "hint": "Verification involves checking documents and designs, while Validation involves testing the actual, running product.",
+    "explanation": "Verification checks if the product is being built according to specifications (e.g., reviews, inspections) and doesn't execute code. Validation tests the actual product to ensure it meets user needs and involves code execution."
+  },
+  {
+    "question": "In the V-Model, the preparation of test documents for Acceptance Testing occurs in parallel with which development phase?",
+    "options": [
+      "Requirements Analysis",
+      "System Design",
+      "Module Design",
+      "Coding"
+    ],
+    "answer": "Requirements Analysis",
+    "hint": "Acceptance tests are designed to validate the system against the highest-level requirements.",
+    "explanation": "In the V-Model, the Acceptance Test Plan is created during the Requirements Analysis phase, as it directly validates that the final product meets the specified user requirements."
+  },
+  {
+    "question": "The mechanism in the V-Model that helps identify problems before they propagate to later stages is called:",
+    "options": [
+      "Stage Containment",
+      "Risk Analysis",
+      "Rapid Prototyping",
+      "Iterative Feedback"
+    ],
+    "answer": "Stage Containment",
+    "hint": "This concept is about containing defects within the stage they are found.",
+    "explanation": "Stage containment in the V-Model ensures that defects found during the testing of a specific phase are contained and fixed before moving to the next phase, preventing them from propagating."
+  },
+  {
+    "question": "For which type of project is the traditional Waterfall Model most suitable?",
+    "options": [
+      "Smaller projects where requirements are very well understood and stable.",
+      "Large, complex projects with high risk and uncertain requirements.",
+      "Projects that require rapid delivery and frequent user feedback.",
+      "Projects where the technology stack is new and experimental."
+    ],
+    "answer": "Smaller projects where requirements are very well understood and stable.",
+    "hint": "The model's rigidity is a major drawback when requirements are expected to change.",
+    "explanation": "The Waterfall model is best suited for projects with clear, stable, and well-documented requirements, as its linear nature does not easily accommodate changes."
+  },
+  {
+    "question": "What is a major limitation of both the Waterfall and V-Models?",
+    "options": [
+      "They are rigid and not easily adaptable to changes in requirements.",
+      "They involve too much user feedback, slowing down the project.",
+      "They are not suitable for small projects.",
+      "They do not have well-defined phases or deliverables."
+    ],
+    "answer": "They are rigid and not easily adaptable to changes in requirements.",
+    "hint": "Both models are based on a sequential flow, making it difficult and costly to go back to a previous phase.",
+    "explanation": "A primary weakness of both models is their rigidity. Since they follow a sequential process, incorporating changes midway through the project is difficult and expensive."
+  },
+  {
+    "question": "If a requirement for a solar heater specifies what it should do on a sunny day but fails to specify what it should do on a rainy day, the requirement is said to be:",
+    "options": [
+      "Incomplete",
+      "Inconsistent",
+      "Ambiguous",
+      "Non-verifiable"
+    ],
+    "answer": "Incomplete",
+    "hint": "A key piece of information for a possible scenario is missing.",
+    "explanation": "The requirement is incomplete because it has omitted the system's expected behavior under a plausible condition (a rainy day)."
+  },
+  {
+    "question": "The property of an SRS that allows one to follow a requirement from its origin through design, code, and testing is known as:",
+    "options": [
+      "Traceability",
+      "Modifiability",
+      "Consistency",
+      "Completeness"
+    ],
+    "answer": "Traceability",
+    "hint": "This property links different artifacts of the development lifecycle together.",
+    "explanation": "Traceability ensures that there is a clear link from each requirement to its corresponding design components, code modules, and test cases, supporting both forward and backward tracking."
+  },
+  {
+    "question": "A system's ability to handle incorrect data entry (e.g., special characters in a name field, a negative value for a discount) by prompting with appropriate error messages demonstrates which quality attribute?",
+    "options": [
+      "Robustness",
+      "Reliability",
+      "Usability",
+      "Security"
+    ],
+    "answer": "Robustness",
+    "hint": "This attribute is about how well a system copes with errors during execution and invalid input.",
+    "explanation": "Robustness is the degree to which a system can function correctly in the presence of invalid inputs or stressful environmental conditions."
+  },
+  {
+    "question": "If an income tax calculation system needs to be updated due to new government norms, the ease with which these changes can be incorporated relates to which non-functional requirement?",
+    "options": [
+      "Maintainability",
+      "Portability",
+      "Performance",
+      "Usability"
+    ],
+    "answer": "Maintainability",
+    "hint": "This quality attribute concerns the effort required to make modifications to the software after it has been deployed.",
+    "explanation": "Maintainability refers to the ease with which a software system can be modified to correct faults, improve performance, or adapt to a changed environment."
+  },
+  {
+    "question": "The standard SRS document structure and template mentioned in the transcript is based on which standard?",
+    "options": [
+      "IEEE 830",
+      "ISO 9001",
+      "CMMI Level 5",
+      "Agile Manifesto"
+    ],
+    "answer": "IEEE 830",
+    "hint": "This is a well-known standard specifically for Software Requirements Specifications.",
+    "explanation": "IEEE 830 is a recommended practice from the Institute of Electrical and Electronics Engineers that provides a standard template and guidelines for writing SRS documents."
+  },
+  {
+    "question": "In ERD terminology, what specifies whether the existence of one entity instance requires a corresponding instance in another entity?",
+    "options": [
+      "Optionality",
+      "Cardinality",
+      "Relationship",
+      "Attribute"
+    ],
+    "answer": "Optionality",
+    "hint": "This defines if a relationship is mandatory or not.",
+    "explanation": "Optionality specifies whether an instance of an entity must participate in a relationship. For example, a student *must* have a department (mandatory), but a department does not have to have students (optional)."
+  },
+  {
+    "question": "In the pen example, the requirement 'it should feel comfortable to grip' is what type of requirement?",
+    "options": [
+      "Non-functional",
+      "Functional",
+      "Constraint",
+      "Business Rule"
+    ],
+    "answer": "Non-functional",
+    "hint": "This describes a quality or characteristic (ergonomics) rather than a specific action the pen must perform.",
+    "explanation": "This is a non-functional requirement because it defines a quality attribute (usability/ergonomics) of the product, not a core function like writing."
+  },
+  {
+    "question": "An analyst is reviewing existing company documents to understand the business processes before building new software. This is an example of which elicitation technique?",
+    "options": [
+      "Document Analysis",
+      "Brainstorming",
+      "Focus Groups",
+      "Interviews"
+    ],
+    "answer": "Document Analysis",
+    "hint": "The source of information is existing written material.",
+    "explanation": "Document Analysis is a requirements elicitation technique that involves reviewing existing documentation of the business processes and systems to extract relevant information."
+  },
+  {
+    "question": "A requirement is classified as something that the team will not implement at this time, but may consider for future upgrades. According to MoSCoW, this is a:",
+    "options": [
+      "Won't",
+      "Could",
+      "Should",
+      "Must"
+    ],
+    "answer": "Won't",
+    "hint": "This category is for items that are explicitly out of scope for the current release.",
+    "explanation": "The 'Won't have' category in MoSCoW is used to explicitly state what will not be included in the current project delivery, which helps manage stakeholder expectations."
+  },
+  {
+    "question": "The main focus of the RAD model compared to traditional models is:",
+    "options": [
+      "Rapid delivery of the software to the customer.",
+      "Extensive upfront analysis and documentation.",
+      "Minimizing client involvement during development.",
+      "Suitability for very large, high-risk projects."
+    ],
+    "answer": "Rapid delivery of the software to the customer.",
+    "hint": "The first word in the model's name is the key.",
+    "explanation": "The primary goal of the Rapid Application Development (RAD) model is to accelerate the development process and deliver a working product to the customer in a much shorter time frame than traditional models."
+  },
+  {
+    "question": "A significant advantage of the Incremental model is that:",
+    "options": [
+      "Each release delivers an operational product.",
+      "It requires very little planning.",
+      "Requirements do not need to be known upfront.",
+      "It is the least expensive model for all project types."
+    ],
+    "answer": "Each release delivers an operational product.",
+    "hint": "Users get a usable piece of the system early, and more functionality is added with each new version.",
+    "explanation": "A key advantage of the Incremental Model is that a working, operational version of the product is delivered with each increment, allowing for early user feedback and value delivery."
+  },
+  {
+    "question": "The Spiral model is most suitable for which type of project?",
+    "options": [
+      "Large projects where risk is perceived as very high.",
+      "Small, low-risk projects with stable requirements.",
+      "Projects that must be delivered in the shortest possible time.",
+      "Projects where the development team has little expertise."
+    ],
+    "answer": "Large projects where risk is perceived as very high.",
+    "hint": "This model's entire structure is built around identifying and managing potential problems.",
+    "explanation": "The Spiral Model is specifically designed for large, complex, and high-risk projects because its iterative nature and built-in risk analysis phase help manage uncertainty."
+  },
+  {
+    "question": "In the V-Model, what is the core activity of the left arm of the 'V'?",
+    "options": [
+      "Verification",
+      "Validation",
+      "Coding",
+      "Maintenance"
+    ],
+    "answer": "Verification",
+    "hint": "This side of the 'V' deals with the development phases and ensuring they meet the specifications from the previous phase.",
+    "explanation": "The left arm of the V-Model represents the Verification phases (Requirements Analysis, System Design, etc.), which focus on ensuring the product is being built correctly according to specifications."
+  },
+  {
+    "question": "Which activity joins the two sides of the V-Model?",
+    "options": [
+      "Coding",
+      "Deployment",
+      "Requirements Analysis",
+      "Acceptance Testing"
+    ],
+    "answer": "Coding",
+    "hint": "This is the point where the design specifications are turned into an actual, executable product.",
+    "explanation": "The Coding phase is the turning point at the bottom of the V-Model. It links the Verification side (design) with the Validation side (testing)."
+  },
+  {
+    "question": "A limitation of the RAD model is that it requires strong commitment from:",
+    "options": [
+      "Both developers and clients.",
+      "Only the developers.",
+      "Only the project manager.",
+      "Only the clients."
+    ],
+    "answer": "Both developers and clients.",
+    "hint": "The model's speed relies on rapid, continuous communication and feedback between both parties.",
+    "explanation": "The RAD model's success is highly dependent on the active and committed involvement of both users and developers throughout the entire lifecycle to facilitate rapid-fire activities and feedback."
+  },
+  {
+    "question": "What is a primary consequence of the linear sequential flow in the Waterfall model?",
+    "options": [
+      "It is very difficult to iterate back to a previous phase.",
+      "It provides high visibility and clear deliverables.",
+      "It is simple and easy to manage.",
+      "Testing begins early in the lifecycle."
+    ],
+    "answer": "It is very difficult to iterate back to a previous phase.",
+    "hint": "The model is named after a waterfall because flow is intended to go in only one direction.",
+    "explanation": "A major consequence and limitation of the Waterfall model is its rigidity. The strict sequential nature means that going back to a previous phase to make changes is costly and disrupts the entire process."
+  },
+  {
+    "question": "An analyst realizes that some requirements have been missed entirely in the SRS. This is an example of:",
+    "options": [
+      "Omission",
+      "Inconsistency",
+      "Ambiguity",
+      "Conflict"
+    ],
+    "answer": "Omission",
+    "hint": "This term refers to something that has been left out or excluded.",
+    "explanation": "This is an issue of incompleteness or omission, where necessary requirements were not captured or documented, forcing developers to guess or ignore the functionality."
+  },
+  {
+    "question": "The document that serves as a formal contract between the developer and the customer is the:",
+    "options": [
+      "Software Requirements Specification (SRS)",
+      "Project Charter",
+      "High-Level Design Document",
+      "Test Plan"
+    ],
+    "answer": "Software Requirements Specification (SRS)",
+    "hint": "This document is reviewed and signed off by stakeholders to ensure everyone agrees on what will be built.",
+    "explanation": "The SRS acts as a contract because it provides a detailed, agreed-upon description of the system to be delivered, which both the customer and the developer can reference."
+  },
+  {
+    "question": "Two developers, Tom and Pinky, simultaneously download, edit, and upload the same file. When Tom checks the file later, his changes are gone. This scenario describes what common problem in collaborative development?",
+    "options": [
+      "Lost Update Problem",
+      "Synchronization Error",
+      "Merge Conflict",
+      "Repository Lock"
+    ],
+    "answer": "Lost Update Problem",
+    "hint": "This occurs when the last person to save their changes overwrites the work of the person who saved just before them.",
+    "explanation": "The Lost Update Problem happens when two or more users access the same data, and the last update made overwrites the changes made by the previous users, causing their work to be lost."
+  },
+  {
+    "question": "What is the primary purpose of Software Configuration Management (SCM)?",
+    "options": [
+      "To coordinate software development by tracking, modifying, and controlling changes.",
+      "To write and execute unit tests for the source code.",
+      "To design the user interface and system architecture.",
+      "To deploy the final product to the customer's environment."
+    ],
+    "answer": "To coordinate software development by tracking, modifying, and controlling changes.",
+    "hint": "Think of it as the traffic control system for a software project's many moving parts.",
+    "explanation": "SCM's main goal is to manage the evolution of a software project, control changes to artifacts, and coordinate the work of multiple team members to maximize productivity and minimize mistakes."
+  },
+  {
+    "question": "A document or product that has been formally reviewed and approved, serving as a basis for further development, is known as a:",
+    "options": [
+      "Baseline",
+      "Revision",
+      "Branch",
+      "Commit"
+    ],
+    "answer": "Baseline",
+    "hint": "Once this is established, any further changes require a formal change control process.",
+    "explanation": "A baseline is a formally accepted version of a configuration item that serves as a stable reference point for future development. Changes can only be made through a formal change management process."
+  },
+  {
+    "question": "Which of the four components of configuration management is responsible for identifying configuration items and giving them unique labels?",
+    "options": [
+      "Configuration Identification",
+      "Change Management",
+      "Configuration Status Accounting",
+      "Configuration Audit"
+    ],
+    "answer": "Configuration Identification",
+    "hint": "This is the first step, where you decide *what* needs to be managed and how to name it.",
+    "explanation": "Configuration Identification is the process of selecting the artifacts that need to be managed and establishing a scheme to uniquely identify each item and its versions."
+  },
+  {
+    "question": "The component of configuration management that records and reports all the changes made to a configuration item is known as:",
+    "options": [
+      "Configuration Status Accounting",
+      "Configuration Identification",
+      "Change Management",
+      "Configuration Audit"
+    ],
+    "answer": "Configuration Status Accounting",
+    "hint": "Think of this as the bookkeeping or logging part of SCM.",
+    "explanation": "Configuration Status Accounting is the administrative tracking and reporting of all configuration items and any changes made to them throughout the project lifecycle."
+  },
+  {
+    "question": "A developer needs to work on a set of files from the central repository. What is the first operation they must perform to get a local copy of these files?",
+    "options": [
+      "Check out",
+      "Check in",
+      "Commit",
+      "Merge"
+    ],
+    "answer": "Check out",
+    "hint": "This action is like borrowing a book from the library to work on it.",
+    "explanation": "A 'check out' is the SCM operation where a developer creates a private, local copy of a file or project from the central repository to begin making changes."
+  },
+  {
+    "question": "After a developer has finished making changes to their local files, what is the operation to upload these changes back to the central repository?",
+    "options": [
+      "Check in",
+      "Check out",
+      "Branch",
+      "Revert"
+    ],
+    "answer": "Check in",
+    "hint": "This action is like returning the book to the library with your updates.",
+    "explanation": "A 'check in' (or commit) is the operation used to make a developer's modified local version of a file available to other users by uploading it to the central repository."
+  },
+  {
+    "question": "A committee that evaluates change requests, analyzes their impact, and decides whether they should be implemented is known as the:",
+    "options": [
+      "Change Control Board (CCB)",
+      "Quality Assurance Team",
+      "Development Team",
+      "Project Stakeholders"
+    ],
+    "answer": "Change Control Board (CCB)",
+    "hint": "This formal group acts as the gatekeeper for all proposed changes to a baseline.",
+    "explanation": "The Change Control Board (CCB) is a formal group of stakeholders responsible for reviewing, evaluating, approving, delaying, or rejecting changes to a project's baselines."
+  },
+  {
+    "question": "What is a primary benefit of using Version Management?",
+    "options": [
+      "It allows rolling back to a previous version if a change causes a problem.",
+      "It automatically fixes bugs in the code.",
+      "It guarantees that no merge conflicts will ever occur.",
+      "It writes the project documentation automatically."
+    ],
+    "answer": "It allows rolling back to a previous version if a change causes a problem.",
+    "hint": "It keeps a complete history of all changes, creating a safety net.",
+    "explanation": "A key benefit of version management is maintaining a historical record of all changes, which makes it possible to revert a file or the entire project to a previous, stable state."
+  },
+  {
+    "question": "A developer wants to work on a new feature in isolation without affecting the main codebase. What SCM concept should they use?",
+    "options": [
+      "Branch",
+      "Trunk",
+      "Tag",
+      "Revision"
+    ],
+    "answer": "Branch",
+    "hint": "This creates a separate line of development that can be worked on independently.",
+    "explanation": "Branching allows a developer to create a separate copy of the codebase to work on new features or bug fixes in isolation, without disrupting the main line of development (trunk/main)."
+  },
+  {
+    "question": "In SCM terminology, what does 'Trunk' or 'Main' refer to?",
+    "options": [
+      "The primary location for code in the repository.",
+      "A copy of the code for experimental work.",
+      "A specific version of a file.",
+      "The developer's local copy of the files."
+    ],
+    "answer": "The primary location for code in the repository.",
+    "hint": "Think of it as the main stem of a tree from which other lines of development can sprout.",
+    "explanation": "The 'Trunk' or 'Main' is the central, primary line of development in a version control repository, representing the most stable and up-to-date version of the project."
+  },
+  {
+    "question": "Tom and Sam both edit the same line of code. Tom changes 'eggs' to 'cheese', while Sam changes 'eggs' to 'hot dog'. When they both try to check in their changes, the version control system will likely report a:",
+    "options": [
+      "Conflict",
+      "Bug",
+      "Branch",
+      "Diff"
+    ],
+    "answer": "Conflict",
+    "hint": "This occurs when the system cannot automatically determine which change should be kept.",
+    "explanation": "A conflict occurs when two developers make contradictory changes to the same part of a file. The version control system cannot automatically merge them and requires manual intervention to resolve."
+  },
+  {
+    "question": "What is the primary intention of a good software tester?",
+    "options": [
+      "To find the presence of defects in the code.",
+      "To prove that the code is completely bug-free.",
+      "To write the code for automated tests.",
+      "To verify that all features have been implemented."
+    ],
+    "answer": "To find the presence of defects in the code.",
+    "hint": "A tester's mindset should be to try to 'break' the software to uncover hidden issues.",
+    "explanation": "The goal of testing is not to prove the absence of defects (which is impossible) but to find as many defects as possible so they can be fixed before the product reaches the end user."
+  },
+  {
+    "question": "In the context of software testing, what does 'Validation' mean?",
+    "options": [
+      "Are we building the right product?",
+      "Are we building the product right?",
+      "Does the code follow programming standards?",
+      "Is the design document complete?"
+    ],
+    "answer": "Are we building the right product?",
+    "hint": "This step checks if the final product actually meets the user's needs and expectations.",
+    "explanation": "Validation is the process of evaluating the final product to check whether it meets the business requirements and user expectations. It answers the question, 'Are we building the right product?'"
+  },
+  {
+    "question": "In the context of software testing, what does 'Verification' mean?",
+    "options": [
+      "Are we building the product right?",
+      "Are we building the right product?",
+      "Is the customer satisfied with the product?",
+      "Does the product work in the production environment?"
+    ],
+    "answer": "Are we building the product right?",
+    "hint": "This step checks if the product is being developed according to the specified design and requirements.",
+    "explanation": "Verification is the process of checking that the software meets its specifications at each stage of development. It answers the question, 'Are we building the product right?'"
+  },
+  {
+    "question": "After a defect is found by a tester and fixed by a developer, what is the developer's process of analyzing and removing the bug called?",
+    "options": [
+      "Debugging",
+      "Regression Testing",
+      "Unit Testing",
+      "Refactoring"
+    ],
+    "answer": "Debugging",
+    "hint": "This is the developer's activity of finding the root cause of a defect and correcting it.",
+    "explanation": "Debugging is the process performed by developers to find the exact location of a defect in the code, analyze its cause, and fix it."
+  },
+  {
+    "question": "During which phase of the Software Testing Life Cycle (STLC) are test scenarios and test cases prepared?",
+    "options": [
+      "Test Design",
+      "Test Plan",
+      "Test Execution",
+      "Test Cycle Closure"
+    ],
+    "answer": "Test Design",
+    "hint": "This is where the 'how' of testing is detailed, based on the high-level 'what' from the previous phase.",
+    "explanation": "The Test Design phase is when testers create the detailed test artifacts, including test scenarios, test cases, and test scripts, that will be used during execution."
+  },
+  {
+    "question": "The testing performed to ensure that new changes (like a bug fix or a new feature) have not negatively impacted existing functionality is called:",
+    "options": [
+      "Regression Testing",
+      "Stress Testing",
+      "Usability Testing",
+      "Acceptance Testing"
+    ],
+    "answer": "Regression Testing",
+    "hint": "This type of testing prevents the software from 'regressing' or getting worse after a change.",
+    "explanation": "Regression testing involves re-executing test cases to ensure that previously working functionality still performs correctly after a change has been made to the system."
+  },
+  {
+    "question": "Which level of testing focuses on individual components or modules of a software to ensure they work as expected in isolation?",
+    "options": [
+      "Unit Testing",
+      "Integration Testing",
+      "System Testing",
+      "Acceptance Testing"
+    ],
+    "answer": "Unit Testing",
+    "hint": "This is the lowest level of testing, typically performed by the developer who wrote the code.",
+    "explanation": "Unit testing is the practice of testing the smallest testable parts of an application, called units (e.g., individual functions or methods), to validate that each unit performs as designed."
+  },
+  {
+    "question": "Which level of testing is performed to find interface errors between combined modules?",
+    "options": [
+      "Integration Testing",
+      "Unit Testing",
+      "System Testing",
+      "Performance Testing"
+    ],
+    "answer": "Integration Testing",
+    "hint": "This level of testing focuses on how different parts of the software work together.",
+    "explanation": "Integration testing is performed after unit testing, where individual modules are combined and tested as a group to expose faults in the interaction between them."
+  },
+  {
+    "question": "In top-down integration testing, what is the term for a dummy module used to simulate a lower-level unit that is not yet available?",
+    "options": [
+      "Stub",
+      "Driver",
+      "Mock",
+      "Shim"
+    ],
+    "answer": "Stub",
+    "hint": "This component stands in for the 'called' function.",
+    "explanation": "A stub is a dummy piece of code used in top-down integration testing to simulate the behavior of a lower-level module that has not yet been developed."
+  },
+  {
+    "question": "In bottom-up integration testing, what is the term for a dummy module used to simulate a higher-level unit that calls the module being tested?",
+    "options": [
+      "Driver",
+      "Stub",
+      "Fake",
+      "Harness"
+    ],
+    "answer": "Driver",
+    "hint": "This component 'drives' the execution of the lower-level module being tested.",
+    "explanation": "A driver is a dummy piece of code used in bottom-up integration testing to call and pass test data to a lower-level module when the actual calling module is not yet available."
+  },
+  {
+    "question": "Which level of testing is performed on the complete, integrated system from an end-to-end perspective to verify it against its specifications?",
+    "options": [
+      "System Testing",
+      "Integration Testing",
+      "Acceptance Testing",
+      "Unit Testing"
+    ],
+    "answer": "System Testing",
+    "hint": "This is the first level of testing where the entire application is tested as a whole.",
+    "explanation": "System testing evaluates the complete and fully integrated software product to ensure it meets all specified functional and non-functional requirements."
+  },
+  {
+    "question": "Testing the system beyond its normal operational capacity to see how it behaves is known as:",
+    "options": [
+      "Stress Testing",
+      "Regression Testing",
+      "Usability Testing",
+      "Functional Testing"
+    ],
+    "answer": "Stress Testing",
+    "hint": "The goal is to find the breaking point of the system.",
+    "explanation": "Stress testing is a type of non-functional testing that determines the robustness of software by testing it under extreme workloads, often to the point of failure."
+  },
+  {
+    "question": "Testing done by the client in the developer's environment before the software is released is called:",
+    "options": [
+      "Alpha Testing",
+      "Beta Testing",
+      "System Testing",
+      "Unit Testing"
+    ],
+    "answer": "Alpha Testing",
+    "hint": "This is the first phase of acceptance testing, conducted at the developer's site.",
+    "explanation": "Alpha testing is a form of acceptance testing performed by a limited group of end-users at the developer's location to identify bugs before the product is released to the public."
+  },
+  {
+    "question": "Testing done by the client in their own real-world environment is called:",
+    "options": [
+      "Beta Testing",
+      "Alpha Testing",
+      "Production Testing",
+      "Integration Testing"
+    ],
+    "answer": "Beta Testing",
+    "hint": "This is the second phase of acceptance testing, where the software is released to a wider audience of actual users.",
+    "explanation": "Beta testing is the final round of testing before releasing a product to a wide audience. The objective is to get feedback from real users in their natural environment."
+  },
+  {
+    "question": "The design phase converts the requirements document into a __________.",
+    "options": [
+      "System specification",
+      "Source code",
+      "Test plan",
+      "User manual"
+    ],
+    "answer": "System specification",
+    "hint": "This phase creates the blueprint that will be used for implementation.",
+    "explanation": "The design phase translates the 'what' from the requirements document (SRS) into the 'how' by creating a detailed system specification that guides the coding process."
+  },
+  {
+    "question": "Which of the following is an artifact typically produced during the design phase?",
+    "options": [
+      "Screen layout diagrams",
+      "User stories",
+      "Executable file",
+      "Test reports"
+    ],
+    "answer": "Screen layout diagrams",
+    "hint": "Design artifacts provide a visual or structural representation of the solution.",
+    "explanation": "Artifacts from the design phase include specifications like functional hierarchy diagrams, screen layouts, normalized tables, and pseudo code, which serve as blueprints for developers."
+  },
+  {
+    "question": "A design that can be easily modified when a requirement change happens possesses the quality of:",
+    "options": [
+      "Flexibility",
+      "Efficiency",
+      "Reliability",
+      "Portability"
+    ],
+    "answer": "Flexibility",
+    "hint": "This quality relates to the ease of adapting the system to new or changed requirements.",
+    "explanation": "A flexible design is one that is structured in a way that allows for easy modification and extension with minimal impact on other parts of the system."
+  },
+  {
+    "question": "The two primary levels of software design are:",
+    "options": [
+      "High-Level Design and Low-Level Design",
+      "Architectural Design and Module Design",
+      "Data Design and Interface Design",
+      "Functional Design and Technical Design"
+    ],
+    "answer": "High-Level Design and Low-Level Design",
+    "hint": "Design is broken down from a broad, overall structure to the detailed logic of individual parts.",
+    "explanation": "Software design is typically divided into two main levels: High-Level Design (HLD), which describes the architecture and overall structure, and Low-Level Design (LLD), which details the logic of individual modules."
+  },
+  {
+    "question": "Which type of design focuses on what modules are required, what each module performs, and how they communicate with one another?",
+    "options": [
+      "High-Level Design",
+      "Low-Level Design",
+      "Procedural Design",
+      "Database Design"
+    ],
+    "answer": "High-Level Design",
+    "hint": "This is the 'big picture' or architectural view of the system.",
+    "explanation": "High-Level Design (HLD) focuses on the system's architecture, defining the major components or modules, their responsibilities, and the interfaces between them."
+  },
+  {
+    "question": "Which type of design focuses on writing a detailed algorithm and concrete data representation for each module?",
+    "options": [
+      "Low-Level Design",
+      "High-Level Design",
+      "Architectural Design",
+      "Interface Design"
+    ],
+    "answer": "Low-Level Design",
+    "hint": "This is the detailed, close-up view of how each individual part will work internally.",
+    "explanation": "Low-Level Design (LLD) provides the detailed implementation logic for each module defined in the HLD, often including algorithms in pseudo code and specific data structures."
+  },
+  {
+    "question": "The design that transforms the data model from the requirements phase into the actual data structures to be used in the software is called:",
+    "options": [
+      "Data Design",
+      "Architectural Design",
+      "Interface Design",
+      "Module Design"
+    ],
+    "answer": "Data Design",
+    "hint": "This design activity is concerned entirely with how the system's information will be organized and stored.",
+    "explanation": "Data Design is the process of converting the conceptual data model (like an ERD) into a logical and physical database design, defining the data structures that the software will use."
+  },
+  {
+    "question": "Defining the system's modules, the functions each module performs, and their interactions is the responsibility of which design activity?",
+    "options": [
+      "Architectural Design",
+      "Data Design",
+      "Interface Design",
+      "Procedural Design"
+    ],
+    "answer": "Architectural Design",
+    "hint": "This is done by a system architect and provides the high-level structural blueprint.",
+    "explanation": "Architectural design is a part of HLD where the overall structure of the system is established, including defining its modules, their functionalities, and how they are interconnected."
+  },
+  {
+    "question": "Which design activity focuses on how the software communicates with itself and with the users interacting with it?",
+    "options": [
+      "Interface Design",
+      "Architectural Design",
+      "Data Design",
+      "Low-Level Design"
+    ],
+    "answer": "Interface Design",
+    "hint": "This includes user interfaces (UI) as well as interfaces between different software components (APIs).",
+    "explanation": "Interface design specifies how software components interact with each other, with other systems, and with human users. It covers both graphical user interfaces (GUIs) and application programming interfaces (APIs)."
+  },
+  {
+    "question": "What is the primary goal of the coding phase in the SDLC?",
+    "options": [
+      "To convert the design into a workable solution using a programming language.",
+      "To create the high-level and low-level design documents.",
+      "To gather and analyze the requirements from the customer.",
+      "To test the completed software for defects."
+    ],
+    "answer": "To convert the design into a workable solution using a programming language.",
+    "hint": "This is the phase where the actual construction of the software happens.",
+    "explanation": "The coding (or implementation) phase is where developers take the detailed specifications from the design phase and translate them into executable source code."
+  },
+  {
+    "question": "Using a simple, plain language to represent the logic of various modules before writing actual code is known as writing:",
+    "options": [
+      "Pseudo code",
+      "Source code",
+      "Machine code",
+      "Compiled code"
+    ],
+    "answer": "Pseudo code",
+    "hint": "This is a key part of Low-Level Design and helps bridge the gap between human logic and programming language syntax.",
+    "explanation": "Pseudo code is an informal, high-level description of the operating principle of a computer program or other algorithm, used by designers to represent the logic before it is translated into a specific programming language."
+  },
+  {
+    "question": "Which two SCM concepts are depicted in a diagram where a developer takes a file from a central database to their local machine and later puts a new version back?",
+    "options": [
+      "Check-out and Check-in",
+      "Branching and Merging",
+      "Cloning and Pushing",
+      "Tagging and Reverting"
+    ],
+    "answer": "Check-out and Check-in",
+    "hint": "These are the fundamental operations for getting a working copy and submitting changes in many centralized version control systems.",
+    "explanation": "The diagram illustrates the core workflow: 'check-out' to get a local copy from the repository and 'check-in' to submit the modified version back to the repository."
+  },
+  {
+    "question": "In SCM, to prevent the 'lost update' problem, a developer can obtain a ______ on an object, which disables others from updating it until the developer checks in a new version.",
+    "options": [
+      "Lock",
+      "Branch",
+      "Tag",
+      "Hook"
+    ],
+    "answer": "Lock",
+    "hint": "This mechanism ensures serialized access to a file, preventing simultaneous edits.",
+    "explanation": "Locking is a synchronization control mechanism in some version control systems that prevents multiple people from editing the same file at the same time, thus avoiding the lost update problem."
+  },
+  {
+    "question": "When a change is requested, it is evaluated, and a decision is made to approve or reject it. This entire process is known as:",
+    "options": [
+      "The Change Control Process",
+      "Version Management",
+      "Configuration Audit",
+      "Baseline Creation"
+    ],
+    "answer": "The Change Control Process",
+    "hint": "This is the formal procedure for managing any modifications to the project's agreed-upon scope or deliverables.",
+    "explanation": "The Change Control Process is a systematic approach to managing all changes made to a product or system, from identification and evaluation to implementation and verification."
+  },
+  {
+    "question": "In the Change Control Process, after a change is implemented and tested, what is the final phase before closing the request?",
+    "options": [
+      "Verification Phase",
+      "Evaluation Phase",
+      "Resolution Phase",
+      "Planning Phase"
+    ],
+    "answer": "Verification Phase",
+    "hint": "This step confirms that the change was implemented correctly and has solved the original problem.",
+    "explanation": "The Verification Phase is the final step where the implemented change is reviewed and tested to ensure it meets the requirements correctly. If successful, the change request is formally closed."
+  },
+  {
+    "question": "Which SCM term represents a specific version of a file, often denoted with numbers like V1, V2, V3?",
+    "options": [
+      "Revision",
+      "Head",
+      "Branch",
+      "Trunk"
+    ],
+    "answer": "Revision",
+    "hint": "Each time a file is checked in, it gets a new one of these.",
+    "explanation": "A revision (or version) represents a unique, numbered state of a file in the repository's history. Each commit or check-in creates a new revision."
+  },
+  {
+    "question": "What is the SCM term for the latest revision of a file in the repository?",
+    "options": [
+      "Head",
+      "Trunk",
+      "Baseline",
+      "Tag"
+    ],
+    "answer": "Head",
+    "hint": "This term points to the most recent commit on a branch.",
+    "explanation": "The 'Head' is a pointer that refers to the most recent revision or commit in a branch of the repository."
+  },
+  {
+    "question": "If you check out a project and later feel that the changes you made are not needed, the action of restoring the file to its previous state is called:",
+    "options": [
+      "Revert",
+      "Commit",
+      "Merge",
+      "Branch"
+    ],
+    "answer": "Revert",
+    "hint": "This action undoes a previous change.",
+    "explanation": "'Revert' is a version control operation that creates a new commit that undoes the changes made in a previous commit, effectively rolling back the changes."
+  },
+  {
+    "question": "The differences between two versions of a file are often referred to as:",
+    "options": [
+      "Diffs",
+      "Conflicts",
+      "Merges",
+      "Commits"
+    ],
+    "answer": "Diffs",
+    "hint": "This term is short for 'differences' and is a common command in version control systems.",
+    "explanation": "A 'diff' is a comparison that shows the line-by-line differences between two files or two versions of the same file."
+  },
+  {
+    "question": "The general process for a developer using an SCM system is to get a working copy, make changes locally, and then ________ those changes back to the repository.",
+    "options": [
+      "Commit",
+      "Revert",
+      "Branch",
+      "Download"
+    ],
+    "answer": "Commit",
+    "hint": "This action saves your changes to the repository's history.",
+    "explanation": "The standard developer workflow is to get a local copy, make changes, and then 'commit' (or check-in) those changes, which records them as a new revision in the repository."
+  },
+  {
+    "question": "Which of these is NOT a level of software testing?",
+    "options": [
+      "Defect Testing",
+      "Unit Testing",
+      "Integration Testing",
+      "System Testing"
+    ],
+    "answer": "Defect Testing",
+    "hint": "Testing levels describe the scope of the test (e.g., module, combined modules, whole system), not the goal of finding a specific type of issue.",
+    "explanation": "Unit, Integration, System, and Acceptance are the four standard levels of testing. 'Defect Testing' is a general activity performed at all levels, not a distinct level itself."
+  },
+  {
+    "question": "Testing if an application is user-friendly, easily understandable, and impressive to the user is called:",
+    "options": [
+      "Usability Testing",
+      "Functional Testing",
+      "Stress Testing",
+      "Regression Testing"
+    ],
+    "answer": "Usability Testing",
+    "hint": "This non-functional testing type is done from an end-user's perspective.",
+    "explanation": "Usability testing is a non-functional testing technique that evaluates how easy and intuitive a software application is to use."
+  },
+  {
+    "question": "Which of the following is an example of a defect tracking tool?",
+    "options": [
+      "Bugzilla",
+      "JUnit",
+      "Selenium",
+      "Git"
+    ],
+    "answer": "Bugzilla",
+    "hint": "JUnit is for unit testing, Selenium is for test automation, and Git is for version control.",
+    "explanation": "Bugzilla is a popular open-source tool used for bug tracking and defect management, allowing teams to log and monitor the status of bugs throughout the testing process."
+  },
+  {
+    "question": "The quality of a good design that determines the system's runtime response time and memory usage is:",
+    "options": [
+      "Efficiency",
+      "Flexibility",
+      "Reliability",
+      "Portability"
+    ],
+    "answer": "Efficiency",
+    "hint": "This quality attribute is all about performance and resource consumption.",
+    "explanation": "Efficiency in design relates to how well the software utilizes system resources, such as CPU time, memory, and disk space, to achieve its required performance levels."
+  },
+  {
+    "question": "In a client-server architecture, where multiple clients connect to a central server, what type of architectural design is this?",
+    "options": [
+      "Distributed Architecture",
+      "Layered Architecture",
+      "Monolithic Architecture",
+      "Microservices Architecture"
+    ],
+    "answer": "Distributed Architecture",
+    "hint": "The processing is split between different computers on a network.",
+    "explanation": "Client-server architecture is a form of distributed architecture where tasks are partitioned between providers of a resource or service, called servers, and service requesters, called clients."
+  },
+  {
+    "question": "A key practice during the coding phase is to use standard control constructs for:",
+    "options": [
+      "Looping and decision making",
+      "Database connections",
+      "User authentication",
+      "API design"
+    ],
+    "answer": "Looping and decision making",
+    "hint": "This refers to the fundamental building blocks of program flow, like 'if-else', 'for', and 'while'.",
+    "explanation": "Good coding practice involves using standard, well-understood control constructs (e.g., for loops, while loops, if-then-else statements) to manage program flow, which improves code readability and maintainability."
+  },
+  {
+    "question": "Performing reviews and tests at the end of each phase of software development is part of the overall process of:",
+    "options": [
+      "Software Verification and Validation (V&V)",
+      "Software Configuration Management (SCM)",
+      "Project Management",
+      "Requirements Elicitation"
+    ],
+    "answer": "Software Verification and Validation (V&V)",
+    "hint": "This is the umbrella term for all quality assurance activities throughout the lifecycle.",
+    "explanation": "Software Verification and Validation (V&V) is a comprehensive process that includes a wide range of quality assurance activities, such as reviews, inspections, and testing, performed at each stage of the SDLC."
+  },
+  {
+    "question": "In the scenario where a candidate shades all options on an OMR sheet and gets a perfect score, what was the fundamental flaw in the testing logic?",
+    "options": [
+      "It did not check if the wrong options were NOT shaded.",
+      "It did not use an automated testing tool.",
+      "It did not perform regression testing.",
+      "It failed to conduct unit testing."
+    ],
+    "answer": "It did not check if the wrong options were NOT shaded.",
+    "hint": "The test only confirmed a positive condition (correct answer is shaded) but failed to check for negative conditions (incorrect answers are not shaded).",
+    "explanation": "The flaw was in the test case design. A robust test would verify not only that the correct option is selected but also that incorrect options are deselected, covering both positive and negative conditions."
+  },
+  {
+    "question": "A banking application allows a user to perform transactions even after clicking 'logout' and then using the browser's 'back' button. This represents a major failure in:",
+    "options": [
+      "Security Testing",
+      "Performance Testing",
+      "Usability Testing",
+      "Functional Testing"
+    ],
+    "answer": "Security Testing",
+    "hint": "This flaw allows an unauthorized user (or the same user after logging out) to access secure information and functionality.",
+    "explanation": "This is a critical security vulnerability. Proper security testing should ensure that sessions are properly terminated upon logout and that secure pages cannot be accessed via browser history."
+  },
+  {
+    "question": "An aggregate object in SCM is a collection of:",
+    "options": [
+      "Basic objects and other aggregate objects.",
+      "Only source code files.",
+      "Only documentation files.",
+      "Only test cases."
+    ],
+    "answer": "Basic objects and other aggregate objects.",
+    "hint": "This concept allows for a hierarchical grouping of configuration items.",
+    "explanation": "An aggregate object is a structural concept in SCM that represents a collection of other items. For example, a 'module' aggregate object might contain basic objects like source files and design documents."
+  },
+  {
+    "question": "An evolution graph in SCM is used to describe the:",
+    "options": [
+      "Change history of an object.",
+      "Architecture of the system.",
+      "Relationship between developers.",
+      "Project timeline and milestones."
+    ],
+    "answer": "Change history of an object.",
+    "hint": "It visually represents the versions and branches of a configuration item over time.",
+    "explanation": "An evolution graph is a visual representation that shows the history of changes to a configuration item, including its various revisions, branches, and merges."
+  },
+  {
+    "question": "In SCM, what is the database managed by a server that stores all configuration management information called?",
+    "options": [
+      "Repository",
+      "Working Copy",
+      "Client",
+      "Baseline"
+    ],
+    "answer": "Repository",
+    "hint": "This is the central, shared storage location for the entire project.",
+    "explanation": "The repository (or repo) is the central database in a version control system where all files, their history, and other metadata for a project are stored."
+  },
+  {
+    "question": "When you put a file into the repository for the first time to begin tracking it with version control, the operation is called:",
+    "options": [
+      "Add",
+      "Check in",
+      "Commit",
+      "Push"
+    ],
+    "answer": "Add",
+    "hint": "This action tells the SCM system to start paying attention to a new file.",
+    "explanation": "The 'add' operation is used to stage a new, previously untracked file, marking it to be included in the next commit and placed under version control."
   }
 ]
