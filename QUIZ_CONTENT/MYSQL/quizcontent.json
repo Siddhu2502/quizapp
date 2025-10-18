@@ -1,563 +1,644 @@
 [
   {
-    "question": "The ______ join produces the Cartesian product or cross product of two tables.",
+    "question": "Which type of join produces the Cartesian product (cross product) of two tables?",
+    "code": null,
     "options": [
-      "Cross",
-      "Self",
-      "Equi",
-      "Outer"
+      "CROSS JOIN",
+      "SELF JOIN",
+      "EQUI JOIN",
+      "OUTER JOIN"
     ],
-    "answer": "Cross",
-    "hint": "This type of join combines every row from the first table with every row from the second table.",
-    "explanation": "A CROSS JOIN returns all possible combinations of rows from the joined tables, resulting in a Cartesian product."
+    "answer": "CROSS JOIN",
+    "hint": "This join combines every row from the first table with every row from the second table without any condition.",
+    "explanation": "A CROSS JOIN creates the Cartesian product of two tables, returning all possible combinations of rows from both tables."
   },
   {
-    "question": "The ______ join is based on all columns in the two tables that have the same name and compatible data types.",
+    "question": "Which join is implicitly based on all columns in the two tables that share the same name?",
+    "code": null,
     "options": [
-      "Natural",
-      "Left Outer",
-      "Full Outer",
-      "Cross"
+      "LEFT OUTER JOIN",
+      "FULL OUTER JOIN",
+      "CROSS JOIN",
+      "NATURAL JOIN"
     ],
-    "answer": "Natural",
-    "hint": "This join type implicitly joins tables based on columns with identical names, removing the need for an explicit ON clause.",
-    "explanation": "A NATURAL JOIN automatically links tables based on columns that share the same name, simplifying the join syntax."
+    "answer": "NATURAL JOIN",
+    "hint": "This join type automatically finds matching column names, so you don't need an ON or USING clause.",
+    "explanation": "A NATURAL JOIN implicitly joins tables based on all columns that have the same name in both tables, matching rows where the values in those columns are equal."
   },
   {
-    "question": "A join that uses an equality operator (=) to compare values in the join condition is commonly known as an ______.",
+    "question": "An Equijoin, which uses the equality operator (=) in its join condition, is also commonly known as a...",
+    "code": null,
     "options": [
-      "Equijoin",
-      "Outer join",
-      "Non-equijoin",
-      "Self join"
-    ],
-    "answer": "Equijoin",
-    "hint": "This is the most common type of join, often implemented with an INNER JOIN clause.",
-    "explanation": "An Equijoin is a specific type of inner join that uses the equality operator to match rows from different tables based on common values."
-  },
-  {
-    "question": "Which type of join is used to retrieve records that do not have a matching value in the other table, in addition to the matched records?",
-    "options": [
+      "Simple Join or Inner Join",
       "Outer Join",
       "Self Join",
-      "Equi Join",
       "Cross Join"
     ],
-    "answer": "Outer Join",
-    "hint": "Think about LEFT, RIGHT, and FULL joins, which are all variations of this type.",
-    "explanation": "An OUTER JOIN (LEFT, RIGHT, or FULL) retrieves all matched rows, plus any unmatched rows from one or both tables."
+    "answer": "Simple Join or Inner Join",
+    "hint": "This is the most common type of join, returning only the rows that have matching values in both tables.",
+    "explanation": "An equijoin uses an equality condition in the join predicate and is the most prevalent form of an INNER JOIN, often referred to as a simple join."
   },
   {
-    "question": "The action of joining a table to itself is referred to as a ______.",
+    "question": "Which type of join is specifically used to retrieve records that have matching values as well as records that do not meet the join condition from one or both tables?",
+    "code": null,
     "options": [
-      "Self Join",
-      "Equi Join",
-      "Outer Join",
-      "Non Equi Join"
+      "SELF JOIN",
+      "NON EQUI JOIN",
+      "EQUI JOIN",
+      "OUTER JOIN"
     ],
-    "answer": "Self Join",
-    "hint": "This is useful for querying hierarchical data, such as finding an employee's manager within the same employees table.",
-    "explanation": "A Self Join is a regular join where a table is joined with itself using aliases to treat it as two separate tables."
+    "answer": "OUTER JOIN",
+    "hint": "Think about joins that include unmatched rows, filling the gaps with NULL values.",
+    "explanation": "An OUTER JOIN (LEFT, RIGHT, or FULL) is used to retrieve all matched records and also includes unmatched records from one or both tables, populating the columns of the missing side with NULLs."
   },
   {
-    "question": "Which of the following is a valid operator combination used to negate a list of values in a WHERE clause?",
+    "question": "What is it called when a table is joined to itself?",
+    "code": null,
     "options": [
-      "NOT IN",
-      "NOT >",
-      "NOT =",
-      "NOT AND"
+      "EQUI JOIN",
+      "SELF JOIN",
+      "OUTER JOIN",
+      "NON EQUI JOIN"
     ],
-    "answer": "NOT IN",
-    "hint": "The NOT operator is used to reverse the logic of operators like IN, BETWEEN, LIKE, and IS NULL.",
-    "explanation": "The `NOT IN` operator allows you to filter results by excluding rows that match any value in a specified list."
+    "answer": "SELF JOIN",
+    "hint": "This technique is useful for querying hierarchical data, such as finding an employee's manager within the same employees table.",
+    "explanation": "A SELF JOIN is a regular join where a table is joined with itself, using table aliases to distinguish between the two instances of the table."
   },
   {
-    "question": "The following query attempts to find employees earning more than the average salary, but it fails. What change is needed to make it work?",
+    "question": "With which of the following sets of operators can the NOT operator be used to negate a condition?",
+    "code": null,
+    "options": [
+      "IN, ANY, ALL, BETWEEN, LIKE",
+      ">, <, =",
+      "ONLY WITH IS NULL",
+      "GROUP BY, HAVING"
+    ],
+    "answer": "IN, ANY, ALL, BETWEEN, LIKE",
+    "hint": "The NOT operator is versatile and can reverse the logic of most comparison and set-based operators.",
+    "explanation": "The NOT operator can be used to negate a wide variety of conditions, commonly with operators like NOT IN, NOT BETWEEN, NOT LIKE, and IS NOT NULL."
+  },
+  {
+    "question": "The following query is intended to find employees earning more than the average salary, but it will fail. What change is required to make it work?",
     "code": "SELECT last_name, first_name FROM employee WHERE salary > AVG(salary);",
     "options": [
-      "Use a subquery in the WHERE clause",
-      "Move AVG(salary) to the SELECT clause",
-      "Replace AVG() with a different function",
-      "Add a GROUP BY clause"
+      "Use a subquery in the WHERE clause to calculate the average salary.",
+      "Move the AVG(salary) function to the SELECT clause and add a GROUP BY.",
+      "Change the AVG() function to MAX().",
+      "This query is correct and will run without errors."
     ],
-    "answer": "Use a subquery in the WHERE clause",
-    "hint": "Aggregate functions like AVG() cannot be used directly in a WHERE clause that operates on individual rows.",
-    "explanation": "The average salary must first be calculated in a subquery, like `WHERE salary > (SELECT AVG(salary) FROM employee)`, before it can be used for comparison."
+    "answer": "Use a subquery in the WHERE clause to calculate the average salary.",
+    "hint": "Aggregate functions like AVG() cannot be used directly in a WHERE clause that filters individual rows.",
+    "explanation": "A WHERE clause cannot contain aggregate functions. The correct approach is to use a subquery: `WHERE salary > (SELECT AVG(salary) FROM employee)` to calculate the average separately."
   },
   {
-    "question": "In which scenario would you use an OUTER JOIN?",
+    "question": "In which primary scenario would you choose to use an outer join?",
+    "code": null,
     "options": [
-      "When you need to retrieve both matched and unmatched data from one or both tables",
-      "Only when the tables have a primary key/foreign key relationship",
-      "When you only want to retrieve data that exists in both tables",
-      "When the tables being joined have only unmatched data"
+      "When you need to retrieve both matched and unmatched data from one or both tables.",
+      "Only when you need to retrieve records that match in both tables.",
+      "When you want to create a Cartesian product of two tables.",
+      "Only when the tables lack a primary key/foreign key relationship."
     ],
-    "answer": "When you need to retrieve both matched and unmatched data from one or both tables",
-    "hint": "Consider a case where you want to list all departments, even those without any employees.",
-    "explanation": "Outer joins are essential for retrieving all rows from one table and the matched rows from another, including rows where no match is found."
+    "answer": "When you need to retrieve both matched and unmatched data from one or both tables.",
+    "hint": "This type of join is essential when you need to see all records from one table, even if there's no corresponding record in the other.",
+    "explanation": "An outer join is used to return all rows from one table and the matched rows from the second table (or all rows from both tables), including rows that do not have a match in the other table."
   },
   {
-    "question": "Which operator is NOT appropriate for the join condition of a non-equi join?",
+    "question": "A non-equi join uses a join condition with a comparison operator other than the equals sign. Which of the following operators would make a join an equi-join, not a non-equi join?",
+    "code": null,
     "options": [
       "=",
-      ">=",
+      ">",
       "BETWEEN",
-      "<>"
+      "LIKE"
     ],
     "answer": "=",
-    "hint": "A non-equi join uses comparison operators other than the one for equality.",
-    "explanation": "A non-equi join is defined by using operators like >, <, !=, or BETWEEN in the join condition. An equality operator (=) would make it an equijoin."
+    "hint": "The definition of a non-equi join is that it uses a comparison operator *other than* equality.",
+    "explanation": "A non-equi join uses any comparison operator besides the equals sign (=), such as >, <, !=, BETWEEN, or LIKE. Using the equals operator would define it as an equi-join."
   },
   {
-    "question": "Under which condition is the USING clause most appropriately used in a join?",
+    "question": "What is a primary requirement for using the USING(column_name) clause as a shorthand for an ON clause in a join?",
+    "code": null,
     "options": [
-      "When the joined tables have columns with the same name and compatible data types",
-      "When you want to create a non-equijoin",
-      "When the tables to be joined have multiple NULL columns",
-      "When the joined tables have columns with the same name but different data types"
+      "The join columns in both tables must have the exact same name and compatible data types.",
+      "The join columns must have different names but compatible data types.",
+      "The join must be an outer join.",
+      "The join columns must have the same name, regardless of their data type."
     ],
-    "answer": "When the joined tables have columns with the same name and compatible data types",
-    "hint": "The USING clause is a shorthand for an ON clause when the column names for the join key are identical.",
-    "explanation": "The `USING(column_name)` clause simplifies joins by allowing you to specify the join column by name, but it requires the column name to be the same in both tables."
+    "answer": "The join columns in both tables must have the exact same name and compatible data types.",
+    "hint": "This clause simplifies the join syntax when the columns you're joining on share a specific characteristic.",
+    "explanation": "The USING(column_name) clause can only be used when the columns being joined in both tables have the exact same name and compatible data types, simplifying the join condition."
   },
   {
-    "question": "What is a primary benefit of creating an index on a table column?",
+    "question": "What is a primary benefit of creating an index on a column that is frequently used in a WHERE clause?",
     "code": "CREATE INDEX emp_dept_id_idx ON employee(dept_id);",
     "options": [
-      "It may reduce the amount of disk I/O for SELECT statements",
-      "It overrides any foreign key constraints",
-      "It increases the chance of a full table scan",
-      "It guarantees unique values in the column"
+      "It may reduce disk I/O and improve performance for SELECT statements.",
+      "It guarantees a reduction in disk I/O for INSERT and UPDATE statements.",
+      "It overrides any unique constraints on the column.",
+      "It forces the database to perform full table scans."
     ],
-    "answer": "It may reduce the amount of disk I/O for SELECT statements",
-    "hint": "Indexes are like the index in a book; they help the database find data faster without searching the entire table.",
-    "explanation": "By creating a data structure that points to the location of data, an index can significantly speed up data retrieval (SELECT) operations, especially on large tables."
+    "answer": "It may reduce disk I/O and improve performance for SELECT statements.",
+    "hint": "Indexes act like a book's index, allowing the database to find data quickly without reading the entire table.",
+    "explanation": "Creating an index on a frequently queried column can significantly speed up SELECT statements by allowing the database to quickly locate rows instead of performing a slower full table scan."
   },
   {
-    "question": "By default, who has all privileges, such as SELECT, INSERT, and DELETE, on a newly created database object like a table?",
+    "question": "How can an object's owner share access, such as read-only access, with other database users?",
+    "code": null,
     "options": [
-      "The owner of the object",
-      "All users with the PUBLIC role",
-      "Only the Database Administrator (DBA)",
-      "No one until privileges are explicitly granted"
+      "By using the GRANT command to give specific privileges.",
+      "By using the PERMIT command.",
+      "Access is automatically shared with all users by default.",
+      "The owner cannot share access; only a Database Administrator (DBA) can."
     ],
-    "answer": "The owner of the object",
-    "hint": "The user who executes the CREATE statement is considered the object's owner.",
-    "explanation": "In most database systems, the creator or owner of an object automatically receives full privileges on that object."
+    "answer": "By using the GRANT command to give specific privileges.",
+    "hint": "Which standard SQL command is used for managing permissions and access rights?",
+    "explanation": "The owner of an object can use the `GRANT` statement to give specific privileges (e.g., `GRANT SELECT ON table_name TO user_name;`) to other users or roles."
   },
   {
-    "question": "Which SQL command allows a table's owner to give specific permissions, like SELECT or UPDATE, to other database users?",
-    "options": [
-      "GRANT",
-      "REVOKE",
-      "ALLOW",
-      "SET ROLE"
-    ],
-    "answer": "GRANT",
-    "hint": "This command is used to bestow privileges, while its counterpart, REVOKE, takes them away.",
-    "explanation": "The `GRANT` command is a fundamental part of database security, used to manage access control by assigning permissions to users or roles."
-  },
-  {
-    "question": "Which SQL statement correctly grants a privilege to all database users?",
+    "question": "Which SQL statement correctly grants the SELECT privilege on the `department` table to every user in the database?",
+    "code": null,
     "options": [
       "GRANT SELECT ON department TO PUBLIC;",
       "GRANT SELECT ON department TO ALL USERS;",
-      "GRANT SELECT ON department TO ALL;",
-      "GRANT SELECT ON department TO *;"
+      "GRANT SELECT ON department TO EVERYONE;",
+      "GRANT SELECT ON department;"
     ],
     "answer": "GRANT SELECT ON department TO PUBLIC;",
-    "hint": "There is a special keyword that represents a role to which every database user belongs.",
-    "explanation": "The `PUBLIC` keyword is a standard way to grant a permission to every user in the database, both current and future."
+    "hint": "In SQL security, there is a special keyword or role that represents all current and future users.",
+    "explanation": "In SQL, `PUBLIC` is a special role that all users belong to by default. Granting a privilege to `PUBLIC` makes it available to every user in the database."
   },
   {
-    "question": "Which SQL statement would you use to remove a view called EMP_DEPT_VU from your schema?",
+    "question": "How do you permanently remove a view named `EMP_DEPT_VU` from a database schema?",
+    "code": null,
     "options": [
       "DROP VIEW EMP_DEPT_VU;",
-      "DROP EMP_DEPT_VU;",
+      "DELETE VIEW EMP_DEPT_VU;",
       "REMOVE VIEW EMP_DEPT_VU;",
-      "DELETE VIEW EMP_DEPT_VU;"
+      "TRUNCATE VIEW EMP_DEPT_VU;"
     ],
     "answer": "DROP VIEW EMP_DEPT_VU;",
-    "hint": "Removing database objects like tables or views typically uses the 'DROP' command.",
-    "explanation": "The `DROP VIEW` command is the standard DDL statement used to permanently delete a view from the database."
+    "hint": "The command to remove database objects like tables, views, and indexes often starts with the same DDL keyword.",
+    "explanation": "The `DROP VIEW` command is the standard SQL statement used to permanently delete a view from the database. This does not affect the data in the underlying tables."
   },
   {
-    "question": "Which statement would display the highest credit limit available for each combination of city and income level in the Customers table?",
+    "question": "Which query correctly displays the highest credit limit for each combination of city and income level from the `Customers` table?",
+    "code": null,
     "options": [
       "SELECT cust_city, cust_income_level, MAX(cust_credit_limit) FROM customers GROUP BY cust_city, cust_income_level;",
       "SELECT cust_city, cust_income_level, MAX(cust_credit_limit) FROM customers;",
       "SELECT cust_city, cust_income_level, MAX(cust_credit_limit) FROM customers GROUP BY cust_credit_limit;",
-      "SELECT cust_city, cust_income_level, MAX(cust_credit_limit) FROM customers GROUP BY cust_city, cust_income_level, MAX(cust_credit_limit);"
+      "SELECT cust_city, cust_income_level, MAX(cust_credit_limit) FROM customers HAVING MAX(cust_credit_limit) > 0;"
     ],
     "answer": "SELECT cust_city, cust_income_level, MAX(cust_credit_limit) FROM customers GROUP BY cust_city, cust_income_level;",
-    "hint": "To use an aggregate function like MAX() alongside other columns, you must group the results by those other columns.",
-    "explanation": "The `GROUP BY` clause must include all non-aggregated columns from the SELECT list to ensure the `MAX()` function operates on the correct data subsets."
+    "hint": "When using an aggregate function like MAX(), all non-aggregated columns in the SELECT list must also appear in the GROUP BY clause.",
+    "explanation": "To find the maximum value for specific groups, you must use the `MAX()` function and then group the results by the columns that define those groups (`cust_city` and `cust_income_level`)."
   },
   {
-    "question": "What is the primary purpose of the `GROUP BY` clause in a SQL query?",
+    "question": "Which of the following SQL statements will produce an error because it mixes aggregate and non-aggregate columns improperly?",
+    "code": null,
     "options": [
-      "To group rows that have the same values into summary rows",
-      "To sort the results in a specific order",
-      "To filter rows based on a specific condition",
-      "To join multiple tables together"
+      "SELECT department_id, SUM(salary) FROM employees;",
+      "SELECT department_id, SUM(salary) FROM employees GROUP BY department_id;",
+      "SELECT * FROM employees;",
+      "SELECT SUM(salary) FROM employees WHERE department_id = 10;"
     ],
-    "answer": "To group rows that have the same values into summary rows",
-    "hint": "This clause is almost always used in conjunction with aggregate functions like COUNT(), SUM(), or AVG().",
-    "explanation": "The `GROUP BY` clause collects rows with identical values in specified columns, allowing aggregate functions to be performed on each group."
+    "answer": "SELECT department_id, SUM(salary) FROM employees;",
+    "hint": "You cannot select a regular column alongside an aggregate function without grouping the results by that regular column.",
+    "explanation": "This query will fail because it includes a non-aggregated column (`department_id`) in the SELECT list with an aggregate function (`SUM(salary)`) without a corresponding `GROUP BY department_id` clause."
   },
   {
-    "question": "Which query correctly creates an equi-join to display employee last names, department names, and location IDs?",
+    "question": "Which query correctly creates an equi-join using ANSI syntax to display employee last names and their corresponding department names?",
+    "code": null,
     "options": [
-      "SELECT e.last_name, d.department_name, d.location_id FROM employees e, departments d WHERE e.department_id = d.department_id;",
-      "SELECT last_name, department_name, location_id FROM employees, departments;",
-      "SELECT e.last_name, d.department_name, d.location_id FROM employees e, departments d WHERE manager_id = manager_id;",
-      "SELECT e.last_name, d.department_name, d.location_id FROM employees e JOIN departments d;"
+      "SELECT e.last_name, d.department_name FROM employees e JOIN departments d ON e.department_id = d.department_id;",
+      "SELECT last_name, department_name FROM employees, departments;",
+      "SELECT e.last_name, d.department_name FROM employees e CROSS JOIN departments d;",
+      "SELECT e.last_name, d.department_name FROM employees e OUTER JOIN departments d;"
     ],
-    "answer": "SELECT e.last_name, d.department_name, d.location_id FROM employees e, departments d WHERE e.department_id = d.department_id;",
-    "hint": "An equi-join requires a WHERE clause to link the tables based on a common column with an equality condition.",
-    "explanation": "This query correctly joins the employees and departments tables using table aliases (e, d) and a `WHERE` clause to match rows on `department_id`."
+    "answer": "SELECT e.last_name, d.department_name FROM employees e JOIN departments d ON e.department_id = d.department_id;",
+    "hint": "An equi-join connects tables based on an equality condition, typically matching a foreign key in one table to a primary key in another.",
+    "explanation": "This query correctly joins the `employees` and `departments` tables on the `department_id` column using the equality operator in the `ON` clause, which defines an equi-join."
   },
   {
-    "question": "Which of the following tasks would require a subquery or a join to be completed in a single SQL statement?",
+    "question": "Which of the following tasks would require a subquery to be performed?",
+    "code": null,
     "options": [
-      "Find employees whose commission is higher than the company average",
-      "Find the total commission earned in department 10",
-      "List all employees in descending order of their employee ID",
-      "Find employees whose annual commission is more than 6000"
+      "Find all employees whose salary is higher than the company's average salary.",
+      "Find the total salary paid to employees in department 10.",
+      "List all employees who do not have a commission.",
+      "List employees in department 20 in descending order of their ID."
     ],
-    "answer": "Find employees whose commission is higher than the company average",
-    "hint": "Consider which tasks require a value that must be calculated from the entire table before you can filter individual rows.",
-    "explanation": "To compare an individual's commission to the average, you must first calculate the average for the whole company, which is typically done in a subquery."
+    "answer": "Find all employees whose salary is higher than the company's average salary.",
+    "hint": "Consider which task requires a value to be calculated first (like an average) before it can be used in a comparison for filtering.",
+    "explanation": "To find employees with a salary higher than the average, you must first calculate the average salary for all employees using a subquery, and then use that result in the WHERE clause of the main query."
   },
   {
-    "question": "Assuming a 'Customers' table with a 'Birth_date' column, which statement would correctly display the age of customers with the alias 'AGE'?",
+    "question": "Which statement correctly calculates and displays the age of a customer in years, aliased as `AGE`?",
+    "code": null,
     "options": [
-      "SELECT ROUND((curdate() - Birth_date)/365) AS AGE FROM Customers;",
-      "SELECT (start_date - curdate())/365 AS AGE FROM Customers;",
-      "SELECT (Birth_date/365) AS AGE FROM Customers;",
-      "SELECT AGE(Birth_date) FROM Customers;"
+      "SELECT ROUND((CURDATE() - birth_date) / 365) AS AGE FROM customer;",
+      "SELECT (start_date - curdate()) / 365 AS AGE FROM customer;",
+      "SELECT AGE(birth_date) FROM customer;",
+      "SELECT (birth_date / 365) AS AGE FROM customer;"
     ],
-    "answer": "SELECT ROUND((curdate() - Birth_date)/365) AS AGE FROM Customers;",
-    "hint": "You need to find the difference between the current date and the birth date, then convert the result (in days) to years.",
-    "explanation": "This query subtracts the birth date from the current date (giving days), divides by 365 to get years, rounds the result, and aliases it as AGE."
+    "answer": "SELECT ROUND((CURDATE() - birth_date) / 365) AS AGE FROM customer;",
+    "hint": "You need a function to get the current date, then perform arithmetic to find the difference in days, which can then be converted to years.",
+    "explanation": "This query uses a date function like `CURDATE()` to get the current date, subtracts the `birth_date` to get the difference in days, divides by 365 to approximate the number of years, and uses `ROUND()` for a clean result."
   },
   {
-    "question": "What will be the output of the following SQL query?",
+    "question": "What is the output of the query `SELECT CEIL(5.3) FROM dual;`?",
     "code": "SELECT CEIL(5.3) FROM dual;",
     "options": [
       "6",
       "5",
-      "5.3",
-      "5.0"
+      "5.0",
+      "5.3"
     ],
     "answer": "6",
-    "hint": "The CEIL or CEILING function always rounds a number UP to the nearest integer.",
-    "explanation": "The `CEIL()` function returns the smallest integer value that is greater than or equal to the input number, so `CEIL(5.3)` results in 6."
+    "hint": "The `CEIL` or `CEILING` function always rounds a number *up* to the next nearest integer.",
+    "explanation": "`CEIL` is short for 'ceiling' and returns the smallest integer value that is greater than or equal to the input number. The ceiling of 5.3 is 6."
   },
   {
-    "question": "When using a `GROUP BY` clause, which columns must be included in it?",
+    "question": "Which rule must be followed when using a `GROUP BY` clause in a SQL query?",
+    "code": null,
     "options": [
-      "All non-aggregated columns from the SELECT list",
-      "All columns from the SELECT list",
-      "Only the primary key of the table",
-      "Only the columns used in the aggregate function"
+      "Any non-aggregated column in the SELECT list must also be in the GROUP BY clause.",
+      "The GROUP BY clause must always come before the WHERE clause.",
+      "Only one column can be used in the GROUP BY clause.",
+      "All columns in the SELECT list must be part of an aggregate function."
     ],
-    "answer": "All non-aggregated columns from the SELECT list",
-    "hint": "If you SELECT a column and an aggregate of another column, you must tell the database how to group the first column.",
-    "explanation": "The SQL standard requires that any column in the SELECT list that is not part of an aggregate function must be listed in the GROUP BY clause."
+    "answer": "Any non-aggregated column in the SELECT list must also be in the GROUP BY clause.",
+    "hint": "This rule ensures that the database knows how to group the rows before applying aggregate functions like SUM() or COUNT().",
+    "explanation": "When you use `GROUP BY`, any column you select that is not part of an aggregate function must be listed in the `GROUP BY` clause to define the unique groupings."
   },
   {
-    "question": "Which query correctly displays 'Not Shipped' for a NULL shipdate and 'Not Available' for a NULL total?",
+    "question": "If `shipdate` can be NULL, which function should be used to display the text 'Not Shipped' in its place?",
+    "code": null,
     "options": [
-      "SELECT ordid, IFNULL(shipdate, 'Not Shipped'), IFNULL(total, 'Not Available') FROM order;",
-      "SELECT ordid, TO_CHAR(shipdate, 'Not Shipped'), TO_CHAR(total, 'Not Available') FROM order;",
-      "SELECT ordid, shipdate || 'Not Shipped', total || 'Not Available' FROM order;",
-      "SELECT ordid, DECODE(shipdate, NULL, 'Not Shipped'), DECODE(total, NULL, 'Not Available') FROM order;"
+      "IFNULL(shipdate, 'Not Shipped')",
+      "TO_CHAR(shipdate, 'Not Shipped')",
+      "REPLACE(shipdate, NULL, 'Not Shipped')",
+      "DECODE(shipdate, 'Not Shipped')"
     ],
-    "answer": "SELECT ordid, IFNULL(shipdate, 'Not Shipped'), IFNULL(total, 'Not Available') FROM order;",
-    "hint": "Look for a function that replaces a NULL value with a specified default value. COALESCE is another common function for this.",
-    "explanation": "The `IFNULL(expression, alt_value)` function (or its standard equivalent `COALESCE`) is used to return an alternative value if the original expression is NULL."
+    "answer": "IFNULL(shipdate, 'Not Shipped')",
+    "hint": "Look for a function that returns a specified default value if the first argument is NULL. `NVL()` or `ISNULL()` are similar functions in other database systems.",
+    "explanation": "The `IFNULL(expression, alt_value)` function checks if `expression` is NULL. If it is, it returns `alt_value`; otherwise, it returns the original `expression`'s value."
   },
   {
-    "question": "What is the typical limitation on nesting single-row functions (like `UPPER()`, `SUBSTR()`, `ROUND()`) in SQL?",
+    "question": "Which statement is true about nesting single-row functions (e.g., `UPPER(SUBSTR(name, 1, 1))`) in SQL?",
+    "code": null,
     "options": [
-      "There is no practical limit to the level of nesting",
-      "They can only be nested up to three levels deep",
-      "They cannot be nested at all",
-      "They can only be nested inside group functions"
+      "They can be nested, with the output of one function serving as the input for another.",
+      "They can only be nested up to two levels deep.",
+      "They cannot be nested at all.",
+      "Only character functions can be nested; numeric functions cannot."
     ],
-    "answer": "There is no practical limit to the level of nesting",
-    "hint": "You can wrap a function around the result of another function, like `UPPER(SUBSTR(name, 1, 1))`.",
-    "explanation": "Single-row functions can be nested to many levels, where the output of the inner function becomes the input for the outer function, though complex nesting can impact readability."
+    "answer": "They can be nested, with the output of one function serving as the input for another.",
+    "hint": "Function composition is a powerful feature for data transformation in a single step.",
+    "explanation": "Single-row functions can be nested, meaning the result of an inner function is used as an argument for an outer function. This allows for complex data manipulation within a `SELECT` statement."
   },
   {
-    "question": "In which clause should group functions (like `SUM()`, `AVG()`) be used to filter grouped data?",
+    "question": "Aggregate functions like `SUM()` or `AVG()` cannot be used to filter data in a `WHERE` clause. Which clause should be used instead?",
+    "code": null,
     "options": [
       "HAVING",
-      "WHERE",
       "GROUP BY",
-      "SELECT"
+      "ORDER BY",
+      "FILTER"
     ],
     "answer": "HAVING",
-    "hint": "The WHERE clause filters rows before grouping, while this clause filters the groups themselves.",
-    "explanation": "The `HAVING` clause is used to filter the results of a query based on the values of aggregate functions, after the `GROUP BY` clause has been applied."
+    "hint": "The `WHERE` clause filters rows *before* grouping, while this other clause filters groups *after* they are formed.",
+    "explanation": "To filter based on the result of an aggregate function, you must use the `HAVING` clause, which is evaluated after the `GROUP BY` clause has been processed."
   },
   {
-    "question": "Which query correctly calculates a 15% credit limit increase and displays 'Not Available' for customers with a NULL credit limit?",
+    "question": "Which SQL statement correctly increases a customer's credit limit by 15% and displays 'Not Available' if the original limit is NULL?",
+    "code": null,
     "options": [
-      "SELECT IFNULL(cust_credit_limit * 0.15, 'Not Available') AS NEW_CREDIT FROM customers;",
-      "SELECT NULLIF(cust_credit_limit * 0.15, 'Not Available') AS NEW_CREDIT FROM customers;",
-      "SELECT cust_credit_limit * 0.15 OR 'Not Available' AS NEW_CREDIT FROM customers;",
-      "SELECT NVL(TO_CHAR(cust_credit_limit * 0.15), 'Not Available') AS NEW_CREDIT FROM customers;"
+      "SELECT IFNULL(cust_credit_limit * 1.15, 'Not Available') AS new_credit FROM customers;",
+      "SELECT NULLIF(cust_credit_limit * 1.15, 'Not Available') AS new_credit FROM customers;",
+      "SELECT cust_credit_limit * 1.15 OR 'Not Available' AS new_credit FROM customers;",
+      "UPDATE customers SET credit_limit = credit_limit * 1.15;"
     ],
-    "answer": "SELECT IFNULL(cust_credit_limit * 0.15, 'Not Available') AS NEW_CREDIT FROM customers;",
-    "hint": "You need a function that checks for NULL and provides a fallback value. Note that the calculation will also be NULL if the initial value is NULL.",
-    "explanation": "The expression `cust_credit_limit * 0.15` evaluates to NULL if `cust_credit_limit` is NULL. `IFNULL` (or `COALESCE`) then replaces that resulting NULL with 'Not Available'."
+    "answer": "SELECT IFNULL(cust_credit_limit * 1.15, 'Not Available') AS new_credit FROM customers;",
+    "hint": "Handle the NULL case first with a function, then perform the calculation. An increase *by* 15% means multiplying by 1.15.",
+    "explanation": "The `IFNULL` function handles cases where `cust_credit_limit` is NULL. For non-NULL values, it calculates the new limit by multiplying by 1.15 (a 15% increase). This is done within a SELECT and does not alter the original data."
   },
   {
-    "question": "What is the default behavior of the `ORDER BY` clause for character-based sorting?",
+    "question": "What is the default sorting behavior of the `ORDER BY` clause when applied to character data (e.g., VARCHAR)?",
+    "code": null,
     "options": [
-      "The sort is case-sensitive",
-      "The sort is case-insensitive",
-      "NULL values are ignored",
-      "Numeric characters are sorted after alphabetic characters"
+      "The sort is typically case-sensitive (e.g., 'Z' comes before 'a').",
+      "The sort is always case-insensitive.",
+      "NULL values are always ignored and excluded from the result.",
+      "It sorts by the length of the string by default."
     ],
-    "answer": "The sort is case-sensitive",
-    "hint": "Think about how 'Apple' and 'apple' would be sorted. This behavior can be controlled by database collation settings.",
-    "explanation": "By default, most databases perform a case-sensitive sort where uppercase letters come before lowercase letters (e.g., 'Z' comes before 'a')."
+    "answer": "The sort is typically case-sensitive (e.g., 'Z' comes before 'a').",
+    "hint": "Consider the binary or ASCII values of uppercase and lowercase letters.",
+    "explanation": "By default, most SQL databases perform a case-sensitive sort based on the character set's binary order, where uppercase letters usually precede lowercase letters."
   },
   {
-    "question": "How do you correctly filter for rows where a column's value is NULL in a WHERE clause?",
+    "question": "The query `SELECT last_name FROM employee WHERE dept_id = NULL;` fails to return employees without a department. What change is needed?",
+    "code": "SELECT last_name FROM employee WHERE dept_id = NULL;",
     "options": [
-      "Use the 'IS NULL' operator",
-      "Use the '= NULL' operator",
-      "Use the '!= NULL' operator",
-      "Use an empty string comparison like `col = ''`"
+      "Change the operator from `=` to `IS`.",
+      "Change the operator from `=` to `!=`.",
+      "Add `OR dept_id = 0` to the condition.",
+      "The query is correct; there must be no employees without a department."
     ],
-    "answer": "Use the 'IS NULL' operator",
-    "hint": "NULL is a special marker for missing data, not a value, so standard comparison operators don't work.",
-    "explanation": "The correct syntax for checking for NULL is `WHERE column_name IS NULL`. Using `= NULL` will not produce the intended results."
+    "answer": "Change the operator from `=` to `IS`.",
+    "hint": "NULL represents an unknown value, so it cannot be compared using standard equality operators like '=' or '!='.",
+    "explanation": "In SQL, `NULL` cannot be compared with operators like `=`, `<`, or `>`. The correct way to check for a `NULL` value is by using the `IS NULL` or `IS NOT NULL` operator."
   },
   {
-    "question": "To preview a potential $100 salary increase for all employees without permanently changing the data, where should the calculation `salary + 100` be placed?",
+    "question": "A manager wants to view projected salaries with a $100 increment without permanently changing the data. How can this be achieved in a single query?",
+    "code": null,
     "options": [
-      "In the SELECT clause",
-      "In the SET clause of an UPDATE statement",
-      "In the WHERE clause of an UPDATE statement",
-      "In an ALTER TABLE statement"
+      "Use an arithmetic expression in the `SELECT` list, like `SELECT name, salary + 100 FROM employee;`",
+      "Use the `UPDATE employee SET salary = salary + 100;` statement.",
+      "Create a temporary table and insert the new salaries.",
+      "Use a `HAVING` clause to project the new salary."
     ],
-    "answer": "In the SELECT clause",
-    "hint": "The SELECT statement is used for retrieving and displaying data, including calculated or 'virtual' columns.",
-    "explanation": "Placing the calculation in the `SELECT` list (`SELECT name, salary, salary + 100 FROM employees;`) allows you to view the result without modifying the underlying table data."
+    "answer": "Use an arithmetic expression in the `SELECT` list, like `SELECT name, salary + 100 FROM employee;`",
+    "hint": "The `SELECT` statement is used for retrieving and displaying data, and it allows for on-the-fly calculations.",
+    "explanation": "You can perform calculations directly in the `SELECT` clause to display projected or modified values. This does not alter the underlying data in the table, making it ideal for 'what-if' analysis."
   },
   {
-    "question": "What is the output of the following query?",
-    "code": "SELECT SUBSTR('Oracle World', 1, 6) FROM dual;",
+    "question": "What is the output of the query `SELECT SUBSTR('Oracle World', 8, 5) FROM dual;`?",
+    "code": "SELECT SUBSTR('Oracle World', 8, 5) FROM dual;",
     "options": [
-      "Oracle",
-      "racle ",
-      "Oracle W",
-      "World"
+      "'World'",
+      "'cle W'",
+      "' Worl'",
+      "'orld'"
     ],
-    "answer": "Oracle",
-    "hint": "The SUBSTR function extracts a substring. The arguments are (string, start_position, length).",
-    "explanation": "This query extracts a substring of length 6 from 'Oracle World', starting at the first character, which results in 'Oracle'."
+    "answer": "'World'",
+    "hint": "The `SUBSTR` function extracts a substring of a specific length, starting at a given position. Remember to count spaces.",
+    "explanation": "`SUBSTR(string, start_position, length)` extracts a substring. In this case, it starts at the 8th character ('W') and extracts 5 characters, resulting in 'World'."
   },
   {
-    "question": "Which operator is used to specify an inclusive range of values in a WHERE clause?",
+    "question": "Which `WHERE` clause is the most standard and readable way to select records where the salary is between 40000 and 100000, inclusive?",
+    "code": null,
     "options": [
-      "BETWEEN",
-      "IN",
-      "LIKE",
-      "EXISTS"
+      "WHERE salary BETWEEN 40000 AND 100000",
+      "WHERE salary > 40000 AND salary < 100000",
+      "WHERE salary IN (40000, 100000)",
+      "WHERE salary >= 40000 OR salary <= 100000"
     ],
-    "answer": "BETWEEN",
-    "hint": "This operator is a shorthand for `>=` and `<=`.",
-    "explanation": "The `BETWEEN` operator selects values within a given range, including the start and end values. For example, `WHERE salary BETWEEN 40000 AND 100000`."
+    "answer": "WHERE salary BETWEEN 40000 AND 100000",
+    "hint": "SQL has a specific operator designed for checking if a value falls within a range, including the endpoints.",
+    "explanation": "The `BETWEEN` operator is inclusive and provides a clear, concise way to specify a range. It is equivalent to `WHERE salary >= 40000 AND salary <= 100000` but is often preferred for readability."
   },
   {
-    "question": "Which query correctly retrieves all employees who have a manager assigned?",
+    "question": "How would you retrieve a list of all employees who have been assigned a manager, assuming unassigned managers are represented by NULL?",
+    "code": null,
     "options": [
-      "SELECT empname, manager_id FROM employee WHERE manager_id IS NOT NULL;",
-      "SELECT empname, manager_id FROM employee WHERE manager_id IS NULL;",
-      "SELECT empname, manager_id FROM employee WHERE manager_id <> NULL;",
-      "SELECT empname, manager_id FROM employee WHERE manager_id > 0;"
+      "SELECT empname FROM employee WHERE manager_id IS NOT NULL;",
+      "SELECT empname FROM employee WHERE manager_id IS NULL;",
+      "SELECT empname FROM employee WHERE manager_id != 0;",
+      "SELECT empname FROM employee WHERE manager_id > 0;"
     ],
-    "answer": "SELECT empname, manager_id FROM employee WHERE manager_id IS NOT NULL;",
-    "hint": "You need to find rows where the 'manager_id' column is not empty or NULL.",
-    "explanation": "The correct way to filter for non-null values is by using the `IS NOT NULL` operator in the WHERE clause."
+    "answer": "SELECT empname FROM employee WHERE manager_id IS NOT NULL;",
+    "hint": "Employees without a manager would have a NULL value in the `manager_id` column. You need to find the opposite of that.",
+    "explanation": "To find rows where a column contains a value (i.e., is not empty or unknown), you must use the `IS NOT NULL` condition."
   },
   {
-    "question": "How do you retrieve a list of unique department IDs from the employee table, without any duplicates?",
+    "question": "How do you retrieve a list of unique `department_id` values from the `employee` table to see all departments that have employees?",
+    "code": null,
     "options": [
       "SELECT DISTINCT department_id FROM employee;",
-      "SELECT department_id FROM employee;",
-      "SELECT ALL department_id FROM employee;",
-      "SELECT department_id DISTINCT FROM employee;"
+      "SELECT UNIQUE department_id FROM employee;",
+      "SELECT department_id FROM employee GROUP BY name;",
+      "SELECT department_id FROM employee;"
     ],
     "answer": "SELECT DISTINCT department_id FROM employee;",
-    "hint": "There is a specific keyword that you place after SELECT to eliminate duplicate rows from the result set.",
-    "explanation": "The `DISTINCT` keyword filters the result set to include only unique values from the specified column(s)."
+    "hint": "There is a specific keyword used directly after `SELECT` to eliminate duplicate rows from the result set.",
+    "explanation": "The `DISTINCT` keyword filters the result set to ensure that only unique values for the specified column(s) are returned."
   },
   {
-    "question": "Which SQL query correctly finds all employees whose name ends with 'kumar'?",
+    "question": "Which query correctly retrieves all employees whose `empname` ends with the string 'son'?",
+    "code": null,
     "options": [
-      "SELECT * FROM employee WHERE empname LIKE '%kumar';",
-      "SELECT * FROM employee WHERE empname LIKE 'kumar%';",
-      "SELECT * FROM employee WHERE empname = 'kumar';",
-      "SELECT * FROM employee WHERE empname LIKE '_kumar';"
+      "SELECT * FROM employee WHERE empname LIKE '%son';",
+      "SELECT * FROM employee WHERE empname LIKE 'son%';",
+      "SELECT * FROM employee WHERE empname = 'son';",
+      "SELECT * FROM employee WHERE empname LIKE '_son';"
     ],
-    "answer": "SELECT * FROM employee WHERE empname LIKE '%kumar';",
-    "hint": "The '%' wildcard character in a LIKE clause matches any sequence of zero or more characters.",
-    "explanation": "Using the wildcard '%' at the beginning (`%kumar`) matches any string that ends with 'kumar'."
+    "answer": "SELECT * FROM employee WHERE empname LIKE '%son';",
+    "hint": "The `%` wildcard character in a `LIKE` clause matches any sequence of zero or more characters.",
+    "explanation": "When used with `LIKE`, placing the wildcard `%` at the beginning of the pattern (`%son`) matches any string that ends with 'son'."
   },
   {
-    "question": "Which statement is generally true about how `NULL` values are handled in SQL sorting?",
+    "question": "In most SQL implementations, what is a key feature of the `ORDER BY` clause regarding calculated columns?",
+    "code": null,
     "options": [
-      "Their sort order (first or last) is specific to the database system",
-      "They are always sorted first in ascending order",
-      "They are always sorted last in ascending order",
-      "They are not included in the sorted result set"
+      "You can sort by a column alias defined in the `SELECT` list.",
+      "You can only sort by columns that exist in the original table.",
+      "The `ORDER BY` clause is processed before the `SELECT` list, so aliases cannot be used.",
+      "If `ORDER BY` is not used, results are always sorted by the primary key."
     ],
-    "answer": "Their sort order (first or last) is specific to the database system",
-    "hint": "Different RDBMS like Oracle, SQL Server, and PostgreSQL have different default behaviors for sorting NULLs.",
-    "explanation": "The SQL standard does not define a default sort order for NULLs. Oracle and PostgreSQL sort NULLs last in ascending order by default, while SQL Server and MySQL sort them first."
+    "answer": "You can sort by a column alias defined in the `SELECT` list.",
+    "hint": "Consider a query like `SELECT salary * 1.1 AS new_salary FROM employees ORDER BY new_salary;`.",
+    "explanation": "Most SQL databases allow you to use a column alias defined in the `SELECT` list directly in the `ORDER BY` clause, which is very useful for sorting by calculated values."
   },
   {
-    "question": "You need to remove all data from a table but want to be able to undo the operation. Which command should you use?",
+    "question": "You need to remove all rows from the `employee` table but keep the table structure. You also want the ability to `ROLLBACK` this operation. Which command should you use?",
+    "code": null,
     "options": [
       "DELETE FROM employee;",
       "TRUNCATE TABLE employee;",
       "DROP TABLE employee;",
-      "This task cannot be accomplished"
+      "RESET TABLE employee;"
     ],
     "answer": "DELETE FROM employee;",
-    "hint": "One command is a DML operation that can be rolled back, while another is a DDL operation that often cannot.",
-    "explanation": "`DELETE` is a Data Manipulation Language (DML) operation that removes rows one by one and can be undone with a `ROLLBACK` (if not auto-committed)."
+    "hint": "One command is a DML operation that logs each row deletion and can be rolled back, while another is a DDL operation that is faster but often cannot.",
+    "explanation": "`DELETE` is a DML (Data Manipulation Language) command that removes rows one by one and can be rolled back as part of a transaction. `TRUNCATE` is a DDL (Data Definition Language) command that is faster but typically cannot be undone."
   },
   {
-    "question": "If a user issues a `COMMIT` command, what happens to the savepoints created before the commit?",
+    "question": "After a `COMMIT` statement is executed, what happens to any `SAVEPOINT`s that were created during that transaction?",
+    "code": null,
     "options": [
-      "They are erased and a `ROLLBACK TO` command will fail",
-      "They remain active for the next transaction",
-      "They are converted into permanent markers",
-      "The database automatically rolls back to the last savepoint"
+      "They are destroyed and can no longer be used.",
+      "They are preserved for the next transaction.",
+      "They are automatically converted to permanent markers.",
+      "Only the most recent savepoint is preserved."
     ],
-    "answer": "They are erased and a `ROLLBACK TO` command will fail",
-    "hint": "A COMMIT makes all changes permanent and ends the current transaction.",
-    "explanation": "Once a transaction is committed, all its savepoints are discarded. Attempting to roll back to a savepoint from a previous, committed transaction will result in an error."
+    "answer": "They are destroyed and can no longer be used.",
+    "hint": "What does the `COMMIT` command do to the state of a transaction?",
+    "explanation": "A `COMMIT` command finalizes the current transaction, making all changes permanent. It also ends the transaction, releasing all locks and destroying any savepoints created within it."
   },
   {
-    "question": "Which statement is true regarding the UNIQUE constraint in SQL?",
+    "question": "Which statement is true regarding a `UNIQUE` constraint in SQL?",
+    "code": null,
     "options": [
-      "It allows multiple NULL values in most databases",
-      "It does not allow any NULL values",
-      "It is enforced only for INSERT operations",
-      "It cannot be disabled once created"
+      "It allows multiple NULL values because NULL is not considered equal to any other value.",
+      "It allows only one NULL value in the column.",
+      "It does not allow any NULL values, similar to a PRIMARY KEY.",
+      "It can only be applied to numeric columns."
     ],
-    "answer": "It allows multiple NULL values in most databases",
-    "hint": "The purpose of UNIQUE is to prevent duplicate non-null values. NULL is not considered a value in this context.",
-    "explanation": "Most RDBMS implementations allow multiple rows to have a NULL value in a column with a UNIQUE constraint, because NULL is not considered equal to another NULL."
+    "answer": "It allows multiple NULL values because NULL is not considered equal to any other value.",
+    "hint": "A `UNIQUE` constraint ensures all non-NULL values are distinct. Think about how NULL is treated in comparisons.",
+    "explanation": "A `UNIQUE` constraint enforces uniqueness for all values in a column except for `NULL`. Because `NULL` is not equal to `NULL`, most database systems permit multiple `NULL` values in a column with a `UNIQUE` constraint."
   },
   {
-    "question": "Which SQL operator is used for pattern matching in string comparisons?",
+    "question": "Which SQL operator is used to check if a value matches any value within a specified list, such as `('USA', 'Canada', 'Mexico')`?",
+    "code": null,
     "options": [
+      "IN",
       "LIKE",
-      "MATCH",
-      "CONTAINS",
-      "REGEX"
+      "BETWEEN",
+      "ANY"
     ],
-    "answer": "LIKE",
-    "hint": "This operator is used with wildcard characters such as '%' (matches any string) and '_' (matches any single character).",
-    "explanation": "The `LIKE` operator is a standard SQL feature for searching for a specified pattern in a column, making it essential for flexible string searches."
+    "answer": "IN",
+    "hint": "This operator simplifies what would otherwise be multiple `OR` conditions.",
+    "explanation": "The `IN` operator allows you to specify multiple values in a `WHERE` clause, making it a concise and readable way to check for membership in a set of values."
   },
   {
-    "question": "Which of the following commands is a Data Manipulation Language (DML) command?",
+    "question": "What is the result of executing a `DROP TABLE employees;` command?",
+    "code": null,
     "options": [
-      "UPDATE",
-      "CREATE",
-      "ALTER",
-      "DROP"
+      "The table's data and structure are permanently removed.",
+      "Only the data in the table is removed; the structure remains.",
+      "The table is marked as inactive but can be restored.",
+      "An error occurs if the table contains any data."
     ],
-    "answer": "UPDATE",
-    "hint": "DML commands are used to manage data within schema objects, not the objects themselves.",
-    "explanation": "DML consists of `SELECT`, `INSERT`, `UPDATE`, and `DELETE`, which are used to retrieve, add, modify, and remove data, respectively."
+    "answer": "The table's data and structure are permanently removed.",
+    "hint": "`DROP` is a Data Definition Language (DDL) command, and these types of operations are typically permanent.",
+    "explanation": "The `DROP TABLE` statement is a DDL operation that completely removes the table definition, all of its data, and associated indexes and constraints from the database. In most cases, it is an irreversible action."
   },
   {
-    "question": "An `INSERT` statement into the `employee` table fails. The `Phoneno` column is defined as `NOT NULL`, but was not included in the statement. What is the reason for the failure?",
-    "code": "INSERT INTO employee(empid, empname) VALUES ('123', 'John');",
+    "question": "Which of the following commands belong to the Data Manipulation Language (DML) subset of SQL?",
+    "code": null,
     "options": [
-      "The value for the non-nullable `Phoneno` column is missing",
-      "The `empid` value should be given without single quotes",
-      "The column order in the INSERT statement is incorrect",
-      "The statement should have been an UPDATE instead of an INSERT"
+      "UPDATE and INSERT",
+      "CREATE and ALTER",
+      "GRANT and REVOKE",
+      "COMMIT and ROLLBACK"
     ],
-    "answer": "The value for the non-nullable `Phoneno` column is missing",
-    "hint": "A `NOT NULL` constraint requires a column to have a value for every row.",
-    "explanation": "If an `INSERT` statement does not provide a value for a column with a `NOT NULL` constraint (and no default value is defined), the database will reject the insertion."
+    "answer": "UPDATE and INSERT",
+    "hint": "DML is concerned with modifying the data *inside* tables, not the structure of the tables (DDL) or access control (DCL).",
+    "explanation": "DML consists of commands used to manage data within schema objects, primarily `SELECT`, `INSERT`, `UPDATE`, and `DELETE`."
   },
   {
-    "question": "In MySQL, which clause can be used with an `INSERT` statement to update a row if it already exists, or insert it if it does not?",
+    "question": "The `employee` table has `EmpId` (PK), `Empname` (Not Null), and `Phoneno` (Not Null). Why will the following `INSERT` statement fail?",
+    "code": "INSERT INTO employee (empid, empname) VALUES (123, 'John');",
+    "options": [
+      "A value is not provided for the `Phoneno` column, which has a `NOT NULL` constraint.",
+      "The `empid` value `123` should be enclosed in single quotes.",
+      "The column order in the `INSERT` statement is incorrect.",
+      "The table name must be in uppercase."
+    ],
+    "answer": "A value is not provided for the `Phoneno` column, which has a `NOT NULL` constraint.",
+    "hint": "Review the constraints on all columns of the table. Does the `INSERT` statement satisfy all of them?",
+    "explanation": "The `Phoneno` column is defined with a `NOT NULL` constraint, meaning every `INSERT` operation must provide a value for it. Because this statement omits a value for `Phoneno`, the database will reject it."
+  },
+  {
+    "question": "Given the `STUDENT` table with columns `Stud_id`, `Name`, and `DOB`, which `INSERT` statement is the most robust and correctly formatted?",
+    "code": null,
+    "options": [
+      "INSERT INTO student (stud_id, name, dob) VALUES (101, 'Smith', '1994-02-01');",
+      "INSERT INTO student VALUES (101, '1994-02-01', 'Smith');",
+      "INSERT student (stud_id, name, dob) VALUES (101, 'Smith', '1994-02-01');",
+      "INSERT INTO student VALUES (101, 'Smith');"
+    ],
+    "answer": "INSERT INTO student (stud_id, name, dob) VALUES (101, 'Smith', '1994-02-01');",
+    "hint": "It is best practice to explicitly list the columns you are inserting into to avoid errors related to column order or future table changes.",
+    "explanation": "This statement is the most reliable because it explicitly lists the target columns and provides a corresponding value for each in the correct order, making it immune to changes in the table's column order."
+  },
+  {
+    "question": "In MySQL, which clause is added to an `INSERT` statement to update an existing row if a primary or unique key conflict occurs?",
+    "code": null,
     "options": [
       "ON DUPLICATE KEY UPDATE",
-      "MERGE INTO",
-      "IF EXISTS UPDATE",
-      "ON CONFLICT DO UPDATE"
+      "ON CONFLICT DO UPDATE",
+      "IF EXISTS THEN UPDATE",
+      "MERGE"
     ],
     "answer": "ON DUPLICATE KEY UPDATE",
-    "hint": "This proprietary MySQL syntax provides 'upsert' functionality, which is handled by MERGE or ON CONFLICT in other databases.",
-    "explanation": "The `ON DUPLICATE KEY UPDATE` clause is a MySQL-specific extension that allows an `INSERT` to function as an `UPDATE` when a duplicate unique or primary key is found."
+    "hint": "This non-standard but popular clause provides 'upsert' (update or insert) functionality in a single statement.",
+    "explanation": "MySQL provides the `ON DUPLICATE KEY UPDATE` clause as an extension to the `INSERT` statement. If a row to be inserted would cause a duplicate value in a unique index, an `UPDATE` of the existing row is performed instead."
   },
   {
-    "question": "To completely remove a table and its structure from a SQL database, which command should be used?",
+    "question": "To completely remove a table and all its data from a database, which command should be used?",
+    "code": null,
     "options": [
-      "DROP",
-      "DELETE",
-      "TRUNCATE",
-      "REMOVE"
+      "DROP TABLE table_name;",
+      "DELETE FROM table_name;",
+      "TRUNCATE TABLE table_name;",
+      "REMOVE TABLE table_name;"
     ],
-    "answer": "DROP",
-    "hint": "This DDL command removes the entire object, not just the data inside it.",
-    "explanation": "The `DROP TABLE` command is a Data Definition Language (DDL) operation that permanently deletes a table's definition, data, indexes, and constraints."
+    "answer": "DROP TABLE table_name;",
+    "hint": "This command is part of the Data Definition Language (DDL) and is used to eliminate entire database objects.",
+    "explanation": "The `DROP TABLE` command is used to permanently delete a table, including its structure, data, indexes, triggers, and constraints."
   },
   {
-    "question": "When defining a foreign key, which option ensures that deleting a parent row will also delete the corresponding child rows?",
+    "question": "What kind of values can be stored in a column defined with a generic numeric data type like `NUMBER` or `DECIMAL`?",
+    "code": null,
     "options": [
-      "ON DELETE CASCADE",
-      "ON DELETE RESTRICT",
-      "ON DELETE SET NULL",
-      "ON DELETE NO ACTION"
+      "Both integer (whole numbers) and floating-point (decimal) values.",
+      "Only positive whole numbers.",
+      "Only integer values without decimals.",
+      "Only character strings that represent numbers."
     ],
-    "answer": "ON DELETE CASCADE",
-    "hint": "This option creates a cascading effect from the parent table to the child table.",
-    "explanation": "`ON DELETE CASCADE` is a referential integrity action that automatically deletes all related rows in a child table when a row in the parent table is deleted."
+    "answer": "Both integer (whole numbers) and floating-point (decimal) values.",
+    "hint": "Numeric data types are versatile and can be defined with specific precision (total digits) and scale (digits after decimal).",
+    "explanation": "Numeric data types are designed to store a wide range of numerical data, including integers, fixed-point decimals, and floating-point numbers."
   },
   {
-    "question": "Which of the following is considered a Data Definition Language (DDL) command?",
+    "question": "Which command is used to remove the 'salary' column from an existing 'emp' table?",
+    "code": null,
     "options": [
-      "TRUNCATE",
-      "DELETE",
-      "SELECT",
-      "UPDATE"
+      "ALTER TABLE emp DROP COLUMN salary;",
+      "ALTER TABLE emp DELETE COLUMN salary;",
+      "UPDATE emp DROP salary;",
+      "DROP COLUMN salary FROM emp;"
     ],
-    "answer": "TRUNCATE",
-    "hint": "DDL commands define or modify the database structure. This command removes all rows from a table quickly.",
-    "explanation": "`TRUNCATE` is a DDL command because it deallocates the data pages, which is a structural change, and it typically cannot be rolled back."
+    "answer": "ALTER TABLE emp DROP COLUMN salary;",
+    "hint": "Modifying the structure of an existing table, such as removing a column, requires the `ALTER TABLE` command.",
+    "explanation": "The `ALTER TABLE` statement is used to add, delete, or modify columns in an existing table. The `DROP COLUMN` clause specifically removes a column and all of its data."
   },
   {
-    "question": "What is the standard SQL format for a 'DATE' literal?",
+    "question": "What is the maximum number of primary keys that a single database table can have?",
+    "code": null,
     "options": [
-      "YYYY-MM-DD",
-      "MM-DD-YYYY",
-      "DD-MON-YY",
-      "YYYY/MM/DD"
+      "1",
+      "2",
+      "Unlimited, as long as columns are available",
+      "0 is allowed, but 1 is the maximum"
     ],
-    "answer": "YYYY-MM-DD",
-    "hint": "This international format ensures dates are unambiguous and sort correctly as strings.",
-    "explanation": "The ISO 8601 standard format `YYYY-MM-DD` is the preferred and most portable format for representing date values in SQL."
+    "answer": "1",
+    "hint": "A primary key's purpose is to provide a single, definitive way to uniquely identify each record. While it can be composed of multiple columns, it is still considered a single key.",
+    "explanation": "A table can have only one primary key. This single primary key can, however, be a composite key, meaning it is made up of two or more columns whose values combined must be unique."
   },
   {
-    "question": "A relational database consists of a collection of ______.",
+    "question": "Which of the following SQL statements contains a syntax error?",
+    "code": null,
+    "options": [
+      "ALTER emp DROP COLUMN name;",
+      "ALTER TABLE emp ADD column_name VARCHAR(25);",
+      "ALTER TABLE emp MODIFY name VARCHAR(30);",
+      "ALTER TABLE emp DROP COLUMN name;"
+    ],
+    "answer": "ALTER emp DROP COLUMN name;",
+    "hint": "Commands that modify a table's fundamental structure must always start with the full `ALTER TABLE` keywords.",
+    "explanation": "This statement is missing the `TABLE` keyword. The correct syntax to modify a table's structure is `ALTER TABLE table_name ...`."
+  },
+  {
+    "question": "You need a rule that a `withdrawal_amount` must always be less than or equal to a `credit_limit` in the same row. What type of constraint is best for this?",
+    "code": null,
+    "options": [
+      "A table-level CHECK constraint",
+      "A column-level CHECK constraint",
+      "A FOREIGN KEY constraint",
+      "A UNIQUE constraint"
+    ],
+    "answer": "A table-level CHECK constraint",
+    "hint": "When a constraint needs to compare values from two or more different columns in the same row, it cannot be attached to a single column.",
+    "explanation": "A column-level check constraint can only refer to the column it is defined on. To compare two different columns (e.g., `CHECK (withdrawal_amount <= credit_limit)`), you must define it as a table-level constraint."
+  },
+  {
+    "question": "A relational database primarily consists of a collection of which fundamental objects?",
+    "code": null,
     "options": [
       "Tables",
       "Records",
@@ -565,11 +646,12 @@
       "Keys"
     ],
     "answer": "Tables",
-    "hint": "These structures organize data into rows and columns.",
-    "explanation": "The fundamental component of a relational database is the table (or relation), which stores data in a structured two-dimensional format."
+    "hint": "These objects are structured with rows and columns to hold data.",
+    "explanation": "Relational databases organize data into tables, which are collections of related records (rows) and fields (columns)."
   },
   {
-    "question": "Which of the following operations does not modify the data in a database?",
+    "question": "Which of the following operations only changes the presentation of data and does not modify the data stored in a database?",
+    "code": null,
     "options": [
       "Sorting",
       "Insertion",
@@ -577,31 +659,176 @@
       "Updating"
     ],
     "answer": "Sorting",
-    "hint": "This operation only changes the order in which data is presented, not the data itself.",
-    "explanation": "Sorting, typically done with an `ORDER BY` clause, affects the presentation of the query result set but does not alter the stored data."
+    "hint": "Think about which SQL clause arranges the result set without changing the underlying rows.",
+    "explanation": "Sorting with the ORDER BY clause only changes the display order of query results; it does not alter the actual data stored in the tables. Insertion, Deletion, and Updating are DML operations that do modify data."
   },
   {
-    "question": "In a relational database, a referential integrity constraint is implemented using a ______.",
+    "question": "How is referential integrity, which ensures a valid relationship between two tables, primarily enforced in a relational database?",
+    "code": null,
     "options": [
-      "Foreign key",
-      "Secondary key",
-      "Composite key",
-      "Primary key"
+      "Using a foreign key constraint",
+      "Using a secondary key",
+      "Using a composite key",
+      "Using a primary key on both tables"
     ],
-    "answer": "Foreign key",
-    "hint": "This type of key creates a link between two tables, ensuring that a value in one table exists in another.",
-    "explanation": "A foreign key enforces referential integrity by constraining a column's values to match the values in the primary key of another table."
+    "answer": "Using a foreign key constraint",
+    "hint": "This type of constraint creates a link from a column in one table to a primary key in another.",
+    "explanation": "A foreign key constraint creates a link between two tables, ensuring that a value in the child table's column must also exist in the parent table's primary key column, thus maintaining referential integrity."
   },
   {
-    "question": "In the relational database model, what term refers to the number of columns in a table?",
+    "question": "Which SQL command quickly removes all rows from a table while leaving the table's structure intact, but is often a non-logged operation that cannot be easily rolled back?",
+    "code": null,
     "options": [
-      "Degree",
+      "TRUNCATE",
+      "DELETE",
+      "DROP",
+      "REMOVE"
+    ],
+    "answer": "TRUNCATE",
+    "hint": "This DDL command is much faster than its DML counterpart for clearing large tables.",
+    "explanation": "`TRUNCATE` is a Data Definition Language (DDL) command that deallocates all data pages for a table, which is much faster than `DELETE`. Unlike `DELETE`, it generally cannot be rolled back."
+  },
+  {
+    "question": "In relational database theory, what is the formal term for a column header, which represents a property of an entity?",
+    "code": null,
+    "options": [
+      "Attribute",
+      "Relation",
+      "Tuple",
+      "Domain"
+    ],
+    "answer": "Attribute",
+    "hint": "In this model, a table is a relation, and a row is a tuple.",
+    "explanation": "In the relational model, a table is called a relation, a row is a tuple, and a column header is an attribute, which describes a characteristic of the entity."
+  },
+  {
+    "question": "In the relational model, what term refers to the total number of rows in a table?",
+    "code": null,
+    "options": [
       "Cardinality",
+      "Degree",
       "Domain",
-      "Tuple"
+      "Attribute"
     ],
-    "answer": "Degree",
-    "hint": "This term describes the 'width' of the table.",
-    "explanation": "The degree of a relation (table) is the number of attributes (columns) it contains."
+    "answer": "Cardinality",
+    "hint": "This term measures the size of a set of data, specifically in terms of its records.",
+    "explanation": "The cardinality of a relation (table) is the number of tuples (rows) it contains at a given point in time."
+  },
+  {
+    "question": "In relational database terminology, what is the 'degree' of a table?",
+    "code": null,
+    "options": [
+      "The number of columns",
+      "The number of rows",
+      "The number of foreign keys",
+      "The number of primary keys"
+    ],
+    "answer": "The number of columns",
+    "hint": "This term is related to the table's structure, not the amount of data it holds.",
+    "explanation": "In the relational model, the degree of a relation is the count of its attributes, which corresponds to the number of columns in the table."
+  },
+  {
+    "question": "A person who designs and develops software, like a payroll system, that interacts with a database to store and retrieve data falls into which user category?",
+    "code": null,
+    "options": [
+      "Application Programmer",
+      "End User",
+      "Network Administrator",
+      "Database Administrator (DBA)"
+    ],
+    "answer": "Application Programmer",
+    "hint": "This role writes the code that allows others to interact with the database without writing SQL directly.",
+    "explanation": "An Application Programmer writes programs that interface with the database to meet the needs of end users. They are different from DBAs, who manage the database itself."
+  },
+  {
+    "question": "In which data model are records organized into a table structure composed of rows and columns?",
+    "code": null,
+    "options": [
+      "Relational",
+      "Hierarchical",
+      "Network",
+      "Object-Oriented"
+    ],
+    "answer": "Relational",
+    "hint": "This is the most common data model used in modern database systems like MySQL, PostgreSQL, and SQL Server.",
+    "explanation": "The relational model, the most common modern data model, structures data in tables (relations) consisting of rows (tuples) and columns (attributes)."
+  },
+  {
+    "question": "Which statement about case-sensitivity in SQL is most accurate?",
+    "code": null,
+    "options": [
+      "SQL keywords are generally case-insensitive, but data comparison can be case-sensitive depending on the database's collation.",
+      "SQL keywords are always case-sensitive, and data is always case-insensitive.",
+      "The entire SQL language and all data stored within it are always case-insensitive.",
+      "Only string data is case-sensitive; keywords and numbers are not."
+    ],
+    "answer": "SQL keywords are generally case-insensitive, but data comparison can be case-sensitive depending on the database's collation.",
+    "hint": "Think about the difference between a command like `SELECT` and the data in a column like 'Smith'.",
+    "explanation": "SQL keywords (e.g., SELECT, FROM, WHERE) are typically case-insensitive. However, the case-sensitivity of the data itself depends on the database system and its specific collation configuration."
+  },
+  {
+    "question": "Which of the following is NOT a widely recognized relational database management system (RDBMS)?",
+    "code": null,
+    "options": [
+      "Unify",
+      "Oracle",
+      "MySQL",
+      "Sybase"
+    ],
+    "answer": "Unify",
+    "hint": "Three of these are major, long-standing players in the database market.",
+    "explanation": "Oracle, MySQL, and Sybase are all well-known RDBMS. While other database products exist, 'Unify' is not a mainstream relational database system in the same category."
+  },
+  {
+    "question": "The statement 'A database is a shared collection of logically unrelated data' is incorrect. Why?",
+    "code": null,
+    "options": [
+      "Data in a database must be logically related to be meaningful.",
+      "Data in a database must be physically stored together.",
+      "Data in a database cannot be shared.",
+      "A database is a collection of programs, not data."
+    ],
+    "answer": "Data in a database must be logically related to be meaningful.",
+    "hint": "What is the core purpose of organizing information into a database instead of just storing files?",
+    "explanation": "A fundamental concept of a database is that it stores a collection of logically *related* data that represents some aspect of the real world. Unrelated data would simply be a collection of files, not a structured database."
+  },
+  {
+    "question": "Which of the following are all valid types of SQL constraints used to enforce data integrity?",
+    "code": null,
+    "options": [
+      "NOT NULL, UNIQUE, CHECK, and PRIMARY KEY",
+      "NULL, DEFAULT, and TRIGGER",
+      "ONLY FOREIGN KEY and UNIQUE",
+      "VIEW, INDEX, and SEQUENCE"
+    ],
+    "answer": "NOT NULL, UNIQUE, CHECK, and PRIMARY KEY",
+    "hint": "Constraints are rules applied to columns to ensure data accuracy. NULL is a state, not a constraint.",
+    "explanation": "SQL constraints are rules enforced on data columns. Common types include NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, and CHECK, all of which ensure data accuracy and reliability."
+  },
+  {
+    "question": "Which of the following are recognized as classic database models defining how data is structured?",
+    "code": null,
+    "options": [
+      "Hierarchical, Network, and Relational",
+      "Conceptual, Logical, and Physical",
+      "Star and Snowflake",
+      "Centralized and Distributed"
+    ],
+    "answer": "Hierarchical, Network, and Relational",
+    "hint": "These models describe the fundamental logical structure of the data, such as a tree, a graph, or a table.",
+    "explanation": "The Hierarchical (tree-like), Network (graph-like), and Relational (table-based) models are classic database structures that define how data is stored, organized, and manipulated."
+  },
+  {
+    "question": "Which of the following SQL statements are classified as Data Manipulation Language (DML) commands?",
+    "code": null,
+    "options": [
+      "SELECT and INSERT",
+      "CREATE and TRUNCATE",
+      "ALTER and DROP",
+      "GRANT and REVOKE"
+    ],
+    "answer": "SELECT and INSERT",
+    "hint": "DML commands work with the data *inside* tables, whereas DDL commands work on the table structures themselves.",
+    "explanation": "DML commands are used for managing data within tables. This includes `SELECT` (to query), `INSERT` (to add), `UPDATE` (to modify), and `DELETE` (to remove) data. `CREATE` and `TRUNCATE` are DDL."
   }
 ]
