@@ -1,0 +1,417 @@
+[
+  {
+    "question": "Some people don't want animation to interfere with their web page experience. What is the jQuery method to let a user turn off the animation?",
+    "options": [
+      "Use the jquery method:stop()",
+      "Use the jquery method:stop.animation()",
+      "Not possible to turn off the animation by the user",
+      "Use the jquery method:pauseAnimation()"
+    ],
+    "answer": "Use the jquery method:stop()",
+    "hint": "Think about the simplest jQuery command to halt an ongoing effect.",
+    "explanation": "The jQuery `.stop()` method is used to stop the currently-running animation on the selected elements."
+  },
+  {
+    "question": "Rhita wants to replace the jQuery code `$(document).ready(fun)` using an equivalent shorthand method. Which of the following is the correct method?",
+    "code": "$(document).ready(fun)",
+    "options": [
+      "$(fun)",
+      "#(fun)",
+      "There is no equivalent function for the given code",
+      "jQuery.fun()"
+    ],
+    "answer": "$(fun)",
+    "hint": "jQuery provides a more concise syntax for the document ready event.",
+    "explanation": "The `$(fun)` syntax is a shorthand for `$(document).ready(fun)`, and both are used to execute code once the DOM is fully loaded and ready to be manipulated."
+  },
+  {
+    "question": "Which jQuery method is used to bind an event handler to the 'blur' JavaScript event on an element?",
+    "options": [
+      ".blur()",
+      ".focus()",
+      ".blurElement()",
+      ".onBlur()"
+    ],
+    "answer": ".blur()",
+    "hint": "The method name in jQuery often directly corresponds to the event name.",
+    "explanation": "The `.blur()` method in jQuery is used to attach a function to be executed when the 'blur' event occurs on an element, which happens when it loses focus."
+  },
+  {
+    "question": "If you set an element's CSS `position` property to its default value and then try to apply a jQuery animation, what is the most likely outcome?",
+    "options": [
+      "Animation failed because the CSS position property is set to static",
+      "Animation failed because the CSS position property is set to Fixed",
+      "The webpage runs successfully with animated elements",
+      "Animation failed because the CSS position property is set to relative"
+    ],
+    "answer": "Animation failed because the CSS position property is set to static",
+    "hint": "jQuery's `.animate()` method requires the element's position property to be one that allows for movement, such as relative, absolute, or fixed.",
+    "explanation": "For jQuery animations on properties like `top` or `left` to work, the CSS `position` property must be `relative`, `absolute`, or `fixed`. The default value is `static`, which does not allow for this type of positioning, causing the animation to fail."
+  },
+  {
+    "question": "What is the effect of the jQuery code `$('#name').remove();`?",
+    "code": "$('#name').remove();",
+    "options": [
+      "It removes the element with id='name' and all its child elements.",
+      "It only hides the element with id='name'.",
+      "It empties the content of the element with id='name'.",
+      "It removes the text value from the element with id='name'."
+    ],
+    "answer": "It removes the element with id='name' and all its child elements.",
+    "hint": "The `.remove()` method affects the entire selected element, not just its content or visibility.",
+    "explanation": "The jQuery `.remove()` method removes the selected elements, including all text and child nodes, from the DOM entirely."
+  },
+  {
+    "question": "Kiran wants to remove all the child nodes from a div element without removing the div itself. Which jQuery method should he use?",
+    "code": "<div>\n  <h2>Good morning</h2>\n  <p>This is a paragraph inside the div.</p>\n</div>",
+    "options": [
+      "empty()",
+      "delete()",
+      "remove(children)",
+      "clear()"
+    ],
+    "answer": "empty()",
+    "hint": "Which jQuery method is specifically designed to clear the contents of an element?",
+    "explanation": "The `.empty()` method in jQuery removes all child nodes and content from the selected elements, leaving the parent element intact."
+  },
+  {
+    "question": "Which jQuery method is used to remove an event handler that was previously attached with the `.on()` function?",
+    "options": [
+      "off()",
+      "remove()",
+      "detach()",
+      "unbind()"
+    ],
+    "answer": "off()",
+    "hint": "The method to remove an event handler is the logical opposite of the one used to attach it.",
+    "explanation": "The `.off()` method is the counterpart to `.on()` in jQuery. It is used to remove event handlers that were previously attached with `.on()`."
+  },
+  {
+    "question": "Which HTML5 tag is most appropriate for dividing a document into distinct, logical groups or thematic sections?",
+    "options": [
+      "<section></section>",
+      "<div></div>",
+      "<group></group>",
+      "<span></span>"
+    ],
+    "answer": "<section></section>",
+    "hint": "HTML5 introduced semantic tags to give better meaning to the document structure.",
+    "explanation": "The `<section>` tag in HTML5 is a semantic element used to group related content, representing a thematic section within a document."
+  },
+  {
+    "question": "Which of the following statements about HTML is true?",
+    "options": [
+      "Browsers attempt to render malformed HTML without throwing an error.",
+      "HTML is a case-sensitive language.",
+      "All HTML tags must always be explicitly closed.",
+      "Browsers will not render HTML if it contains syntax mistakes."
+    ],
+    "answer": "Browsers attempt to render malformed HTML without throwing an error.",
+    "hint": "Think about how forgiving web browsers are when they encounter HTML that isn't perfectly written.",
+    "explanation": "Web browsers are designed to be permissive and will often parse and display HTML pages even if they contain syntax errors, rather than throwing a hard error like a programming language compiler."
+  },
+  {
+    "question": "Which CSS selector is used to change the style of a link when a user's mouse pointer is on top of it?",
+    "options": [
+      "a:hover",
+      "a:active",
+      "a:visited",
+      "a:link"
+    ],
+    "answer": "a:hover",
+    "hint": "CSS has pseudo-classes to style elements based on user actions.",
+    "explanation": "The `:hover` pseudo-class in CSS is used to select and style an element when a user mouses over it."
+  },
+  {
+    "question": "In HTML5, elements like `<section>`, `<article>`, and `<aside>` are known by what collective term?",
+    "code": "<section>\n<article>\n<aside>",
+    "options": [
+      "Semantic elements",
+      "Graphic elements",
+      "Multimedia elements",
+      "Control elements"
+    ],
+    "answer": "Semantic elements",
+    "hint": "These tags were introduced to provide more meaning to the structure of a web page.",
+    "explanation": "Elements like `<section>`, `<article>`, and `<aside>` are known as semantic elements in HTML5 because they clearly describe their meaning and purpose to both the browser and the developer."
+  },
+  {
+    "question": "Using a '#' symbol in a jQuery selector, like `$('#myElement')`, is equivalent to which native JavaScript function?",
+    "options": [
+      "document.getElementById()",
+      "document.getElementsByTagName()",
+      "document.getElementsByClassName()",
+      "document.querySelector()"
+    ],
+    "answer": "document.getElementById()",
+    "hint": "The '#' symbol is a selector used to target elements by their unique attribute.",
+    "explanation": "In CSS and jQuery, the '#' selector targets an element by its ID. This is the direct equivalent of the native JavaScript `document.getElementById()` function."
+  },
+  {
+    "question": "Which JavaScript statement correctly writes the text 'World of JavaScript' directly into the HTML document?",
+    "options": [
+      "document.write('World of JavaScript')",
+      "console.log('World of JavaScript')",
+      "System.out.println('World of JavaScript')",
+      "window.alert('World of JavaScript')"
+    ],
+    "answer": "document.write('World of JavaScript')",
+    "hint": "Which object represents the web page itself in the browser's DOM?",
+    "explanation": "`document.write()` is a JavaScript method that writes a string of text directly to the HTML document stream where the script is placed."
+  },
+  {
+    "question": "Which syntax correctly checks if a variable 'amt' is equal to the number 5000 in JavaScript?",
+    "options": [
+      "if (amt == 5000)",
+      "if (amt === '5000')",
+      "if (amt = 5000)",
+      "if (amt equals 5000)"
+    ],
+    "answer": "if (amt == 5000)",
+    "hint": "JavaScript uses specific operators for comparison, distinguishing between assignment (=) and equality (== or ===).",
+    "explanation": "In JavaScript, the `==` operator is used for loose equality comparison. The `=` operator is for assignment, and `===` is for strict equality (value and type)."
+  },
+  {
+    "question": "What will be the output of the following JavaScript code?",
+    "code": "var txt = \"pass 70% fail 30%\";\nvar pattern = /\\D/g;\nvar res = txt.match(pattern);\ndocument.write(res);",
+    "options": [
+      "p,a,s,s, ,%, ,f,a,i,l, ,%",
+      "70,30",
+      "7,0,%,3,0,%",
+      "pass,fail"
+    ],
+    "answer": "p,a,s,s, ,%, ,f,a,i,l, ,%",
+    "hint": "The `\\D` regular expression character class matches any character that is not a digit.",
+    "explanation": "The regular expression `/\\D/g` finds all non-digit characters globally. The `match()` method returns an array of these characters, which includes letters, spaces, and the '%' symbol from the string."
+  },
+  {
+    "question": "Which JavaScript string method is used to extract a single character from a specific index within a string?",
+    "options": [
+      "charAt()",
+      "getCharAt()",
+      "characterAt()",
+      "substring()"
+    ],
+    "answer": "charAt()",
+    "hint": "This string method takes a number (an index) as an argument and returns the character at that position.",
+    "explanation": "The `charAt()` method in JavaScript returns a new string consisting of the single character at the specified index in a string."
+  },
+  {
+    "question": "What is the output of the following JavaScript code snippet?",
+    "code": "var amt = 55 + \"55\";\ndocument.write(amt);",
+    "options": [
+      "5555",
+      "110",
+      "Error",
+      "NaN"
+    ],
+    "answer": "5555",
+    "hint": "Consider how JavaScript's `+` operator behaves when one of the operands is a string.",
+    "explanation": "In JavaScript, the `+` operator performs string concatenation if either operand is a string. The number `55` is converted to a string and concatenated with the string `'55'`, resulting in `'5555'`."
+  },
+  {
+    "question": "Which JavaScript property should be used to redirect the browser to a new web page?",
+    "options": [
+      "window.location",
+      "window.reload",
+      "document.url",
+      "page.redirect"
+    ],
+    "answer": "window.location",
+    "hint": "This property of the global object can be used to get the current page address (URL) and to navigate to a new one.",
+    "explanation": "The `window.location` object in JavaScript can be used to control the browser's location. Assigning a new URL to `window.location` or `window.location.href` redirects the page."
+  },
+  {
+    "question": "Which JavaScript operator is used to determine the data type of a variable?",
+    "options": [
+      "typeof",
+      "getType",
+      "instanceof",
+      "type"
+    ],
+    "answer": "typeof",
+    "hint": "This unary operator returns a string indicating the type of the unevaluated operand.",
+    "explanation": "The `typeof` operator in JavaScript is used to return a string that represents the data type of a variable or expression, such as 'string', 'number', or 'object'."
+  },
+  {
+    "question": "To execute a JavaScript function when a user clicks a button, which event handler should be used?",
+    "options": [
+      "onclick",
+      "onchange",
+      "onmouseover",
+      "onsubmit"
+    ],
+    "answer": "onclick",
+    "hint": "The event name corresponds to the action of pressing a mouse button on an element.",
+    "explanation": "The `onclick` event is triggered when a user clicks on an HTML element, making it the appropriate event for executing code when a button is pressed."
+  },
+  {
+    "question": "Which of the following operations cannot be performed by client-side JavaScript alone?",
+    "options": [
+      "Store form contents to a database file on the server",
+      "Display an alert box to the user",
+      "Validate a form",
+      "Dynamically change the HTML content"
+    ],
+    "answer": "Store form contents to a database file on the server",
+    "hint": "Client-side scripts run in the user's browser and have limited access for security reasons. Which of these actions requires server access?",
+    "explanation": "Client-side JavaScript runs in the browser and lacks the permissions to directly access server-side resources like a database. This operation must be handled by a server-side language."
+  },
+  {
+    "question": "When a user views a page containing a JavaScript program, where is the script executed?",
+    "options": [
+      "The User's machine running a Web browser",
+      "The Web server",
+      "A central machine deep within Netscape's corporate offices",
+      "The Database Server"
+    ],
+    "answer": "The User's machine running a Web browser",
+    "hint": "JavaScript is known as a 'client-side' language. Where is the client located?",
+    "explanation": "JavaScript is a client-side scripting language, meaning the code is downloaded from the server and then executed by the JavaScript engine within the user's own web browser."
+  },
+  {
+    "question": "Which JavaScript code snippet correctly changes the content of the paragraph element below?",
+    "code": "<p id=\"pid1\">Aim Higher.. Sky is your limit</p>",
+    "options": [
+      "document.getElementById(\"pid1\").innerHTML = \"Never give up!!\";",
+      "document.getElementByName(\"p\").innerHTML = \"Never give up!!\";",
+      "$(\"#pid1\").text = \"Never give up!!\";",
+      "#pid1.innerHTML = \"Never give up!!\";"
+    ],
+    "answer": "document.getElementById(\"pid1\").innerHTML = \"Never give up!!\";",
+    "hint": "To target a specific element with a unique ID in vanilla JavaScript, you need the correct DOM selection method.",
+    "explanation": "`document.getElementById('pid1')` selects the unique element with the ID 'pid1', and its `.innerHTML` property can then be modified to change its HTML content."
+  },
+  {
+    "question": "Which HTML tag is used to enclose JavaScript statements within an HTML file?",
+    "options": [
+      "<script>",
+      "<style>",
+      "<code>",
+      "<body>"
+    ],
+    "answer": "<script>",
+    "hint": "HTML has a specific tag designated for including executable code.",
+    "explanation": "The '<script>' tag is the standard HTML element used to embed or reference executable client-side scripts, typically JavaScript."
+  },
+  {
+    "question": "What is the correct syntax for a single-line comment in JavaScript?",
+    "options": [
+      "// this is a comment",
+      "<!-- this is a comment -->",
+      "/* this is a comment */",
+      "# this is a comment"
+    ],
+    "answer": "// this is a comment",
+    "hint": "JavaScript shares its single-line comment syntax with many C-style languages.",
+    "explanation": "In JavaScript, a single-line comment starts with `//`. Multi-line comments are enclosed in `/* ... */`, and HTML comments use `<!-- ... -->`."
+  },
+  {
+    "question": "Which HTML element is a container for metadata such as the document title, scripts, and styles?",
+    "options": [
+      "<head></head>",
+      "<body></body>",
+      "<meta></meta>",
+      "<title></title>"
+    ],
+    "answer": "<head></head>",
+    "hint": "This tag contains information about the document and is located before the `<body>` tag.",
+    "explanation": "The `<head>` element in HTML is a container for metadata (data about the document) and is placed between the `<html>` tag and the `<body>` tag. Its content is not displayed on the page itself."
+  },
+  {
+    "question": "A new feature in HTML5 allows web applications to store data locally within the user's browser, enabling them to function offline. What is this capability called?",
+    "options": [
+      "Offline Storage",
+      "Client-Side Validation",
+      "Server-Side Caching",
+      "Dynamic CSS"
+    ],
+    "answer": "Offline Storage",
+    "hint": "HTML5 introduced capabilities for web apps to function without a constant internet connection.",
+    "explanation": "HTML5 introduced features like Application Cache and Web Storage (localStorage, sessionStorage) that allow developers to build applications that can function and store data while offline."
+  },
+  {
+    "question": "What does the acronym HTML stand for?",
+    "options": [
+      "Hyper Text Markup Language",
+      "Hyperlink and Text Markup Language",
+      "Home Tool Markup Language",
+      "Hyper Tooling Markup Language"
+    ],
+    "answer": "Hyper Text Markup Language",
+    "hint": "It's the standard language for creating the structure of web pages.",
+    "explanation": "HTML is an acronym for Hyper Text Markup Language, which is the standard language used to create and design documents to be displayed in a web browser."
+  },
+  {
+    "question": "What is the general term for a software application, such as Chrome or Firefox, that is used to access and view material on the internet?",
+    "options": [
+      "Browser",
+      "Webpage",
+      "Website",
+      "Search Engine"
+    ],
+    "answer": "Browser",
+    "hint": "This software interprets HTML, CSS, and JavaScript to render pages.",
+    "explanation": "A web browser is a software application used to access information on the World Wide Web. It retrieves, presents, and traverses information resources on the web."
+  },
+  {
+    "question": "Which HTML input type is most appropriate for a field where the user must enter a web address?",
+    "options": [
+      "type=\"url\"",
+      "type=\"text\"",
+      "type=\"webaddress\"",
+      "type=\"http\""
+    ],
+    "answer": "type=\"url\"",
+    "hint": "HTML5 introduced specific input types for better semantics and built-in validation.",
+    "explanation": "The `input type=\"url\"` is used for input fields that should contain a URL address. On supporting devices, it may bring up a specialized keyboard, and browsers can add validation to check for a correct URL format."
+  },
+  {
+    "question": "Which HTML attribute displays temporary text in an input field that disappears when the user starts typing?",
+    "options": [
+      "placeholder",
+      "value",
+      "default",
+      "title"
+    ],
+    "answer": "placeholder",
+    "hint": "This attribute provides a short hint that describes the expected value of an input field.",
+    "explanation": "The `placeholder` attribute specifies a short hint (e.g., a sample value or a brief description of the expected format) that is displayed in the input field before the user enters a value."
+  },
+  {
+    "question": "How can you use an image as a clickable submit button inside an HTML form?",
+    "options": [
+      "<input type=\"image\" src=\"image.jpg\" alt=\"submit\">",
+      "<input type=\"submit\" src=\"image.jpg\">",
+      "<img href=\"image.jpg\" value=\"submit\">",
+      "<button><img src=\"image.jpg\"></button>"
+    ],
+    "answer": "'<input type=\"image\" src=\"image.jpg\" alt=\"submit\">'",
+    "hint": "There is a specific `input` type designed for this purpose.",
+    "explanation": "The '<input type=\"image\">' defines an image as a submit button. The `src` attribute specifies the path to the image, and clicking it will submit the form."
+  },
+  {
+    "question": "Which HTML attribute uses a regular expression to enforce a specific format, such as a 10-digit phone number, for an input field?",
+    "options": [
+      "<input type=\"text\" pattern=\"[0-9]{10}\">",
+      "<input type=\"number\" pattern=\"[0-9]{10}\">",
+      "<input type=\"text\" validate=\"[0-9]{10}\">",
+      "<input type=\"tel\" length=\"10\">"
+    ],
+    "answer": "<input type=\"text\" pattern=\"[0-9]{10}\">",
+    "hint": "This attribute provides powerful client-side validation capabilities using regular expressions.",
+    "explanation": "The `pattern` attribute specifies a regular expression that the input element's value is checked against on form submission. `[0-9]{10}` ensures exactly 10 digits are entered."
+  },
+  {
+    "question": "Which pair of HTML tags is used to create an input field with a dropdown of pre-defined suggestions for the user?",
+    "options": [
+      "<input> and <datalist>",
+      "<input> and <select>",
+      "<select> and <option>",
+      "<form> and <list>"
+    ],
+    "answer": "<input> and <datalist>",
+    "hint": "This feature provides an 'autocomplete' functionality for input elements, with the list of suggestions being defined separately.",
+    "explanation": "The `<datalist>` element specifies a list of pre-defined options for an `<input>` element. The `list` attribute of the input must refer to the `id` of the datalist to link them."
+  }
+]

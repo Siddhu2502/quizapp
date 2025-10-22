@@ -15,5 +15,5 @@ export const AppState = {
 
 export const CONFIG = {
     QUIZ_LENGTH: 20,
-    TOPICS: ['DEVOPS', 'JAVA', 'GENAI', 'PYTHON', 'MYSQL', 'SOFTWARE_FUNDAMENTALS'],
+    TOPICS: ['DEVOPS', 'JAVA', 'GENAI', 'PYTHON', 'MYSQL', 'SOFTWARE_FUNDAMENTALS', 'WEBDEV'],
 };
